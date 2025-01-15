@@ -41,7 +41,7 @@ remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
   # tambahan
-  - jekyll-seo-tag
+  #- jekyll-seo-tag
   # - jekyll-spaceship
 
 markdown: kramdown
