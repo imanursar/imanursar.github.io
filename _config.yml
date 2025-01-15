@@ -29,24 +29,31 @@ twitter_username:
 github_username:  imanursar
 
 # Build settings
-#theme: minima
-#plugins:
-#  - jekyll-feed
 
 # use this when you're trying to run locally
 # theme: "just-the-docs"
 
 # use this when you're pushing updates to github
 remote_theme: pmarsceill/just-the-docs
+
+
 plugins:
   - jekyll-feed
+
   # tambahan
-  #- jekyll-seo-tag
+  - jekyll-seo-tag
   # - jekyll-spaceship
+
+
 
 markdown: kramdown
 
 color_scheme: light
+
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+ga_tracking: G-D11N9P4G2Q
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -56,6 +63,8 @@ color_scheme: light
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+
+
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
