@@ -9,7 +9,7 @@ nav_order: 1
 ---
 
 # Optimizing Cross-Docking Location Through Heat Map Analysis
-<img src="/assets/images/geospatial/heat_map.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
 
 
 ## Introduction
@@ -27,8 +27,8 @@ By leveraging this tool, we can generate heat maps that pinpoint high-density ar
 <p style='text-align: justify;'>
 The primary objective of this doc is to demonstrate how our tool's heat map analysis can inform and optimize cross-docking decisions. By identifying the most strategic Cross-Docking, we aim to significantly reduce last-mile delivery costs while maintaining or even improving service levels.</p>
 
-<img src="/assets/images/geospatial/obj1.png" alt="drawing" width="300"/>
-<img src="/assets/images/geospatial/obj2.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/obj_1.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/obj_2.png" alt="drawing" width="300"/>
 
 
 ## Schema
@@ -36,7 +36,7 @@ The primary objective of this doc is to demonstrate how our tool's heat map anal
 
 
 ## Overview of the tool
-<img src="/assets/images/geospatial/overview.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/overview_tool.png" alt="drawing" width="500"/>
 
 
 ## Dataset - Potential customer
@@ -56,7 +56,7 @@ Once all data is collected, we estimate metrics such as tonnage, sales orders, a
 The median monthly values are then determined as the estimation benchmarks for each parameter. We also use this estimation benchmarks for buyer leads data.
 
 
-## Result
+## Heat-Map Result
 <img src="/assets/images/geospatial/map.gif" alt="drawing" width="500"/>
 
 <p style='text-align: justify;'>
@@ -85,8 +85,82 @@ And many more insights
 </p>
 
 
-## Reference
+## Heat-Map with Analysis of matrices
+<img src="/assets/images/geospatial/map_adv.gif" alt="drawing" width="500"/>
+
+<p style='text-align: justify;'>
+In addition to the heatmap visualizations provided by this tool, we can perform a deep dive analysis of tonnage, GMV, and sales orders within the identified regions.
+
+By leveraging these visualizations and analytics, we can discuss and assess the logistical implications.
+
+In example: particularly in high-volume areas within a 5 km radius of selected points of interest:
+<ul>
+    <li>The number of potential buyers, buyer leads, and transactions</li>
+    <li>The distribution across different channel categories</li>
+    <li>Identifying the direction of the highest concentration of buyers near this point.</li>
+    <li>Analyzing and comparing key metrics within the radius area, including: Tonnage, GMV, Sales orders</li>
+</ul>
+
+Further breakdowns could include:
+<ul>
+    <li>Detailed analysis of the above metrics by channel category (GT, MT, HoReCa) and/or by kabupaten or city within the radius.</li>
+    <li>Using historical data to estimate the potential market size within the radius.</li>
+</ul>
+</p>
+<br>
+
+<img src="/assets/images/geospatial/table_1.png" alt="drawing" width="500"/>
+<p style='text-align: justify;'>
+As shown in the table above, we can measure the number of potential and registered buyers, the required tonnage, GMV, and sales orders generated for each city and channel category. This insight is crucial for formulating a strategic plan for the area, from both business and logistics perspectives.
+</p>
 
 
-## Repository
+## Comparing two points to get more insight and decision
+<p style='text-align: justify;'>
+With this tool, we can comparing 2 points that lead us to get more insight and better decision for cross-docking location.
+</p>
+
+#### East Jakarta
+
+<img src="/assets/images/geospatial/map_adv_2.gif" alt="drawing" width="500"/>
+<p></p>
+<img src="/assets/images/geospatial/table_2.png" alt="drawing" width="425"/>
+<img src="/assets/images/geospatial/table_3.png" alt="drawing" width="425"/>
+
+#### South Jakarta
+
+<img src="/assets/images/geospatial/map_adv_3.gif" alt="drawing" width="500"/>
+
+
+## Expansion
+<p style='text-align: justify;'>
+if we want to expand our business by establishing a new Cross-Docking in a high-potential area like Bogor. First, we need to identify regions with a high density of potential buyers, registered buyers, and areas with high order volumes. With this information, we can select the most optimal location for a Cross-Docking that would efficiently cover both existing transactions and potential buyers.
+</p>
+
+#### Bogor
+<img src="/assets/images/geospatial/map_adv_4.gif" alt="drawing" width="500"/>
+
+#### West Jakarta
+<img src="/assets/images/geospatial/map_adv_5.gif" alt="drawing" width="500"/>
+
+#### Surabaya
+<img src="/assets/images/geospatial/map_adv_6.gif" alt="drawing" width="500"/>
+
+#### Bali
+<img src="/assets/images/geospatial/map_adv_7.gif" alt="drawing" width="500"/>
+
+#### Bekasi
+<img src="/assets/images/geospatial/map_adv_8.gif" alt="drawing" width="500"/>
+
+
+## Key Takeaways 
+<ul>
+    <li>This tool and its visualizations allow us to gain deeper insights into the distribution of buyers, potential buyers, and transaction data across specific regions.</li>
+    <li>Comparing three parameters—potential buyers, registered buyers, and transaction buyers—helps us identify areas with high and low buyer activity.</li>
+    <li>Enables a better understanding of the potential market, retention opportunities, and areas with high transaction volume.</li>
+    <li>Facilitates the calculation of key metrics for single or multiple points, providing a comprehensive view to determine optimal locations for Cross-Dockings or distribution centers.</li>
+    <li>offering valuable insights into where business and logistical improvements can be made.</li>
+    <li>Supports the initiation of cost-distance and cost-benefit analyses.</li>
+</ul>
+
 
