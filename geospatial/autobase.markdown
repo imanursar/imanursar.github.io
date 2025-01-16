@@ -4,8 +4,9 @@
 
 layout: default
 title: autobase
-parent: Geospatial
-nav_order: 10
+parent: snippet
+grand_parent: Geospatial
+nav_order: 1
 ---
 
 # Twitter Autobase Bot
