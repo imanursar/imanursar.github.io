@@ -33,7 +33,7 @@ By utilizing heat maps, we can more accurately identify optimal Cross-Docking th
 <img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
 
 <span class="fs-3">
-[Read more](/geospatial/cross_docking_location){: .btn }
+[Read more](/geospatial/heat map analysis){: .btn }
 </span>
 
 
