@@ -27,20 +27,20 @@ By leveraging this tool, we can generate heat maps that pinpoint high-density ar
 <p style='text-align: justify;'>
 The primary objective of this doc is to demonstrate how our tool's heat map analysis can inform and optimize cross-docking decisions. By identifying the most strategic Cross-Docking, we aim to significantly reduce last-mile delivery costs while maintaining or even improving service levels.</p>
 
-<img src="/assets/images/geospatial/obj_1.png" alt="drawing" width="300"/>
-<img src="/assets/images/geospatial/obj_2.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/heat_map/obj_1.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/heat_map/obj_2.png" alt="drawing" width="300"/>
 
 
 ## Schema
-<img src="/assets/images/geospatial/schema.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/schema.png" alt="drawing" width="500"/>
 
 
 ## Overview of the tool
-<img src="/assets/images/geospatial/overview_tool.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/overview_tool.png" alt="drawing" width="500"/>
 
 
 ## Dataset - Potential customer
-<img src="/assets/images/geospatial/scrap.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/scrap.png" alt="drawing" width="500"/>
 <p style='text-align: justify;'>
 We aggregate potential data from Google Maps by targeting specific customers, locations, and keywords.
 
@@ -57,7 +57,7 @@ The median monthly values are then determined as the estimation benchmarks for e
 
 
 ## Heat-Map Result
-<img src="/assets/images/geospatial/map.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map.gif" alt="drawing" width="500"/>
 
 <p style='text-align: justify;'>
 By comparing these three heatmaps (Potential data, Registered data, Transaction data), we can identify the most strategic Cross-Docking based on three key parameters:
@@ -86,7 +86,7 @@ And many more insights
 
 
 ## Heat-Map with Analysis of matrices
-<img src="/assets/images/geospatial/map_adv.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv.gif" alt="drawing" width="500"/>
 
 <p style='text-align: justify;'>
 In addition to the heatmap visualizations provided by this tool, we can perform a deep dive analysis of tonnage, GMV, and sales orders within the identified regions.
@@ -109,7 +109,7 @@ Further breakdowns could include:
 </p>
 <br>
 
-<img src="/assets/images/geospatial/table_1.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/table_1.png" alt="drawing" width="500"/>
 <p style='text-align: justify;'>
 As shown in the table above, we can measure the number of potential and registered buyers, the required tonnage, GMV, and sales orders generated for each city and channel category. This insight is crucial for formulating a strategic plan for the area, from both business and logistics perspectives.
 </p>
@@ -122,14 +122,14 @@ With this tool, we can comparing 2 points that lead us to get more insight and b
 
 #### East Jakarta
 
-<img src="/assets/images/geospatial/map_adv_2.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_2.gif" alt="drawing" width="500"/>
 <p></p>
-<img src="/assets/images/geospatial/table_2.png" alt="drawing" width="425"/>
-<img src="/assets/images/geospatial/table_3.png" alt="drawing" width="425"/>
+<img src="/assets/images/geospatial/heat_map/table_2.png" alt="drawing" width="425"/>
+<img src="/assets/images/geospatial/heat_map/table_3.png" alt="drawing" width="425"/>
 
 #### South Jakarta
 
-<img src="/assets/images/geospatial/map_adv_3.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_3.gif" alt="drawing" width="500"/>
 
 
 ## Expansion
@@ -138,19 +138,19 @@ if we want to expand our business by establishing a new Cross-Docking in a high-
 </p>
 
 #### Bogor
-<img src="/assets/images/geospatial/map_adv_4.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_4.gif" alt="drawing" width="500"/>
 
 #### West Jakarta
-<img src="/assets/images/geospatial/map_adv_5.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_5.gif" alt="drawing" width="500"/>
 
 #### Surabaya
-<img src="/assets/images/geospatial/map_adv_6.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_6.gif" alt="drawing" width="500"/>
 
 #### Bali
-<img src="/assets/images/geospatial/map_adv_7.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_7.gif" alt="drawing" width="500"/>
 
 #### Bekasi
-<img src="/assets/images/geospatial/map_adv_8.gif" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/map_adv_8.gif" alt="drawing" width="500"/>
 
 
 ## Key Takeaways 

@@ -10,9 +10,8 @@ heading_anchors: true
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </style>
 
-# Hi, I'm Iman!
-
-![](../assets/images/about_me/circle.png)
+# Hi, I'm Iman! 
+<img src="/assets/images/about_me/circle.png" alt="drawing" width="100"/>
 
 ## About Me
 
