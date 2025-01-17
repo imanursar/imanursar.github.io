@@ -29,7 +29,7 @@ df = pd.read_csv(r'..\map\starbucksInLACounty.csv')
 |  4 | 76468-95631  | Target Carson T-2026       |    33.844  |    -118.263 | Carson     | CA      | 90746 |
 
 ### load json file
-Next, we load or provide the path to the geojson file.
+Next, we load or provide the path to the GeoJSON or shape file. This step is optional if the `main_data` parameter is already set as a GeoDataFrame that includes a geometry column.
 
 ```python
 with open(r'..\map\laMap.geojson') as f:
@@ -41,20 +41,21 @@ By calling `maps.map_marker_fol_plot`, we can some plotting such as:
 - draw plot map with circle as marker for location
 - draw plot map with point as marker for location
 - draw plot map with point as marker for location with number/image on it
-- draw plot map with polygon as marker for area
 - draw plot map with choropleth as marker for area
 - draw plot map with choropleth as marker for area with changing per time
+- draw plot map with heatmap as marker for area
+- draw plot map with polygon as marker for area
 - draw plot map with geometry grid as marker for area
 - draw plot map with voronoi area as marker for area
 - draw plot map with multiple route as marker for line
-- draw plot map with heatmap as marker for area
 
 In this chapter, we will showcase the first three types of plots as examples. Additional examples and discussions will be covered in the next chapter.
 
 ```python
 maps.map_marker_fol_plot(main_data=main_data, shape=laArea, col_list=['latitude','longitude'],
-                         marker = ['circle'], center_coor=[34.0522,-118.2437], tip= ['strLocation'],
-                        control_layer=False, fullscreen=False)
+                        marker = ['circle'], center_coor=[34.0522,-118.2437], tip= ['strLocation'],zoom=5, 
+                        control_layer=False, fullscreen=False, upper_right = [61, 2], lower_left = [49, -8],
+                        popup_type = 'table',custome_popup=df[['strLocation']],)
 ```
 
 This function requires the following parameters:
@@ -63,11 +64,16 @@ This function requires the following parameters:
 - **col_loc** (`list`):              Two column names of location `['longitude', 'latitude']`  
 - **marker** (`list`):               Select the type(s) of markets you want to display  
 - **center_coor** (`list`):          The center coordinates for the map, making it easier to navigate and interact with  
+- **zoom** (`int`):                  Setting zoom scale of map  
+- **upper_right** (`list`):          upper right coordinate for geometry grid
+- **lower_left** (`list`):           lower left coordinate for geometry grid
+- **popup_type** (`string`):         type of popup that will appear
+- **custome_popup** (`list`):        columns name in list that will appear in popup
 - **tip** (`string`):                The column name containing string values that will appear as a tooltip when hovering over a location.
 - **control_layer** (`boolean`):     Adds a control layer panel to toggle which map layers to display.
 - **fullscreen** (`boolean`):        Adds a fullscreen button to switch between fullscreen mode and normal view.
 
-As discussed above, the `marker` parameter can include values such as:
+As discussed above, the `marker` parameter can include one or multiple values such as:
 - circle, point, point_number 
 - polygon
 - choropleth
@@ -83,14 +89,26 @@ As discussed above, the `marker` parameter can include values such as:
 - geo_area
 - single_route
 
+When multiple values are provided, the function automatically generates multiple layers to fulfill the request, allowing for a dynamic and comprehensive visualization.
 
 ## The result
 
-### Circle marker
+### Circle marker map
 <img src="/assets/images/geospatial/snippet/folium_circle.png" alt="drawing" width="500"/>
 
-### Point marker
+### Point marker map
 <img src="/assets/images/geospatial/snippet/folium_point.png" alt="drawing" width="500"/>
 
 <img src="/assets/images/geospatial/snippet/folium_point_marker.png" alt="drawing" width="500"/>
 
+### pop up map
+<img src="/assets/images/geospatial/snippet/folium_popup.png" alt="drawing" width="500"/>
+
+### choropleth map
+<img src="/assets/images/geospatial/snippet/folium_choropleth.png" alt="drawing" width="500"/>
+
+### heatmap map
+<img src="/assets/images/geospatial/snippet/folium_heatmap.png" alt="drawing" width="500"/>
+
+### ant path map
+<img src="/assets/images/geospatial/snippet/folium_antpath.png" alt="drawing" width="500"/>
