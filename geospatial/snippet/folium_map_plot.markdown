@@ -112,3 +112,6 @@ When multiple values are provided, the function automatically generates multiple
 
 ### ant path map
 <img src="/assets/images/geospatial/snippet/folium_antpath.png" alt="drawing" width="500"/>
+
+### voronoi map
+<img src="/assets/images/geospatial/snippet/folium_voronoi.png" alt="drawing" width="500"/>
