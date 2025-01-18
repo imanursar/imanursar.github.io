@@ -5,6 +5,7 @@
 layout: default
 title: heat map analysis
 parent: Geospatial
+permalink: /geospatial/heat map analysis/
 nav_order: 1
 ---
 

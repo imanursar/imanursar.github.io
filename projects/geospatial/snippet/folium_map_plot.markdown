@@ -6,6 +6,7 @@ layout: default
 title: Folium Map plot
 parent: snippet code
 grand_parent: Geospatial
+permalink: /geospatial/snippet code/Folium Map plot
 nav_order: 2
 ---
 

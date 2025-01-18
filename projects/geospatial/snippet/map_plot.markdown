@@ -6,6 +6,7 @@ layout: default
 title: Map plot
 parent: snippet code
 grand_parent: Geospatial
+permalink: /geospatial/snippet code/Map plot
 nav_order: 1
 ---
 
