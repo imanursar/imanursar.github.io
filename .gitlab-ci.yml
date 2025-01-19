@@ -2,6 +2,7 @@ default:
   image: ruby:3.2
 
 deploy-pages:
+  stage: deploy
   script:
     - gem install bundler
     - bundle install
@@ -10,3 +11,5 @@ deploy-pages:
   artifacts:
     paths:
       - public
+  only:
+    - main
