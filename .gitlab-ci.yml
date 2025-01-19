@@ -1,13 +1,13 @@
 default:
   image: ruby:3.2
 
-deploy-pages:
-  stage: deploy
+pages:
   script:
+    - mkdir .public
+    - cp -r public/* .public/
     - gem install bundler
     - bundle install
-    - bundle exec jekyll build -d public
-  pages: true  # specifies that this is a Pages job
+    - bundle exec jekyll build -d public/
   artifacts:
     paths:
       - public
