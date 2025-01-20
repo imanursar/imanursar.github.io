@@ -11,6 +11,7 @@ nav_order: 4
 
 #  The H3 spatial index
 a discrete global grid system for indexing geographies into a hexagonal grid
+<img src="/assets/images/geospatial/snippet/index_h3_cover.png" alt="drawing" width="500"/>
 
 
 ## Introduction

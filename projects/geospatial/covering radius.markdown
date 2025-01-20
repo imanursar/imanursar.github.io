@@ -11,6 +11,7 @@ nav_order: 5
 
 #  Covering radius
 How to cover geometry map by using circle polygon.
+<img src="/assets/images/geospatial/snippet/covering_radius_cover.png" alt="drawing" width="500"/>
 
 
 ## Introduction
