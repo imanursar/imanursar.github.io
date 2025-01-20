@@ -49,4 +49,4 @@ My expertise spans descriptive statistics, supervised and unsupervised machine l
 - [LinkedIn](https://www.linkedin.com/in/imanul-j/)
 - [Github](https://github.com/imanursar)
 - [Gitlab](https://gitlab.com/imanursar)
-- [Email](imanursar@gmail.com)
+- [Email](mailto:imanursar@gmail.com)

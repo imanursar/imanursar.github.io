@@ -28,14 +28,14 @@ we encourage you to read Uber’s blog post at https://www.uber.com/blog/h3/.
 
 ### Load dataset
 <p style='text-align: justify;'>
-First, we load two datasets. these dataset have difference type:
-<lu>
-    <li>Polygon / multipolygon geometry dataset</li>
-    <li>point geometry dataset</li>
-</lu>
-Overal, there datasets contain the names of locations in New York, location code, Shape length, Shape area, and their cordinates.</p>
+First, we load two datasets. Overal, there datasets contain the names of locations in New York, location code, Shape length, Shape area, and their cordinates.</p>
 
-#### Load Polygon data
+these dataset have difference type:
+- Polygon / multipolygon geometry dataset
+- point geometry dataset
+
+
+### Load Polygon data
 ```python
 df = gpd.read_file('zip:///../map/book/nybb_16a.zip!nybb_16a/nybb.shp')
 df = df.to_crs(epsg=4326)
@@ -51,7 +51,7 @@ df = df.to_crs(epsg=4326)
 
 <img src="/assets/images/geospatial/snippet/index_h3_1.png" alt="drawing" width="500"/>
 
-#### Load Point data
+### Load Point data
 ```python
 listings = pd.read_csv('../map/book/listings.csv')
 listings_gpdf = gpd.GeoDataFrame(listings,
@@ -77,7 +77,7 @@ listings_manhattan = listings_gpdf.loc[listings_mask]
 
 
 ## The Code
-By calling `maps.geo_to_hexagon`, we can weather stations reporting data for January 1, 2022 across Ohio, and calculate interpolation for area around them.
+By calling `maps.geo_to_hexagon`, we can convert geometry from specific dataset into a hexagonal grid.
 
 ```python
 result = maps.geo_to_hexagon(main_data, types='points', res=9, agg_col=None)
