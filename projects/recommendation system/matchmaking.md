@@ -10,8 +10,15 @@ nav_order: 1
 ---
 
 # Optimizing Supply and Demand Matchmaking
-<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
 
+Recommendation
+{: .badge .badge-pill .badge-primary }
+Optimization
+{: .badge .badge-pill .badge-secondary }
+matchmaking
+{: .badge .badge-pill .badge-info }
+
+<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>

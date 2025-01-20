@@ -10,10 +10,16 @@ nav_order: 3
 ---
 
 #  Spatial interpolation
+
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+interpolation
+{: .badge .badge-pill .badge-info }
+
 Estimating unknowns with spatial interpolation
 <img src="/assets/images/geospatial/snippet/ko_2.png" alt="drawing" width="500"/>
-
-
 
 ## Introduction
 <p style='text-align: justify;'>

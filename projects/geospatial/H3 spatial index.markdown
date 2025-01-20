@@ -10,9 +10,16 @@ nav_order: 4
 ---
 
 #  The H3 spatial index
+
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+index
+{: .badge .badge-pill .badge-info }
+
 a discrete global grid system for indexing geographies into a hexagonal grid
 <img src="/assets/images/geospatial/snippet/index_h3_cover.png" alt="drawing" width="500"/>
-
 
 ## Introduction
 <p style='text-align: justify;'>

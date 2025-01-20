@@ -10,8 +10,15 @@ nav_order: 1
 ---
 
 # Optimizing Cross-Docking Location Through Heat Map Analysis
-<img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
 
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+heatmap
+{: .badge .badge-pill .badge-info }
+
+<img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>
