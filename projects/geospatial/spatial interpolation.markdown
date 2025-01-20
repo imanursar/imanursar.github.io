@@ -6,7 +6,7 @@ layout: default
 title: Spatial interpolation
 parent: Geospatial
 permalink: /geospatial/spatial interpolation
-nav_order: 3
+nav_order: 4
 ---
 
 #  Spatial interpolation
@@ -26,8 +26,7 @@ Estimating unknowns with spatial interpolation
 Spatial interpolation is a process that uses known values from observations to estimate values at other unknown locations. This process is common in a number of scientific fields, such as meteorology and wildlife conservation. When it comes to meteorology, weather data is provided from a handful of weather stations in a given geography. From that information, meteorologists are asked to make predictions about what the weather will be at other locations.</p>
 
 <p style='text-align: justify;'>
-There are many methods for performing spatial interpolation, including Inverse Distance Weighted (IDW) interpolation, Triangular Information Network (TIN) interpolation, and Kriging-based interpolation methods, to name a few. In this section, we’ll introduce to IDW interpolation as well as Ordinary Kriging (OK), which are two of the most common
-spatial interpolation methods that we’ll encounter.</p>
+There are many methods for performing spatial interpolation, including Inverse Distance Weighted (IDW) interpolation, Triangular Information Network (TIN) interpolation, and Kriging-based interpolation methods, to name a few. In this section, we’ll introduce to IDW interpolation as well as Ordinary Kriging (OK), which are two of the most common spatial interpolation methods that we’ll encounter.</p>
 
 ## Dataset
 
