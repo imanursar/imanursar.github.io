@@ -6,7 +6,7 @@ layout: default
 title: heat map analysis
 parent: Geospatial
 permalink: /geospatial/heat map analysis/
-nav_order: 2
+nav_order: 1
 ---
 
 # Optimizing Cross-Docking Location Through Heat Map Analysis

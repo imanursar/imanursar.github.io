@@ -4,9 +4,8 @@
 
 layout: default
 title: Spatial interpolation
-parent: snippet code
-grand_parent: Geospatial
-permalink: /geospatial/snippet code/spatial interpolation
+parent: Geospatial
+permalink: /geospatial/spatial interpolation
 nav_order: 3
 ---
 
@@ -43,8 +42,8 @@ extend = path + f"\Ohio_State.shp"
 
 IDW limitation:
     
-- 1. the resulting interpolation’s accuracy can decrease if the distribution of the sampled points is unevenly distributed across the study area.
-- 2. the IDW method cannot produce interpolated values that are outside the minimum or maximum of the observed values.
+- the resulting interpolation’s accuracy can decrease if the distribution of the sampled points is unevenly distributed across the study area.
+- the IDW method cannot produce interpolated values that are outside the minimum or maximum of the observed values.
 
 ### Kriging-based interpolation
 <p style='text-align: justify;'>Kriging is a spatial interpolation method that leverages distance similarly to the IDW interpolation method but also leverages the degree of variation in sampled data points to interpolate unknown points. Kriging-based estimates are produced using a weighted linear combination of the sampled values around the unknown point.
