@@ -26,7 +26,7 @@ machine learning
 <p style="text-align: justify">
 in this topic, we developed a tool that streamlines the matchmaking process between supply and demand for each transaction.
 
-The primary objective is to enable the business team to efficiently find the best suppliers for the listed demand, enhancing order generation and improving the fulfillment process.</p>
+The primary objective of this project is to enable the business team to efficiently find the best suppliers for the listed demand, enhancing order generation and improving the fulfillment process.</p>
 
 <img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
 

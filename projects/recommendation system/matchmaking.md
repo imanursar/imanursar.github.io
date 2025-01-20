@@ -15,153 +15,72 @@ nav_order: 1
 
 ## Introduction
 <p style='text-align: justify;'>
-In the rapidly evolving landscape of logistics, the efficiency of last-mile delivery has become a critical factor in maintaining competitive advantage and customer satisfaction. By using direct shipping from distribution centers to individual buyers, leading to increased costs and extended delivery times, particularly in densely populated or geographically dispersed areas.</p>
+The efficient alignment of supply and demand is a critical challenge for each transaction operation.</p>
 
 <p style='text-align: justify;'>
-To address these challenges, our team has developed a data-driven tool designed to analyze and visualize the distribution of buyers, potential buyers, and transaction data across specific regions.</p>
+The biggest challenge is to identify the most suitable suppliers to fulfill the varying demands listed by our bussiness team. This process often results in suboptimal supplier choices, delayed order fulfillment, and increased costs, ultimately impacting customer satisfaction and overall business performance.</p>
 
 <p style='text-align: justify;'>
-By leveraging this tool, we can generate heat maps that pinpoint high-density areas of demand and transaction volume, offering valuable insights into where logistical improvements can be made. By utilizing heat maps, we can more accurately identify optimal Cross-Docking that align with buyer and transaction concentrations. These identified zones can then be pursued as cross-docking locations to optimize last-mile logistics.</p>
+Given these challenges, there is a critical need for a more structured approach to supply-demand matching that leverages data-driven insights and predictive modeling. By refining the supplier selection process, we can improve order generation rates, enhance fulfillment accuracy, and reduce the time to market.</p>
+
+<p style='text-align: justify;'>
+To address these challenges, we have developed a tool that streamlines the matchmaking process between supply and demand for each transaction operation.</p>
 
 
 ## Objective
 <p style='text-align: justify;'>
-The primary objective of this doc is to demonstrate how our tool's heat map analysis can inform and optimize cross-docking decisions. By identifying the most strategic Cross-Docking, we aim to significantly reduce last-mile delivery costs while maintaining or even improving service levels.</p>
+The primary objective of this project is to enable the business team to efficiently find the best suppliers for the listed demand, enhancing order generation and improving the fulfillment process.</p>
 
-<img src="/assets/images/geospatial/heat_map/obj_1.png" alt="drawing" width="300"/>
-<img src="/assets/images/geospatial/heat_map/obj_2.png" alt="drawing" width="300"/>
+<p style='text-align: justify;'>
+By integrating data from both internal systems and the harvest prediction model, the tool provides reliable, almost real-time supplier recommendations, ensuring high-quality supply sources that meet our business requirements.</p>
+
+<img src="/assets/images/recommendation/matchmaking/issue.png" alt="drawing" width="175" height='300'/>
 
 
 ## Schema
-<img src="/assets/images/geospatial/heat_map/schema.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/schema.png" alt="drawing" width="500"/>
 
 
 ## Overview of the tool
-<img src="/assets/images/geospatial/heat_map/overview_tool.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/overview_tool.png" alt="drawing" width="500"/>
 
 
-## Dataset - Potential customer
-<img src="/assets/images/geospatial/heat_map/scrap.png" alt="drawing" width="500"/>
+## Key Parameters for Matchmaking
 <p style='text-align: justify;'>
-We aggregate potential data from Google Maps by targeting specific customers, locations, and keywords.
+The core functionality of this tool is a scoring process designed to identify the best-matching supplies for the given demand.</p>
 
-By identifying the business type through Google Maps, we classify them into three channel types:</p>
-<ul>
-    <li>General Trade</li> 
-    <li>Modern Trade</li>
-    <li>Horeca</li>
-</ul>
-
-Once all data is collected, we estimate metrics such as tonnage, sales orders, and GMV using historical data specific to each city and channel type. 
-
-The median monthly values are then determined as the estimation benchmarks for each parameter. We also use this estimation benchmarks for buyer leads data.
+This process is divided into four steps:
+- **Mandatory Parameters**: assess the most critical factors
+- **Main Parameters**: evaluate additional important factors
+- **Scoring Parameters**: Combines multiple criteria to recommend only the most suitable suppliers.
+- **Ranking**: sorting all result to give the best supplier
 
 
-## Heat-Map Result
-<img src="/assets/images/geospatial/heat_map/map.gif" alt="drawing" width="500"/>
-
+## Scoring and Recommendation Process
 <p style='text-align: justify;'>
-By comparing these three heatmaps (Potential data, Registered data, Transaction data), we can identify the most strategic Cross-Docking based on three key parameters:
-<ul>
-    <li>Areas with future growth potential and opportunities for generating additional demand.</li> 
-    <li>Geographic locations where sales demand is concentrated.</li>
-    <li>Regions with a high level of current business activity.</li>
-</ul>
+Once the user inputs the data, the tool matches the demand with the existing entries from the supplies datasets. The output consists of two tables, one for each data source, along with additional details about the scoring process.
+</p> 
 
-This analysis enables us to determine optimal Cross-Docking locations based on data insights, helping us to identify high-density areas that could reduce last-mile delivery costs if selected as cross-docking points.</p>
-
-<p style='text-align: justify;'>
-Additionally, these maps can serve several other purposes, such as:
-<ul>
-    <li>Differentiating areas with frequent low-volume transactions from those with fewer high-volume transactions to inform logistical planning.</li>
-    <li>Determining which areas to prioritize if we aim to maintain current transaction levels, potentially reducing delivery distances and times.</li>
-    <li>Spotting regions with high transaction volumes occurring away from dense buyer areas for potential strategic initiatives.</li>
-    <li>Identifying areas where we have a higher concentration of buyer leads compared to others, and understanding the reasons behind it.</li>
-    <li>Recognizing patterns in the distribution of our buyer leads.</li>
-    <li>Combining this data with customer segmentation and behavior (e.g., new, retention, churn) to pinpoint areas where we should focus our outreach efforts.</li>
-    <li>Detecting high-potential buyer densities or high-transaction buyer densities that may not align with current buyer distributions.</li>
-    <li>Identifying regions suitable for expansion or targeted marketing campaigns.</li>
-</ul>
-And many more insights
-</p>
+Key columns include:
+- **Rank**: Indicates the best supplier.
+- **Final_Score**: Represents the overall matchmaking score.
+- **Source_Rec**: Recommends the most profitable delivery type.
+- **Distance_Rec and Distance_in_km**: Show the distance detail between supply and demand.
+- **Tonnage_Ratio_Supply_Demand**: Indicates the percentage of supply tonnage that matches the demand.
+- **Margin**: Calculates the potential margin generated from matching the supply with the demand.
 
 
-## Heat-Map with Analysis of matrices
-<img src="/assets/images/geospatial/heat_map/map_adv.gif" alt="drawing" width="500"/>
-
-<p style='text-align: justify;'>
-In addition to the heatmap visualizations provided by this tool, we can perform a deep dive analysis of tonnage, GMV, and sales orders within the identified regions.
-
-By leveraging these visualizations and analytics, we can discuss and assess the logistical implications.
-
-In example: particularly in high-volume areas within a 5 km radius of selected points of interest:
-<ul>
-    <li>The number of potential buyers, buyer leads, and transactions</li>
-    <li>The distribution across different channel categories</li>
-    <li>Identifying the direction of the highest concentration of buyers near this point.</li>
-    <li>Analyzing and comparing key metrics within the radius area, including: Tonnage, GMV, Sales orders</li>
-</ul>
-
-Further breakdowns could include:
-<ul>
-    <li>Detailed analysis of the above metrics by channel category (GT, MT, HoReCa) and/or by kabupaten or city within the radius.</li>
-    <li>Using historical data to estimate the potential market size within the radius.</li>
-</ul>
-</p>
-<br>
-
-<img src="/assets/images/geospatial/heat_map/table_1.png" alt="drawing" width="500"/>
-<p style='text-align: justify;'>
-As shown in the table above, we can measure the number of potential and registered buyers, the required tonnage, GMV, and sales orders generated for each city and channel category. This insight is crucial for formulating a strategic plan for the area, from both business and logistics perspectives.
-</p>
+## Result
+<img src="/assets/images/recommendation/matchmaking/result_1.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/result_2.png" alt="drawing" width="500"/>
 
 
-## Comparing two points to get more insight and decision
-<p style='text-align: justify;'>
-With this tool, we can comparing 2 points that lead us to get more insight and better decision for cross-docking location.
-</p>
-
-#### East Jakarta
-
-<img src="/assets/images/geospatial/heat_map/map_adv_2.gif" alt="drawing" width="500"/>
-<p></p>
-<img src="/assets/images/geospatial/heat_map/table_2.png" alt="drawing" width="425"/>
-<img src="/assets/images/geospatial/heat_map/table_3.png" alt="drawing" width="425"/>
-
-#### South Jakarta
-
-<img src="/assets/images/geospatial/heat_map/map_adv_3.gif" alt="drawing" width="500"/>
-
-
-## Expansion
-<p style='text-align: justify;'>
-if we want to expand our business by establishing a new Cross-Docking in a high-potential area like Bogor. First, we need to identify regions with a high density of potential buyers, registered buyers, and areas with high order volumes. With this information, we can select the most optimal location for a Cross-Docking that would efficiently cover both existing transactions and potential buyers.
-</p>
-
-#### Bogor
-<img src="/assets/images/geospatial/heat_map/map_adv_4.gif" alt="drawing" width="500"/>
-
-#### West Jakarta
-<img src="/assets/images/geospatial/heat_map/map_adv_5.gif" alt="drawing" width="500"/>
-
-#### Surabaya
-<img src="/assets/images/geospatial/heat_map/map_adv_6.gif" alt="drawing" width="500"/>
-
-#### Bali
-<img src="/assets/images/geospatial/heat_map/map_adv_7.gif" alt="drawing" width="500"/>
-
-#### Bekasi
-<img src="/assets/images/geospatial/heat_map/map_adv_8.gif" alt="drawing" width="500"/>
-
-
-## Key Takeaways 
-<ul>
-    <li>This tool and its visualizations allow us to gain deeper insights into the distribution of buyers, potential buyers, and transaction data across specific regions.</li>
-    <li>Comparing three parameters—potential buyers, registered buyers, and transaction buyers—helps us identify areas with high and low buyer activity.</li>
-    <li>Enables a better understanding of the potential market, retention opportunities, and areas with high transaction volume.</li>
-    <li>Facilitates the calculation of key metrics for single or multiple points, providing a comprehensive view to determine optimal locations for Cross-Dockings or distribution centers.</li>
-    <li>offering valuable insights into where business and logistical improvements can be made.</li>
-    <li>Supports the initiation of cost-distance and cost-benefit analyses.</li>
-</ul>
-
+## The Key Benefits
+Implementing this tool offers several key benefits to business teams:
+- **Improved Supplier Alignment and Enhanced Order Generation**: The tool enables the channel team to precisely and efficiently matching supply and demand, the tool drives increased order generation.
+- **Data-Driven Decision Making**: The tool provides a transparent, objective basis for supplier selection, leveraging data from internal systems and the harvest prediction model.
+- **Margin Optimization**: By choosing suppliers based on a comprehensive scoring system that includes pricing considerations (and soon will include the log cost), the tool helps reduce procurement costs.
+- **Increased Fulfillment Rates and Reduced Lead Times**: With the tool's data-driven approach, we can significantly improve our fulfillment rates by selecting suppliers who can meet demand requirements promptly.
+- **Upstream-downstream Connectivity**: By utilizing harvest prediction data and Kabayan data, we can prioritize farmers with AR and due dates approaching soon to become suppliers for DFF GT. This approach helps maintain the AR/AP cash flow process within Kabayan and reduces the number of farmers falling into the NPL category due to delays in AR payments.
+- **Scalability and Flexibility**: The tool and its underlying model can be easily implemented across other business channels (such as Horeca and Modern Trade) or scaled to provide matchmaking recommendations at the business level.
 
