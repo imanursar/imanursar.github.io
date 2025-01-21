@@ -111,16 +111,6 @@ By calling `maps.spatial_autocorrelation_multi`, we can measure Moran's I value 
 
 ```python
 result = maps.spatial_autocorrelation_multi(main_data,col_list)
-
-res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
-                             types='',plot_spatial_lag=True)
-
-df, res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
-                             types='global',plot_spatial_lag=False)
-
-res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
-                             types='local', plot_spatial_lag=False, 
-                             getis_ord=True)
 ```
 
 This function requires the following parameters:
@@ -170,7 +160,19 @@ db = (gpd.GeoDataFrame(lads.join(ref[["Pct_Leave"]]), crs=lads.crs)
 By calling `maps.spatial_autocorrelation`, we can measure Moran's I value and P-value to determine spatial autocorrelation of data based on feature values and feature locations. 
 
 ```python
-result = maps.spatial_autocorrelation(main_data, col_value='', types='global',plot_spatial_lag=False,getis_ord=False,num_quantiles=5)
+result = maps.spatial_autocorrelation(main_data, col_value='', 
+                            types='global',plot_spatial_lag=False,
+                            getis_ord=False,num_quantiles=5)
+
+res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
+                             types='',plot_spatial_lag=True)
+
+df, res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
+                             types='global',plot_spatial_lag=False)
+
+res = maps.spatial_autocorrelation(db,col_value='Pct_Leave',
+                             types='local', plot_spatial_lag=False, 
+                             getis_ord=True)
 ```
 
 This function requires the following parameters:
