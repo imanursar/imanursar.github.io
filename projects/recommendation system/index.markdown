@@ -11,7 +11,7 @@ permalink: /recommendation system/
 has_toc: false
 ---
 
-# Data Science Portfolio
+# Data Science Portfolio in Recommendation topic
 Personal Projects and Curiosity-Driven Explorations
 <br>
 

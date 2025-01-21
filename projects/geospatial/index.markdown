@@ -11,7 +11,7 @@ permalink: /geospatial/
 has_toc: false
 ---
 
-# Data Science Portfolio
+# Data Science Portfolio in Geospatial topic
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
