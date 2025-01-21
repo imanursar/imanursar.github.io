@@ -106,7 +106,7 @@ cluster_variables = [
 ]
 ```
 
-### The Code
+## The Code
 By calling `maps.spatial_autocorrelation_multi`, we can measure Moran's I value and P-value to determine spatial autocorrelation of data based on feature values and feature locations. 
 
 ```python
@@ -127,8 +127,8 @@ This function requires the following parameters:
 - **main_data** (`string`):          Data location and value  
 - **col_list** (`string`):           Targated column in main_data     
 
-### The result
-#### Moran's I for each variable
+## The result
+### Moran's I for each variable
 
 | Variable           |   Moran's I |   P-value |
 |:-------------------|------------:|----------:|
@@ -166,7 +166,7 @@ db = (gpd.GeoDataFrame(lads.join(ref[["Pct_Leave"]]), crs=lads.crs)
     .dropna())
 ```
 
-### The Code
+## The Code
 By calling `maps.spatial_autocorrelation`, we can measure Moran's I value and P-value to determine spatial autocorrelation of data based on feature values and feature locations. 
 
 ```python
@@ -182,8 +182,8 @@ This function requires the following parameters:
 - **num_quantiles** (`Int`):         number quantiles
    
 
-### The result
-#### Moran's I for each variable
+## The result
+### Moran's I for each variable
 
 | lad16cd   |   objectid | lad16nm                     |   Pct_Leave | geometry                                                                                     |   Pct_Leave_lag |   Pct_Leave_std |   Pct_Leave_lag_std |
 |:----------|-----------:|:----------------------------|------------:|:---------------------------------------------------------------------------------------------|----------------:|----------------:|--------------------:|
@@ -195,7 +195,7 @@ This function requires the following parameters:
 
 <img src="/assets/images/geospatial/snippet/autocor_01.png" alt="drawing" width="1000"/>
 
-###  Global spatial autocorrelation
+##  Global spatial autocorrelation
 
 |    | types       |   global_value |   p_sim | details                          |
 |---:|:------------|---------------:|--------:|:---------------------------------|
@@ -225,7 +225,7 @@ On the left panel we can see in grey the empirical distribution generated from s
 | E06000010 |         10 | Kingston upon Hull, City of |       67.62 | MULTIPOLYGON (((-35191.00877187259 7134866.243975437, -39368.88292597354 7133972.734487184,  |         65.5233 |        14.4792  |             12.579  |                        1 |         0.227 |           0 | Non-Significant |           0        | LL (cold spots)    |    
 
 
-###  Local spatial autocorrelation
+##  Local spatial autocorrelation
 
 <img src="/assets/images/geospatial/snippet/autocor_04.png" alt="drawing" width="500"/>
 
@@ -242,7 +242,7 @@ The red and blue locations in the top-right map in Figure 5 display the largest 
 In this case, the results are virtually the same for `Gi` and `Gi*`. Also, at first glance, these maps appear to be visually similar to the final LISA map from above. 
 
 
-#### Table result
+### Table result
 
 | moran_labels    |   count |
 |:----------------|--------:|
