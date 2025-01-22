@@ -6,7 +6,7 @@ layout: default
 title: Spatial interpolation
 parent: Geospatial
 permalink: /geospatial/spatial interpolation
-nav_order: 4
+nav_order: 18
 ---
 
 #  Spatial interpolation

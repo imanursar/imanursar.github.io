@@ -6,7 +6,7 @@ layout: default
 title: H3 spatial index
 parent: Geospatial
 permalink: /geospatial/H3 spatial index
-nav_order: 5
+nav_order: 16
 ---
 
 #  The H3 spatial index

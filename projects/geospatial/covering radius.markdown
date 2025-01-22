@@ -6,7 +6,7 @@ layout: default
 title: Covering radius
 parent: Geospatial
 permalink: /geospatial/covering radius
-nav_order: 6
+nav_order: 17
 ---
 
 #  Covering radius
