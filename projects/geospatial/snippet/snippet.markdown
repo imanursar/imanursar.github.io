@@ -4,7 +4,7 @@
 
 layout: default
 title: snippet code
-nav_order: 5
+nav_order: 15
 parent: Geospatial
 has_children: true
 heading_anchors: true
