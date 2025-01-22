@@ -15,12 +15,20 @@ heading_anchors: true
 
 ## About Me
 
+<p style='text-align: justify;'>
 I am an experienced data scientist with 5 years of expertise in building AI-driven solutions for business challenges. Adept at both leading teams and independently executing complex projects. I specialize in machine learning, data-driven strategies, and implementing scalable systems with proven impact in business.
 
 Proficient in leveraging tools such as Python, SQL, TensorFlow, Metabase, Power BI, Google Cloud Platform (GCP), Looker, and Tableau for data analysis, visualization, reporting and create Machine Learning model. Skilled in building and maintaining robust data pipelines using Apache Airflow, DBT, Excel, and Git. 
 
+My expertise spans descriptive statistics, supervised and unsupervised machine learning models, fraud detection, root cause analysis, image processing, Bayesian and geospatial modeling, as well as supply chain optimization. Currently exploring reinforcement learning to push the boundaries of data science innovation.</p>
 
-My expertise spans descriptive statistics, supervised and unsupervised machine learning models, fraud detection, root cause analysis, image processing, Bayesian and geospatial modeling, as well as supply chain optimization. Currently exploring reinforcement learning to push the boundaries of data science innovation.
+
+## Education
+- **Master of science - Computational science**, Institut Teknologi Bandung (ITB). 2018-2019.
+**Title of thesis**: Detection and Classification of Objects in Astronomy Images Using Image Processing and Machine Learning.
+
+- **Bachelor of science - Astronomy**, Institut Teknologi Bandung (ITB). 2012-2016.
+**Title of thesis**: NEO-R1000: A Fast And Efficient Compact Spectrograph For Emission Line Objects Study At Bosscha Observatory.
 
 
 

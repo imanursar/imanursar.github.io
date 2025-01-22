@@ -15,6 +15,23 @@ has_toc: false
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
+## Data & Insight Showcase - Spatial Data Science
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+data science
+{: .badge .badge-pill .badge-info }
+
+### What is spatial data science?
+spatial data science is a process to **solving problems what relate to spatial algorithms and geographical data (location, address, longlat, etc)**.
+
+<img src="/assets/images/geospatial/geo_ds_1.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](/geospatial/geospatial data science){: .btn }
+</span>
+
 ## Optimizing Cross-Docking Location Through Heat Map Analysis
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -34,6 +51,47 @@ By utilizing heat maps, we can more accurately identify optimal Cross-Docking th
 
 <span class="fs-3">
 [Read more](/geospatial/heat map analysis){: .btn }
+</span>
+
+## Change detection in multitemporal remote sensing images
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+change detection
+{: .badge .badge-pill .badge-info }
+multitemporal
+{: .badge .badge-pill .badge-info }
+remote sensing
+{: .badge .badge-pill .badge-info }
+
+<div style="text-align: justify">
+Change detection involves analyzing 2 or more multitemporal remote sensing images covering the same area to find any changes that may have occurred at different times.</div>
+
+<img src="/assets/images/geospatial/change_detection//change_detection_cover.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](/geospatial/change detection/){: .btn }
+</span>
+
+## Spatial hypotesis and autocorrelation Analysis
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+hypotesis
+{: .badge .badge-pill .badge-info }
+
+<p style='text-align: justify;'>
+This project focuses on the one of critical part of exploratory spatial data analysis (ESDA), which is testing for spatial structure present within data.</p>
+
+<p style='text-align: justify;'>
+Testing for spatial structure is important because if it is present in data, then we’ll want to leverage that spatial structure to enhance our downstream analysis. This can be done by using specialized algorithms during a model-building process that can understand patterns from both data and geographic space.</p>
+
+<img src="/assets/images/geospatial/snippet//autocor_06.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](/geospatial/spatial hypotesis autocorrelation/){: .btn }
 </span>
 
 
