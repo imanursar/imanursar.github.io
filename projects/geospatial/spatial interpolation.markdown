@@ -66,29 +66,44 @@ By calling `maps.spatial_interpolation`, we can weather stations reporting data 
 ```python
 result = maps.spatial_interpolation(main_data, extend, col_name='TAVG',
                                     types='idw', search_radious= 3, power=2,
-                                    variogram_model='gaussian')
+                                    variogram_model='gaussian',
+                                    crs_meter=3347, crs_deg=4326, resolution = 25_000)
 ```
 
 This function requires the following parameters:
 - **main_data** (`string`):          Data location and value  
 - **shape** (`string`):              Shapefile location    
 - **col_name** (`string`):           Targated column in main_data    
-- **types** (`string`):              type of interpolation    
+- **types** (`string`):              type of interpolation (scipy, IDW, krige)   
 - **search_radious** (`int`):        a default value of 4, it determines how many nearest points will be used for idw calculation.
 - **power** (`int`):                 a default value of 2, this is the power parameter from idw equation.    
 - **variogram_model** (`string`):    Gaussian, exponential, spherical, and linear    
 
 
 ## The result
+## Nearest ND Interpolator
+<img src="/assets/images/geospatial/snippet/ko_3.png" alt="drawing" width="500"/>
+
+<p style='text-align: justify;'>The Nearest ND Interpolator does a good job of picking up on the overall signal from the data, with temperatures decreasing as you move further north in the state.</p>
+
+
 ### IDW
 <img src="/assets/images/geospatial/snippet/interpolation.png" alt="drawing" width="500"/>
 
 <p style='text-align: justify;'>The IDW interpolation does a good job of picking up on the overall signal from the data, with temperatures decreasing as you move further north in the state. It also picks up on the observation in the northeast of the state, which is a bit warmer than other locations in the surrounding area.</p>
 
 ### Kriging-based
+<img src="/assets/images/geospatial/snippet/ko_4.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ko_5.png" alt="drawing" width="500"/>
+
+
 <img src="/assets/images/geospatial/snippet/ko_1.png" alt="drawing" width="500"/>
 <p style='text-align: justify;'>shows an empirical semivariogram using a Gaussian model.
 The Gaussian model does reasonably well fitting the points, even with the
 large outlier.</p>
 <img src="/assets/images/geospatial/snippet/ko_2.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ko_6.png" alt="drawing" width="500"/>
+
 <p style='text-align: justify;'>Compared to IDW, OK produces a surface of interpolated values that is much smoother than that of IDW. The values around the sampled observations are roughly the same as that of the IDW-based approach.</p>
