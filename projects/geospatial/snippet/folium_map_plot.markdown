@@ -116,3 +116,6 @@ When multiple values are provided, the function automatically generates multiple
 
 ### voronoi map
 <img src="/assets/images/geospatial/snippet/folium_voronoi.png" alt="drawing" width="500"/>
+
+### Radius cover-area
+<img src="/assets/images/geospatial/snippet/folium_radius.png" alt="drawing" width="500"/>

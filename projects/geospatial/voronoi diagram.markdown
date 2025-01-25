@@ -88,6 +88,16 @@ This function requires the following parameters:
 
 <img src="/assets/images/geospatial/snippet/voronoi_02.png" alt="drawing" />
 
+## Real use case with voronoi diagram
+<p style='text-align: justify;'>
+A Voronoi diagram helps us identify the nearest neighbor or determine the closest pair of points within a specific area. In this case, we’re focusing on Lombok, where we have several merchants who can assist with distributing our products. By using a Voronoi diagram, we can clearly see which merchant is closest to any given location, making it easier to plan and optimize our distribution.
+</p>
+
+<img src="/assets/images/geospatial/snippet/voronoi_03.png" alt="drawing" width="314"/>
+<img src="/assets/images/geospatial/snippet/voronoi_04.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/snippet/voronoi_05.png" alt="drawing" width="625"/>
+
+
 ## Applications of Voronoi Diagrams in Various Fields
 <p style='text-align: justify;'>
 Voronoi diagrams have a wide range of applications in various fields. In computational geometry, they solve proximity problems, such as finding the nearest neighbor or determining the closest pair of points. In computer graphics and visualization, they generate realistic textures, simulate natural phenomena, and create visually appealing visualizations.
