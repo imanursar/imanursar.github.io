@@ -111,7 +111,7 @@ When multiple values are provided, the function automatically generates multiple
 ### heatmap map
 <img src="/assets/images/geospatial/snippet/folium_heatmap.png" alt="drawing" width="500"/>
 
-### ant path map
+### route path map
 <img src="/assets/images/geospatial/snippet/folium_antpath.png" alt="drawing" width="500"/>
 
 ### voronoi map
@@ -119,3 +119,30 @@ When multiple values are provided, the function automatically generates multiple
 
 ### Radius cover-area
 <img src="/assets/images/geospatial/snippet/folium_radius.png" alt="drawing" width="500"/>
+
+### World map
+<img src="/assets/images/geospatial/snippet/folium__world_map.png" alt="drawing" width="500"/>
+
+### Indonesia map
+<img src="/assets/images/geospatial/snippet/folium_indo.png" alt="drawing" width="500"/>
+
+### Province choropleth map
+<img src="/assets/images/geospatial/snippet/folium_choropleth_indo.png" alt="drawing" width="500"/>
+
+
+### Topography map
+<img src="/assets/images/geospatial/snippet/ipyleaflet_01.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_02.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_03.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_04.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_05.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_06.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/ipyleaflet_07.png" alt="drawing" width="500"/>
+
+<img src="/assets/images/geospatial/snippet/carto_01.png" alt="drawing" width="500"/>
