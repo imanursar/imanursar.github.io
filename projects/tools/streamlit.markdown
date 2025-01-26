@@ -19,7 +19,7 @@ streamlit
 {: .badge .badge-pill .badge-info }
 
 The Faster You Can Iterate, The Faster You Can Learn
-<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_07.png" alt="drawing"/>
 
 ## Introduction
 <p style='text-align: justify;'>

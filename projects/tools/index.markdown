@@ -3,35 +3,38 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Recommendation system
-nav_order: 3
+title: tools
+nav_order: 5
 has_children: true
 heading_anchors: true
-permalink: /recommendation system/
+permalink: /tools/
 has_toc: false
 ---
 
-# Data Science Portfolio in Recommendation topic
+# Data Science Portfolio
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
-## Optimizing Supply and Demand Matchmaking
-recommendation
+## Streamlit 101
+tools
 {: .badge .badge-pill .badge-primary }
-scoring
+simulation
 {: .badge .badge-pill .badge-secondary }
-machine learning
+streamlit
 {: .badge .badge-pill .badge-info }
 
-<p style="text-align: justify">
-in this topic, we developed a tool that streamlines the matchmaking process between supply and demand for each transaction.
+The Faster You Can Iterate, The Faster You Can Learn
 
-The primary objective of this project is to enable the business team to efficiently find the best suppliers for the listed demand, enhancing order generation and improving the fulfillment process.</p>
+## Introduction
+<p style='text-align: justify;'>
+we’ve embraced Streamlit as a powerful tool to bring data to life. Whether it’s showcasing results, running proofs of concept (POCs), or conducting internal simulations, Streamlit has become an integral part of how we transform raw data into actionable insights.
 
-<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
+With its user-friendly interface and interactive capabilities, Streamlit allows us to present complex analyses in a way that’s clear, engaging, and easy for stakeholders to understand. From visualizing trends to running dynamic models, it helps decision-makers dive deeper into the numbers and make informed choices with confidence.
+
+<img src="/assets/images/tools/streamlit_07.png" alt="drawing"/>
 
 <span class="fs-3">
-[Read more](../recommendation system/matchmaking){: .btn }
+[Read more](../tools/streamlit){: .btn }
 </span>
 
 
