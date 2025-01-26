@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: tools
+title: Tools
 nav_order: 5
 has_children: true
 heading_anchors: true
@@ -30,6 +30,7 @@ The Faster You Can Iterate, The Faster You Can Learn
 we’ve embraced Streamlit as a powerful tool to bring data to life. Whether it’s showcasing results, running proofs of concept (POCs), or conducting internal simulations, Streamlit has become an integral part of how we transform raw data into actionable insights.
 
 With its user-friendly interface and interactive capabilities, Streamlit allows us to present complex analyses in a way that’s clear, engaging, and easy for stakeholders to understand. From visualizing trends to running dynamic models, it helps decision-makers dive deeper into the numbers and make informed choices with confidence.
+</p>
 
 <img src="/assets/images/tools/streamlit_07.png" alt="drawing"/>
 

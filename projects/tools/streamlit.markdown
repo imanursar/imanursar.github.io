@@ -4,7 +4,7 @@
 
 layout: default
 title: streamlit 101
-parent: tools
+parent: Tools
 permalink: /tools/streamlit
 nav_order: 1
 ---
@@ -43,12 +43,12 @@ The development workflow for data projects often followed a common, linear path:
 
 While this workflow seems straightforward, it often led to two major challenges:
 
-#### The Unmaintainability Trap
+### The Unmaintainability Trap
 As the project evolves, keeping the scripts and notebooks organized becomes increasingly difficult. Small tweaks to the code or data require significant time and effort to re-run processes and validate outputs. Without a clear structure, the workflow can become fragile, with each layer dependent on manual intervention. This makes it hard to scale or revisit old projects without confusion and frustration.
 
 <img src="/assets/images/tools/streamlit_02.png" alt="drawing" width="500"/>
 
-#### The Frozen Zone
+### The Frozen Zone
 In traditional workflows, once insights or models are delivered, they often get "frozen" into static reports or dashboards. This leaves little room for experimentation or real-time interaction, making it challenging for stakeholders to ask "what if" questions or explore the data beyond what was initially provided. This rigidity can stifle collaboration and prevent deeper insights from emerging.
 
 <img src="/assets/images/tools/streamlit_03.png" alt="drawing" width="500"/>
@@ -56,8 +56,8 @@ In traditional workflows, once insights or models are delivered, they often get 
 Streamlit disrupts this cycle by providing an interactive and dynamic platform where you can combine the steps into a seamless, iterative process. It bridges the gap between static workflows and real-time decision-making, allowing developers and stakeholders to collaborate, explore, and experiment without getting stuck in the traps of unmaintainability and frozen outputs.
 
 ## Streamlit come to the rescue
-#### What if we could make building tools as easy as writing python scripts?
-#### This is the spirit of streamlit
+> What if we could make building tools as easy as writing python scripts?
+> **This is the spirit of streamlit**
 
 Imagine if building powerful, interactive tools was as simple as writing a Python script. No complicated frameworks, no steep learning curves, and no need to be a front-end expert. That’s exactly the problem Streamlit solves—it takes the complexity out of turning data and ideas into real, interactive applications.
 
