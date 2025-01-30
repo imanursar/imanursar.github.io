@@ -50,20 +50,20 @@ To build a well-rounded database, we extract and organize the following essentia
 ### Using Keywords for Targeted Data Scraping
 For projects that cater to specific customer segments, we use well-defined keywords to refine our search. This ensures we extract the most relevant businesses based on:
 
-1. **Business Categories**
-We tailor our searches to include specific fish-related establishments, such as:
+- **Business Categories**
+    We tailor our searches to include specific fish-related establishments, such as:
 
-- Pecel lele – Small roadside eateries serving fried catfish, common in Indonesia.
-- Depot ikan – Fish depots and wholesalers supplying fresh seafood.
-- Rumah makan – General eateries that may have seafood specialties.
-- HORECA (Hotels, Restaurants, Cafés) – A broad category covering hospitality businesses that source seafood.
+    - Pecel lele – Small roadside eateries serving fried catfish, common in Indonesia.
+    - Depot ikan – Fish depots and wholesalers supplying fresh seafood.
+    - Rumah makan – General eateries that may have seafood specialties.
+    - HORECA (Hotels, Restaurants, Cafés) – A broad category covering hospitality businesses that source seafood.
 
-2. **Geographic Focus**
-We refine our data collection by targeting specific locations, using administrative divisions like:
+- **Geographic Focus**
+    We refine our data collection by targeting specific locations, using administrative divisions like:
 
-- Subdistricts (Kecamatan)
-- Villages/Wards (Kelurahan)
-- Regions or cities with high seafood consumption or trade
+    - Subdistricts (Kecamatan)
+    - Villages/Wards (Kelurahan)
+    - Regions or cities with high seafood consumption or trade
 
 <img src="/assets/images/scrap/google_map/scraping_02.png" alt="drawing" width="500"/>
 
