@@ -121,7 +121,7 @@ place = 'medan'
 place = 'kabupaten deli serdang'
 level = 'desa'
 boundaries = [3.44,3.84,98.50,98.82]
-key = ''
+key = 'API key'
 ```
 **Query**
 ```python
@@ -134,6 +134,7 @@ raw_collection_data, collection_data, collection_data_detail, areas_search = map
 ```
 
 **Output**
+
 <img src="/assets/images/scrap/google_map/scraping_04.png" alt="drawing"/>
 
 ### Get the data using Covering radius
@@ -152,7 +153,7 @@ prov = 'jakarta'
 keywords = ['lapak ikan', 'pecel lele', 'depot ikan', 'ikan segar', 'seafood', 'rumah makan', 'Warung Sayur', 'hotel', 'superindo', 'supermarket','restoran']
 city = 'Jakarta selatan'
 boundaries = [-6.3725,-6.2016,106.7286,106.8713]
-key = ''
+key = 'API key'
 ```
 <img src="/assets/images/scrap/google_map/scraping_05.png" alt="drawing"/>
 
@@ -164,11 +165,14 @@ result = maps.radius_covering(sharp_map_selected, radius, meter_crs= 'EPSG:32748
 <img src="/assets/images/scrap/google_map/scraping_06.png" alt="drawing"/>
 
 **The code**
+
 ```python
 raw_collection_data, collection_data, collection_data_detail = maps.search_data_coord(result, prov=prov, city=city, radius = radius, 
                   keywords=keywords, boundaries=boundaries, key=key)
 ```
+
 **Output**
+
 <img src="/assets/images/scrap/google_map/scraping_07.png" alt="drawing"/>
 
 
