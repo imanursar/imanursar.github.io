@@ -34,6 +34,24 @@ In this Credit Score 101 guide, we’ll break down what a credit score is, why i
 [Read more](/Scoring/credit scoring 101){: .btn }
 </span>
 
+##  Scorecard Method
+scoring
+{: .badge .badge-pill .badge-primary }
+credit score
+{: .badge .badge-pill .badge-secondary }
+scorecard
+{: .badge .badge-pill .badge-info }
+
+
+## Definition
+**Scorecard** - a model that using probabilities or ratings to assess the Risk levels associated with applicants or clients. All variables will contribute to the overall points that applicants will get.
+
+<img src="/assets/images/scoring/scorecard/scorecard_01.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](../Scoring/scorecard method){: .btn }
+</span>
+
 
 ### Links
 - Source code on [my github](https://github.com/imanursar/)
