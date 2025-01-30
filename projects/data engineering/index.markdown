@@ -4,7 +4,7 @@
 
 layout: default
 title: Data Engineering
-nav_order: 5
+nav_order: 7
 has_children: true
 heading_anchors: true
 permalink: /data engineering

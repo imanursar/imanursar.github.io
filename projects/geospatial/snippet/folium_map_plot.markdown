@@ -94,6 +94,13 @@ When multiple values are provided, the function automatically generates multiple
 
 ## The result
 
+### get image osm map
+```python
+maps.get_image_osm(coor=(-8.36,113.35,-8.2,113.525), zoom=18, server='',margin=.05,
+                    tilesize=256,maxtiles=16,show_image=False)
+```
+<img src="/assets/images/geospatial/snippet/map_tile_01.png" alt="drawing" width="500"/>
+
 ### Circle marker map
 <img src="/assets/images/geospatial/snippet/folium_circle.png" alt="drawing" width="500"/>
 
