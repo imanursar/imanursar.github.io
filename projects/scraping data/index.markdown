@@ -15,23 +15,23 @@ has_toc: false
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
-## Data Cleaning Strategic
-data government
+## Scraping Data with Google Maps API for Market Expansion
+scraping data
 {: .badge .badge-pill .badge-primary }
-data cleansing
+google maps API
 {: .badge .badge-pill .badge-secondary }
 
 
-#### What data cleaning is?
-<p style='text-align: justify;'> Used mainly when dealing with data stored in database, the terms data validation, data cleaning, or data scrubbing refers to the process of detecting, correcting, replacing, modifying or removing messy data from a record set, table, or database.</p>
+### Introduction
+<p style='text-align: justify;'>To grow our acquisition efforts and truly understand the market potential—both for Upstream and downstream buyers— we need access to the right data. This means identifying and targeting untapped potential customers, whether they are small-scale farmers, distributors, or retailers who haven't yet been engaged with our platform.</p>
 
-#### Why we need data cleaning process?
-<p style='text-align: justify;'> First of all, Data is dirty. Live with it. Data cleaning consists primarily in implementing error prevention strategies before they occur. However, error-prevention strategies can reduce but not eliminate common errors.</p>
 
-<img src="/assets/images/data/data_cleansing_cover.png" alt="drawing" width="500"/>
+<p style='text-align: justify;'>One of the most effective ways to gather this data is through data scraping, particularly from sources like Google Maps API. By utilizing Google Maps, we can collect valuable information about businesses, locations, and customer segments in both upstream and downstream markets.</p>
+
+<img src="/assets/images/scrap/google_map/scraping_02.png" alt="drawing" width="500"/>
 
 <span class="fs-3">
-[Read more](../data strategic/data cleaning){: .btn }
+[Read more](../scraping data/google map data){: .btn }
 </span>
 
 

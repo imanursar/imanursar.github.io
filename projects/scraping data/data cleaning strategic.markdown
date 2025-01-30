@@ -10,13 +10,11 @@ nav_order: 1
 ---
 
 #  Scraping Data with Google Maps API for Market Expansion
-
 scraping data
 {: .badge .badge-pill .badge-primary }
 google maps API
 {: .badge .badge-pill .badge-secondary }
 
-A small guidance for data team to find the right data cleaning strategy
 <img src="/assets/images/scrap/google_map/scraping_01.png" alt="drawing" width="500"/>
 
 ## Introduction
@@ -24,7 +22,6 @@ A small guidance for data team to find the right data cleaning strategy
 
 
 <p style='text-align: justify;'>One of the most effective ways to gather this data is through data scraping, particularly from sources like Google Maps API. By utilizing Google Maps, we can collect valuable information about businesses, locations, and customer segments in both upstream and downstream markets.</p>
-
 
 
 ## Why Google Maps API?
@@ -70,12 +67,14 @@ We refine our data collection by targeting specific locations, using administrat
 
 <img src="/assets/images/scrap/google_map/scraping_02.png" alt="drawing" width="500"/>
 
+
 ## Constraints
 - Limitation in google places API that only return max 60 data.
 - The Google Place API didn't return a telephone number, but we need another request for a specific place to get a phone number.
 - Scraping without google API could be blocked if detected as bot.
 - Using 3rd party only gives around 60-100 row data for free trial
 - Using the OSM API only gives limited data due to the fact that the fact that the data comes from voluntary input.
+
 
 ## Explorations + Decisions
 There are several methods that we can use to solve our problems. Including, but not limited to:
@@ -95,6 +94,7 @@ There are several methods that we can use to solve our problems. Including, but 
     - https://scrapy.org/
 - Manual scraping
     - Using programing languages such as python or javascript.
+
 
 ## Technical Details
 To ensure accurate and comprehensive data collection, we use two primary methods: **Area-Level Querying** and **Covering Radius Method**. Each method has its advantages depending on the region's size, structure, and data availability.
@@ -171,6 +171,7 @@ raw_collection_data, collection_data, collection_data_detail = maps.search_data_
 **Output**
 <img src="/assets/images/scrap/google_map/scraping_07.png" alt="drawing"/>
 
+
 ## The Result
 <img src="/assets/images/scrap/google_map/scraping_03.png" alt="drawing"/>
 <img src="/assets/images/scrap/google_map/scraping_08.png" alt="drawing"/>
@@ -181,6 +182,7 @@ raw_collection_data, collection_data, collection_data_detail = maps.search_data_
 
 ## Maximizing Downstream Growth with Google Maps Data
 <p style='text-align: justify;'>By utilizing Google Maps data, we can strategically expand our downstream market, particularly by identifying potential buyers such as restaurants, fish markets, and seafood distributors. This data-driven approach allows us to make informed business decisions and optimize acquisition strategies.</p>
+
 
 ## Key Benefits of Using This Data in the Downstream Sector
 - **Estimating the Number of New Customers**. With structured business listings, we can analyze:
@@ -204,8 +206,8 @@ raw_collection_data, collection_data, collection_data_detail = maps.search_data_
     - Offline Approaches: On-ground sales visits, networking at seafood trade fairs, or in-person product demonstrations.
     - Hybrid Model: A mix of online and offline engagement based on business type and readiness to adopt digital solutions.
 
-## Final Thoughts
 
+## Final Thoughts
 With this structured, data-driven approach, we can:
 ✅ Maximize customer acquisition by focusing on high-potential buyers.
 ✅ Increase revenue predictability with demand-based insights.
