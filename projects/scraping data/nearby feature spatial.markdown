@@ -6,13 +6,13 @@ layout: default
 title: Nearby Feature Spatial
 parent: Scraping Data
 permalink: /scraping data/nearby feat spatial
-nav_order: 1
+nav_order: 2
 ---
 
 #  Exploring Nearby Places with Spatial Data: Fetching Points of Interest
 scraping data
 {: .badge .badge-pill .badge-primary }
-OMS API
+geospatial
 {: .badge .badge-pill .badge-secondary }
 
 <img src="/assets/images/scrap/nfs/nfs_03.png" alt="drawing" width="500"/>
@@ -84,6 +84,7 @@ This function requires the following parameters:
 <img src="/assets/images/scrap/nfs/nfs_03.png" alt="drawing" width="500"/>
 
 ### data point
+
 |    |   accommodates |   bathrooms |   bedrooms |   beds | neighborhood   |   pool |   d2balboa |   coastal |   price |   log_price |    id |   pg_Apartment |   pg_Condominium |   pg_House |   pg_Other |   pg_Townhouse |   rt_Entire_home/apt |   rt_Private_room |   rt_Shared_room | geometry                                      | buffer_500m                                                                          |   poi_count |
 |---:|---------------:|------------:|-----------:|-------:|:---------------|-------:|-----------:|----------:|--------:|------------:|------:|---------------:|-----------------:|-----------:|-----------:|---------------:|---------------------:|------------------:|-----------------:|:----------------------------------------------|:------------------------------------------------------------------------------------|------------:|
 |  0 |              5 |         2   |          2 |      2 | North Hills    |      0 |    2.97208 |         0 |     425 |     6.05209 |     6 |              0 |                0 |          1 |          0 |              0 |                    1 |                 0 |                0 | POINT (-117.129705218814 32.75399315770497)   | POLYGON ((269812.639421743 -580195.743780701, 269810.2317850791 -580244.7523508657, |          14 |

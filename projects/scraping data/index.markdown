@@ -35,5 +35,20 @@ google maps API
 </span>
 
 
+## Exploring Nearby Places with Spatial Data: Fetching Points of Interest
+scraping data
+{: .badge .badge-pill .badge-primary }
+geospatial
+{: .badge .badge-pill .badge-secondary }
+
+### Introduction
+<p style='text-align: justify;'>When you're looking for places around you—whether it's coffee shops, ATMs, parks, or gas stations—you’re essentially looking for Points of Interest (POIs). These are specific locations that serve a purpose for people, like businesses, landmarks, or public facilities. One of the best ways to fetch and analyze POIs is by using OpenStreetMap (OSM), a rich, community-driven map database.</p>
+
+<img src="/assets/images/scrap/nfs/nfs_03.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](../scraping data/nearby feat spatial){: .btn }
+</span>
+
 ### Links
 - Source code on [my github](https://github.com/imanursar/)
