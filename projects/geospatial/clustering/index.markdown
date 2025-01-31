@@ -19,3 +19,11 @@ map
 {: .badge .badge-pill .badge-secondary }
 Clustering
 {: .badge .badge-pill .badge-info }
+
+
+##  Clustering area - get center location
+<img src="/assets/images/geospatial/snippet/clustering_01.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](/geospatial/clustering area/center location){: .btn }
+</span>

@@ -6,7 +6,7 @@ layout: default
 title: Spatial hypotesis and autocorrelation
 parent: Geospatial
 permalink: /geospatial/spatial hypotesis autocorrelation/
-nav_order: 4
+nav_order: 5
 ---
 
 # Spatial hypotesis and autocorrelation Analysis

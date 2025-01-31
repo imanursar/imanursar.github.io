@@ -6,7 +6,7 @@ layout: default
 title: Route-based combinatorial optimization problems
 parent: Geospatial
 permalink: /geospatial/route_based/
-nav_order: 5
+nav_order: 6
 ---
 
 # Route-based combinatorial optimization problems
