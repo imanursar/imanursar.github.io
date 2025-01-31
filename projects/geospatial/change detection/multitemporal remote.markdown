@@ -3,10 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: change detection
-parent: Geospatial
-permalink: /geospatial/change detection/
-nav_order: 3
+title: multitemporal remote
+parent: change detection
+grand_parent: Geospatial
+permalink: /geospatial/change detection/multitemporal remote/
+nav_order: 1
 ---
 
 # Change detection in multitemporal remote sensing images
@@ -90,6 +91,8 @@ reference: [http://web.eee.sztaki.hu/remotesensing/airchange_benchmark.html](htt
 This algorithm requires the following Hyperparameter parameters:
 - **blocks size** (`tuple`):         default value (5 x 5), non-overlapping blocks of block size of feature vector space     
 - **components** (`int`):            default value 3, The number of clusters in k-mean    
+
+we take non-overlapping blocks of size 5 x 5 from the difference image and flatten them into row vectors. The image can be resized to make both the dimensions a multiple of 5 by scipy.misc.imresize(). Collection of these row vectors forms a vector set.
 
 ### Result
 <img src="/assets/images/geospatial/change_detection//change_detection_06.png" alt="drawing"/>
