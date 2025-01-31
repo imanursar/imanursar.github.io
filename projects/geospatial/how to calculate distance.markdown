@@ -47,6 +47,7 @@ In this guide, we’ll explore various distance metrics, from simple Euclidean d
     - **Google API**
 
 ## Which Distance Metric Should You Use?
+
 |Metric	|Best For	|Example Use Case|
 |:-----:|:-----:|:-----:|
 |Euclidean | Straight-line distance | Finding the closest supplier|
@@ -81,7 +82,7 @@ dist = [[ 1.616204  , 99.289473  ],
 
 
 ## The Code
-By calling `optimization.compute_distances`, distances are calculated based on the specified distance calculation type. This function returns distance (in meters) and duration (in seconds) as a DataFrame.
+By calling `optimization.compute_distances`, distances are calculated based on the specified distance calculation type. This function returns `distance (in meters)` and `duration (in seconds)` as a DataFrame.
 
 ```python
 distance,duration = optimization.compute_distances(dist,types='osrm')
