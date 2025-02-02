@@ -38,6 +38,25 @@ With its user-friendly interface and interactive capabilities, Streamlit allows 
 [Read more](../tools/streamlit){: .btn }
 </span>
 
+## Power BI 101
+tools
+{: .badge .badge-pill .badge-primary }
+simulation
+{: .badge .badge-pill .badge-secondary }
+power bi
+{: .badge .badge-pill .badge-info }
+
+## Introduction
+<p style='text-align: justify;'>
+Microsoft Power BI is a collection of software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights.
+</p>
+
+<img src="/assets/images/tools/power_bi_01.png" alt="drawing"/>
+
+<span class="fs-3">
+[Read more](../tools/power_bi){: .btn }
+</span>
+
 
 ### Links
 - Source code on [my github](https://github.com/imanursar/)
