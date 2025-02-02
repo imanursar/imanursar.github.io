@@ -104,24 +104,7 @@ This function requires the following parameters:
 |  1 | median_center        | [139.7438701   35.67423052]                                 |
 |  2 | std                  | 0.07276603382028334                                         |
 |  3 | ellipse_value        | [0.0589476986565102, 0.081723578779534, 1.3936583780349217] |
-|  4 | convex_hull_vertices | [[139.563369  35.726562]                                    |
-|    |                      |  [139.562972  35.612766]                                    |
-|    |                      |  [139.564458  35.544522]                                    |
-|    |                      |  [139.565166  35.540166]                                    |
-|    |                      |  [139.582672  35.532785]                                    |
-|    |                      |  [139.620277  35.528044]                                    |
-|    |                      |  [139.693713  35.524541]                                    |
-|    |                      |  [139.752308  35.523416]                                    |
-|    |                      |  [139.7935    35.5255  ]                                    |
-|    |                      |  [139.909515  35.597019]                                    |
-|    |                      |  [139.914993  35.649834]                                    |
-|    |                      |  [139.915277  35.753888]                                    |
-|    |                      |  [139.914672  35.80083 ]                                    |
-|    |                      |  [139.894043  35.810386]                                    |
-|    |                      |  [139.81      35.8175  ]                                    |
-|    |                      |  [139.5855    35.8155  ]                                    |
-|    |                      |  [139.567523  35.815063]                                    |
-|    |                      |  [139.566842  35.813663]]                                   |
+|  4 | convex_hull_vertices | [[139.563369  35.726562],[139.562972  35.612766],[139.564458  35.544522]]                                   |
 |  5 | min_rect_vertices    | (139.562972, 35.523416, 139.915277, 35.8175)                |
 |  6 | min_rect_width       | 0.3523050000000012                                          |
 |  7 | min_rect_height      | 0.2940840000000051                                          |
@@ -156,6 +139,6 @@ by this visualization we can get some insights, such as:
     - **minimum rotated rectangle** - provides a tighter rectangular bound on the point pattern, but the rectangle is askew or rotated.
     - **minimum bounding circle** - the smallest circle that can be drawn to enclose the entire dataset.
 
-<img src="/assets/images/geospatial/snippet/pp_04.png" alt="drawing"/>
-
+    <img src="/assets/images/geospatial/snippet/pp_04.png" alt="drawing"/>
     Each gives a different impression of the area enclosing the user’s range of photographs. In this, you can see that the alpha shape is much tighter than the rest of the shapes. The minimum bounding rectangle and circle are the “loosest” shapes, in that they contain the most area outside of the user’s typical area. But, they’re also the simplest shapes to draw and understand.
+
