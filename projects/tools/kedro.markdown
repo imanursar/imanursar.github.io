@@ -29,7 +29,7 @@ Kedro is an open-source Python framework that helps data scientists and engineer
 ## Why Use Kedro?
 
 - **Modularity & Reusability** – Organizes code in a structured, reusable way.
-- **Pipeline Management – Helps design and visualize complex workflows.
+- **Pipeline Management** – Helps design and visualize complex workflows.
 - **Configuration Management** – Keeps secrets and parameters cleanly separated.
 - **Testing & Versioning** – Encourages best practices like unit testing and reproducibility.
 - **Seamless Deployment** – Works well with cloud platforms and production environments.
