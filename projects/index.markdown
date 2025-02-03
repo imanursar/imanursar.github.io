@@ -14,13 +14,14 @@ heading_anchors: true
 <img src="/assets/images/about_me/circle.png" alt="drawing" width="100"/>
 
 ## About Me
+I am an experienced Data Scientist with 5 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing tailored, scalable data solutions systems that meet the specific needs of various organizations. 
 
-<p style='text-align: justify;'>
-I am an experienced data scientist with 5 years of expertise in building AI-driven solutions for business challenges. Adept at both leading teams and independently executing complex projects. I specialize in machine learning, data-driven strategies, and implementing scalable systems with proven impact in business.
+Proficient in leveraging tools such as: 
+- **Data Engineering, Data pipelining and Warehousing**: SQL, BigQuery, Apache Airflow, dbt, Excel, Git. 
+- **Data Analytics & Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Tableau. 
+- **Machine Learning & AI**: Python, TensorFlow, scikit-learn, OpenCV, FastAPI, and data science deployment framework.
 
-Proficient in leveraging tools such as Python, SQL, TensorFlow, Metabase, Power BI, Google Cloud Platform (GCP), Looker, and Tableau for data analysis, visualization, reporting and create Machine Learning model. Skilled in building and maintaining robust data pipelines using Apache Airflow, DBT, Excel, and Git. 
-
-My expertise spans descriptive statistics, supervised and unsupervised machine learning models, fraud detection, root cause analysis, image processing, Bayesian and geospatial modeling, as well as supply chain optimization. Currently exploring reinforcement learning to push the boundaries of data science innovation.</p>
+My expertise spans descriptive and diagnostic statistics, supervised and unsupervised machine learning models, Data Scraping, Scoring Systems, computer vision, Forecasting, Scoring, Simulation, Bayesian and geospatial modeling, as well as supply chain optimization.
 
 
 ## Education
