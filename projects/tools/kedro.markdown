@@ -18,7 +18,7 @@ simulation
 Kedro
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/tools/power_bi_01.png" alt="drawing"  width="500"/>
+<img src="/assets/images/tools/kedro_cover.png" alt="drawing"  width="500"/>
 
 ## Introduction
 

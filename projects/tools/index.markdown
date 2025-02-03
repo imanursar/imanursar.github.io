@@ -57,6 +57,25 @@ Microsoft Power BI is a collection of software services, apps, and connectors th
 [Read more](../tools/power_bi){: .btn }
 </span>
 
+## Kedro 101
+tools
+{: .badge .badge-pill .badge-primary }
+simulation
+{: .badge .badge-pill .badge-secondary }
+Kedro
+{: .badge .badge-pill .badge-info }
+
+## Introduction
+<p style='text-align: justify;'>
+Kedro is an open-source Python framework that helps data scientists and engineers build reliable, scalable, and maintainable data pipelines. It brings best practices from software engineering into data science projects, making it easier to move from exploration to production.
+</p>
+
+<img src="/assets/images/tools/kedro_cover.png" alt="drawing"/>
+
+<span class="fs-3">
+[Read more](../tools/kedro){: .btn }
+</span>
+
 
 ### Links
 - Source code on [my github](https://github.com/imanursar/)
