@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Generating point in polygon
-parent: snippet code
+title: Generating Point in Polygon
+parent: Snippet Code
 grand_parent: Geospatial
 permalink: /geospatial/snippet code/point generator
 nav_order: 3

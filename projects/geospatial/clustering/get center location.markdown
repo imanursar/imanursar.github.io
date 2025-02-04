@@ -4,7 +4,7 @@
 
 layout: default
 title: Get Center Location
-parent: clustering area
+parent: Clustering Area
 grand_parent: Geospatial
 permalink: /geospatial/clustering area/center location
 nav_order: 1

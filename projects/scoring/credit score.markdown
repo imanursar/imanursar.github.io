@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Credit scoring 101
+title: Credit Scoring 101
 parent: Scoring
 permalink: /Scoring/credit scoring 101/
 nav_order: 1

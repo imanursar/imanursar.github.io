@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Route-based combinatorial optimization problems
+title: Route-based Combinatorial Optimization Problems
 parent: Geospatial
 permalink: /geospatial/route_based/
 nav_order: 6

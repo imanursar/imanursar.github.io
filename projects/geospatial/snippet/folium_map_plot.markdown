@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Folium Map plot
-parent: snippet code
+title: Folium Map Plot
+parent: Snippet Code
 grand_parent: Geospatial
 permalink: /geospatial/snippet code/Folium Map plot
 nav_order: 2

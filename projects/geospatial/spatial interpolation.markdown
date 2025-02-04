@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Spatial interpolation
+title: Spatial Interpolation
 parent: Geospatial
 permalink: /geospatial/spatial interpolation
 nav_order: 18

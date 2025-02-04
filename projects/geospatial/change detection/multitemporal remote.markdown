@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: multitemporal remote
-parent: change detection
+title: Multitemporal Remote Change Detection
+parent: Change Detection
 grand_parent: Geospatial
 permalink: /geospatial/change detection/multitemporal remote/
 nav_order: 1

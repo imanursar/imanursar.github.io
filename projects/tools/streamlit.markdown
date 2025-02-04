@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: streamlit 101
+title: Streamlit 101
 parent: Tools
 permalink: /tools/streamlit
 nav_order: 1

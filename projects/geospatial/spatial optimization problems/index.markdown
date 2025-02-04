@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: spatial optimization
+title: Spatial Optimization
 parent: Geospatial
 permalink: /geospatial/spatial optimization/
 nav_order: 4

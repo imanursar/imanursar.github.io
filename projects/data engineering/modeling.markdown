@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Data modeling
+title: Data Modeling
 parent: Data Engineering
 permalink: /data engineering/data modeling
 nav_order: 1

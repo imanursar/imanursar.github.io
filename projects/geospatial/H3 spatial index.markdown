@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: H3 spatial index
+title: H3 Spatial Index
 parent: Geospatial
 permalink: /geospatial/H3 spatial index
 nav_order: 16

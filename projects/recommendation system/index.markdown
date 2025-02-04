@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Recommendation system
+title: Recommendation System
 nav_order: 3
 has_children: true
 heading_anchors: true

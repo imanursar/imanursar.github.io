@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Spatial hypotesis and autocorrelation
+title: Spatial Hypotesis and Autocorrelation
 parent: Geospatial
 permalink: /geospatial/spatial hypotesis autocorrelation/
 nav_order: 5

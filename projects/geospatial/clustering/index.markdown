@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: clustering area
+title: Clustering Area
 parent: Geospatial
 permalink: /geospatial/clustering area/
 nav_order: 21

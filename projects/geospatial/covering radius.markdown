@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Covering radius
+title: Covering Radius
 parent: Geospatial
 permalink: /geospatial/covering radius
 nav_order: 17

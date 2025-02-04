@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: cluster points
-parent: clustering area
+title: Cluster Points
+parent: Clustering Area
 grand_parent: Geospatial
 permalink: /geospatial/clustering area/cluster points
 nav_order: 2

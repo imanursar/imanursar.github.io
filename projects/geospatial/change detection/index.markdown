@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: change detection
+title: Change Detection
 parent: Geospatial
 permalink: /geospatial/change detection/
 nav_order: 3

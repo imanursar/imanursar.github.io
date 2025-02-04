@@ -3,8 +3,8 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title:  LSCP - pulp method
-parent: spatial optimization
+title:  LSCP - Pulp Method
+parent: Spatial Optimization
 grand_parent: Geospatial
 permalink: /geospatial/spatial optimization/lscp_pulp/
 nav_order: 1

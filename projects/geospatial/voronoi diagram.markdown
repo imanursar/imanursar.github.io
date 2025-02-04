@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Voronoi diagram
+title: Voronoi Diagram
 parent: Geospatial
 permalink: /geospatial/voronoi diagram
 nav_order: 19

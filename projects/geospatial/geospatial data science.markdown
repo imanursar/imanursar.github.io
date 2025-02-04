@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Geospatial data science
+title: Geospatial Data Science
 parent: Geospatial
 permalink: /geospatial/geospatial data science
 nav_order: 1
