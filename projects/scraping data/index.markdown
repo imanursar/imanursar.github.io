@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Scraping Data
-nav_order: 5
+title: Scraping Geospatial Data
+nav_order: 3
 has_children: true
 heading_anchors: true
-permalink: /scraping data
+permalink: /scraping geospatial data
 has_toc: false
 ---
 
