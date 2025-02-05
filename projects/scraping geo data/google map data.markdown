@@ -4,8 +4,8 @@
 
 layout: default
 title: Scraping Data with Google Maps API
-parent: Scraping Data
-permalink: /scraping data/google map data
+parent: Scraping Geospatial Data
+permalink: /scraping geo data/google map data
 nav_order: 1
 ---
 
@@ -15,7 +15,7 @@ scraping data
 google maps API
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap/google_map/scraping_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/google_map/scraping_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>To grow our acquisition efforts and truly understand the market potential—both for Upstream and downstream buyers— we need access to the right data. This means identifying and targeting untapped potential customers, whether they are small-scale farmers, distributors, or retailers who haven't yet been engaged with our platform.</p>
@@ -65,7 +65,7 @@ For projects that cater to specific customer segments, we use well-defined keywo
     - Villages/Wards (Kelurahan)
     - Regions or cities with high seafood consumption or trade
 
-<img src="/assets/images/scrap/google_map/scraping_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/google_map/scraping_02.png" alt="drawing" width="500"/>
 
 
 ## Constraints
@@ -135,7 +135,7 @@ raw_collection_data, collection_data, collection_data_detail, areas_search = map
 
 **Output**
 
-<img src="/assets/images/scrap/google_map/scraping_04.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_04.png" alt="drawing"/>
 
 ### Get the data using Covering radius
 another method is using [Covering Radius](https://imanursar.github.io/geospatial/covering%20radius). By utilizing Covering Radius, we can  efficiently covering a given area with minimal circular regions is a powerful method for obtaining localized information, especially when querying services like the Google Maps API, which often limits searches to a specific radius. 
@@ -155,14 +155,14 @@ city = 'Jakarta selatan'
 boundaries = [-6.3725,-6.2016,106.7286,106.8713]
 key = 'API key'
 ```
-<img src="/assets/images/scrap/google_map/scraping_05.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_05.png" alt="drawing"/>
 
 **The code**
 ```python
 result = maps.radius_covering(sharp_map_selected, radius, meter_crs= 'EPSG:32748', deg_crs='EPSG:4326')
 ```
 
-<img src="/assets/images/scrap/google_map/scraping_06.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_06.png" alt="drawing"/>
 
 **The code**
 
@@ -173,15 +173,15 @@ raw_collection_data, collection_data, collection_data_detail = maps.search_data_
 
 **Output**
 
-<img src="/assets/images/scrap/google_map/scraping_07.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_07.png" alt="drawing"/>
 
 
 ## The Result
-<img src="/assets/images/scrap/google_map/scraping_03.png" alt="drawing"/>
-<img src="/assets/images/scrap/google_map/scraping_08.png" alt="drawing"/>
-<img src="/assets/images/scrap/google_map/scraping_09.png" alt="drawing"/>
-<img src="/assets/images/scrap/google_map/scraping_10.png" alt="drawing"/>
-<img src="/assets/images/scrap/google_map/scraping_11.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_03.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_08.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_09.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_10.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/google_map/scraping_11.png" alt="drawing"/>
 
 
 ## Maximizing Downstream Growth with Google Maps Data

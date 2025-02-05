@@ -4,8 +4,8 @@
 
 layout: default
 title: Extract Specific Geographic Data
-parent: Scraping Data
-permalink: /scraping data/extract spatial
+parent: Scraping Geospatial Data
+permalink: /scraping geo data/extract spatial
 nav_order: 3
 ---
 
@@ -15,7 +15,7 @@ scraping data
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap/oms_extract_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/oms_extract_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -31,12 +31,13 @@ By calling `maps.extract_spatial`, we extract specific geographic data from the 
 boundary= [47.46, 19.03, 47.53, 19.07]
 amenity_list = [('amenity','cafe'), ('amenity','pub'),]
 
-result = maps.extract_spatial(boundary, amenity_list= amenity_list)
+result = maps.extract_spatial(boundary, amenity_list= amenity_list, place_at='jakarta')
 ```
 
 This function requires the following parameters:
 - **boundary** (`list`):            list of longitude and latitude.
 - **amenity_list** (`list`):        amenity list that we want to extract.
+- **place_at**(`string`):           specific location
 
 ## The result
 
@@ -48,4 +49,12 @@ This function requires the following parameters:
 |  3 | Szamos Today  | amenity       | cafe      | POINT (19.0478428 47.505579)  |     19.0478 |    47.5056 |
 |  4 | À la Maison   | amenity       | cafe      | POINT (19.0526831 47.4953643) |     19.0527 |    47.4954 |
 
-<img src="/assets/images/scrap/oms_extract_01.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/oms_extract_01.png" alt="drawing"/>
+
+|                     | geometry                      | addr:city   |   addr:housenumber |   addr:postcode | addr:street            | amenity   |   capacity | check_date:opening_hours   | contact:email            |   contact:facebook |
+|:--------------------|:------------------------------|:------------|-------------------:|----------------:|:-----------------------|:----------|-----------:|:---------------------------|:-------------------------|-------------------:|
+| ('node', 260896310) | POINT (19.0528557 47.5022714) | Budapest    |                 15 |            1051 | Hercegprímás utca      | cafe      |         67 | 2024-07-11                 | tanya@cookiebeacon.com   |        1.00076e+14 |
+| ('node', 260900823) | POINT (19.0547717 47.5083433) | Budapest    |                 72 |            1055 | Bajcsy-Zsilinszky út   | pub       |         50 | nan                        | nan                      |        1.00057e+14 |
+| ('node', 260911188) | POINT (19.0485417 47.5121822) | Budapest    |                 32 |            1055 | Falk Miksa utca        | pub       |         35 | nan                        | tokajiborozo@gmail.com   |        1.0007e+14  |
+| ('node', 263984860) | POINT (19.0531945 47.504527)  | Budapest    |                  1 |            1054 | Nagysándor József utca | cafe      |        nan | nan                        | nan                      |      nan           |
+| ('node', 263988027) | POINT (19.0478428 47.505579)  | Budapest    |                 10 |            1055 | Kossuth Lajos tér      | cafe      |         50 | nan                        | parlament.cafe@szamos.hu |        1.79802e+15 |

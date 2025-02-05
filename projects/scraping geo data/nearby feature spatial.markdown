@@ -4,8 +4,8 @@
 
 layout: default
 title: Nearby Feature Spatial
-parent: Scraping Data
-permalink: /scraping data/nearby feat spatial
+parent: Scraping Geospatial Data
+permalink: /scraping geo data/nearby feat spatial
 nav_order: 2
 ---
 
@@ -15,7 +15,7 @@ scraping data
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap/nfs/nfs_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/nfs/nfs_03.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>When you're looking for places around you—whether it's coffee shops, ATMs, parks, or gas stations—you’re essentially looking for Points of Interest (POIs). These are specific locations that serve a purpose for people, like businesses, landmarks, or public facilities. One of the best ways to fetch and analyze POIs is by using OpenStreetMap (OSM), a rich, community-driven map database.</p>
@@ -79,9 +79,9 @@ This function requires the following parameters:
 | bar       |              339 |
 | restaurant|              1505 |
 
-<img src="/assets/images/scrap/nfs/nfs_01.png" alt="drawing" width="500"/>
-<img src="/assets/images/scrap/nfs/nfs_02.png" alt="drawing" width="500"/>
-<img src="/assets/images/scrap/nfs/nfs_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/nfs/nfs_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/nfs/nfs_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/nfs/nfs_03.png" alt="drawing" width="500"/>
 
 ### data point
 
