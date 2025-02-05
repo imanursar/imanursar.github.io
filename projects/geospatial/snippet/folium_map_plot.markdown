@@ -99,57 +99,60 @@ When multiple values are provided, the function automatically generates multiple
 maps.get_image_osm(coor=(-8.36,113.35,-8.2,113.525), zoom=18, server='',margin=.05,
                     tilesize=256,maxtiles=16,show_image=False)
 ```
-<img src="/assets/images/geospatial/snippet/map_tile_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/map_tile_01.png" alt="drawing" />
 
 ### Circle marker map
-<img src="/assets/images/geospatial/snippet/folium_circle.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_circle.png" alt="drawing" />
 
 ### Point marker map
-<img src="/assets/images/geospatial/snippet/folium_point.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_point.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/folium_point_marker.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_point_marker.png" alt="drawing" />
 
 ### pop up map
-<img src="/assets/images/geospatial/snippet/folium_popup.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_popup.png" alt="drawing" />
 
 ### choropleth map
-<img src="/assets/images/geospatial/snippet/folium_choropleth.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_choropleth.png" alt="drawing" />
 
 ### heatmap map
-<img src="/assets/images/geospatial/snippet/folium_heatmap.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_heatmap.png" alt="drawing" />
 
 ### route path map
-<img src="/assets/images/geospatial/snippet/folium_antpath.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_antpath.png" alt="drawing" />
 
 ### voronoi map
-<img src="/assets/images/geospatial/snippet/folium_voronoi.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_voronoi.png" alt="drawing" />
 
 ### Radius cover-area
-<img src="/assets/images/geospatial/snippet/folium_radius.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_radius.png" alt="drawing" />
+
+### POI map plot
+<img src="/assets/images/geospatial/snippet/scarping_01.png" alt="drawing" />
 
 ### World map
-<img src="/assets/images/geospatial/snippet/folium__world_map.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium__world_map.png" alt="drawing" />
 
 ### Indonesia map
-<img src="/assets/images/geospatial/snippet/folium_indo.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_indo.png" alt="drawing" />
 
 ### Province choropleth map
-<img src="/assets/images/geospatial/snippet/folium_choropleth_indo.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/folium_choropleth_indo.png" alt="drawing" />
 
 
 ### Topography map
-<img src="/assets/images/geospatial/snippet/ipyleaflet_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_01.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_02.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_03.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_04.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_04.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_05.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_05.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_06.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_06.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/ipyleaflet_07.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/ipyleaflet_07.png" alt="drawing" />
 
-<img src="/assets/images/geospatial/snippet/carto_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/snippet/carto_01.png" alt="drawing" />
