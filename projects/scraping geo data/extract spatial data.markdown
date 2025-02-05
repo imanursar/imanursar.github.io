@@ -15,7 +15,7 @@ scraping data
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap geo/oms_extract_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/geodata/oms_extract_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -49,7 +49,7 @@ This function requires the following parameters:
 |  3 | Szamos Today  | amenity       | cafe      | POINT (19.0478428 47.505579)  |     19.0478 |    47.5056 |
 |  4 | À la Maison   | amenity       | cafe      | POINT (19.0526831 47.4953643) |     19.0527 |    47.4954 |
 
-<img src="/assets/images/scrap geo/oms_extract_01.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_extract_01.png" alt="drawing"/>
 
 |                     | geometry                      | addr:city   |   addr:housenumber |   addr:postcode | addr:street            | amenity   |   capacity | check_date:opening_hours   | contact:email            |   contact:facebook |
 |:--------------------|:------------------------------|:------------|-------------------:|----------------:|:-----------------------|:----------|-----------:|:---------------------------|:-------------------------|-------------------:|
