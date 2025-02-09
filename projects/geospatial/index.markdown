@@ -95,5 +95,24 @@ Testing for spatial structure is important because if it is present in data, the
 </span>
 
 
+# Simple Livability Index: Measuring Quality of Life Across City Districts
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+Livability Index
+{: .badge .badge-pill .badge-info }
+
+<p style='text-align: justify;'>
+Finding the perfect place to live isn’t just about personal preferences—it’s also about the environment, opportunities, and overall quality of life a neighborhood can offer. The Simple Livability Index aims to provide a clear, data-driven way to compare different city districts, scoring each one from 1 to 10 based on key livability factors.</p>
+
+<img src="/assets/images/geospatial/snippet/livability_index_02.png" alt="drawing" width="500"/>
+
+<span class="fs-3">
+[Read more](/geospatial/livability index/){: .btn }
+</span>
+
+
+
 ### Links
 - Source code on [my github](https://github.com/imanursar/)

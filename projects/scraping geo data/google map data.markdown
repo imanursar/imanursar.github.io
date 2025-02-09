@@ -176,6 +176,10 @@ raw_collection_data, collection_data, collection_data_detail = maps.search_data_
 <img src="/assets/images/scrap geo/google_map/scraping_07.png" alt="drawing"/>
 
 
+## Final Schema
+<img src="/assets/images/scrap geo/google_map/scraping_12.png" alt="drawing"/>
+
+
 ## The Result
 <img src="/assets/images/scrap geo/google_map/scraping_03.png" alt="drawing"/>
 <img src="/assets/images/scrap geo/google_map/scraping_08.png" alt="drawing"/>
