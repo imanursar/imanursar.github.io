@@ -3,14 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Folium Map Plot
+title: Interactive Map Plot
 parent: Snippet Code
 grand_parent: Geospatial
-permalink: /geospatial/snippet code/Folium Map plot
+permalink: /geospatial/snippet code/interactive map plot
 nav_order: 2
 ---
 
-#  Folium Map plot using Shapefile
+#  Interactive Map plot using Shapefile
 
 ## Dataset
 
@@ -53,7 +53,7 @@ By calling `maps.map_marker_fol_plot`, we can some plotting such as:
 In this chapter, we will showcase the first three types of plots as examples. Additional examples and discussions will be covered in the next chapter.
 
 ```python
-maps.map_marker_fol_plot(main_data=main_data, shape=laArea, col_list=['latitude','longitude'],
+maps.map_fol_plot(main_data=main_data, shape=laArea, col_list=['latitude','longitude'],
                         marker = ['circle'], center_coor=[34.0522,-118.2437], tip= ['strLocation'],zoom=5, 
                         control_layer=False, fullscreen=False, upper_right = [61, 2], lower_left = [49, -8],
                         popup_type = 'table',custome_popup=df[['strLocation']],)
@@ -114,6 +114,9 @@ maps.get_image_osm(coor=(-8.36,113.35,-8.2,113.525), zoom=18, server='',margin=.
 
 ### choropleth map
 <img src="/assets/images/geospatial/snippet/folium_choropleth.png" alt="drawing" />
+
+### Deep Interactive map
+<img src="/assets/images/geospatial/snippet/leafmap_01.png" alt="drawing" />
 
 ### heatmap map
 <img src="/assets/images/geospatial/snippet/folium_heatmap.png" alt="drawing" />
