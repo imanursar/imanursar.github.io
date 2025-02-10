@@ -7,6 +7,9 @@ title: Power BI 101
 parent: Tools
 permalink: /tools/power_bi
 nav_order: 2
+has_children: true
+heading_anchors: true
+has_toc: false
 ---
 
 # Power BI 101
