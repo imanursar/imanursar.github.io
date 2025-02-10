@@ -7,6 +7,9 @@ title: Route-based Combinatorial Optimization Problems
 parent: Geospatial
 permalink: /geospatial/route_based/
 nav_order: 6
+has_children: true
+heading_anchors: true
+has_toc: false
 ---
 
 # Route-based combinatorial optimization problems
@@ -15,7 +18,7 @@ geospatial
 {: .badge .badge-pill .badge-primary }
 map
 {: .badge .badge-pill .badge-secondary }
-heatmap
+Optimization
 {: .badge .badge-pill .badge-info }
 
 <img src="/assets/images/geospatial/tsp/tsp_08.png" alt="drawing" width="1500"/>
