@@ -7,7 +7,7 @@ title:  LSCP - Pulp Method
 parent: Spatial Optimization
 grand_parent: Geospatial
 permalink: /geospatial/spatial optimization/lscp_pulp/
-nav_order: 1
+nav_order: 2
 ---
 
 # Location Set Covering Problem (LSCP) - pulp method

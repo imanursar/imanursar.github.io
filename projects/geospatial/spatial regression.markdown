@@ -18,7 +18,6 @@ map
 Pattern
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/geospatial/snippet/random_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 In this project, we will be discussing regression models and how they can
