@@ -4,7 +4,7 @@
 
 layout: default
 title: Uniqueness
-parent: Description
+parent: Description Analytics
 permalink: /description/uniqueness/
 nav_order: 2
 ---
@@ -12,8 +12,6 @@ nav_order: 2
 # Create Unique value in Data
 descriptive analytics
 {: .badge .badge-pill .badge-primary }
-
-<img src="/assets/images/description/desc_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 count and find uniqueness in each columns

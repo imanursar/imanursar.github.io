@@ -4,7 +4,7 @@
 
 layout: default
 title: Describe Data
-parent: Description
+parent: Description Analytics
 permalink: /description/describe data/
 nav_order: 1
 ---

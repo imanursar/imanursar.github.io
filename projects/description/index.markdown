@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Description
+title: Description Analytics
 nav_order: 7
 has_children: true
 heading_anchors: true
@@ -25,6 +25,28 @@ Descriptive analytics is the first step for every advanced analytics. This proce
 
 <span class="fs-3">
 [Read more](../description/describe data/){: .btn }
+</span>
+
+
+##  Create Unique value in Data
+descriptive analytics
+{: .badge .badge-pill .badge-primary }
+
+count and find uniqueness in each columns
+
+<span class="fs-3">
+[Read more](../description/uniqueness/){: .btn }
+</span>
+
+
+##  Snippet Code
+descriptive analytics
+{: .badge .badge-pill .badge-primary }
+
+a curated selection of code examples and practical tips for working with analytics data.
+
+<span class="fs-3">
+[Read more](../description/snippet code/){: .btn }
 </span>
 
 

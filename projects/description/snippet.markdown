@@ -4,7 +4,7 @@
 
 layout: default
 title: Snippet Code
-parent: Description
+parent: Description Analytics
 permalink: /description/snippet code/
 nav_order: 3
 ---
@@ -96,5 +96,70 @@ This function requires the following parameters:
 | 755 |          1 |        2 | male  |  0.67 |       1 |       1 | 14.5    | S          | Second  | child | False        | nan    | Southampton   | yes     | False   |
 | 630 |          1 |        1 | male  | 80    |       0 |       0 | 30      | S          | First   | man   | True         | A      | Southampton   | yes     | True    |
 | 851 |          0 |        3 | male  | 74    |       0 |       0 |  7.775  | S          | Third   | man   | True         | nan    | Southampton   | no      | True    |
+
+_________________
+
+# Show value count for every unique in single column
+By calling, `describe.n_large_small` we can generate value count for every unique in single column and calculate its percentage.
+
+```python
+describe.value_counts(df,col)
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data location and value 
+- **col** (`string`):               column name
+
+## The result
+
+|    | sex    |   n_samples |   percent |
+|---:|:-------|------------:|----------:|
+|  0 | male   |         577 |     64.76 |
+|  1 | female |         314 |     35.24 |
+
+# Show value count for every unique in each column
+By calling, `describe.n_large_small` we can generate value count for every unique in multiple columns and calculate its percentage.
+
+```python
+describe.value_counts_all(df,["sex",'survived'])
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data location and value 
+- **col** (`list`):                 column name
+
+## The result
+<img src="/assets/images/description/desc_04.png" alt="drawing"/>
+
+_________________
+
+# Group numerical description 
+By calling, `describe.group_describe` we can generate numerical description from selected columns compare to specific category.
+
+```python
+describe.group_describe(main_data,col)
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data location and value 
+- **col** (`list`):                 column name
+
+## The result
+<img src="/assets/images/description/desc_05.png" alt="drawing"/>
+
+# Group count description for specific columns
+By calling, `describe.group_describe_all` we can generate count value for each colums compare to specific categories.
+
+```python
+describe.group_describe_all(main_data,columns,n)
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data location and value 
+- **columns** (`list`):             column name
+- **n** (`int`):             threshold of category in each column
+
+## The result
+<img src="/assets/images/description/desc_06.png" alt="drawing"/>
 
 _________________
