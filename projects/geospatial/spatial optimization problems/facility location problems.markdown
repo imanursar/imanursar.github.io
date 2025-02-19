@@ -145,7 +145,7 @@ To fine-tune our analysis, we set a few important parameters that guide facility
 
 
 ## The Code
-By calling `maps.spatial_cluster_opt`, we can identify the optimal medical locations to serve all of the patient demand.
+By calling `maps.spatial_cluster_opt`, we can identify the optimal store locations to serve all of the demands.
 
 ```python
 result, model, fac2cli, fac2cli_idx = maps.spatial_cluster_opt(main_data=cost_matrix, types='lscp',threshold=service_dist)
@@ -159,7 +159,7 @@ This function requires the following parameters:
 - **p_facilities** (`int`):          total point (i.e. medical locations )
 - **max_radius** (`int`):            maximum radius for each point
 
-Then, byh using `maps.plot_cluster_opt` we can plot the results to identify which medical centers were selected and what part of the population they are serving.
+Then, by using `maps.plot_cluster_opt` we can plot the results to identify which stores were selected and what part of the population they are serving.
 
 ```python
 maps.plot_cluster_opt(model=result,facility_points=medical_center_locs,
