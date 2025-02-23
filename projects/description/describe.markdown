@@ -60,7 +60,7 @@ df_styled,mis_val_table = describe.describe_data(df,image=True)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value  
+- **main_data** (`dataframe`):      Data Input
 - **image** (`Boolean`):            generate table plot  
 
 ## The result

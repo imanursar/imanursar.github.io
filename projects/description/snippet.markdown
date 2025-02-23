@@ -6,7 +6,7 @@ layout: default
 title: Snippet Code
 parent: Description Analytics
 permalink: /description/snippet code/
-nav_order: 3
+nav_order: 99
 ---
 
 # Introduction
@@ -24,7 +24,7 @@ describe.sample_data(df[["survived", "pclass", "sex", "age"]],n=10)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value  
+- **main_data** (`dataframe`):      Data Input 
 - **n** (`int`):                    total row  
 
 ## The result
@@ -52,7 +52,7 @@ describe.df_to_sheet(df)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value  
+- **main_data** (`dataframe`):      Data Input 
 
 ## The result
 
@@ -68,7 +68,7 @@ describe.describe_num(df)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value  
+- **main_data** (`dataframe`):      Data Input 
 
 ## The result
 
@@ -84,7 +84,7 @@ describe.n_large_small(main_data,col,n)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value 
+- **main_data** (`dataframe`):      Data Input
 - **col** (`string`):               column name
 - **n** (`int`):                    number or row to be shown
 
@@ -107,7 +107,7 @@ describe.value_counts(df,col)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value 
+- **main_data** (`dataframe`):      Data Input
 - **col** (`string`):               column name
 
 ## The result
@@ -125,41 +125,10 @@ describe.value_counts_all(df,["sex",'survived'])
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value 
+- **main_data** (`dataframe`):      Data Input
 - **col** (`list`):                 column name
 
 ## The result
 <img src="/assets/images/description/desc_04.png" alt="drawing"/>
-
-_________________
-
-# Group numerical description 
-By calling, `describe.group_describe` we can generate numerical description from selected columns compare to specific category.
-
-```python
-describe.group_describe(main_data,col)
-```
-
-This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value 
-- **col** (`list`):                 column name
-
-## The result
-<img src="/assets/images/description/desc_05.png" alt="drawing"/>
-
-# Group count description for specific columns
-By calling, `describe.group_describe_all` we can generate count value for each colums compare to specific categories.
-
-```python
-describe.group_describe_all(main_data,columns,n)
-```
-
-This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value 
-- **columns** (`list`):             column name
-- **n** (`int`):             threshold of category in each column
-
-## The result
-<img src="/assets/images/description/desc_06.png" alt="drawing"/>
 
 _________________

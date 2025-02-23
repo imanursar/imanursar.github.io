@@ -40,7 +40,7 @@ describe.unique(df,r=0.1)
 ```
 
 This function requires the following parameters:
-- **main_data** (`dataframe`):      Data location and value  
+- **main_data** (`dataframe`):      Data Input
 - **r** (`float`):      ratio unique value
 
 ## The result
