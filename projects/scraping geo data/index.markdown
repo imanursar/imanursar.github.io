@@ -4,7 +4,7 @@
 
 layout: default
 title: Scraping Geospatial Data
-nav_order: 3
+nav_order: 4
 has_children: true
 heading_anchors: true
 permalink: /scraping geo data
