@@ -103,3 +103,6 @@ Sometimes, all methods listed above fail. This can be due to two reasons:
 - The document is text-based but with an atypical encryption that Tabula & Co. cannot handle.
 
 When this is the case, it is best to treat the PDF as an image and use OCR technology to read it. Tesseract is by far the most widespread tool for doing this.
+
+
+source: https://medium.com/data-science-collective/stop-copy-pasting-turn-pdfs-into-data-in-seconds-c5997d523133
