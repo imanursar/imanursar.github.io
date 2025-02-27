@@ -9,7 +9,7 @@ permalink: /geospatial/sustainable development
 nav_order: 11
 ---
 
-# Simple Livability Index: Measuring Quality of Life Across City Districts
+# Geospatial Monitoring of Sustainable Development in Bolivia
 
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -18,7 +18,7 @@ map
 Sustainable Development
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/geospatial/snippet/livability_index_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_01.png" alt="drawing" width="500"/>
 
 ## Introduction
 Understanding regional development is crucial for shaping effective policies and ensuring balanced growth across a country. This article explores how sustainable development varies across Bolivia's 339 municipalities, using geospatial analysis to uncover patterns, disparities, and trends.
@@ -84,29 +84,81 @@ To conduct this study, we rely on a georeferenced dataset that includes:
 - **Municipal Sustainable Development Index**: a key metric for evaluating municipal-level progress.
 
 ### Load dataset
-
-
-
-## The Code
+The data is stored in a `GeoJSON` file, allowing us to utilize GeoPandas for loading and processing. Additionally, we can load definition data if further context or explanation is required.
 
 ```python
+dataURL = 'map_and_data.geojson'
+gdf = gpd.read_file(dataURL)
 
+dataDefinitions = pd.read_csv('dataDefinitions.csv')
+data_dict = dict(zip(dataDefinitions['Variable'], dataDefinitions['Label']))
 ```
 
-## The Data
-### Roads
+we can store all required data into parameters for easier access.
+
+```python
+INDICATOR1 = 'imds' # Municipal Sustainable Development Index
+INDICATOR2 = 'pop2017' # Estimated population in 2017
+INDICATOR3 = 'ln_t400NTLpc2017' # Trend log NTL per capita in 2017
+INDICATOR4 = 'rank_imds' # Bolivia Index Ranking
+INDICATOR5 = 'co2017' # Estimated carbon dioxide in 2017
+ADM1 = 'dep' # Department ~ province
+ADM3 = 'mun' # Municipality ~ city
+
+gdf = gdf[[ADM1, ADM3, INDICATOR1, INDICATOR2, INDICATOR3, INDICATOR4, INDICATOR5,'geometry','COORD_X','COORD_Y']]
+```
+
+## Exploratory data analysis (EDA)
+
+EDA is the first step for every advanced analytics. This process will help us to understand and answer the 5W + 1H question before we expand our analytics.
+
+### Description analytics
+```python
+describe.describe_data(gdf)
+```
+
+```
+Table size 339 x 10
+Dataframe has 10 columns.
+There are 0 columns that have missing values.
+```
+
+|    | index            | Data Type   |   Count |   Missing |   % missing |   Low value |      Q1 |     Mean |   Median |       Q3 |      Hi value |   Mode |    Stddev |   Skewness | Skewness note                |   Uniques |
+|---:|:-----------------|:------------|--------:|----------:|------------:|------------:|--------:|---------:|---------:|---------:|--------------:|-------:|----------:|-----------:|:-----------------------------|----------:|
+|  0 | dep              | object      |     339 |         0 |           0 |        0    |    0    |     0    |     0    |     0    |   0           |   0    |      0    |       0    | non-numeric                  |         9 |
+|  1 | mun              | object      |     339 |         0 |           0 |        0    |    0    |     0    |     0    |     0    |   0           |   0    |      0    |       0    | non-numeric                  |       333 |
+|  2 | imds             | float64     |     339 |         0 |           0 |       35.7  |   47    |    51.05 |    50.5  |    54.85 |  80.2         |  47.5  |      6.77 |       0.59 | Moderately Positively Skewed |       188 |
+|  3 | pop2017          | float64     |     339 |         0 |           0 |      661.82 | 6425.71 | 32858.8  | 11627.5  | 22497.3  |   1.60446e+06 | 661.82 | 117649    |       9.71 | Highly Positively Skewed     |       339 |
+|  4 | ln_t400NTLpc2017 | float64     |     339 |         0 |           0 |        7.87 |   12.82 |    13.67 |    13.7  |    14.65 |  16.99        |   7.87 |      1.28 |      -0.54 | Moderately Negatively Skewed |       339 |
+|  5 | rank_imds        | int32       |     339 |         0 |           0 |        1    |   85.5  |   170    |   170    |   254.5  | 339           |   1    |     98.01 |       0    | Fairly Symmetric (Positive)  |       339 |
+|  6 | co2017           | float64     |     339 |         0 |           0 |      400.05 |  402.91 |   403.59 |   403.67 |   404.56 | 406.23        | 400.05 |      1.23 |      -0.55 | Moderately Negatively Skewed |       339 |
+|  7 | geometry         | geometry    |     339 |         0 |           0 |        0    |    0    |     0    |     0    |     0    |   0           |   0    |      0    |       0    | non-numeric                  |       339 |
+|  8 | COORD_X          | float64     |     339 |         0 |           0 |      -69.48 |  -67.87 |   -66.07 |   -66.18 |   -64.62 | -57.69        | -69.48 |      2.15 |       0.8  | Moderately Positively Skewed |       339 |
+|  9 | COORD_Y          | float64     |     339 |         0 |           0 |      -22.67 |  -18.88 |   -17.45 |   -17.59 |   -16.48 | -10.11        | -22.67 |      2.35 |       0.75 | Moderately Positively Skewed |       339 |
+
+Using the information above we found that:
+- There is no missing value in our dataset.
+- The dataset includes 9 departments (provinces in Indonesian terms) and 333 municipalities (cities in Indonesian terms).
+- The Municipal Sustainable Development Index (IMDS) exhibits a moderately positive skew, indicating that most values are concentrated toward the lower end of the distribution. The standard deviation is approximately 6.77, with the mean and median being nearly equal, suggesting minimal variation across rows.
+- The estimated population in 2017 (pop2017) shows a highly positive skew, which aligns with geographic differences, particularly between urban areas and large cities.
+- The trend of logarithmic nighttime light per capita in 2017 (ln_t400NTLpc2017) presents a moderately negative skew, implying that nighttime light intensity is relatively high in certain locations. However, the variation in values across rows remains small.
+
+### Boxplot and Histogram plot
+To get more conprehensive insight about our distribution data, we can make a boxplot and histogram to get more clearer view how our data is.
+
+```python
+visual.boxplot(gdf,[INDICATOR1,INDICATOR2,INDICATOR3, INDICATOR4,INDICATOR5,'COORD_X','COORD_Y'],row_col=(3,3),title="Geospatial Monitoring of Sustainable Development in Bolivia",footnote='2017')
+```
+
+<img src="/assets/images/geospatial/sustainable dev/sus_02.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_03.png" alt="drawing"/>
 
 
+### Numeric Descriptive
+<img src="/assets/images/geospatial/sustainable dev/sus_04.png" alt="drawing"/>
 
+### Boxplot Comparison
+<img src="/assets/images/geospatial/sustainable dev/sus_05.png" alt="drawing"/>
 
-## The result
-
-### in Table 
-
-
-### in Graphic
-
-
-
-## Final Thoughts
-
+### Choropleth map 
+<img src="/assets/images/geospatial/sustainable dev/sus_01.png" alt="drawing"/>

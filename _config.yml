@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Imanul Jihad
+title: Personal Projects
 email: imanursar@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Data Science Project Portfolio
@@ -47,13 +47,14 @@ plugins:
 
 
 markdown: kramdown
-
 color_scheme: light
+nav_enabled: true
+
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-ga_tracking: G-D11N9P4G2Q
-ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
+# ga_tracking: G-D11N9P4G2Q
+# ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
 
 # Exclude from processing.
 # The following items will not be processed, by default.
