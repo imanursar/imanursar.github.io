@@ -162,3 +162,71 @@ visual.boxplot(gdf,[INDICATOR1,INDICATOR2,INDICATOR3, INDICATOR4,INDICATOR5,'COO
 
 ### Choropleth map 
 <img src="/assets/images/geospatial/sustainable dev/sus_01.png" alt="drawing"/>
+
+### Histogram distribution
+<img src="/assets/images/geospatial/sustainable dev/sus_06.png" alt="drawing"/>
+
+### Scatter plot, box and distribution (pop2017_log vs imds)
+<img src="/assets/images/geospatial/sustainable dev/sus_07.png" alt="drawing"/>
+
+### Choropleth map for imds compare to night light area
+<img src="/assets/images/geospatial/sustainable dev/sus_08.png" alt="drawing"/>
+
+<img src="/assets/images/geospatial/sustainable dev/sus_09.png" alt="drawing"/>
+
+### Residuals vs Fitted for Linear regression (imds vs dep, mun, pop2017, ln_t400NTLpc2017, rank_imds, co2017, pop2017_log)
+<img src="/assets/images/geospatial/sustainable dev/sus_10.png" alt="drawing"/>
+
+### QQ plot 
+<img src="/assets/images/geospatial/sustainable dev/sus_11.png" alt="drawing"/>
+
+### Scale-Location Plot
+<img src="/assets/images/geospatial/sustainable dev/sus_12.png" alt="drawing"/>
+
+
+### Leverage plot
+<img src="/assets/images/geospatial/sustainable dev/sus_13.png" alt="drawing"/>
+
+### Exploratory spatial data analysis (ESDA) - Box plot
+<img src="/assets/images/geospatial/sustainable dev/sus_14.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_15.png" alt="drawing"/>
+
+### Exploratory spatial data analysis (ESDA) - Fisher Jenks plot
+<img src="/assets/images/geospatial/sustainable dev/sus_16.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_17.png" alt="drawing"/>
+
+### spatial autocorrelation multivariable
+<img src="/assets/images/geospatial/sustainable dev/sus_18.png" alt="drawing"/>
+
+<img src="/assets/images/geospatial/sustainable dev/sus_19.png" alt="drawing"/>
+
+<img src="/assets/images/geospatial/sustainable dev/sus_20.png" alt="drawing"/>
+
+### Scatter plot, box and distribution (imds vs imds lag)
+<img src="/assets/images/geospatial/sustainable dev/sus_21.png" alt="drawing"/>
+
+### Spatial Autocorrelation Global
+<img src="/assets/images/geospatial/sustainable dev/sus_22.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_23.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_24.png" alt="drawing"/>
+
+### Spatial Autocorrelation Local
+<img src="/assets/images/geospatial/sustainable dev/sus_25.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_26.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_27.png" alt="drawing"/>
+
+### Geospatial Weight Regression (GWR) analysis
+<img src="/assets/images/geospatial/sustainable dev/sus_28.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_29.png" alt="drawing"/>
+
+<img src="/assets/images/geospatial/sustainable dev/sus_30.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sustainable dev/sus_31.png" alt="drawing"/>
+
+### Exploratory spatial data analysis (ESDA) - Fisher Jenks plot for GWR R2
+<img src="/assets/images/geospatial/sustainable dev/sus_32.png" alt="drawing"/>
+
+### Exploratory spatial data analysis (ESDA) - Fisher Jenks plot for GWR Slope
+<img src="/assets/images/geospatial/sustainable dev/sus_33.png" alt="drawing"/>
+
+### Exploratory spatial data analysis (ESDA) - Fisher Jenks plot for MGWR Slope
+<img src="/assets/images/geospatial/sustainable dev/sus_34.png" alt="drawing"/>
