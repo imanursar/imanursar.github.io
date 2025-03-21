@@ -4,7 +4,7 @@
 
 layout: default
 title: Machine Learning
-nav_order: 7
+nav_order: 96
 has_children: true
 heading_anchors: true
 permalink: /machine learning

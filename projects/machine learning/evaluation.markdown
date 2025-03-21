@@ -6,7 +6,7 @@ layout: default
 title: How to evaluate your machine learning models?
 parent: Machine Learning
 permalink: /machine learning/evaluation
-nav_order: 1
+nav_order: 99
 ---
 
 #  How to evaluate your machine learning models?

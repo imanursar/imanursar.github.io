@@ -4,7 +4,7 @@
 
 layout: default
 title: Scoring
-nav_order: 6
+nav_order: 95
 has_children: true
 heading_anchors: true
 permalink: /scoring/
