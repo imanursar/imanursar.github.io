@@ -5,8 +5,8 @@
 layout: default
 title: Exploring geospatial relationships
 nav_order: 2
-parent: ESRI
-permalink: /esri/geospatial relationships
+parent: ArcGIS
+permalink: /ArcGIS/geospatial relationships
 ---
 
 # Exploring geospatial relationships

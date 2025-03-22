@@ -5,8 +5,8 @@
 layout: default
 title: Snippet
 nav_order: 1
-parent: ESRI
-permalink: /esri/snippet
+parent: ArcGIS
+permalink: /ArcGIS/snippet
 ---
 
 # Geospatial Snippet Collection

@@ -5,8 +5,8 @@
 layout: default
 title: Modifing Spatial Data
 nav_order: 3
-parent: ESRI
-permalink: /esri/modify
+parent: ArcGIS
+permalink: /ArcGIS/modify
 ---
 
 # Modifing Spatial Data
