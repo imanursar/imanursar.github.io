@@ -9,7 +9,7 @@ parent: ArcGIS
 permalink: /ArcGIS/snippet
 ---
 
-# Geospatial Snippet Collection
+# ArcGIS Pro Snippet Collection
 Personal Projects and Curiosity-Driven Explorations
 <br>
 

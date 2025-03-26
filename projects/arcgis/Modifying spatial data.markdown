@@ -3,13 +3,13 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Modifing Spatial Data
+title: Modifying Spatial Data
 nav_order: 3
 parent: ArcGIS
 permalink: /ArcGIS/modify
 ---
 
-# Modifing Spatial Data
+# Modifying Spatial Data
 Personal Projects and Curiosity-Driven Explorations
 <br>
 

@@ -81,10 +81,17 @@ At this stage, the goal is to define the problem, align stakeholders, and set re
     - Conduct a discovery session with stakeholders (e.g., operations, security, logistics).
     - Clarify the objective: Why is capturing truck container data important? (e.g., security, tracking, inventory management).
     - Define success criteria: What will be considered a successful implementation? (e.g., accuracy, speed, integration with existing systems).
+    - Start with the business problem, scope and risks:
+      - What’s the business risk?
+      - What’s the business goal?
+      - What’s the forecasting horizon?
+      - What’s the current business process?
+      - What’s the potential business impact?
   - **Feasibility Assessment**
     - Assess existing infrastructure: Are there cameras at entry gates? Is there an existing data pipeline?
     - Identify technical constraints: Lighting conditions, camera angles, motion blur, and data storage requirements.
     - Research best approaches: Optical Character Recognition (OCR), Computer Vision, or a combination with manual validation.
+    - assess the feasibility by conducting an exploration of the raw data.
   - **Stakeholder Alignment**
     - Present a high-level project plan.
     - Get buy-in from key teams (IT, operations, procurement).
