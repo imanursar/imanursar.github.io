@@ -169,6 +169,17 @@ unless there is a good reason for that.
     - **To limit the impact of outliers and extreme values we can decide to present the median**. This is acceptable as long as clearly explained within the findings.
     - **Some authors have recommended that true extreme values should always stay in the analysis**. In practice, many exceptions are made to that rule. We can grouping those values as “excluded from analysis”.
 
+#### Evaluate and improve the data quality:
+- **How the data is collected, and under what conditions?**
+    The environment where the data was collected does matter. The environment includes, but not limited to, the location, timing, weather conditions, etc.
+- **What does the data represent?**
+    Does it include everyone? Only the people in the city?. Or, perhaps, only those who opted to answer because they had a strong opinion about the topic.
+- **What are the methods used to clean the data and why?**
+    Different methods can be better in different situations or with different data types.
+- **Do you invest the time and money in improving the process?**
+    Investing in people and the process is as critical as investing in the technology.
+
+
 ## Documenting Changes
 Documentation of error, alterations, additions and error checking is essential to:
 
