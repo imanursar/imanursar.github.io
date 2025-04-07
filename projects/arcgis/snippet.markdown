@@ -10,9 +10,6 @@ permalink: /ArcGIS/snippet
 ---
 
 # ArcGIS Pro Snippet Collection
-Personal Projects and Curiosity-Driven Explorations
-<br>
-
 geospatial
 {: .badge .badge-pill .badge-primary }
 map

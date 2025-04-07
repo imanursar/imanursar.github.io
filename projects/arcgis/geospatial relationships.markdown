@@ -10,9 +10,6 @@ permalink: /ArcGIS/geospatial relationships
 ---
 
 # Exploring geospatial relationships
-Personal Projects and Curiosity-Driven Explorations
-<br>
-
 geospatial
 {: .badge .badge-pill .badge-primary }
 map
