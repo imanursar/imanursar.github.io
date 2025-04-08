@@ -6,7 +6,7 @@ layout: default
 title: Geoprocessing Model - Automating tasks
 nav_order: 5
 parent: ArcGIS
-permalink: /ArcGIS/automate
+permalink: /ArcGIS/automate tasks
 ---
 
 # Geoprocessing Model - Automating tasks
@@ -23,9 +23,9 @@ snippet
 
 In this project we will learn three ways for storing and automating multiple-operation workflows. Workflow definition, storage, and automation facilitate and standardize geospatial solutions. These capabilities are especially useful for organizations that anticipate performing a workflow many times.
 
-- automating tasks — This feature allows we to walk the user through a series of predefined steps that can incorporate (or call) commands and geoprocessing tools, including model and script tools. It can serve as a  best practices or a workflow tutorial—a documented series of instructions that call forth the correct commands or tools. And the tasks can be shared as part of a project, allowing users to share their knowledge.
-- ModelBuilder™ — a geoprocessing environment that allows we to easily link one tool to another and run a set of operations one after another. ModelBuilder provides a helpful visual diagram of geoprocessing workflows and includes advanced capabilities such as looping and if-then scenarios.
-- automate our work with Python — We will write a command and use a custom script tool (created with Python) that performs multiple operations.
+- [Automating tasks](https://imanursar.github.io/ArcGIS/automate tasks) — This feature allows we to walk the user through a series of predefined steps that can incorporate (or call) commands and geoprocessing tools, including model and script tools. It can serve as a  best practices or a workflow tutorial—a documented series of instructions that call forth the correct commands or tools. And the tasks can be shared as part of a project, allowing users to share their knowledge.
+- [ModelBuilder™](https://imanursar.github.io/ArcGIS/modelbuilder) — a geoprocessing environment that allows we to easily link one tool to another and run a set of operations one after another. ModelBuilder provides a helpful visual diagram of geoprocessing workflows and includes advanced capabilities such as looping and if-then scenarios.
+- [Automate with Python](https://imanursar.github.io/ArcGIS/automate python) — We will write a command and use a custom script tool (created with Python) that performs multiple operations.
 
 ## Study case scenario
 We are employed by a nonprofit agency whose primary objective is

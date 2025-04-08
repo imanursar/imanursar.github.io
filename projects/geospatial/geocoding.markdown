@@ -37,13 +37,15 @@ We’ll be working with the Zomato - India Restaurant dataset, which includes va
 data = pd.read_csv(r'..\map\zomato.csv',encoding="ISO-8859-1")
 df = data[['Locality']]
 ```
-|    | Locality                                   |
-|---:|:-------------------------------------------|
-|  0 | Century City Mall, Poblacion, Makati City  |
-|  1 | Little Tokyo, Legaspi Village, Makati City |
-|  2 | Edsa Shangri-La, Ortigas, Mandaluyong City |
-|  3 | SM Megamall, Ortigas, Mandaluyong City     |
-|  4 | SM Megamall, Ortigas, Mandaluyong City     |
+
+
+| | Locality                                   |
+|-|:-------------------------------------------|
+|0| Century City Mall, Poblacion, Makati City  |
+|1| Little Tokyo, Legaspi Village, Makati City |
+|2| Edsa Shangri-La, Ortigas, Mandaluyong City |
+|3| SM Megamall, Ortigas, Mandaluyong City     |
+|4| SM Megamall, Ortigas, Mandaluyong City     |
 
 
 ## Get the coordinate for each locations
