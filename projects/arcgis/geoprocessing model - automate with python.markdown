@@ -10,13 +10,13 @@ permalink: /ArcGIS/automate python
 ---
 
 # Geoprocessing Model - Automating with Python
+argispro
+{: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
 map
 {: .badge .badge-pill .badge-secondary }
 esri
-{: .badge .badge-pill .badge-info }
-snippet
 {: .badge .badge-pill .badge-info }
 
 <img src="/assets/images/esri/esri_34.webp" alt="drawing"  width="500"/>
@@ -28,8 +28,7 @@ In this project we will learn three ways for storing and automating multiple-ope
 - [Automate with Python](https://imanursar.github.io/ArcGIS/automate python) — We will write a command and use a custom script tool (created with Python) that performs multiple operations.
 
 ## Study case scenario
-We are employed by a nonprofit agency whose primary objective is
-to raise awareness of and develop solutions for international human rights violations. Taking advantage of the public information offered by the Armed Conflict Location and Event Data (ACLED) project, we are creating maps that convey the impact of political violence in developing countries. We will present our maps at an international human rights conference for eventual incorporation into an awareness campaign.
+We are employed by a nonprofit agency whose primary objective is to raise awareness of and develop solutions for international human rights violations. Taking advantage of the public information offered by the Armed Conflict Location and Event Data (ACLED) project, we are creating maps that convey the impact of political violence in developing countries. We will present our maps at an international human rights conference for eventual incorporation into an awareness campaign.
 
 
 ## The Dataset

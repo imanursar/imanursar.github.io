@@ -10,13 +10,13 @@ permalink: /ArcGIS/presenting
 ---
 
 # Basic Presenting Map Project
+argispro
+{: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
 map
 {: .badge .badge-pill .badge-secondary }
 esri
-{: .badge .badge-pill .badge-info }
-snippet
 {: .badge .badge-pill .badge-info }
 
 <img src="/assets/images/esri/esri_104.webp" alt="drawing"  width="500"/>

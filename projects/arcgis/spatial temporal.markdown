@@ -10,16 +10,16 @@ permalink: /ArcGIS/spatial temporal
 ---
 
 # Analyzing spatial and temporal patterns
+argispro
+{: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
 map
 {: .badge .badge-pill .badge-secondary }
 esri
 {: .badge .badge-pill .badge-info }
-snippet
-{: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/esri_56.webp" alt="drawing"  width="500"/>
+<img src="/assets/images/esri/esri_71.webp" alt="drawing"  width="500"/>
 
 Crime mapping analysts can use GIS to identify spatial patterns to gain a better understanding of the role of location, proximity, and opportunity while providing key decision-makers with information to put crime prevention solutions in place.
 
