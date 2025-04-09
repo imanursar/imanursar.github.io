@@ -13,7 +13,7 @@ nav_order: 3
 descriptive analytics
 {: .badge .badge-pill .badge-primary }
 
-<img src="/assets/images/description/desc_07.png" alt="drawing" width="500"/>
+<img src="/assets/images/description/desc_07.webp" alt="drawing" width="500"/>
 
 ## Introduction
 Data quality profiling and exploratory data analysis are crucial steps in the process of Data Science and Machine Learning development. This project is one of the tool that can be used as the first step in the data understanding step of the data science workflow.
@@ -54,7 +54,7 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_22.png" alt="drawing"/>
+<img src="/assets/images/description/desc_22.webp" alt="drawing"/>
 
 _________________
 
@@ -72,12 +72,12 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_07.png" alt="drawing"/>
-<img src="/assets/images/description/desc_08.png" alt="drawing"/>
-<img src="/assets/images/description/desc_09.png" alt="drawing"/>
-<img src="/assets/images/description/desc_10.png" alt="drawing"/>
-<img src="/assets/images/description/desc_11.png" alt="drawing"/>
-<img src="/assets/images/description/desc_12.png" alt="drawing"/>
+<img src="/assets/images/description/desc_07.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_08.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_09.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_10.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_11.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_12.webp" alt="drawing"/>
 
 _________________
 
@@ -95,9 +95,9 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_17.png" alt="drawing"/>
-<img src="/assets/images/description/desc_18.png" alt="drawing"/>
-<img src="/assets/images/description/desc_19.png" alt="drawing"/>
+<img src="/assets/images/description/desc_17.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_18.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_19.webp" alt="drawing"/>
 
 _________________
 
@@ -113,8 +113,8 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_20.png" alt="drawing"/>
-<img src="/assets/images/description/desc_21.png" alt="drawing"/>
+<img src="/assets/images/description/desc_20.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_21.webp" alt="drawing"/>
 
 _________________
 

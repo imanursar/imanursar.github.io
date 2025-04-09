@@ -48,7 +48,7 @@ This function requires the following parameters:
 - **col** (`list`):                 column name
 
 ## The result
-<img src="/assets/images/description/desc_05.png" alt="drawing"/>
+<img src="/assets/images/description/desc_05.webp" alt="drawing"/>
 
 _________________
 
@@ -65,7 +65,7 @@ This function requires the following parameters:
 - **n** (`int`):             threshold of category in each column
 
 ## The result
-<img src="/assets/images/description/desc_06.png" alt="drawing"/>
+<img src="/assets/images/description/desc_06.webp" alt="drawing"/>
 
 _________________
 
@@ -85,9 +85,9 @@ This function requires the following parameters:
 - **footnote** (`string`):           footmap text
 
 ## The result
-<img src="/assets/images/description/desc_13.png" alt="drawing"/>
-<img src="/assets/images/description/desc_14.png" alt="drawing"/>
-<img src="/assets/images/description/desc_15.png" alt="drawing"/>
+<img src="/assets/images/description/desc_13.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_14.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_15.webp" alt="drawing"/>
 
 _________________
 
@@ -111,4 +111,4 @@ This function requires the following parameters:
 - **footnote** (`string`):          footmap text
 
 ## The result
-<img src="/assets/images/description/desc_16.png" alt="drawing"/>
+<img src="/assets/images/description/desc_16.webp" alt="drawing"/>

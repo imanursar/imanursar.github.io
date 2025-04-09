@@ -13,7 +13,7 @@ nav_order: 1
 descriptive analytics
 {: .badge .badge-pill .badge-primary }
 
-<img src="/assets/images/description/desc_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/description/desc_01.webp" alt="drawing" width="500"/>
 
 ## Introduction
 Descriptive analytics is the first step for every advanced analytics. This process will help us to understand and answer the 5W + 1H question before we expand our analytics.
@@ -64,7 +64,7 @@ This function requires the following parameters:
 - **image** (`Boolean`):            generate table plot  
 
 ## The result
-<img src="/assets/images/description/desc_01.png" alt="drawing"/>
+<img src="/assets/images/description/desc_01.webp" alt="drawing"/>
 
 ```
 table size 891 x 15

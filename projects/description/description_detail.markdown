@@ -58,7 +58,7 @@ sales.stb.freq(["product_group"])
 ```
 ### The result
 
-<img src="/assets/images/description/desc_23.png" alt="drawing"/>
+<img src="/assets/images/description/desc_23.webp" alt="drawing"/>
 
 _________________
 
@@ -77,8 +77,8 @@ sales.stb.freq(["product_group", "store"], value="last_week_sales")
 ```
 ### The result
 
-<img src="/assets/images/description/desc_24.png" alt="drawing"/>
-<img src="/assets/images/description/desc_25.png" alt="drawing"/>
+<img src="/assets/images/description/desc_24.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_25.webp" alt="drawing"/>
 
 _________________
 
@@ -100,7 +100,7 @@ sales.stb.counts(exclude="number")
 ```
 ### The result
 
-<img src="/assets/images/description/desc_26.png" alt="drawing"/>
+<img src="/assets/images/description/desc_26.webp" alt="drawing"/>
 
 _________________
 
@@ -114,7 +114,7 @@ sales.stb.missing()
 ```
 ### The result
 
-<img src="/assets/images/description/desc_27.png" alt="drawing"/>
+<img src="/assets/images/description/desc_27.webp" alt="drawing"/>
 
 _________________
 
@@ -128,4 +128,4 @@ sales[sales['product_group'].isin(['PG2','PG1'])]
 ```
 ### The result
 
-<img src="/assets/images/description/desc_27.png" alt="drawing"/>
+<img src="/assets/images/description/desc_27.webp" alt="drawing"/>

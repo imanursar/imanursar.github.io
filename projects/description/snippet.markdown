@@ -56,7 +56,7 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_02.png" alt="drawing"/>
+<img src="/assets/images/description/desc_02.webp" alt="drawing"/>
 
 _________________
 
@@ -72,7 +72,7 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/description/desc_03.png" alt="drawing"/>
+<img src="/assets/images/description/desc_03.webp" alt="drawing"/>
 
 _________________
 
@@ -129,6 +129,6 @@ This function requires the following parameters:
 - **col** (`list`):                 column name
 
 ## The result
-<img src="/assets/images/description/desc_04.png" alt="drawing"/>
+<img src="/assets/images/description/desc_04.webp" alt="drawing"/>
 
 _________________

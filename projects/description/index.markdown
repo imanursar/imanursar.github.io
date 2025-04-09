@@ -19,7 +19,7 @@ Personal Projects and Curiosity-Driven Explorations
 descriptive analytics
 {: .badge .badge-pill .badge-primary }
 
-<img src="/assets/images/description/desc_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/description/desc_01.webp" alt="drawing" width="500"/>
 
 Descriptive analytics is the first step for every advanced analytics. This process will help us to understand and answer the 5W + 1H question before we expand our analytics.
 

@@ -13,7 +13,7 @@ nav_order: 6
 descriptive analytics
 {: .badge .badge-pill .badge-primary }
 
-<img src="/assets/images/description/desc_29.png" alt="drawing" width="500"/>
+<img src="/assets/images/description/desc_29.webp" alt="drawing" width="500"/>
 
 ## Introduction
 This project aims to easy-to-use missing data visualizations and utilities that allows you to get a quick visual summary of the completeness (or lack thereof) of our dataset.
@@ -53,7 +53,7 @@ This function requires the following parameters:
 
 ### The result
 
-<img src="/assets/images/description/desc_28.png" alt="drawing"/>
+<img src="/assets/images/description/desc_28.webp" alt="drawing"/>
 
 _________________
 
@@ -77,8 +77,8 @@ Your selected dataframe has 15 columns.
 There are 4 columns that have missing values.
 ```
 
-<img src="/assets/images/description/desc_29.png" alt="drawing"/>
-<img src="/assets/images/description/desc_30.png" alt="drawing"/>
+<img src="/assets/images/description/desc_29.webp" alt="drawing"/>
+<img src="/assets/images/description/desc_30.webp" alt="drawing"/>
 _________________
 
 ## Third Example
@@ -98,6 +98,6 @@ This function requires the following parameters:
 
 ### The result
 
-<img src="/assets/images/description/desc_31.png" alt="drawing"/>
+<img src="/assets/images/description/desc_31.webp" alt="drawing"/>
 
 _________________
