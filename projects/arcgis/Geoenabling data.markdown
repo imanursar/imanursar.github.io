@@ -5,7 +5,7 @@
 layout: default
 title: Geo-enabling data - geocoding
 nav_order: 8
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/geocoding
 ---
 

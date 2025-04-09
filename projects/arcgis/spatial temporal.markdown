@@ -5,7 +5,7 @@
 layout: default
 title: Analyzing spatial and temporal patterns
 nav_order: 9
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/spatial temporal
 ---
 

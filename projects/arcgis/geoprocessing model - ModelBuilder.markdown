@@ -5,7 +5,7 @@
 layout: default
 title: Geoprocessing Model - ModelBuilder
 nav_order: 6
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/modelbuilder
 ---
 

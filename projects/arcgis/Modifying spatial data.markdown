@@ -5,7 +5,7 @@
 layout: default
 title: Modifying Spatial Data
 nav_order: 3
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/modify
 ---
 

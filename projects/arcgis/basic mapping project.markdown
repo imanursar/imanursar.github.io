@@ -5,7 +5,7 @@
 layout: default
 title: Basic Presenting Map Project
 nav_order: 4
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/presenting
 ---
 

@@ -5,7 +5,7 @@
 layout: default
 title: Geoprocessing Model - Automating tasks
 nav_order: 5
-parent: ArcGIS
+parent: ArcGIS Pro
 permalink: /ArcGIS/automate tasks
 ---
 
