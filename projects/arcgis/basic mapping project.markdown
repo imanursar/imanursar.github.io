@@ -19,7 +19,7 @@ esri
 snippet
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/esri_104.png" alt="drawing"  width="500"/>
+<img src="/assets/images/esri/esri_104.webp" alt="drawing"  width="500"/>
 
 Maps convey our ideas about locations to the minds of map readers. It is a fine balance of communicating the appropriate amount of information by displaying data and graphic elements through a suitable medium, such as a paper map or mobile device.
 
@@ -56,12 +56,12 @@ In this part, we will apply detailed symbology to the data to visualize maximum 
 
 To do that, we need the Wireline_Broadband layer represents all census tracts that have wired broadband technologies, and the Wireless_Broadband layer represents areas that have wireless technologies. represents areas that have wireless technologies. we are required to show only fixed wireless technology and visualize it. To show only fixed wireless, we will create a definition query to select a subset of all the wireless technologies.
 
-<img src="/assets/images/esri/esri_95.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_95.webp" alt="drawing"/>
 
 ### Apply a definition query
 To make it easier to analyze, we filter our data only for `wireless broadband technology` with values `Terrestrial Fixed Wireless technologies Unlicensed and Licensed` . This value needed to isolates only fixed wireless technology areas. 
 
-<img src="/assets/images/esri/esri_97.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_97.webp" alt="drawing"/>
 
 ### Fine-tune the categories
 Next, we will apply more detailed symbology to the wireless broadband layer to show the maximum advertised download speed available. we will symbolize only broadband download speeds that are `faster than 768 kilobits per second (Kbps)`. 
@@ -75,12 +75,12 @@ This process can be done by aggragate and lebeling `Maximum_Advertised_Downstrea
 - 1.5 to 3 mbps
 - 768 kbps to 1.5 mbps
 
-<img src="/assets/images/esri/esri_98.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_98.webp" alt="drawing"/>
 
 ### Apply symbol layer drawing
 Next, we will look at the symbology on the map and compare it with the order of the color ramp in the Contents pane. It may be difficult to see how overlapping features are being represented, but when we inspect it closely, the higher speeds are drawn in a lower order. we will use symbol layer drawing to control the drawing order of feature symbology—essentially overriding the default drawing sequence.
 
-<img src="/assets/images/esri/esri_99.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_99.webp" alt="drawing"/>
 
 This map now shows coverage by fixed broadband technologies (DSL,
 cable, fiber, and fixed wireless) based on maximum advertised download speeds marketed to all consumer levels, including commercial businesses. 
@@ -91,7 +91,7 @@ cable, fiber, and fixed wireless) based on maximum advertised download speeds ma
 ### Label at point or area
 In this part, we will focus on `Community_Anchor_Institutes` dataset. Our mapping project also requires features to be labeled on the Community Anchor Institutes map. Labels are based on one or more feature attributes and placed near or on a feature. We utilize dynamic labeling —  Label positions that can change depending on map scale, addition or removal of features, or the attribute used. 
 
-<img src="/assets/images/esri/esri_96.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_96.webp" alt="drawing"/>
 
 By default, ARGIS Pro uses Maplex Label Engine. By this engine, we have access to a new set of label placement properties that allow us to control how labels are oriented, formatted, and placed in feature-dense areas and how conflicts between labels
 can be resolved. In addition to the standard feature types, Maplex Label Engine provides label placement options for features such as streets, contours, rivers, boundaries, and land parcels. 
@@ -108,7 +108,7 @@ Next, we apply there settings to get The labels to look more legible on the map:
 - Measure Offset From to    = Exact Symbol Outline
 - Stack - Change Maximum Number of Lines = 2
 
-<img src="/assets/images/esri/esri_100.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_100.webp" alt="drawing"/>
 
 By apply these settings, The labels now look properly placed without overcrowding. We can make the lables appear at only specific map scales, you can specify a label visibility range. In `minimum scale` value, we can type `1:450.000`. It mean that when the map is zoomed out beyond 1:450,000, the labels are not displayed.
 
@@ -123,7 +123,7 @@ By select `Countries layer` we can apply these settings:
 
 The county labels are switched from the default regular placement to boundary placement, which means that they follow the boundary lines close. This type of labeling allows readers to easily locate boundaries on a map.
 
-<img src="/assets/images/esri/esri_100.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_100.webp" alt="drawing"/>
 
 
 ## Create a page layout 
@@ -150,7 +150,7 @@ Speed map
   - top-right anchor
   - snap the map to the Vertical Guideline
 
-<img src="/assets/images/esri/esri_102.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_102.webp" alt="drawing"/>
 
 ### Insert a legend element
 A legend will help your map readers understand the meaning of the broadband speed symbols on the map as well as the status of public Wi-Fi availability at libraries in Utah County. A basic legend consists of a patch (symbol) and a label (explanatory text).
@@ -167,7 +167,7 @@ We apply these settings on our page layout:
 - To adjust the gap to improve the spacing around the patches and
 labels, increase the Background X and Y gaps to 0.1 inches.
 
-<img src="/assets/images/esri/esri_103.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_103.webp" alt="drawing"/>
 
 ### Insert a scale bar
 A scale bar is a dynamic element that provides an indication of the size of features and distances on the map.
@@ -207,7 +207,7 @@ For a rectangle we apply these settings on our page layout:
 
 
 ## The Result
-<img src="/assets/images/esri/esri_104.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_104.webp" alt="drawing"/>
 
 
 ### Save a layout template

@@ -19,7 +19,7 @@ esri
 snippet
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/esri_33.png" alt="drawing"  width="500"/>
+<img src="/assets/images/esri/esri_33.webp" alt="drawing"  width="500"/>
 
 In this project we will learn three ways for storing and automating multiple-operation workflows. Workflow definition, storage, and automation facilitate and standardize geospatial solutions. These capabilities are especially useful for organizations that anticipate performing a workflow many times.
 
@@ -37,7 +37,7 @@ The ACLED dataset we are using provides information on political violence in dev
 
 ACLED_2005_2018 — a point feature class that displays locations of armed conicts throughout Africa from 2005 to 2018 (Source: ACLED).
 
-<img src="/assets/images/esri/esri_18.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_18.webp" alt="drawing"/>
 
 
 ## ModelBuilder
@@ -45,7 +45,7 @@ ModelBuilder, packaged within ArcGIS Pro, is a design environment for creating s
 
 We will continue working with the Conflict dataset for Rwanda, which displays conflicts that occurred in Rwanda between 2010 and 2018. Conflict locations are symbolized using graduated symbols so that larger symbols show greater fatalities. 
 
-<img src="/assets/images/esri/esri_29.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_29.webp" alt="drawing"/>
 
 ### Add operations to ModelBuilder
 To create a new geoprocessing model, we can use this path. 
@@ -77,7 +77,7 @@ we apply there parameters to our `Summary Statistics tool`:
 
 Using ModelBuilder, we have connected this operation to the output of the selection operation. The statistics will be calculated only for selected features.
 
-<img src="/assets/images/esri/esri_30.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_30.webp" alt="drawing"/>
 
 Additionally, we can automatically resize and fit our diagram model by using `Auto Layout` button at ModelBuilder ribbon. 
 
@@ -86,8 +86,8 @@ On the ModelBuilder tab, in the Run group, click Run. A progress window appears 
 
 After run the model, the result will be shown at main map, like image below.
 
-<img src="/assets/images/esri/esri_31.png" alt="drawing"/>
-<img src="/assets/images/esri/esri_32.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_31.webp" alt="drawing"/>
+<img src="/assets/images/esri/esri_32.webp" alt="drawing"/>
 
 
 ### Convert a model to a geoprocessing tool
@@ -102,4 +102,4 @@ We can turn a model into a stand-alone geoprocessing tool that we can share and 
 
 By that steps Our model looks like a regular geoprocessing tool that appear at pane at the right.
 
-<img src="/assets/images/esri/esri_33.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_33.webp" alt="drawing"/>

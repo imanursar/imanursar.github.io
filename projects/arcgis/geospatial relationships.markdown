@@ -32,7 +32,7 @@ Some studies suggest that people with lower income have higher incidence of
 obesity and diabetes. You want to see if there is an obvious correlation
 between median income and obesity rates in Illinois counties. Although you cannot draw scientific conclusions from a visual observation, you can determine whether further analysis is warranted.
 
-<img src="/assets/images/esri/esri_05.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_05.webp" alt="drawing"/>
 
 Notice that the new class breaks change your map dramatically: most counties are now in the second-lowest category (23.1% to 27%), because no more than 27 percent of their populations are considered obese. The highest category (31.1% to 35%) is reserved for counties with more than 31 percent of their population considered obese. The higher thresholds are required to accommodate the higher percentages of subsequent years.
 
@@ -46,7 +46,7 @@ We can comparing yearly of our data. Lets say that we want to compare 2004 to 20
 ## Generate Statistic calculation
 We can calculate difference percentage value and generate a layer. The Percent change layer shows which counties had the greatest increases between 2004 and 2010. These darker counties might be of interest to researchers and policymakers. The reason for the sudden changes should be investigated.
 
-<img src="/assets/images/esri/esri_07.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_07.webp" alt="drawing"/>
 
 
 ## Connect spatial datasets
@@ -54,13 +54,13 @@ We will test one more hypothesis: that obesity rates correlate with higher numbe
 
 This map will show that relation between population in yearly data and IL_food_deserts. This layer shows Illinois data for the census tract level rather than the county level. 
 
-<img src="/assets/images/esri/esri_08.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_08.webp" alt="drawing"/>
 
 Although some counties have both high obesity prevalence and a high number of food desert tracts, there does not seem to be an obvious correlation at first glance. Some red counties have zero or only one food desert tract, while others have several.
 
 Although you hoped to see some obvious correlative patterns between obesity, income, and food deserts in your initial visual analysis, the comparison of thematic maps is not the end of the story.
 
-<img src="/assets/images/esri/esri_09.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_09.webp" alt="drawing"/>
 
 
 

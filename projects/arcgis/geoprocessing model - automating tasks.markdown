@@ -19,7 +19,7 @@ esri
 snippet
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/esri_28.png" alt="drawing" width="500"/>
+<img src="/assets/images/esri/esri_28.webp" alt="drawing" width="500"/>
 
 In this project we will learn three ways for storing and automating multiple-operation workflows. Workflow definition, storage, and automation facilitate and standardize geospatial solutions. These capabilities are especially useful for organizations that anticipate performing a workflow many times.
 
@@ -37,7 +37,7 @@ The ACLED dataset we are using provides information on political violence in dev
 
 ACLED_2005_2018 — a point feature class that displays locations of armed conicts throughout Africa from 2005 to 2018 (Source: ACLED).
 
-<img src="/assets/images/esri/esri_18.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_18.webp" alt="drawing"/>
 
 
 ## Automating tasks
@@ -50,41 +50,41 @@ In this part, we will use precongured tasks and modifing it for new task.
 
 To access the tasks we can use this path, On the View tab, in the Windows group, click the Tasks button to show the Tasks pane. When the Tasks pane opens, we will see the Create Conflict Maps task item.
 
-<img src="/assets/images/esri/esri_18_1.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_18_1.webp" alt="drawing"/>
 
 Each task contains some steps, with the Progress indicator at the bottom. 
 
-<img src="/assets/images/esri/esri_19.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_19.webp" alt="drawing"/>
 
-<img src="/assets/images/esri/esri_19_1.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_19_1.webp" alt="drawing"/>
 
 ### First task - definition query
 The first task facilitates the creation of a `definition query`, which limits the display of features to features that meet user-defined criteria. This step opens the query builder, which is on the Definition Query tab of Layer Properties. The rest of the step relies on manual input, with the instructions documented in the task step.
 
 The final result of the first task as shown below.
 
-<img src="/assets/images/esri/esri_20.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_20.webp" alt="drawing"/>
 
 In this part, we filter our data on `Country = south sudan` and limit our windows time data for `year >= 2010`.
 
 ### Symbolize layer
 This task has only one step, to change symbol to `Graduated symbol` on the `Fatalities` parameter with three classes. 
 
-<img src="/assets/images/esri/esri_21.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_21.webp" alt="drawing"/>
 
 ### Make Selection
 This task also has one step. To select only those `EVENT_TYPE = Violence against Civilians`. The Select Layer by Attribute tool is embedded within the Tasks pane, with default parameters preselected.
 
 The result of these tasks can be shown at below image.
 
-<img src="/assets/images/esri/esri_22.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_22.webp" alt="drawing"/>
 
 The map shows conflicts in South Sudan between 2010 and 2018, symbolized with graduated symbols, so that the increasing size corresponds to a greater number of fatalities. Conflicts that have been classified as violence against civilians are selected in cyan.
 
 ### Add a new task item.
 Next, we will add to an existing task item. In the Tasks pane, click Create Conflict Maps, and click the Options menu > Edit in Designer. This step opens the Task Designer. When the Task Designer is open, the Tasks pane reveals new buttons and tabs.
 
-<img src="/assets/images/esri/esri_23_1.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_23_1.webp" alt="drawing"/>
 
 In the Tasks pane, click the New Task button. A new task is now visible in the Tasks pane, and the Task Designer is updated to reflect the new task. Clicking any task in the Tasks pane will bring up the same task in the Task Designer.
 
@@ -102,7 +102,7 @@ To create default parameter for our new task, we can use `Edit tool` at Task Des
 
 The result of this new task can be shown at below image.
 
-<img src="/assets/images/esri/esri_23.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_23.webp" alt="drawing"/>
 
 Tasks provide the benefit of a built-in, how-to tutorial without needing separate documents to explain workflows. Whether they are commonly performed tasks or more obscure workflows that are performed only occasionally, storing the sequence of steps in a task item is a good way to ensure compliance and consistency.
 
@@ -110,16 +110,16 @@ Tasks provide the benefit of a built-in, how-to tutorial without needing separat
 ## Result for other countries
 
 ### **Egypt**
-<img src="/assets/images/esri/esri_24.png" alt="drawing"/>
-<img src="/assets/images/esri/esri_25.png" alt="drawing"/>
-<img src="/assets/images/esri/esri_26.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_24.webp" alt="drawing"/>
+<img src="/assets/images/esri/esri_25.webp" alt="drawing"/>
+<img src="/assets/images/esri/esri_26.webp" alt="drawing"/>
 
 ### **Libya**
-<img src="/assets/images/esri/esri_27.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_27.webp" alt="drawing"/>
 
 ### **Rwanda**
-<img src="/assets/images/esri/esri_29.png" alt="drawing"/>
-<img src="/assets/images/esri/esri_28.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_29.webp" alt="drawing"/>
+<img src="/assets/images/esri/esri_28.webp" alt="drawing"/>
 
 
 

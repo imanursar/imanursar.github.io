@@ -19,7 +19,7 @@ esri
 snippet
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/esri_34.png" alt="drawing"  width="500"/>
+<img src="/assets/images/esri/esri_34.webp" alt="drawing"  width="500"/>
 
 In this project we will learn three ways for storing and automating multiple-operation workflows. Workflow definition, storage, and automation facilitate and standardize geospatial solutions. These capabilities are especially useful for organizations that anticipate performing a workflow many times.
 
@@ -37,7 +37,7 @@ The ACLED dataset we are using provides information on political violence in dev
 
 ACLED_2005_2018 — a point feature class that displays locations of armed conicts throughout Africa from 2005 to 2018 (Source: ACLED).
 
-<img src="/assets/images/esri/esri_18.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_18.webp" alt="drawing"/>
 
 
 ## Automating with Python
@@ -50,7 +50,7 @@ Each process in Argis Pro can be translate into Python script. In Example, we ca
 
 To use python command and python code from tools, we can use - On the View menu, click the Python Window button, this step opens the Python window. Now we can paste our previous code from tool to this entry box.
 
-<img src="/assets/images/esri/esri_34_1.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_34_1.webp" alt="drawing"/>
 
 ```python
 arcpy.management.SaveToLayerFile(
@@ -101,5 +101,5 @@ The code includes the tool name, creation date, and description, followed by the
 
 Next, we can run out custom script tool by in the Catalog pane, right-click the Select and Summarize script tool, and click Open. 
 
-<img src="/assets/images/esri/esri_34.png" alt="drawing"/>
-<img src="/assets/images/esri/esri_35.png" alt="drawing"/>
+<img src="/assets/images/esri/esri_34.webp" alt="drawing"/>
+<img src="/assets/images/esri/esri_35.webp" alt="drawing"/>
