@@ -31,10 +31,14 @@ A surface, which is made up of raster cells, can be discrete data, which means t
 
 Every raster cell has a value. Some cells may have a value of zero (for instance, representing no precipitation), and some cells may have a value of NoData, which means that no values were recorded for that cell. NoData cells are ignored in raster calculations.
 
-<img src="/assets/images/esri/esri_105.png" alt="drawing" width="275"/>
-<img src="/assets/images/esri/esri_106.png" alt="drawing" width="275"/>
+<img src="/assets/images/esri/esri_105.webp" alt="drawing" width="275"/>
+<img src="/assets/images/esri/esri_106.webp" alt="drawing" width="275"/>
 
 About images: (Left) This raster of discrete data represents land cover. Data courtesy of Lake Tahoe Data Clearinghouse, US Geological Survey. (Right) This raster of continuous data represents elevation. Data courtesy of the Oce of Geographic Information (MassGIS), and the Commonwealth of Massachusetts Information Technology Division.
+
+The simple yet accurate to comparing raster and vector data is by using this image
+
+<img src="/assets/images/esri/raster-vs-vector-gis.webp" alt="drawing" width="275"/>
 
 
 ## Study case scenario
