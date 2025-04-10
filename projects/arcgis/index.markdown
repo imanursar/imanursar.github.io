@@ -189,3 +189,22 @@ Time is an important variable in analyzing crime. When using temporal data — i
 <span class="fs-3">
 [Read more](../ArcGIS/spatial temporal){: .btn }
 </span>
+
+
+## Determining suitability
+argispro
+{: .badge .badge-pill .badge-primary }
+geospatial
+{: .badge .badge-pill .badge-primary }
+map
+{: .badge .badge-pill .badge-secondary }
+esri
+{: .badge .badge-pill .badge-info }
+
+In this project, we will solve a common GIS problem: determining which areas are most suitable for a specific land-use purpose. 
+
+<img src="/assets/images/esri/esri_92.webp" alt="drawing"  width="500"/>
+
+<span class="fs-3">
+[Read more](../ArcGIS/suitability){: .btn }
+</span>
