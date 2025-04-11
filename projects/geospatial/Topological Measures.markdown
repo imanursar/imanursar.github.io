@@ -9,7 +9,7 @@ permalink: /geospatial/topological
 nav_order: 23
 ---
 
-#  Topological Measures of Geographical Surfaces - 
+#  Topological Measures of Geographical Surfaces
 
 geospatial
 {: .badge .badge-pill .badge-primary }
