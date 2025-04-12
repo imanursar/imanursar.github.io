@@ -15,7 +15,7 @@ data engineering
 data modeling
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/data/data_modeling_13.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling_13.webp" alt="drawing" width="500"/>
 
 ## What Is Data Modelling?
 <p style='text-align: justify;'>
@@ -68,7 +68,7 @@ Assess gaps between current systems and the desired state:
 ---------------------------
 
 ## Data Sources and Input Tables
-<img src="/assets/images/data/data_modeling_07.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling_07.webp" alt="drawing" width="500"/>
 
 **Source Systems**:
 - List the source systems (e.g., transactional sales systems, procurement systems, ERP, third-party APIs).

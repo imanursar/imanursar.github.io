@@ -80,7 +80,7 @@ This method is can handle somewhat more complex tables compare to previous metho
 <img src="/assets/images/scrap/scrap_04.png" alt="drawing"/>
 <img src="/assets/images/scrap/scrap_05.png" alt="drawing"/>
 <img src="/assets/images/scrap/scrap_06.png" alt="drawing"/>
-<img src="/assets/images/scrap/scrap_07.png" alt="drawing"/>
+<img src="/assets/images/scrap/scrap_07.webp" alt="drawing"/>
 
 If our tables are too complex, then using plumber is one of the solution. It also helps extract not only tables, but also text. One has more control over what one wants to extract because one can manually define table areas — that being said, this does require more fine-tuning than a “just run it”-type of approach.
 
@@ -96,7 +96,7 @@ This method cannot recognize tables as such. However, when other methods fail, i
 
 
 ### tesseract
-<img src="/assets/images/scrap/scrap_08.png" alt="drawing"/>
+<img src="/assets/images/scrap/scrap_08.webp" alt="drawing"/>
 
 Sometimes, all methods listed above fail. This can be due to two reasons: 
 - Either the document is not text-based but scanned. 
@@ -105,4 +105,5 @@ Sometimes, all methods listed above fail. This can be due to two reasons:
 When this is the case, it is best to treat the PDF as an image and use OCR technology to read it. Tesseract is by far the most widespread tool for doing this.
 
 
-source: https://medium.com/data-science-collective/stop-copy-pasting-turn-pdfs-into-data-in-seconds-c5997d523133
+#### source
+- https://medium.com/data-science-collective/stop-copy-pasting-turn-pdfs-into-data-in-seconds-c5997d523133

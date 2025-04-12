@@ -17,7 +17,7 @@ data cleansing
 {: .badge .badge-pill .badge-secondary }
 
 A small guidance for data team to find the right data cleaning strategy
-<img src="/assets/images/data/data_cleansing_cover.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_cleansing_cover.webp" alt="drawing" width="500"/>
 
 ## **Introduction**
 No matter how fancy your model is or how clever your feature engineering gets, your insights are only as good as the data you start with. That’s why data quality isn’t just a checkbox, it’s the foundation of everything we do in data science.

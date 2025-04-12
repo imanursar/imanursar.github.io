@@ -28,7 +28,7 @@ data cleansing
 #### Why we need data cleaning process?
 <p style='text-align: justify;'> First of all, Data is dirty. Live with it. Data cleaning consists primarily in implementing error prevention strategies before they occur. However, error-prevention strategies can reduce but not eliminate common errors.</p>
 
-<img src="/assets/images/data/data_cleansing_cover.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_cleansing_cover.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../data strategic/data cleaning){: .btn }

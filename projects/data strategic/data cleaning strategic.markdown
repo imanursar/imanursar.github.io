@@ -17,7 +17,7 @@ data cleansing
 {: .badge .badge-pill .badge-secondary }
 
 A small guidance for data team to find the right data cleaning strategy
-<img src="/assets/images/data/data_cleansing_cover.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_cleansing_cover.webp" alt="drawing" width="500"/>
 
 ## Introduction
 #### What data cleaning is?
@@ -32,7 +32,7 @@ Even with the best error prevention strategies in place, there will still be a n
 In analytic and modeling perspective, there are some main guidelines that need to be fulfilled such as: Quality data beats fancy algorithms, or Garbage in, garbage out. A simple algorithm can outweigh a complex one just because it was given enough and high-quality data.</p>
 
 #### Where the errors come from?
-<img src="/assets/images/data/data_cleansing_cover.png" alt="drawing"/>
+<img src="/assets/images/data/data_cleansing_cover.webp" alt="drawing"/>
 
 
 ## Sources of Error
