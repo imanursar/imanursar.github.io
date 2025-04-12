@@ -17,17 +17,17 @@ supervised learning
 evaluation
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/machine learning/evaluation_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/machine learning/evaluation_02.webp" alt="drawing" width="500"/>
 
 ## Performance metrics
 There are (minimum) 4 steps to build a machine learning model
 
-<img src="/assets/images/machine learning/evaluation_01.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_01.webp" alt="drawing"/>
 
 ## Evaluation Metrics Types
 Difference types of evaluation metrics for different type of algorithms
 
-<img src="/assets/images/machine learning/evaluation_02.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_02.webp" alt="drawing"/>
 
 In this section, we will focus on evaluation metrics for classification problems. It starts with a confusion matrix, and we go through its derived metrics and their pros and cons.
 
@@ -39,7 +39,7 @@ When dealing with classification problems, it is better to use a confusion matri
 - **True negatives (TN)**: Predicted negative and are actually negative
 - **False negatives (FN)**: Predicted negative and are actually positive
 
-<img src="/assets/images/machine learning/evaluation_03.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_03.webp" alt="drawing"/>
 
 ## Accuracy
 From confusion matrix, we can derived our metrics into most used metric to judge a model such as accuracy. 
@@ -53,14 +53,14 @@ From confusion matrix, we can derived our metrics into most used metric to judge
 - Detecting everyone as not having cancer gives an accuracy of 90% straight.
 The model did nothing here but just gave cancer free for all the 100 predictions.
 
-<img src="/assets/images/machine learning/evaluation_04.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_04.webp" alt="drawing"/>
 
 ## Precision
 The precision is intuitively the ability of the classifier not to label as positive a sample that is negative.
 
 - Gives percentage of positive instances out of the total predicted positive instances. Denominator is the model prediction done as positive from the whole given dataset.
 
-<img src="/assets/images/machine learning/evaluation_05.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_05.webp" alt="drawing"/>
 
 - Use it when you want to find the answer for the: **How much the model is right when it says it is right!**
 
@@ -69,7 +69,7 @@ The recall is intuitively the ability of the classifier to find all the positive
 
 - Gives percentage of positive instances out of the total actual positive instances. Denominator is actual number of positive instances present in the dataset
 
-<img src="/assets/images/machine learning/evaluation_06.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_06.webp" alt="drawing"/>
 
 - Use it when you want to find the answer for the: **How much extra right ones, the model missed when it showed the right ones!**
 
@@ -79,7 +79,7 @@ The recall is intuitively the ability of the classifier to find all the negative
 - Gives percentage of negative instances out of the total actual negative instances.
 Like Recall but the shift is on the negative instances. Denominator is actual number of negative instances present in the dataset
 
-<img src="/assets/images/machine learning/evaluation_07.png" alt="drawing"/>
+<img src="/assets/images/machine learning/evaluation_07.webp" alt="drawing"/>
 
 It is *finding out how many healthy patients were not having cancer and were told they don't have cancer.*
 
@@ -90,7 +90,7 @@ can be interpreted as a harmonic mean of the precision and recall, its best valu
 - The relative contribution of precision and recall to the F1 score are equal.
 - Model does well in F1 score if the positive predicted are actually positives (precision) and doesn't miss out on positives and predicts them negative (recall).
 
-<img src="/assets/images/machine learning/evaluation_08.png" alt="drawing" width="400"/>
+<img src="/assets/images/machine learning/evaluation_08.webp" alt="drawing" width="400"/>
 
 - One drawback: Both precision and recall are given equal importance due to which according to our application we may need one higher than the other and F1 score may not be the exact metric for it.
 
@@ -101,7 +101,7 @@ PR Curve is a plot of the precision (y-axis) and the recall (x-axis) for differe
 - In the figure: 4 predictors showing their respective precision- recall curve  for various threshold values.
 - Top right part of the graph is the ideal space  where we get high precision and recall 
 
-<img src="/assets/images/machine learning/evaluation_09.png" alt="drawing" width="600"/>
+<img src="/assets/images/machine learning/evaluation_09.webp" alt="drawing" width="600"/>
 
 [source](https://www.researchgate.net/figurePrecision-Recall-PR-curve-comparison_fig3_365784229)
 
@@ -115,16 +115,16 @@ How to choose the predictor and the threshold value?
 ## ROC Curve
 ROC curve is a plot that summarizes the performance of a binary classification model on the positive class.
 
-<img src="/assets/images/machine learning/evaluation_10.png" alt="drawing" width="400"/>
+<img src="/assets/images/machine learning/evaluation_10.webp" alt="drawing" width="400"/>
 
 - ROC stands for Receiver Operating Characteristic.
 - Graph is plotted against TPR and FPR for various  threshold values.
 - TPR increases, FPR also increases.
 - Comparing different predictors (here 3) on a given dataset also becomes easy as you can see in right side figure, one can choose the threshold according to the application at hand.
 
-<img src="/assets/images/machine learning/evaluation_11.png" alt="drawing" width="400"/>
+<img src="/assets/images/machine learning/evaluation_11.webp" alt="drawing" width="400"/>
 
-<img src="/assets/images/machine learning/evaluation_12.png" alt="drawing" width="400"/>
+<img src="/assets/images/machine learning/evaluation_12.webp" alt="drawing" width="400"/>
 
 ## Which metrics that we can use for our model?
 Select metrics that match your goals, data, and methods.

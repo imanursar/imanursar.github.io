@@ -68,7 +68,7 @@ remote sensing
 <div style="text-align: justify">
 Change detection involves analyzing 2 or more multitemporal remote sensing images covering the same area to find any changes that may have occurred at different times.</div>
 
-<img src="/assets/images/geospatial/change_detection//change_detection_cover.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/change_detection//change_detection_cover.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](/geospatial/change detection/){: .btn }

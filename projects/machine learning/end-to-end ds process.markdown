@@ -16,7 +16,7 @@ supervised learning
 {: .badge .badge-pill .badge-secondary }
 
 
-<img src="/assets/images/machine learning/end to end/end_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/machine learning/end to end/end_01.webp" alt="drawing" width="500"/>
 
 ## **Introduction**
 
@@ -73,7 +73,7 @@ This project consists of multiple key objectives, each contributing to better lo
 
 This part is a cross-functional effort involving logistics, IT, and operations. By following this structured approach, we ensure that the solution is practical, scalable, and valuable to the business. The key success factors are aligning stakeholders, iterative testing, and designing for real-world challenges from the start.
 
-<img src="/assets/images/machine learning/end to end/end_01.png" alt="drawing"/>
+<img src="/assets/images/machine learning/end to end/end_01.webp" alt="drawing"/>
 
 ### **Project Initiation**
 At this stage, the goal is to define the problem, align stakeholders, and set realistic expectations.
@@ -177,7 +177,7 @@ Since the goal is to capture the journey of a truck through multiple checkpoints
 ### **Database Schema Design**
 To keep the database structured and easy to query, we will use a relational model with the following key tables:
 
-<img src="/assets/images/machine learning/end to end/end_02.png" alt="drawing"/>
+<img src="/assets/images/machine learning/end to end/end_02.webp" alt="drawing"/>
 
   - **Truck Table (Master data for trucks)** -- Stores truck-specific information.
 	```sql
@@ -203,7 +203,7 @@ To keep the database structured and easy to query, we will use a relational mode
 	);
 	```
 
-<img src="/assets/images/machine learning/end to end/end_03.png" alt="drawing"/>
+<img src="/assets/images/machine learning/end to end/end_03.webp" alt="drawing"/>
 
   - **Checkpoint Table (Each step in the journey)** -- Logs truck progression through the checkpoints.
 	```sql
@@ -296,7 +296,7 @@ To keep the dashboard clean and structured, I would design three main pages:
   - **Checkpoint Performance Page** -- Detailed analysis of each checkpoint's efficiency & compliance.
   - **Fulfillment Page** -- Tracks purchase fulfillment and any shortages.
 
-<img src="/assets/images/machine learning/end to end/end_04.png" alt="drawing"/>
+<img src="/assets/images/machine learning/end to end/end_04.webp" alt="drawing"/>
 
 ### **Page Breakdown and Metrics**
 
@@ -349,7 +349,7 @@ This structured dashboard design ensures that the operational supervisor can qui
 
 By utilize CRISP-DM framework, we ensure a practical, data-driven solution to predict truck arrival times. And by choosing a combination of machine learning and statistical methods, we balance accuracy, interpretability, and operational usability.
 
-<img src="/assets/images/machine learning/end to end/end_05.png" alt="drawing"/>
+<img src="/assets/images/machine learning/end to end/end_05.webp" alt="drawing"/>
 
 ### **Understanding the Problem**
 The goal is to predict when a truck will arrive at the premise based on available data. This helps operational teams optimize resource allocation, reduce waiting times, and improve efficiency in handling truck arrivals.
