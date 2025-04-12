@@ -65,7 +65,8 @@ In a retail setting, attractiveness might include:
 We can even use `composite scores`, combining multiple factors into one weighted value (weighted index from several metrics) that reflects how desirable a location is. The key is: what drives customer behavior in our market?
 
 ### Example
-Let’s say we have three stores:
+
+Let's say we have three stores:
 |   store_id |   Size (sqm) |   Monthly Sales |   Brand Score | Attractiveness (Composite)            |
 |-----------:|-----------------:|------:|------:|:--------------------|
 |          1 |              500 | 100,000 | 80  | 0.5×Size + 0.3×Sales + 0.2×Brand  |
