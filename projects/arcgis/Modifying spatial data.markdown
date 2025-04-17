@@ -10,7 +10,7 @@ permalink: /ArcGIS/modify
 ---
 
 # Modifying Spatial Data
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

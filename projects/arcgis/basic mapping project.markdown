@@ -10,7 +10,7 @@ permalink: /ArcGIS/presenting
 ---
 
 # Basic Presenting Map Project
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -93,7 +93,7 @@ In this part, we will focus on `Community_Anchor_Institutes` dataset. Our mappin
 
 <img src="/assets/images/esri/esri_96.webp" alt="drawing"/>
 
-By default, ARGIS Pro uses Maplex Label Engine. By this engine, we have access to a new set of label placement properties that allow us to control how labels are oriented, formatted, and placed in feature-dense areas and how conflicts between labels
+By default, ArcGIS Pro uses Maplex Label Engine. By this engine, we have access to a new set of label placement properties that allow us to control how labels are oriented, formatted, and placed in feature-dense areas and how conflicts between labels
 can be resolved. In addition to the standard feature types, Maplex Label Engine provides label placement options for features such as streets, contours, rivers, boundaries, and land parcels. 
 
 To get more readable map, we filtered only to show `PublicWifi = Unknown`. Additionally, we can use a label expression to change the labels from all uppercase letters to title case. 

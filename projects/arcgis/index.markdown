@@ -16,7 +16,7 @@ Personal Projects and Curiosity-Driven Explorations
 <br>
 
 ## Basic GIS in snippet
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 map
 {: .badge .badge-pill .badge-secondary }
@@ -33,7 +33,7 @@ snippet
 
 
 ## Exploring geospatial relationships
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -52,7 +52,7 @@ We will explore obesity prevalence rates by county, create visual aids for displ
 
 
 ## Modifying Spatial Data
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -71,7 +71,7 @@ We work in the GIS department of Troutdale, Oregon. One of our jobs is to mainta
 
 
 ## Basic Presenting Map Project
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -89,7 +89,7 @@ planning and policy, and study broadband trends.
 
 
 ## Geoprocessing Model - Automating tasks
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -110,7 +110,7 @@ We are employed by a nonprofit agency whose primary objective is to raise awaren
 
 
 ## Geoprocessing Model - ModelBuilder
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -131,7 +131,7 @@ We are employed by a nonprofit agency whose primary objective is to raise awaren
 
 
 ## Geoprocessing Model - Automating with Python
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -152,7 +152,7 @@ We are employed by a nonprofit agency whose primary objective is to raise awaren
 
 
 ## Geo-enabling data - geocoding
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -171,7 +171,7 @@ In ArcGIS Pro, we can also create features from information that describes or na
 
 
 ## Analyzing spatial and temporal patterns
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -192,7 +192,7 @@ Time is an important variable in analyzing crime. When using temporal data — i
 
 
 ## Determining suitability
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

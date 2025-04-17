@@ -10,6 +10,8 @@ permalink: /ArcGIS/snippet
 ---
 
 # ArcGIS Pro Snippet Collection
+arcgispro
+{: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
 map

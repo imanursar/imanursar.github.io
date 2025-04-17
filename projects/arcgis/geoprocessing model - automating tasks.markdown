@@ -10,7 +10,7 @@ permalink: /ArcGIS/automate tasks
 ---
 
 # Geoprocessing Model - Automating tasks
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

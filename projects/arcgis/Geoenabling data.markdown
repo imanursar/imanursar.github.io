@@ -10,7 +10,7 @@ permalink: /ArcGIS/geocoding
 ---
 
 # Geo-enabling data - geocoding
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

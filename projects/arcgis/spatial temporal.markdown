@@ -10,7 +10,7 @@ permalink: /ArcGIS/spatial temporal
 ---
 
 # Analyzing spatial and temporal patterns
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

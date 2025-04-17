@@ -10,7 +10,7 @@ permalink: /ArcGIS/suitability
 ---
 
 # Determining suitability
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

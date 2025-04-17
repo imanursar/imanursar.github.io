@@ -10,7 +10,7 @@ permalink: /ArcGIS/automate python
 ---
 
 # Geoprocessing Model - Automating with Python
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
@@ -45,7 +45,7 @@ We can also run geoprocessing tools, along with other functions, using Python. P
 We will continue using our previous dataset. We filter the layer’s definition to the country of Nigeria, displaying conflicts between 2010 and 2018. Next, we will using graduated symbols based on the FATALITIES field. Use the default classification method, change the number of classes to 3. 
 
 ### Run a command using Python
-Each process in Argis Pro can be translate into Python script. In Example, we can translate `Save to Layer File tool` from Geoprocessing pane by right-click the status bar at the bottom of the Geoprocessing pane, and click Copy Python Command - Or we can alternatively copy the Python command from the geoprocessing history on the Analysis tab > Geoprocessing group. On the View menu, click the Python Window button. This process will copy python code for `Save to Layer File tool` into our clipboard.
+Each process in ArcGIS Pro can be translate into Python script. In Example, we can translate `Save to Layer File tool` from Geoprocessing pane by right-click the status bar at the bottom of the Geoprocessing pane, and click Copy Python Command - Or we can alternatively copy the Python command from the geoprocessing history on the Analysis tab > Geoprocessing group. On the View menu, click the Python Window button. This process will copy python code for `Save to Layer File tool` into our clipboard.
 
 To use python command and python code from tools, we can use - On the View menu, click the Python Window button, this step opens the Python window. Now we can paste our previous code from tool to this entry box.
 

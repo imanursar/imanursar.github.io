@@ -10,7 +10,7 @@ permalink: /ArcGIS/modelbuilder
 ---
 
 # Geoprocessing Model - ModelBuilder
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }

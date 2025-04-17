@@ -10,7 +10,7 @@ permalink: /ArcGIS/geospatial relationships
 ---
 
 # Exploring geospatial relationships
-argispro
+arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
 {: .badge .badge-pill .badge-primary }
