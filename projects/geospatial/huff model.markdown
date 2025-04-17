@@ -67,6 +67,7 @@ We can even use `composite scores`, combining multiple factors into one weighted
 ### Example
 
 Let's say we have three stores:
+
 |   store_id |   Size (sqm) |   Monthly Sales |   Brand Score | Attractiveness (Composite)            |
 |-----------:|-----------------:|------:|------:|:--------------------|
 |          1 |              500 | 100,000 | 80  | 0.5×Size + 0.3×Sales + 0.2×Brand  |
