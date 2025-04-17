@@ -116,9 +116,9 @@ From OpenStreetMap (OMS), we collect main data such as:
 
 ## The Code
 To conduct this analysis, we can used several previous code to get all data.
-- `maps.get_geodata_area` with `types= 'polygon'` - get polygon area data
-- `maps.get_geodata_area` with `types= 'graph'` - get roads graph
-- `maps.extract_spatial` with specific `amenity_list` - get all requirement  features from specific area.
+- [`maps.get_geodata_area`](https://imanursar.github.io/scraping%20geo%20data/extract%20polygon#the-code) with `types= 'polygon'` - get polygon area data
+- [`maps.get_geodata_area`](https://imanursar.github.io/scraping%20geo%20data/extract%20graph#the-code) with `types= 'graph'` - get roads graph
+- [`maps.extract_spatial`](https://imanursar.github.io/scraping%20geo%20data/extract%20spatial#the-code) with specific `amenity_list` - get all requirement  features from specific area.
 
 ```python
 result = maps.get_geodata_area(places= [])
