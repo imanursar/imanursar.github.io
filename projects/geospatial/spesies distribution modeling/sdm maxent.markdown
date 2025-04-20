@@ -21,7 +21,7 @@ maxent model
 {: .badge .badge-pill .badge-info }
 
 
-<img src="/assets/images/geospatial/sdm/sdm_20.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/sdm/sdm_20.webp" alt="drawing" width="500"/>
 
 ## **Introduction**
 ### **Understanding Species Distribution Models (SDMs)**
@@ -91,11 +91,11 @@ gdf = gpd.read_file(os.getcwd()+'/data/ariolimax-ca.gpkg')
 
 Next, we can plot data from four species of Banana Slug across California.
 
-<img src="/assets/images/geospatial/sdm/sdm_05.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_05.webp" alt="drawing"/>
 
 And we can add raster data into our previous plot to get comparison between this two data.
 
-<img src="/assets/images/geospatial/sdm/sdm_06.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_06.webp" alt="drawing"/>
 
 
 ## **Drawing random pseudoabsence locations**
@@ -123,12 +123,12 @@ This function requires the following parameters:
 ### **uniform random geographic sample from unmasked locations within a raster's extent**
 we can use raster data to create a uniform random geographic sample from unmasked locations within a raster's extent.
 
-<img src="/assets/images/geospatial/sdm/sdm_07.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_07.webp" alt="drawing"/>
 
 ### **uniform random geographic sample from unmasked locations within a raster's extent**
 we can use raster data to use the rectangular bounds of the raster to draw samples.
 
-<img src="/assets/images/geospatial/sdm/sdm_08.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_08.webp" alt="drawing"/>
 
 ### **From a bias raster**
 We could also provide a "bias" file, where the raster grid cells contain information on the probability of sampling an area. Bias adjustments are recommended because species occurrence records are often biased towards certain locations (near roads, parks, or trails).
@@ -137,7 +137,7 @@ The grid cells can be an arbitrary range of values. What's important is that the
 
 We'll use the leaf area index (LAI) covariate to select more background samples from highly vegetated areas.
 
-<img src="/assets/images/geospatial/sdm/sdm_09.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_09.webp" alt="drawing"/>
 
 We can see that we are selecting a disproportionately high number of points along California's coast - home to dense redwood forests where slugs thrive - and disproportionately few samples in the dry deserts in the southeast.
 
@@ -146,7 +146,7 @@ Another way to address bias would be to only select points inside area where tha
 
 The Ariolimax dataset contains occurrence records for four species within the genus. If we're interested in understanding the distributions of only one of them, we could construct a rudimentary "range map" for this genus by computing the bounding geometry of all points then sampling within those bounds.
 
-<img src="/assets/images/geospatial/sdm/sdm_10.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_10.webp" alt="drawing"/>
 
 - The yellow polygon above shows the simple "range map".
 - The blue points are point samples selected from within that range.
@@ -173,7 +173,7 @@ This function requires the following parameters:
 
 Next let's plot some histograms to understand the similarities and differences between the conditions at presence locations and at background locations.
 
-<img src="/assets/images/geospatial/sdm/sdm_11.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_11.webp" alt="drawing"/>
 
 This checks out. Slugs are commonly found in areas with higher annual cloud cover, consistently cool temperatures, and high vegetation growth (even after adjusting for bias and oversampling areas with high LAI).
 
@@ -204,14 +204,14 @@ This function requires the following parameters:
 ### **Compute weights based on the distance to the nearest point**
 This code with `distance` will calculate weights based on the distance to the nearest neighbor.
 
-<img src="/assets/images/geospatial/sdm/sdm_12.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_12.webp" alt="drawing"/>
 
 There's one lone point in the northwest corner that is assigned a very high weight because it's so isolated.
 
 ### **Compute weights based on the distance to the nearest point**
 This code with `density` will compute the average distance from each point to all other points, computing sample weights from point density instead of the distance to the single nearest point. This may be useful if you have small clusters of a few points far away from large, densely populated regions.
 
-<img src="/assets/images/geospatial/sdm/sdm_13.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_13.webp" alt="drawing"/>
 
 As you can see, there are tradeoffs for finding the best sample weights depending on the spatial distributions of each occurrence dataset. We'll use the sample density weights here to upweight the samples in the sierras (the northeastern cluster of points).
 
@@ -241,14 +241,14 @@ With a "checkerbox" train/test split, points are intersected along a regular gri
 
 The height and width of the grid used to split the data is controlled by the `grid_size` parameter. This should specify distance in the units of the point data's CRS.
 
-<img src="/assets/images/geospatial/sdm/sdm_14.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_14.webp" alt="drawing"/>
 
 ### **Geographic k-fold splits**
 Create k geographically-clustered folds using the GeographicKFold cross validation strategy. This method is effective for understanding how well models fit in one region will generalize to areas outside the training domain.
 
 This method uses KMeans clusters fit with the x/y locations of the point data, grouping points into spatially distinct groups. This cross-validation strategy is a good way to test how well models generalize outside of their training extents into novel geographic regions.
 
-<img src="/assets/images/geospatial/sdm/sdm_15.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_15.webp" alt="drawing"/>
 
 
 ## **Modeling**
@@ -327,7 +327,7 @@ confusion matrix =
 [[2169   99]
  [ 277  611]]
 ```
-<img src="/assets/images/geospatial/sdm/sdm_16.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_16.webp" alt="drawing"/>
 
 ```python
 accuracy_score =  0.8809
@@ -377,8 +377,8 @@ weighted avg       0.88      0.88      0.88      3156
 
 time span=  0:00:01.383780
 ```
-<img src="/assets/images/geospatial/sdm/sdm_17.png" alt="drawing"/>
-<img src="/assets/images/geospatial/sdm/sdm_18.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_17.webp" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_18.webp" alt="drawing"/>
 
 As you can see our model has good result, with:
 - accuracy_score =  0.8809
@@ -388,11 +388,11 @@ but need to mention that our model has low recall score `recall score =  0.6881`
 
 we can used output model to create partial dependence plots (PDP) to show how model predictions vary across the range of covariates
 
-<img src="/assets/images/geospatial/sdm/sdm_19.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_19.webp" alt="drawing"/>
 
 ## **Result**
 we can plot the suitability predictions
-<img src="/assets/images/geospatial/sdm/sdm_20.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_20.webp" alt="drawing"/>
 
 ## Source
 - https://earth-chris.github.io/elapid/sdm/maxent/

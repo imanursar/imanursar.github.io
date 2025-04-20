@@ -67,7 +67,7 @@ By utilizing machine learning, SDMs can process large datasets efficiently and g
 
 Whether you're an ecologist, a data scientist, or just an enthusiast in geospatial sciences, understanding SDMs opens doors to data-driven insights into species-environment interactions.
 
-<img src="/assets/images/geospatial/sdm/sdm_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/sdm/sdm_03.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](/geospatial/sdm/sdm/){: .btn }

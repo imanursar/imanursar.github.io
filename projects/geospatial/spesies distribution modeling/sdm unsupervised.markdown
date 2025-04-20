@@ -19,7 +19,7 @@ distribution models
 {: .badge .badge-pill .badge-info }
 
 
-<img src="/assets/images/geospatial/sdm/sdm_25.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/sdm/sdm_25.webp" alt="drawing" width="500"/>
 
 
 ## **Introduction**
@@ -114,10 +114,10 @@ coverages = load_dir(r"..\data\sdm sklearn\coverages")
 
 **Raster or map grid dataset**
 
-<img src="/assets/images/geospatial/sdm/sdm_21.png" alt="drawing" width="350"/>
-<img src="/assets/images/geospatial/sdm/sdm_22.png" alt="drawing" width="350"/>
-<img src="/assets/images/geospatial/sdm/sdm_23.png" alt="drawing" width="350"/>
-<img src="/assets/images/geospatial/sdm/sdm_24.png" alt="drawing" width="350"/>
+<img src="/assets/images/geospatial/sdm/sdm_21.webp" alt="drawing" width="350"/>
+<img src="/assets/images/geospatial/sdm/sdm_22.webp" alt="drawing" width="350"/>
+<img src="/assets/images/geospatial/sdm/sdm_23.webp" alt="drawing" width="350"/>
+<img src="/assets/images/geospatial/sdm/sdm_24.webp" alt="drawing" width="350"/>
 
 ## **Model**
 ### **Initiate Models**
@@ -148,18 +148,18 @@ This function requires the following parameters:
         - `Logloss =  0.1008`                             
         - `AUC of ROC =  0.8859`                             
 
-<img src="/assets/images/geospatial/sdm/sdm_27.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_27.webp" alt="drawing"/>
 
 - microryzomys minutus                             
         - `Logloss =  0.0907`                             
         - `AUC of ROC =  0.9934`                            
 
-<img src="/assets/images/geospatial/sdm/sdm_28.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_28.webp" alt="drawing"/>
 
 
 ## **The result**
-<img src="/assets/images/geospatial/sdm/sdm_25.png" alt="drawing"/>
-<img src="/assets/images/geospatial/sdm/sdm_26.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_25.webp" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_26.webp" alt="drawing"/>
 
 Images above will help use to predicting a mapping species suitability within the same geographic area and environmental conditions. SDMs help us to analyzing and predicting the relationships between species occurrences and environmental factors to predict where species are most likely (distribution) to be found—both now and in the future.
 

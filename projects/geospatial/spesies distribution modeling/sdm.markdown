@@ -19,7 +19,7 @@ distribution models
 {: .badge .badge-pill .badge-info }
 
 
-<img src="/assets/images/geospatial/sdm/sdm_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/sdm/sdm_03.webp" alt="drawing" width="500"/>
 
 
 ## **Introduction**
@@ -95,11 +95,11 @@ There are 19 raster features.
 
 ### **Presence Species Data**
 We can map the species presences `(pa==1)`.
-<img src="/assets/images/geospatial/sdm/sdm_01.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_01.webp" alt="drawing"/>
 
 ### **Background Data**
 We can map the background points `(pa == 0)`.
-<img src="/assets/images/geospatial/sdm/sdm_02.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_02.webp" alt="drawing"/>
 
 ### **Preparing Raster Data into Machine Learning**
 By using `pyimpute` library, we generate the raster maps of suitability into more acceptable data input for Machine learning model.
@@ -247,8 +247,8 @@ plt.show()
 ```
 
 ## **The result**
-<img src="/assets/images/geospatial/sdm/sdm_03.png" alt="drawing"/>
-<img src="/assets/images/geospatial/sdm/sdm_04.png" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_03.webp" alt="drawing"/>
+<img src="/assets/images/geospatial/sdm/sdm_04.webp" alt="drawing"/>
 
 Images above will help use to predicting a mapping species suitability within the same geographic area and environmental conditions. SDMs help us to analyzing and predicting the relationships between species occurrences and environmental factors to predict where species are most likely (distribution) to be found—both now and in the future.
 

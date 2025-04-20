@@ -18,7 +18,7 @@ map
 heatmap
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/cross_dock.webp" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -35,20 +35,20 @@ By leveraging this tool, we can generate heat maps that pinpoint high-density ar
 <p style='text-align: justify;'>
 The primary objective of this doc is to demonstrate how our tool's heat map analysis can inform and optimize cross-docking decisions. By identifying the most strategic Cross-Docking, we aim to significantly reduce last-mile delivery costs while maintaining or even improving service levels.</p>
 
-<img src="/assets/images/geospatial/heat_map/obj_1.png" alt="drawing" width="300"/>
-<img src="/assets/images/geospatial/heat_map/obj_2.png" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/heat_map/obj_1.webp" alt="drawing" width="300"/>
+<img src="/assets/images/geospatial/heat_map/obj_2.webp" alt="drawing" width="300"/>
 
 
 ## Schema
-<img src="/assets/images/geospatial/heat_map/schema.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/schema.webp" alt="drawing" width="500"/>
 
 
 ## Overview of the tool
-<img src="/assets/images/geospatial/heat_map/overview_tool.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/overview_tool.webp" alt="drawing" width="500"/>
 
 
 ## Dataset - Potential customer
-<img src="/assets/images/geospatial/heat_map/scrap.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/scrap.webp" alt="drawing" width="500"/>
 <p style='text-align: justify;'>
 We aggregate potential data from Google Maps by targeting specific customers, locations, and keywords.
 
@@ -117,7 +117,7 @@ Further breakdowns could include:
 </p>
 <br>
 
-<img src="/assets/images/geospatial/heat_map/table_1.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/heat_map/table_1.webp" alt="drawing" width="500"/>
 <p style='text-align: justify;'>
 As shown in the table above, we can measure the number of potential and registered buyers, the required tonnage, GMV, and sales orders generated for each city and channel category. This insight is crucial for formulating a strategic plan for the area, from both business and logistics perspectives.
 </p>
@@ -132,8 +132,8 @@ With this tool, we can comparing 2 points that lead us to get more insight and b
 
 <img src="/assets/images/geospatial/heat_map/map_adv_2.gif" alt="drawing" width="500"/>
 <p></p>
-<img src="/assets/images/geospatial/heat_map/table_2.png" alt="drawing" width="425"/>
-<img src="/assets/images/geospatial/heat_map/table_3.png" alt="drawing" width="425"/>
+<img src="/assets/images/geospatial/heat_map/table_2.webp" alt="drawing" width="425"/>
+<img src="/assets/images/geospatial/heat_map/table_3.webp" alt="drawing" width="425"/>
 
 #### South Jakarta
 
