@@ -104,6 +104,7 @@ coverages = load_dir(r"..\data\sdm sklearn\coverages")
 ```
 
 **Point-format dataset**
+
 |    | species              |   dd long |   dd lat |
 |---:|:---------------------|----------:|---------:|
 |  0 | microryzomys_minutus |  -64.7    | -17.85   |

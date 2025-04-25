@@ -47,7 +47,7 @@ By leveraging this tool, we can generate heat maps that pinpoint high-density ar
 
 By utilizing heat maps, we can more accurately identify optimal Cross-Docking that align with buyer and transaction concentrations. These identified zones can then be pursued as cross-docking locations to optimize last-mile logistics.</div>
 
-<img src="/assets/images/geospatial/cross_dock.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/cross_dock.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](/geospatial/heat map analysis){: .btn }
