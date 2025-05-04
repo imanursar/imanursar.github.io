@@ -57,6 +57,16 @@ Distinctive regions of the electromagnetic spectrum define Landsat’s spectral 
 <img src="/assets/images/scrap geo/remote_03.jpeg" alt="drawing"/>
 
 
+### Detail for each band
+- [What are the best Landsat spectral bands for use in my research?](https://www.usgs.gov/faqs/what-are-best-landsat-spectral-bands-use-my-research)
+- [Common Landsat Band Combinations](https://www.usgs.gov/media/images/common-landsat-band-combinations)
+- [What are the band designations for the Landsat satellites?](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites)
+- [How to Interpret Common False Color Images](https://earthobservatory.nasa.gov/features/FalseColor/page6.php)
+- [Color-Infrared (CIR) Imagery](https://www.mngeo.state.mn.us/chouse/airphoto/cir.html)
+- [Landsat 8 Bands and Band Combinations](https://gisgeography.com/landsat-8-bands-combinations/)
+- [Band Combinations for Landsat 9 Imagery](https://pressbooks.lib.vt.edu/remotesensing/chapter/chapter-16-band-combinations-for-landsat-9-imagery/)
+
+
 ## Sentinel
 
 Sentinel is also an Earth-imaging satellite program. The Sentinel program is designed, launched, and managed by the European Space Agency. Each Sentinel mission involves two satellites. For example, Sentinels 1-A (launched in 2014) and 1-B (launched in 2016) are radar imaging weather satellites. Sentinels 2-A (launched in 2015) and 2-B (launched in 2017) are multi-spectral high-resolution land-observation satellites comparable to the US Landsat system. The first of the Sentinel-6 satellites launched in 2020, with the second scheduled for 2025. Sentinel satellites monitor global sea level changes. To get more information we can see at [this link](https://www.esa.int/Applications/Observing_the_Earth/Copernicus/The_Sentinel_missions).
