@@ -17,12 +17,25 @@ heading_anchors: true
 I am an experienced Data Scientist with 5 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing tailored, scalable data solutions systems that meet the specific needs of various organizations. 
 
 Proficient in leveraging tools such as: 
-- **Data Engineering, Data pipelining and Warehousing**: PostgreSQL, MySQl, SQL, BigQuery, Apache Airflow, dbt, and Git. 
+- **Data Engineering, Data pipelining and Warehousing**: PostgreSQL, MySQl, SQL, BigQuery, Apache Airflow, dbt, and Git.
 - **Data Analytics & Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, and Tableau. 
-- **Machine Learning & AI**: Python, TensorFlow, scikit-learn, OpenCV, FastAPI, and data science deployment framework.
+- **Machine Learning & AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, FastAPI, Some Python Libraries, and Data Science Deployment Framework.
+- **GIS Tools**: ArcGIS Pro, Python, and data science deployment framework.
 - **Other Tools**: Google sheet, Excel, Confluence, and Jira.
 
-My expertise spans descriptive and diagnostic statistics, supervised and unsupervised machine learning models, Data Scraping, Scoring Systems, computer vision, Forecasting, Scoring, Simulation, Bayesian and geospatial modeling, as well as supply chain optimization.
+My expertise spans:
+- Descriptive and Diagnostic statistics
+- Predictive and Prescriptive Model
+- Supervised and Unsupervised Machine Learning and Deep Learning Models
+- Data Scraping
+- Scoring Systems
+- Computer Vision
+- Forecasting
+- Scoring Recommendation
+- Simulation
+- Geospatial Modeling
+- Advance ArcGIS Pro for Deep Learning
+- Supply Chain Optimization
 
 
 ## Education
