@@ -19,7 +19,7 @@ map
 esri
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/esri/sar_15.png" alt="drawing"  width="500"/>
+<img src="/assets/images/esri/sar_15.webp" alt="drawing"  width="500"/>
 
 In this project, we will solve combine cases that will help us to identify flooded areas. Flooding is one of the most frequent and costly types of natural disasters. Flood mapping is traditionally performed using local aerial observations or ground surveys. However, when flooding is widespread, these methods become prohibitively expensive and time-consuming. 
 
@@ -69,12 +69,12 @@ After we download the data, we need to preprocessing this data first before we c
         - Polarization Bands = the VV and VH boxes
         - DEM Raster = DEM.tif
 
-    <img src="/assets/images/esri/sar_18.png" alt="drawing" />
-    <img src="/assets/images/esri/sar_19.png" alt="drawing" />
+    <img src="/assets/images/esri/sar_18.webp" alt="drawing" />
+    <img src="/assets/images/esri/sar_19.webp" alt="drawing" />
 
     `Apply Geometric Terrain Correction` or Orthorectification is the process of correcting apparent changes in the position of ground objects caused by the perspective of the sensor view angle and variations in elevation on the ground. This process uses a digital elevation model (DEM) layer. 
 
-    <img src="/assets/images/esri/sar_20.png" alt="drawing" />
+    <img src="/assets/images/esri/sar_20.webp" alt="drawing" />
 
 - Create a 3-band composite and clip it
     Next, we'll continue to prepare the data by deriving a 3-band composite raster and clipping it to match our exact area of interest. When using a `deep learning pretrained model`, we need to provide it with input that is similar to the data it was trained on. As we can read in the `Water Body Extraction (SAR) - USA pretrained model` [documentation](https://www.arcgis.com/home/item.html?id=6247b5485d9549b6a335d3060c503488), the input expected is an 8-bit, 3-band Sentinel-1 C band SAR GRD VH polarization band raster. This means:
@@ -93,7 +93,7 @@ After we download the data, we need to preprocessing this data first before we c
             - Name = Raster input dataset
             - Output Pixel Type = 8 Bit Unsigned
 
-    <img src="/assets/images/esri/sar_21.png" alt="drawing" />
+    <img src="/assets/images/esri/sar_21.webp" alt="drawing" />
 
     Finally we will clip our dataset to match exact area of interest using the `Extract by Mask` tool. For the  `Extract by Mask` tool, set the following parameters:
     - Input raster = from previous step
@@ -101,10 +101,10 @@ After we download the data, we need to preprocessing this data first before we c
     -  Output Coordinate System = WGS 1984 UTM Zone 15N (specificaly for this area)
 
 ### Pre-flood
-<img src="/assets/images/esri/sar_02.png" alt="drawing" />
+<img src="/assets/images/esri/sar_02.webp" alt="drawing" />
 
 ### Post-flood
-<img src="/assets/images/esri/sar_01.png" alt="drawing" />
+<img src="/assets/images/esri/sar_01.webp" alt="drawing" />
 
 <img src="/assets/images/esri/sar_06.gif" alt="drawing" />
 
@@ -119,7 +119,7 @@ First, we will extract water pixels from both pre- and post-flood maps. In some 
 - test_time_augmentation = True
 - Extent = Current Display Extent or Intersection of Inputs (for all layer).
 
-<img src="/assets/images/esri/sar_07.png" alt="drawing" />
+<img src="/assets/images/esri/sar_07.webp" alt="drawing" />
 
 Deep learning pixel classification cannot be performed on the entire image at one time. Instead, the tool will cut the image into small pieces known as chips. A batch size of 4 means that the tool will process four image chips at a time. By decreasing the batch_size value, we will decreasing time processing and chips image that will calculate by model. Changing the batch_size value will not affect the quality of the results, only the efficiency of the model's classification process. 
 
@@ -127,11 +127,11 @@ Data augmentation is a technique to generate multiple versions of image chips by
 
 The Result will be shown at the below image.
 
-<img src="/assets/images/esri/sar_13.png" alt="drawing" />
+<img src="/assets/images/esri/sar_13.webp" alt="drawing" />
 
-<img src="/assets/images/esri/sar_15.png" alt="drawing" />
+<img src="/assets/images/esri/sar_15.webp" alt="drawing" />
 
-<img src="/assets/images/esri/sar_08.png" alt="drawing" />
+<img src="/assets/images/esri/sar_08.webp" alt="drawing" />
 
 
 ## The Change Detection Process
@@ -142,11 +142,11 @@ The output of `Water Extraction` process only give data with label 1 as detected
 - Input raster or constant value 2 = 1
 - Output raster = Pre_Flood_Binary
 
-<img src="/assets/images/esri/sar_17.png" alt="drawing" />
+<img src="/assets/images/esri/sar_17.webp" alt="drawing" />
 
 For each pixel, the tool will return 1 if Input raster or constant value 1 is equal to Input raster or constant value 2, and 0 otherwise.
 
-<img src="/assets/images/esri/sar_16.png" alt="drawing" />
+<img src="/assets/images/esri/sar_16.webp" alt="drawing" />
 
 Next, we will use `Change Detection Wizard` tool to compute change detection between these rasters. The detail of change detection can read [in this page](https://imanursar.github.io/ArcGIS/change_detection). However, in this case we have 2 rasters with binary (0 and 1) or categories values. So we have difference setting to handle this condition.
 
@@ -164,10 +164,10 @@ Categorical Change method will compute change betwen two thematic rasters. Quant
 The result of this process can be shown at below images.
 
 ### In Feature Classes format
-<img src="/assets/images/esri/sar_09.png" alt="drawing" />
+<img src="/assets/images/esri/sar_09.webp" alt="drawing" />
 
 ### In Raster Dataset format
-<img src="/assets/images/esri/sar_12.png" alt="drawing" />
+<img src="/assets/images/esri/sar_12.webp" alt="drawing" />
 
 
 In Raster Dataset we will have these result:
@@ -176,6 +176,6 @@ In Raster Dataset we will have these result:
 
 To get more insight, we can change visualization and observe attribute table at Raster Dataset. As we seen at image below, we can see more clearly changing area due to flood that labeled by red area compare with exisiting water body before flood (labeled by blue area). We can calculate impacted area by using `area` column which in square meters and change it into square kilometer. Click `calculate` button and create new columns (or replace exisiting one) and insert this expression `!Area! / 1000000` to change from square meter to square kilometer.
 
-<img src="/assets/images/esri/sar_11.png" alt="drawing" />
+<img src="/assets/images/esri/sar_11.webp" alt="drawing" />
 
 
