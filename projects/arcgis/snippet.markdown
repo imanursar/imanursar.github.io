@@ -35,7 +35,7 @@ The result is shown school walking areas more clearly with detail from the basem
 # World Map Visualization 
 This project we will explore `World_data.mxd` that contains: 1. Population for each big city, 2. Population for each country, 3. Air pollution by country. We also add a basemap for oceans to get more detail map.
 
-<img src="/assets/images/esri/world.webp" alt="drawing"/>
+<img src="/assets/images/esri/World.webp" alt="drawing"/>
 
 
 # Experience 3D GIS
