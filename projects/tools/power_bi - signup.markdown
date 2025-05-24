@@ -22,7 +22,7 @@ simulation
 power bi
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/tools/power_bi_01.png" alt="drawing"  width="500"/>
+<img src="/assets/images/tools/power_bi_01.webp" alt="drawing"  width="500"/>
 
 ## Power BI Desktop
 

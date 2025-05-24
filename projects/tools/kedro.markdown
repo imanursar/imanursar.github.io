@@ -18,7 +18,7 @@ simulation
 Kedro
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/tools/kedro_cover.png" alt="drawing"  width="500"/>
+<img src="/assets/images/tools/kedro_cover.webp" alt="drawing"  width="500"/>
 
 ## Introduction
 
@@ -66,7 +66,7 @@ Kedro is an open-source Python framework that helps data scientists and engineer
 
     Next, we will be ask to type our project and folder name.
 
-    <img src="/assets/images/tools/kedro_03.png" alt="drawing"  width="500"/>
+    <img src="/assets/images/tools/kedro_03.webp" alt="drawing"  width="500"/>
 
 - Install all Libraries at requirements.txt
 
@@ -105,11 +105,11 @@ Kedro is an open-source Python framework that helps data scientists and engineer
 
 - Prepare our jupyter notebook to do data science things.
 
-    <img src="/assets/images/tools/kedro_04.png" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_04.webp" alt="drawing"/>
 
 - Convert all process into function to make it easier to implement into kedro
 
-    <img src="/assets/images/tools/kedro_05.png" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_05.webp" alt="drawing"/>
 
 - Build Our First Data Pipeline
 
@@ -231,8 +231,8 @@ Kedro is an open-source Python framework that helps data scientists and engineer
 
     Kedro will automatically execute the pipeline and store the processed data in the specified locations.
 
-    <img src="/assets/images/tools/kedro_01.png" alt="drawing"/>
-    <img src="/assets/images/tools/kedro_02.png" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_01.webp" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_02.webp" alt="drawing"/>
 
 - Visualize the Pipeline
 
@@ -244,8 +244,8 @@ Kedro is an open-source Python framework that helps data scientists and engineer
 
     This launches an interactive graph in your browser.
 
-    <img src="/assets/images/tools/kedro_06.png" alt="drawing"/>
-    <img src="/assets/images/tools/kedro_07.png" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_06.webp" alt="drawing"/>
+    <img src="/assets/images/tools/kedro_07.webp" alt="drawing"/>
 
 
 ## What’s Next?

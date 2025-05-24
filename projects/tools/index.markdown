@@ -32,7 +32,7 @@ we’ve embraced Streamlit as a powerful tool to bring data to life. Whether it�
 With its user-friendly interface and interactive capabilities, Streamlit allows us to present complex analyses in a way that’s clear, engaging, and easy for stakeholders to understand. From visualizing trends to running dynamic models, it helps decision-makers dive deeper into the numbers and make informed choices with confidence.
 </p>
 
-<img src="/assets/images/tools/streamlit_07.png" alt="drawing"/>
+<img src="/assets/images/tools/streamlit_07.webp" alt="drawing"/>
 
 <span class="fs-3">
 [Read more](../tools/streamlit){: .btn }
@@ -51,7 +51,7 @@ power bi
 Microsoft Power BI is a collection of software services, apps, and connectors that work together to turn your unrelated sources of data into coherent, visually immersive, and interactive insights.
 </p>
 
-<img src="/assets/images/tools/power_bi_01.png" alt="drawing"/>
+<img src="/assets/images/tools/power_bi_01.webp" alt="drawing"/>
 
 <span class="fs-3">
 [Read more](../tools/power_bi){: .btn }
@@ -70,7 +70,7 @@ Kedro
 Kedro is an open-source Python framework that helps data scientists and engineers build reliable, scalable, and maintainable data pipelines. It brings best practices from software engineering into data science projects, making it easier to move from exploration to production.
 </p>
 
-<img src="/assets/images/tools/kedro_cover.png" alt="drawing"/>
+<img src="/assets/images/tools/kedro_cover.webp" alt="drawing"/>
 
 <span class="fs-3">
 [Read more](../tools/kedro){: .btn }

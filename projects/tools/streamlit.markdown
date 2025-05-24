@@ -19,7 +19,7 @@ streamlit
 {: .badge .badge-pill .badge-info }
 
 The Faster You Can Iterate, The Faster You Can Learn
-<img src="/assets/images/tools/streamlit_07.png" alt="drawing"/>
+<img src="/assets/images/tools/streamlit_07.webp" alt="drawing"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -39,19 +39,19 @@ The development workflow for data projects often followed a common, linear path:
 - Model: Developing machine learning models or running simulations to generate insights.
 - Product: Finally, packaging the results into dashboards, presentations, or reports for stakeholders.
 
-<img src="/assets/images/tools/streamlit_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_01.webp" alt="drawing" width="500"/>
 
 While this workflow seems straightforward, it often led to two major challenges:
 
 ### The Unmaintainability Trap
 As the project evolves, keeping the scripts and notebooks organized becomes increasingly difficult. Small tweaks to the code or data require significant time and effort to re-run processes and validate outputs. Without a clear structure, the workflow can become fragile, with each layer dependent on manual intervention. This makes it hard to scale or revisit old projects without confusion and frustration.
 
-<img src="/assets/images/tools/streamlit_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_02.webp" alt="drawing" width="500"/>
 
 ### The Frozen Zone
 In traditional workflows, once insights or models are delivered, they often get "frozen" into static reports or dashboards. This leaves little room for experimentation or real-time interaction, making it challenging for stakeholders to ask "what if" questions or explore the data beyond what was initially provided. This rigidity can stifle collaboration and prevent deeper insights from emerging.
 
-<img src="/assets/images/tools/streamlit_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_03.webp" alt="drawing" width="500"/>
 
 Streamlit disrupts this cycle by providing an interactive and dynamic platform where you can combine the steps into a seamless, iterative process. It bridges the gap between static workflows and real-time decision-making, allowing developers and stakeholders to collaborate, explore, and experiment without getting stuck in the traps of unmaintainability and frozen outputs.
 
@@ -67,8 +67,8 @@ This is the spirit of Streamlit: simplicity, flexibility, and speed. It’s not 
 
 Gone are the days of static notebooks and endless PowerPoint slides. With Streamlit, you can deliver apps that spark collaboration, inspire better decisions, and drive real impact—all with the ease of writing Python. It’s data science, reimagined.
 
-<img src="/assets/images/tools/streamlit_04.png" alt="drawing" width="500"/>
-<img src="/assets/images/tools/streamlit_05.png" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_04.webp" alt="drawing" width="500"/>
+<img src="/assets/images/tools/streamlit_05.webp" alt="drawing" width="500"/>
 
 ## Streamlit’s Three Core Principles
 Streamlit is built on three guiding principles that make it a powerful yet simple tool for creating interactive apps. Here’s a closer look at how these principles work:
@@ -96,4 +96,4 @@ Streamlit’s simplicity, intuitive widget handling, and caching system create a
 
 ## Getting started with Streamlit
 
-<img src="/assets/images/tools/streamlit_06.png" alt="drawing"/>
+<img src="/assets/images/tools/streamlit_06.webp" alt="drawing"/>
