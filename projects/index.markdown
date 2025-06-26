@@ -14,13 +14,14 @@ heading_anchors: true
 <img src="/assets/images/about_me/circle.png" alt="drawing" width="100"/>
 
 ## About Me
-I am an experienced Data Scientist with 5 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing tailored, scalable data solutions systems that meet the specific needs of various organizations. 
+I am an experienced Data Scientist with more than 5 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing tailored, scalable data solutions systems that meet the specific needs of various organizations. 
 
 Proficient in leveraging tools such as: 
 - **Data Engineering, Data pipelining and Warehousing**: PostgreSQL, MySQL, SQL, BigQuery, Apache Airflow, DataHub, Docker, dbt, and Git.
 - **Data Analytics & Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Superset, and Tableau. 
-- **Machine Learning & AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, FastAPI, Some Python Libraries, and Data Science Deployment Framework.
+- **Machine Learning & AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, FastAPI, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
 - **GIS Tools**: ArcGIS Pro, ArcGIS Deep Learning Frameworks, Python, and Data Science eployment framework.
+- **Web**: HTML, and PHP.
 - **Other Tools**: Google sheet, Excel, Confluence, and Jira.
 
 My expertise spans:
@@ -34,7 +35,7 @@ My expertise spans:
 - Scoring Recommendation
 - Simulation
 - Geospatial Modeling
-- Advance ArcGIS Pro for Deep Learning
+- Advanced ArcGIS Pro for Deep Learning
 - Supply Chain Optimization
 
 
@@ -48,6 +49,7 @@ My expertise spans:
 
 
 ## Licenses & certifications
+- Microsoft Certified: Azure AI Engineer Associate [Microsoft](https://learn.microsoft.com/api/credentials/share/en-us/ImanulJihad-6016/F71D18865A3CC46?sharingId=A90C3D869B28FC06)
 - Agile Project Management [Google](https://www.coursera.org/account/accomplishments/verify/FCWQQVS7LACW)
 - Google Project Management Professional Certificate [Coursera](https://www.credly.com/badges/e1e6e9cb-30c4-461a-a4e9-9a7046766da0/linked_in_profile)
 - Data analyst mentor [MyEduSolve](https://drive.google.com/file/d/1ROUbmY8hpxJAHChBTFsZyBqrP-qhBSSO/view)
