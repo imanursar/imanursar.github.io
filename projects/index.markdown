@@ -20,8 +20,8 @@ Proficient in leveraging tools such as:
 - **Data Engineering, Data pipelining and Warehousing**: PostgreSQL, MySQL, SQL, BigQuery, Apache Airflow, DataHub, Docker, dbt, and Git.
 - **Data Analytics & Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Superset, and Tableau. 
 - **Machine Learning & AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, FastAPI, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
-- **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, Python, and Data Science eployment framework.
-- **Web**: HTML, and PHP.
+- **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, Python, and Data Science Deployment framework.
+- **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
 - **Other Tools**: Google sheet, Excel, Confluence, and Jira.
 
 My expertise spans:
@@ -37,6 +37,7 @@ My expertise spans:
 - Geospatial Modeling
 - Advanced ArcGIS Pro and ArcGIS Enterprise for Deep Learning
 - Supply Chain Optimization
+- Code and Data Governance
 
 
 ## Education
