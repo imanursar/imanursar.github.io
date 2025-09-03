@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Machine Learning
+title: ML DL AI
 nav_order: 96
 has_children: true
 heading_anchors: true
-permalink: /machine learning
+permalink: /ml_dl_ai
 has_toc: false
 ---
 
@@ -29,10 +29,10 @@ Difference types of evaluation metrics for different type of algorithms.
 In this section, we will focus on evaluation metrics for classification problems. It starts with a confusion matrix, and we go through its derived metrics and their pros and cons.
 
 
-<img src="/assets/images/machine learning/evaluation_02.webp" alt="drawing" width="500"/>
+<img src="/assets/images/ml_dl_ai/evaluation_02.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
-[Read more](../machine learning/evaluation){: .btn }
+[Read more](../ml_dl_ai/evaluation){: .btn }
 </span>
 
 
