@@ -28,7 +28,7 @@ Data modelling is the process used to structure how data is stored, as well as m
 
 The goal is to create a visual data map that accurately describes the data structure, how data will flow through the system whilst highlighting important data relationships. This can involve the data input itself, the data infrastructure and output, whether that’s predictive models, ML algorithms, AI or other products/services.</p>
 
-<img src="/assets/images/data/data_modeling_13.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_13.png" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../data engineering/data modeling){: .btn }

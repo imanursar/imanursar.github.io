@@ -6,7 +6,7 @@ layout: default
 title: Data Modeling
 parent: Data Engineering
 permalink: /data engineering/data modeling
-nav_order: 1
+nav_order: 101
 ---
 
 #  Data Modeling
@@ -15,7 +15,7 @@ data engineering
 data modeling
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/data/data_modeling_13.webp" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_13.webp" alt="drawing" width="500"/>
 
 ## What Is Data Modelling?
 <p style='text-align: justify;'>
@@ -34,13 +34,13 @@ This mart will help team data to analyze more deeper such as:
 - etc
 
 ### issues From product FOV
-<img src="/assets/images/data/data_modeling_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_01.webp" alt="drawing" width="500"/>
 
 ### issues From Business FOV
-<img src="/assets/images/data/data_modeling_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_02.webp" alt="drawing" width="500"/>
 
 ### scope
-<img src="/assets/images/data/data_modeling_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_03.webp" alt="drawing" width="500"/>
 
 ### Success Criteria
 Define how the datamart's success will be measured:
@@ -52,23 +52,23 @@ Define how the datamart's success will be measured:
 
 ## Timeline
 Define a high-level timeline with phases:
-<img src="/assets/images/data/data_modeling_04.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_04.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Comparing analysis
-<img src="/assets/images/data/data_modeling_06.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_06.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Gap Analysis
 Assess gaps between current systems and the desired state:
-<img src="/assets/images/data/data_modeling_05.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_05.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Data Sources and Input Tables
-<img src="/assets/images/data/data_modeling_07.webp" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_07.webp" alt="drawing" width="500"/>
 
 **Source Systems**:
 - List the source systems (e.g., transactional sales systems, procurement systems, ERP, third-party APIs).
@@ -82,7 +82,7 @@ Assess gaps between current systems and the desired state:
 ---------------------------
 
 ## Data Model Design
-<img src="/assets/images/data/data_modeling_08.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_08.webp" alt="drawing" width="500"/>
 
 **Entities**:
 - Define key entities: Region, SKU, Time, parameters.
@@ -219,19 +219,19 @@ GROUP BY sku_name;
 
 ### MART_xx SCHEMA
 Define Key Metrics and Definitions
-<img src="/assets/images/data/data_modeling_09.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_09.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Recommendation and Added Values
-<img src="/assets/images/data/data_modeling_10.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_10.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Risks and Mitigation
-<img src="/assets/images/data/data_modeling_11.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_11.webp" alt="drawing" width="500"/>
 
 ---------------------------
 
 ## Stakeholders
-<img src="/assets/images/data/data_modeling_12.png" alt="drawing" width="500"/>
+<img src="/assets/images/data/data_modeling/data_modeling_12.webp" alt="drawing" width="500"/>
