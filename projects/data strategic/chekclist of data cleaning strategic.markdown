@@ -6,7 +6,7 @@ layout: default
 title: Data Quality Checklist
 parent: Data Strategic
 permalink: /data strategic/data quality checklist
-nav_order: 2
+nav_order: 101
 ---
 
 #  Data Quality Checklist: The Real MVP of Data Science

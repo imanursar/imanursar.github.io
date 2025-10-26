@@ -50,6 +50,12 @@ Define how the datamart's success will be measured:
 
 ---------------------------
 
+## Steps
+We start from these step to step define requirment and and build data model.
+<img src="/assets/images/data/data_modeling/data_modeling_14.webp" alt="drawing" width="500"/>
+
+---------------------------
+
 ## Timeline
 Define a high-level timeline with phases:
 <img src="/assets/images/data/data_modeling/data_modeling_04.webp" alt="drawing" width="500"/>

@@ -6,7 +6,7 @@ layout: default
 title: Data Cleaning Strategic
 parent: Data Strategic
 permalink: /data strategic/data cleaning
-nav_order: 1
+nav_order: 100
 ---
 
 #  Data Cleaning Strategic
