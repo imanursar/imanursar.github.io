@@ -73,6 +73,8 @@ The recall is intuitively the ability of the classifier to find all the positive
 
 - Use it when you want to find the answer for the: **How much extra right ones, the model missed when it showed the right ones!**
 
+<img src="/assets/images/ml_dl_ai/evaluation_13.webp" alt="drawing"/>
+
 ## Specificity
 The recall is intuitively the ability of the classifier to find all the negative samples.
 
