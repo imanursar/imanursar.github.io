@@ -6,7 +6,7 @@ layout: default
 title: YOLO in Computer Vision
 parent: Computer Vision
 permalink: /computer vision/yolo
-nav_order: 1
+nav_order: 100
 ---
 
 #  YOLO (You Only Look Once) in Computer Vision
