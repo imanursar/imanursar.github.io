@@ -15,7 +15,7 @@ Computer Vision
 yolo
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/computer_vision/yolo/yolo_00.webp" alt="drawing" width="500"/>
+<img src="/assets/images/computer_vision/yolo12/yolo12_12.webp" alt="drawing" width="500"/>
 
 ## What Is YOLOv12?
 
