@@ -82,6 +82,35 @@ We’ll need a Python environment with the following key libraries installed:
 
 ## Pre-Processing
 
+### Dataset Structure
+
+For YOLO training, organize our data as follows:
+
+```
+  Dataset/
+  ├── data.yaml        # Dataset configuration
+  ├── train/
+  │   ├── images/      # Training images
+  │   └── labels/      # Training labels (YOLO format)
+  ├── valid/
+  │   ├── images/      # Validation images
+  │   └── labels/      # Validation labels
+  └── test/
+      ├── images/      # Test images
+      └── labels/      # Test labels
+```
+
+The data.yaml file should contain:
+
+```
+  train: /path/to/train/images
+  val: /path/to/val/images
+  test: /path/to/test/images
+  nc: 3  # Number of classes
+  names: ['class1', 'class2', 'class3']  # Class names
+```
+
+
 ### set data path
 We set all path at pre-processing to help us for repetting input. In this path, we define all necessary paths such as dataset path, model result path, etc.
 
@@ -118,6 +147,15 @@ We are now ready to train a YOLOv12 model. Below, we can select the checkpoint f
 - yolov12m.pt
 - yolov12l.pt
 - yolov12x.pt
+
+Each name relate to variant sizes of models in every task, Nano (N), Small (S), Medium (M), Large (L), and eXtra large (X).
+Nano and small are used primarily in test batches, medium and large are used in small applications, and extra large is used in industrial standards with large datasets or to provide the best performing model.
+Beside that, if we are doing something other than detect or track you need to have an extension to the base name:
+
+- Segment = `-seg`
+- OBB = `-obb`
+- Pose = `-pose`
+- Classify = `-cls`
 
 We fine-tune the small variant `yolov12s.pt` for 50 epochs. Training for 50 epochs takes ~30 minutes on a T4 GPU. We can try larger variants (e.g., yolov12m, yolov12l, or yolov12x) for better performance (with longer training time).
 
