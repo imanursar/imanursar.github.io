@@ -323,8 +323,6 @@ This function requires the following parameters:
 
 
 ## Reference
-- https://github.com/sunsmarterjie/yolov12
+- https://github.com/sunsmarterjie/yolov12/
 - https://blog.roboflow.com/train-yolov12-model/
-- https://pyimagesearch.com/2025/07/21/training-yolov12-for-detecting-pothole-severity-using-a-custom-dataset/
 - https://supervision.roboflow.com/how_to/track_objects/
-- 

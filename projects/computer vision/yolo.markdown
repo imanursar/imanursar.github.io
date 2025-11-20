@@ -69,6 +69,43 @@ YOLO is a real-time object detection algorithm that transforms how machines reco
 
     **Example**: Simultaneously identifying object classes and segmenting them (e.g., separating fish by species and shape) in a single underwater camera feed.
 
+- **YOLOv9** introduced two major innovations:
+  - **Programmable Gradient Information (PGI)**: A technique to preserve input information throughout the network, ensuring reliable gradient flow and improving training efficiency.
+  - **Generalized Efficient Layer Aggregation Network (GELAN)**: An architecture designed to maximize parameter utilization and computational efficiency, leading to superior performance even in lightweight models.
+
+- **YOLOv10** addressed the limitations of Non-Maximum Suppression (NMS) by introducing:
+  - **Consistent Dual Assignments**: A strategy combining one-to-one and one-to-many label assignments during training, eliminating the need for NMS and reducing inference latency.
+  - **Efficiency-Accuracy Driven Design**: Comprehensive optimization of model components to enhance performance while minimizing computational overhead.
+
+- **YOLOv11**: Enhanced Speed with C3K2 Blocks and Official OBB Support. The final CNN-based iteration, YOLOv11, focused on speed and efficiency by:
+  - **C3K2 Modules**: Replacing previous blocks with structures utilizing smaller kernel convolutions, improving feature representation with fewer parameters.
+  - **Depthwise Separable Convolutions**: Reducing computational load while maintaining accuracy.
+
+### Limitations of YOLOv8 to YOLOv11
+Despite these advancements, YOLOv8 through YOLOv11 shared common limitations:
+- **CNN-Centric Architectures**: All models relied heavily on convolutional neural networks (CNNs) without integrating attention mechanisms.
+- **Lack of Attention Mechanisms**: The absence of attention modules limited the models’ ability to capture global context, affecting performance in complex scenes.
+
+But, Attention mechanisms are notoriously resource-intensive, especially when applied to high-resolution inputs. Unlike convolutional operations, which scale linearly with input size, self-attention scales quadratically. For real-time detection tasks, this is a deal-breaker.
+
+Other than that, Attention-based models also suffer from inefficient memory access patterns. During inference, attention maps frequently need to move between the high-speed GPU cache and main memory, slowing things down even more. CNNs, on the other hand, benefit from localized operations and structured memory access, giving them a speed advantage on modern hardware.
+
+- **YOLO12**: At this architecture, the first time in the series, the YOLO framework shifts from being purely CNN-based to embracing an attention-centric design, all without compromising the real-time performance. With innovations like Area Attention (a more efficient form of local attention), FlashAttention (optimized memory access), and a residual architecture tailored for stability, attention finally becomes viable in real-time detection.
+
+improvement:
+- **Area Attention**: Local Efficiency, Global Awareness. Area Attention splits the input feature map into equal-sized segments along horizontal or vertical directions — usually into 4 parts. Attention is then applied within each of these local “areas.”
+- **R-ELAN: Making Attention Models Trainable**: Residual Efficient Layer Aggregation Network used to improve feature aggregation. The structure in two key ways:
+  - **Residual Connections with Scaling**: A shortcut connection is added from the input to the output of each block using a small scaling factor (default = 0.01). This dramatically improves convergence, especially for deep attention-based networks.
+  - **Simplified Aggregation**: Instead of splitting and transitioning multiple times like ELAN, R-ELAN:
+    - Uses a single transition layer to standardize input channels
+    - Passes through attention/convolutional blocks
+    - Concatenates only once, reducing memory and compute
+- **FlashAttention**: Fixing the Latency Bottleneck. A custom kernel-level optimization that reduces memory overhead during attention computation. without repeatedly moving data between the GPU cache and main memory.
+- **MLP Ratio Tweaked**: Traditional transformer blocks use a feed-forward network (FFN) with a 4:1 hidden dimension ratio. YOLOv12 reallocates more compute to the attention layers.
+- **Conv+BN Instead of Linear+LN**: Instead of using fully connected layers and layer normalization (common in ViTs), YOLOv12 favors convolution + batch normalization, which improves both performance and GPU efficiency.
+- **No Positional Embeddings**: YOLOv12 removes positional encoding entirely and uses a 7×7 separable convolution (“Position Perceiver”) to inject spatial information in a more lightweight and interpretable way.
+- **Hierarchical Design Retained**: Unlike plain transformer backbones, YOLOv12 keeps the multi-stage, hierarchical structure seen in YOLO model.
+
 ## The comparison
 
 | Version    | Release Year       | Backbone / Architecture | Key Features & Improvements                                                                  | Speed / Performance          | Supported Tasks                    | Typical Use Case Example                                                               |
