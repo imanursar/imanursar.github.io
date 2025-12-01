@@ -14,16 +14,18 @@ heading_anchors: true
 <img src="/assets/images/about_me/circle.png" alt="drawing" width="100"/>
 
 ## About Me
-I am an experienced Data Scientist with more than 5 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing tailored, scalable data solutions systems that meet the specific needs of various organizations. 
+I am an experienced Data Scientist with more than 6 years of expertise in building AI and data-driven solutions for business challenges. Skilled in leading teams, collaborating with cross-functional teams, and independently executing complex projects. I specialize in machine learning, data strategy, fullstack data science, and designing and implementing, scalable data solutions systems that meet the specific needs of various organizations. 
+
+I have a well-rounded background across the full data value chain — from data engineering and analytics to predictive modeling and AI modeling — enabling me to build complete, insight-driven data systems. now advancing into generative AI and LLM applications for enterprise use.
 
 Proficient in leveraging tools such as: 
-- **Data Engineering, Data pipelining**: SQL,  Apache Airflow, DataHub, Docker, dbt, and Git.
-- **Database and Warehousing**: PostgreSQL, BigQuery, MySQL, DuckDB, and Supabase.
-- **Data Analytics & Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Superset, and Tableau. 
-- **Machine Learning & AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, FastAPI, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
+- **Data Engineering, Data pipelining and Data Streaming**: SQL, Apache Airflow, DataHub, Docker, dbt, Kafka and Git.
+- **Database and Warehousing**: PostgreSQL, BigQuery, MySQL, Trino, DuckDB, and Supabase.
+- **Data Analytics and Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Superset, and Tableau. 
+- **Machine Learning and AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, YOLO, FastAPI, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
 - **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, Python, and Data Science Deployment framework.
 - **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
-- **Other Tools**: Google sheet, Excel, Confluence, and Jira.
+- **Other Tools**: Google sheet, Microsoft Office, Confluence, and Jira.
 
 My expertise spans:
 - Descriptive and Diagnostic statistics
