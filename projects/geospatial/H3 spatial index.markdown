@@ -18,8 +18,8 @@ map
 index
 {: .badge .badge-pill .badge-info }
 
-a discrete global grid system for indexing geographies into a hexagonal grid
 <img src="/assets/images/geospatial/snippet/index_h3_cover.png" alt="drawing" width="500"/>
+A discrete global grid system for indexing geographies into a hexagonal grid.
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -27,6 +27,19 @@ The Hexagonical Hierarchical (H3) index was developed by Uber to help it analyze
 
 <p style='text-align: justify;'>
 The H3 grid system comprises nesting hexagons that cover the Earth’s surface. There are a total of 16 resolutions of the H3 grid system, with the first level containing 122 hexes and the 16th level containing over 569 trillion unique hexes. The area of the hexes in each level gets progressively smaller and is 1/7th the size of the hexes in the prior level. For each resolution, the hexes are assigned unique identifiers that can be appended to other geographic data to aid in efficient spatial analysis and feature engineering.</p>
+
+## Advantage
+- Help to organize the planet so we can measure, comapre, and analyze it.
+- Covering the surface with perfectly fitting shapes that don’t overlap or leave gaps.
+  - Uniform shape
+  - Uniform edge length
+  - Uniform angles
+- More natural neighbourhoods - every cell has 6 equal neighbours
+— More consistent distances - No long diagonal weirdness like squares.
+— More efficient space-filling - less over/under coverage
+- It breaks the world into 15 resolutions, from country-sized hexagons to tiny ~1 cm² cells.
+- It’s hierarchical — Big hexagons contain smaller ones, all the way down.
+- It's consistent — the same rules apply everywhere on Earth.
 
 ## Reference
 we encourage you to read Uber’s blog post at https://www.uber.com/blog/h3/.
