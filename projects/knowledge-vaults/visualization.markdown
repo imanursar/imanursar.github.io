@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Knowledge Vaults
-nav_order: 103
+title: kv - Visualization
+nav_order: 99
+parent: Knowledge Vaults
 has_children: true
-heading_anchors: true
-permalink: /knowledge-vaults/
+permalink: /knowledge-vaults/visualization/
 has_toc: false
 ---
 
@@ -15,11 +15,11 @@ has_toc: false
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
-## Main Indexs For Remote Sensing
+## Visualization 101
 
-Geospatial
+Visualization
 {: .badge .badge-pill .badge-primary }
-indexs
+Foundation
 {: .badge .badge-pill .badge-secondary }
 
 <span class="fs-3">

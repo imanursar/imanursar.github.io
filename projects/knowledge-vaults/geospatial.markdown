@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Knowledge Vaults
-nav_order: 103
+title: kv - Geospatial
+nav_order: 100
+parent: Knowledge Vaults
 has_children: true
-heading_anchors: true
-permalink: /knowledge-vaults/
+permalink: /knowledge-vaults/geospatial/
 has_toc: false
 ---
 
