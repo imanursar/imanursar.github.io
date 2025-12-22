@@ -52,4 +52,6 @@ indexs
 |BSI     | The bare soil index (BSI) | ((SWIR 1 + Red) - (NIR + Blue)) / ((SWIR 1 + Red) + (NIR + Blue)) |is used to retrieve information from vegetation in cases where its coverage is less than half of the assessed area. This index allows us to determine the vegetation health of the exposed soil area |
 |IPI     | The structure-insensitive pigment index | (NIR - Blue) / (NIR - RED) | was initially proposed to identify vegetation stress through the ratio between carotenoid and chlorophyll in vegetation. It is also useful for analyzing vegetation structures with different canopy configuration |
 |SWM     | The sentinel water mask (SWM) | (Blue + Green) / (NIR + SWIR 1) | is specifically used to analyze water data from the Sentinel-2 constellation |
-
+|TI     | Turbidity levels | Red / Green | A measure of water clarity. High TI = Sediments or disturbed water |
+|FDI     | Floating Debris Index | NIR - (Red + Blue) | floating debris detection |
+|FAI     | Floating Algae Index | NIR − (Red + (SWIR − Red) × (λNIR − λRed) / (λSWIR − λRed)) | Useful to detect floating organic matter |
