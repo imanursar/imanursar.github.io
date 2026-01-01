@@ -3,11 +3,11 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: kv - Visualization
-nav_order: 99
+title: kv - Managerial
+nav_order: 101
 parent: Knowledge Vaults
 has_children: true
-permalink: /knowledge-vaults/visualization/
+permalink: /knowledge-vaults/managerial/
 has_toc: false
 ---
 
@@ -15,15 +15,17 @@ has_toc: false
 Personal Projects and Curiosity-Driven Explorations
 <br>
 
-## Visualization 101
+## Leading Through Change
 
-Visualization
+Managerial
 {: .badge .badge-pill .badge-primary }
-Foundation
+Leader
 {: .badge .badge-pill .badge-secondary }
+Change
+{: .badge .badge-pill .badge-info }
 
 <span class="fs-3">
-[Read more](../knowledge-vaults/visualization/visualization_101){: .btn }
+[Read more](../knowledge-vaults/managerial/lead_change){: .btn }
 </span>
 
 

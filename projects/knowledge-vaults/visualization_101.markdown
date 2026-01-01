@@ -6,16 +6,12 @@ layout: default
 title: Visualization 101
 nav_order: 100
 parent: kv - Visualization
-permalink: /knowledge-vaults/visualization/101
+permalink: /knowledge-vaults/visualization_101
 has_toc: false
 grand_parent: Knowledge Vaults
 ---
 
-# Data Science Portfolio
-Personal Projects and Curiosity-Driven Explorations
-<br>
-
-## Main Indexs For Remote Sensing
+# Main Indexs For Remote Sensing
 
 Visualization
 {: .badge .badge-pill .badge-primary }
