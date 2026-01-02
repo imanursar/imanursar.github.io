@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Build Ingest Process [PostGIS + DLT]
+title: Build Ingest Process
 parent: Data Engineering
 permalink: /data engineering/data_ingest
 nav_order: 100
