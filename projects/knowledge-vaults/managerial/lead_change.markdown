@@ -39,3 +39,42 @@ Change
 - **Be Open About The Challenges But Stay Positive** - Share the challenges and inspire confidence in your ability to deliver change.
 - **Collect Feedback** - Always ask questions, continue to collect feedback.
 - **Communicate Calmly** - Your stress (and calmness) are contagious.
+
+## Use Cases
+
+- **When Someone Says, "This Won't Work"**
+  - X Don't: Shut them down
+  - ✓ Do: Ask, "What part feels risky to you?"
+  - Pushback often signals perceived risk, not defiance.
+- **When Someone Pushes Back Immediately**
+  - X Don't: Argue or rush to explain
+  - ✓ Do: Say, "That's a fair concern. Let's unpack it together."
+  - Feeling dismissed activates the brain's threat response.
+- **When You First Announce the Change**
+  - X Don't: Start with timelines and business goals
+  - ✓ Do: Start with what it means for them - clarity, growth, less stress
+  - If it doesn't feel personally relevant, the brain deprioritizes it. 
+- **When You Feel Defensive**
+  - X Don't: Talk over people or double down
+  - ✓ Do: Pause. Ask, "What's unclear or concerning right now?"
+  - Calm questions reduce threat perception and invite openness.
+- **When a Key Team Member Goes Quiet**
+  - X Don't: Assume silence means agreement
+  - ✓ Do: Ask privately, "What's your honest take on this?"
+  - Silence often reflects low psychological safety, not support.
+- **When Team Energy Drops**
+  - X Don't: Pretend everything's fine
+  - ✓ Do: Say, "This change is hard, and that's normal."
+  - Naming emotions reduces brain reactivity and helps people process.
+- **When Sharing the Plan**
+  - X Don't: Overwhelm with jargon or slides
+  - ✓ Do: Be clear, "Here's what's changing and why it matters."
+  - Ambiguity increases anxiety and slows decision-making.
+- **When People Go Quietly Passive**
+  - X Don't: Call them out publicly
+  - ✓ Do: Follow up one-on-one and offer a clear next step
+  - Small wins release dopamine and build momentum.
+- **When You Want Long-Term Buy-In**
+  - X Don't: Treat it like a one- time announcement
+  - ✓ Do: Repeat the "why" and show visible progress
+  - Repetition and short-term wins reinforce belief and drive habit formation.
