@@ -20,6 +20,8 @@ Leader
 Change
 {: .badge .badge-pill .badge-info }
 
+<img src="/assets/images/knowledge/managerial/change_01.webp" alt="drawing" width="500"/>
+
 
 ## Why Leading Through Change is Hard
 
