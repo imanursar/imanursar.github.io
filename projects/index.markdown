@@ -47,6 +47,8 @@ I have a well-rounded background across the full data value chain — from data 
 - Supply Chain Optimization
 - Code and Data Governance
 
+---
+
 ## Experience
 - **ESRI Indonesia**
   - Location: Jakarta - Indonesia
@@ -67,6 +69,7 @@ I have a well-rounded background across the full data value chain — from data 
       - Designed robust data pipelines and data management structures to support enterprise-scale operations.
       - Implemented data governance and privacy standards, ensuring consistent compliance across internal platforms.
       - Developed and launched a Data Service module integrated with internal tools to enable advanced spatial analytics.
+
   ---
 
 - **EFishery**
@@ -89,6 +92,7 @@ I have a well-rounded background across the full data value chain — from data 
       - **Data Scraping for Market Insights**: Automated the collection of external data to generate insights and identify potential leads for business expansion.
       - **Scoring Systems**: Developed scoring models for fraud detection, credit risk assessment, feature importance analysis, and text analysis for Root Cause Analysis for Risk Management.
       - **Supply & Demand Forecasting**: Created predictive models to improve supply chain efficiency and revenue generation through data-driven fulfillment. 
+
   ---
 
 - **UNPAD, BUNIS, Startup Campus, and MyEduSolve**
@@ -98,6 +102,7 @@ I have a well-rounded background across the full data value chain — from data 
   - Responsibility:
     - Data Science and Artificial Intelligence Mentor for MSIB Batch 5 and 6 by Kemendikbudristek in PT. Kampus Merdeka Belajar and MyeduSolve.
     - Guest Lecturer and Mentor at ekonomi terapan magister class and economics and business enrichment bachelor class at Padjadjaran University and Binus University.
+
   ---
 
 - **Bobobox**
@@ -116,6 +121,7 @@ I have a well-rounded background across the full data value chain — from data 
       - RFM and Segmentation (user, location etc.)
       - Cohort and retention analysis
       - IoT-Driven Predictive Maintenance and IoT-Driven Customer behavior from Capsule hotel system. 
+
   ---
 
 - **FINEOZ**
@@ -128,6 +134,7 @@ I have a well-rounded background across the full data value chain — from data 
     - ETL & pipelines development: explore, clean, transform, and analyze large databases using SQL and Python to create efficient process and data pipelines.
     - Work closely with BE within the technical in attempt to gather and populate data warehouse table structure and developing the APIs.
     - Business intelligence and reporting: created analytics dashboards and reports. 
+
   ---
 
 ## Education
@@ -140,6 +147,7 @@ Title of thesis: **NEO-R1000: A Fast And Efficient Compact Spectrograph For Emis
 - **National Astronomical Observatory of Japan**, Tokyo, Japan. Sokendai Asian Winter School, Astronomy, 2020 - 2020.
 - **Kyoto Sangyo University**, Kyoto, Japan. Research Student, Astronomy, 2014 - 2014.
 
+---
 
 ## Licenses & certifications
 - Microsoft Certified: Azure AI Engineer Associate [Microsoft](https://learn.microsoft.com/api/credentials/share/en-us/ImanulJihad-6016/F71D18865A3CC46?sharingId=A90C3D869B28FC06)
@@ -161,7 +169,7 @@ Title of thesis: **NEO-R1000: A Fast And Efficient Compact Spectrograph For Emis
 - IDCamp Machine Learning Developer 2021 [Indosat Ooredoo Hutchison Digital Camp](https://idcamp.indosatooredoo.com/news/381/selamat-kepada-penerima-beasiswa-lanjutan-kelas-menengah-idcamp-2021)
 - CCNA: Introduction to Networks [Cisco Networking Academy](https://www.credly.com/badges/3dd5cad6-36d3-466a-ade4-e0539b413947/public_url)
 
-
+---
 
 ## Reach Me
 - [LinkedIn](https://www.linkedin.com/in/imanul-j/)
