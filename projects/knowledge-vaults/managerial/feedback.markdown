@@ -35,8 +35,13 @@ Giving feedback is an essential skill to learn. It builds trust. It helps teams 
 ## Receiving Feedback
 
 - **Constructive Criticism is necessary** - Everyone will have to deal with negative feedback during their career. It is how you respond to this criticism that will define you.
+- **Check-in with yourself. Get grounded. Get curious.** - Begin everything with a self-checkin.
+- **Listen from Center** - Listen to what the other person has to say. But not just any kind of listening, centered listening. **Listening from center**: characteristics of this mode include an awareness of the big picture, feelings of interconnection, and a widening of possibilities.
+- **Put the feedback on a plate** - Imagine there is a plate between you and person sharing feedback. As they speak, imagine their words going onto the plate, where you can examine them. This visualization keeps the words external, allows you to see what is being shared, and to look at it more objectively. From this vantage point you can ask clarifying questions, seek to understand what is being shared, and remain grounded and listen from center. Keep the feedback on the plate as the feedback conversation progresses.
 - **Try and Find Common Ground** - Accepting failure and committing to changes will help you to move forward.
 - **Set Feedback As A Positive** - Those who fail to see feedback as constructive often lose morale and are far less likely to improve as a result.
+- **Distinguish between facts and opinions** - One of the things look for when receiving feedback is opinions masquerading as facts. With the feedback sitting on the plate in front of you, and having flagged this as an opinion masquerading as a fact, you can now start to ask clarifying questions to understand what the speaker is really trying to say.
+- **Add a few responses and gestures to your toolkit** - It can be useful to have a few go-to phrases and responses at the ready to help create space for processing in the midst of a feedback conversation in order to slow the conversation down, modulate reactivity, and create new possibilities for responding.
 
 
 ## How to Give Feedback Model
