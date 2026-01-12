@@ -11,7 +11,7 @@ has_toc: false
 grand_parent: Knowledge Vaults
 ---
 
-# Leading Through Change
+# How To Delegate
 
 Visualization
 {: .badge .badge-pill .badge-primary }
@@ -19,6 +19,34 @@ Leader
 {: .badge .badge-pill .badge-secondary }
 Delegate
 {: .badge .badge-pill .badge-info }
+
+It’s normal to think of delegation as simply offloading tasks to team members. As a manager, you’re still responsible for the outcome, even though the tasks are performed by others.
+You can’t delegate your managerial responsibilities, such as performance management tasks. But everything else is an opportunity for delegation.
+
+## Before Delegation
+To delegate effectively, start by deciding on two things:
+
+- What to delegate
+- And who you will delegate to
+
+## During Delegation
+There are two things you must do to delegate effectively as a manager:
+
+- **Explain the task clearly** - Schedule some face time with your report. 
+    Provide clear and concise instructions. What are you trying to achieve? 
+    To delegate effectively, delegate problems, not tasks.
+    Think of yourself as a coach. Your job is to help others work through their problems and find their solutions.
+    Don’t talk about how a task needs to be done. Talk about what needs to be achieved.
+- **Define the level of delegation** - Define the level of delegation. 
+    This sets the expectation for both parties of the delegated task.
+
+    Here are the 5 levels in a nutshell:
+
+     - **Do as I say**. This is the “execute” level. At this level you give instructions
+     - **Research and report back**. Delegate the time-consuming research. You’ll only need to decide
+     - **Research and make a recommendation**. Your team member should be able to recommend what he/she believes to be the best option
+     - **Decide and inform**. “Make the best decision you can, based on your research, but keep me updated at all times”
+     - **Act independently**. Total freedom
 
 
 ## The Levels of Delegation Framework
