@@ -6,7 +6,7 @@ layout: default
 title: Aggregate data
 parent: Description Analytics
 permalink: /description/aggregate/
-nav_order: 4
+nav_order: 104
 ---
 
 # Create Aggregate Data

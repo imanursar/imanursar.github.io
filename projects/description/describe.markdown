@@ -6,7 +6,7 @@ layout: default
 title: Describe Data
 parent: Description Analytics
 permalink: /description/describe data/
-nav_order: 1
+nav_order: 101
 ---
 
 # Create Comprehensive Describe Data
