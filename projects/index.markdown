@@ -57,8 +57,8 @@ I have a well-rounded background across the full data value chain — from data 
   - Responsibility:
     - **Acted as a data consultant**: assisted various clients and stakeholders to understanding, translating, gain business requirements and strategies for data-driven decision-making initiatives.
     - **ETL & pipelines development**: Designed, built, and optimized ETL workflows and scalable data pipelines, including data modeling, transformation, and large-scale analytics.
-    **Developed and implemented data strategies, analytical frameworks, and end-to-end Data Science and GeoAI project workflows.**
-    **Designed and optimized geospatial data processing, spatial analytics, and GeoAI pipelines.**
+    - **Developed and implemented data strategies, analytical frameworks, and end-to-end Data Science and GeoAI project workflows.**
+    - **Designed and optimized geospatial data processing, spatial analytics, and GeoAI pipelines.**
   - Led multiple key initiatives, including:
     - **Code and Data Governance (internal project)**: Initiated well-defined, governed, reproducible and standardized Python-based workflows and established unified GeoAI processes across the full data lifecycle by automation process; reduced project development time by more than 30%; and ensured all codebases were standardized, scalable, and production-ready.
     - **GeoAI - Object detection**: Delivered a technical workshop and improved palm detection accuracy from 70% to 90% in dense canopy areas using ArcGIS Pro Deep Learning.
