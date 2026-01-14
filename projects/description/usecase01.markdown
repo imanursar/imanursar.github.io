@@ -206,4 +206,4 @@ By using descriptive and diagnostic analysis at previous slides. We can bring ou
 
 ## The APP dashboard
 
-[![Example app dashboard]("/assets/images/description/usecase01/usecase01_11.webp")](https://drive.google.com/file/d/1Zrt1oCN0HYbyhHPAfWMGjUcaGQxHLfOx/view?usp=sharing)
+[![Example app dashboard](/assets/images/description/usecase01/usecase01_11.webp)](https://drive.google.com/file/d/1Zrt1oCN0HYbyhHPAfWMGjUcaGQxHLfOx/view?usp=sharing)
