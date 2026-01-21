@@ -536,14 +536,14 @@ To give more useful information, help the models learn real behavior, and avoid 
 ---
 
 ## Deployment
-Design a formal **data model** that defines relationships, enforces standards, and creates a shared language across the system. 
-The data model must be backed by a **scalable storage architecture** aligned with serving needs. Different workloads require different stores. (i.e. postgres - offline analytics and feature generation, redis - online inference and real-time access).
-On top of this, we need an **orchestration layer** to automate configuration, execution, and coordination across the system. The choice of orchestrator depends on architectural decisions, such as workflow orchestration for batch processes (e.g., Airflow) and event-driven systems for real-time data flows (e.g., Kafka). 
-**Model deployment** should follow the same architectural discipline. Models should be containerized and deployed via cloud or hybrid infrastructure to enable repeatable CI/CD processes, versioning, and controlled rollbacks.
-To **operationalize model outputs**, we expose them through well-defined APIs and integrate them directly into digital touchpoints such as websites and mobile applications.
-Using **Feedback Loop system**, we could systematically capture user interactions, model inference outputs, and online evaluation data, then align them back into the data model, storage layer, and orchestration workflows.
-we establish **monitoring and governance** as first-class components. This includes technical monitoring (feature drift, model performance, latency, SLA compliance) and business monitoring (ROI, conversion uplift, and downstream impact). The objective is fast detection and decisive response, not retrospective reporting.
-All of these components should be integrated into a **unified CI/CD pipeline**. This is what enables scalable deployment, controlled experimentation, and sustainable maintenance as the system evolves.
+- Design a formal **data model** that defines relationships, enforces standards, and creates a shared language across the system. 
+- The data model must be backed by a **scalable storage architecture** aligned with serving needs. Different workloads require different stores. (i.e. postgres - offline analytics and feature generation, redis - online inference and real-time access).
+- On top of this, we need an **orchestration layer** to automate configuration, execution, and coordination across the system. The choice of orchestrator depends on architectural decisions, such as workflow orchestration for batch processes (e.g., Airflow) and event-driven systems for real-time data flows (e.g., Kafka). 
+- **Model deployment** should follow the same architectural discipline. Models should be containerized and deployed via cloud or hybrid infrastructure to enable repeatable CI/CD processes, versioning, and controlled rollbacks.
+- To **operationalize model outputs**, we expose them through well-defined APIs and integrate them directly into digital touchpoints such as websites and mobile applications.
+- Using **Feedback Loop system**, we could systematically capture user interactions, model inference outputs, and online evaluation data, then align them back into the data model, storage layer, and orchestration workflows.
+- We establish **monitoring and governance** as first-class components. This includes technical monitoring (feature drift, model performance, latency, SLA compliance) and business monitoring (ROI, conversion uplift, and downstream impact). The objective is fast detection and decisive response, not retrospective reporting.
+- All of these components should be integrated into a **unified CI/CD pipeline**. This is what enables scalable deployment, controlled experimentation, and sustainable maintenance as the system evolves.
 
 <img src="/assets/images/recommendation/rs_101/rs_101_04.webp" alt="drawing"/>
 
