@@ -6,7 +6,7 @@ layout: default
 title: Missing Value
 parent: Description Analytics
 permalink: /description/missing/
-nav_order: 6
+nav_order: 106
 ---
 
 # Create Deep Analysis for Missing value From Dataset

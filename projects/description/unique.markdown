@@ -6,7 +6,7 @@ layout: default
 title: Uniqueness
 parent: Description Analytics
 permalink: /description/uniqueness/
-nav_order: 2
+nav_order: 102
 ---
 
 # Create Unique value in Data
