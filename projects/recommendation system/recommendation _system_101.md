@@ -34,6 +34,28 @@ Ranking is the more intuitive formulation of the recommendation problem. Given a
 
 It is easy to see that the prediction problem often boils down to the ranking problem. If we are able to predict missing values, we can extract the top values and display them as our results.
 
+### The long tail problem
+The whole point of recommender systems is to surface items in what we call “the long tail.” Imagine this is a plot of the sales of items of every item in our catalog, sorted by sales. So, number of sales, or popularity, is on the Y axis, and all the products are along the X axis. We almost always see an exponential distribution like this… most sales come from a very small number of items, but taken together, the “long tail” makes up a large amount of sales as well. Items in that “long tail” – the yellow part, in the graph – are items that cater to people with unique, niche interests.
+
+Recommender systems can help people discover those items in the long tail that are relevant to their own unique, niche interests. If we can do that successfully, then the recommendations our system makes can help new authors get discovered, can help people explore their own passions, and generate revenue.
+
+<img src="/assets/images/recommendation/rs_101/rs_101_01.webp" alt="drawing"/>
+
+---
+
+## Modern Recommendation System Framework
+These systems typically involve **documents** (entities a system recommends, like movies or videos), **queries** (information needed to make recommendations, such as user data or location), and **embeddings** (mappings of queries or documents to a vector space called embedding space).
+
+Below is a common architecture for a recommendation system model:
+
+<img src="/assets/images/recommendation/rs_101/rs_101_06.webp" alt="drawing"/>
+
+- **Candidate Generation**: starting with a vast corpus and generating a smaller subset of candidates. 
+- **Scoring**: the model ranks the candidates to select a smaller, more refined set of documents. 
+- **Re-ranking**: This final step refines the recommendations. 
+
+We will discuss deep more about this framework at [this page](/recommendation system/rec_sys_modern)
+
 ---
 
 ## Market Basket Analysis
@@ -253,7 +275,7 @@ These data could come from internal and external sources. That should be conside
 1. Internal data
 - Transactional data
 - Logging and tracker data
-- User data
+- User profile data
 
 1. External data
 - 3rd party data
@@ -308,7 +330,7 @@ These data could come from internal and external sources. That should be conside
 - Discounts used
 - Payment method
 
-2. Activity / behavior (Captures real engagement data)
+2. Activity / behavior (Captures real engagement or implicit data)
 - Page, Category or Product views, searches
 - Login frequency
 - Session duration
@@ -481,17 +503,46 @@ To give more useful information, help the models learn real behavior, and avoid 
   - Session Length
   - Dwell Time
   - Bounce Rate
-  - Hit Rate
+  - **Hit Rate**
     - Recognizes items in the top-N list that the user has rated in the past and is divided by the number of items in the list.
-  - Average reciprocal hit rate (ARHR)
-    - A weighting system that takes into account the item’s placing in the top-N list.
-    - This in effect rewards items listed prominently in the first few places of a top-N list, where there’s higher visibility, and penalizes familiar items low in the N-list.
-  - Diversity
-    - A measure of variety in your N-list.
-    - Diversity can be measured using a number of metrics including Intra-List Similarity (ILS), cosine similarity, and Jaccard similarity coefficient between pairs of items.
-  - User Studies
-    - User studies are more difficult to scale and they generate results in a contrived environment, they help to generate valuable qualitative insights.
-    - Qualitative feedback can be valuable at highlighting aspects overlooked in an A/B test.
+    - Generate top-N recommendations for all of the users. If one of the recommendations in a users’ top-N recommendations is something they actually rated, we consider that a “hit”. We actually managed to show the user something that they found interesting enough to watch on their own already, so we’ll consider that a success. Just add up all of the “hits” in our top-N recommendations for every user, divide by the number of users, and that’s our hit rate.
+    - It’s a much more user-focused metric
+  - **Average reciprocal hit rate (ARHR)**
+    - This metric is just like hit rate, but it accounts for where in the top-N list our hits appear (A weighting system that takes into account the item’s placing in the top-N list). So, we end up getting more credit for successfully recommending an item in the top slot than in the bottom slot.
+    - This is a more user-focused metric, since users tend to focus on the beginning of lists and it depends a lot on how our top-N recommendations are displayed.
+    - The only difference is that instead of summing up the number of hits, we sum up the reciprocal rank of each hit. So, if we successfully predict a recommendation in slot 3, that only counts as 1/3. But a hit in slot 1 of our top-N recommendations receives the full weight of 1.0.
+  - **Cumulative hit rank**
+    - it throws away hits if our predicted rating is below some threshold. Which means that we shouldn’t get credit for recommending items to a user that we think they won’t actually enjoy.
+    - Thus, we shouldn't count the value below threshold.
+  - **Rating hit rate (rHR)**
+    - Hit rate that breaks it down by predicted rating score.
+    - It can be a good way to get an idea of the distribution of how good our algorithm thinks recommended movies are that actually get a hit.
+    - Ideally we want to recommend movies that they actually liked, and breaking down the distribution gives us some sense of how well we’re doing in more detail.
+  - **Coverage**
+    - That’s just the percentage of possible recommendations that our system is able to provide.
+    - > % of <user,item> pairs that can be predicted.
+    - This measurement is a trade-off with accuracy, If we enforce a higher quality threshold on the recommendations we make, then we might improve our accuracy at the expense of coverage (serendipity).
+    - Coverage can also be an important to watch, because it gives us a sense of how quickly new items in our catalog will start to appear in recommendations.
+  - **Diversity**
+    - A measure of how broad a variety of items in our recommender system.
+    - > Diversity = 1 - S ; S = avg similiarity between recommendation pairs
+    - This metrics is trick due to it behavior to give very high deiversity by just recommeding completely random items. Thus, it need to co-exist with other metrics. 
+  - **Novelty**
+    - Is a measure of how popular the items are that we are recommending.
+    - > mean popularity rank of recommended items
+    - Again, just recommending random stuff would yield very high novelty scores, since the vast majority of items are not top-sellers.
+  - **Churn**
+    - How often do the recommendations for a user change?
+    - Churn can measure how sensitive our recommender system is to new or existing user behavior.
+    - Again, just recommending random stuff would yield very high churn scores.
+  - **Responsiveness**
+    - How quickly does new user behavior influence our recommendations? If we rate a new movie, does it affect our recommendations immediately.
+    - More responsiveness would always seem to be a good thing, but in the world of business we have to decide how responsive our recommender really needs to be – since recommender systems that have instantaneous responsiveness are complex, difficult to maintain, and expensive to build.
+    - We need to strike our own balance between responsiveness and simplicity.
+  - **User Studies / Perceived quality**
+    - Another thing we can do is just straight up ask our users if they think specific recommendations are good. 
+    - In practice though, it’s a tough thing to do. Users will probably be confused over whether we asking them to rate the item or rate the recommendation, so we won’t really know how to interpret this data. 
+    - It also requires extra work from our customers with no clear payoff for them, so we’re unlikely to get enough ratings on our recommendations to be useful.
 
 - **Evaluating Candidate Ranking**
   - MRR (Mean Reciprocal Rank)
@@ -558,8 +609,16 @@ To give more useful information, help the models learn real behavior, and avoid 
 - For **specialized product categories** (such as skincare), **recommendation logic must differ** fundamentally from broad, multi-category e-commerce systems. E.I. The strategy should explicitly separate recommendation paths for new versus existing customers.
   - **New customers (cold start)**: When profile and behavioral data is unavailable, recommendations must rely on item metadata and explicit preference capture. This can include user-declared inputs (e.g., skin condition, lifestyle, usage goals) and, where appropriate, computer vision or diagnostic tools to infer user needs. These data enable **content-based, context-aware, or hybrid recommendations**.
   - **Existing customers (known users)**: For users with prior product usage, recommendations should avoid repeating the same product category. If the user is already satisfied with a product, the system should **prioritize cross-sell or upsell strategies using complementary items to extend value and deepen product adoption**.
-- Still recommending rated or brought items that **helps to instill an element of trust**. If you present a list of unfamiliar items the user has never seen before, they might not trust your platform’s ability to recommend items and understand their personal preferences.
-- Consider the condition that the recommended items were too similar to items the user had already purchased or consumed in the past. Rather than being recommended a near-identical item, the user perhaps prefers some variety in their recommendations.
+- There’s **a concept of user trust in a recommender system** – people want to see at least a few familiar items in their recommendations that make them say, “yeah, that’s a good recommendation for me. This system seems good.” If we only recommend things people have never heard of, they may conclude that our system doesn’t really know them, and they may engage less with our recommendations as a result.
+- Consider the condition that the recommended items were too similar to items the user had already purchased or consumed in the past. Rather than being recommended a near-identical item, **the user perhaps prefers some variety in their recommendations**.
+- **Popular items are usually popular for a reason** – they’re enjoyable by a large segment of the population, so we would expect them to be good recommendations for a large segment of the population who hasn’t read or watched them yet. If we’re not recommending some popular items, we should probably question whether our recommender system is really working as it should.
+- **We need to strike a balance between familiar, popular items, and what we call “serendipitous discovery” of new items the user has never heard of before.** The familiar items establish trust with the user, and the new ones allow the user to discover entirely new things that they might love.
+- **NONE of the metrics we’ve discussed matter more than how real customers react to the recommendations our produce, in the real world**. We can have the most accurate rating predictions in the world, but if customers can’t find new items to buy or watch from our system, it will be worthless from a practical standpoint.
+- There is a real effect where **often accuracy metrics tell us an algorithm is great, only to have it do horribly in an online test.** YouTube studied this, and calls it the “surrogate problem.” Accurately predicted ratings don’t necessarily make for good video recommendations. 
+
+  > There is more art than science in selecting the surrogate problem for recommendations.
+
+  It means that we can't always use accuracy as a surrogate for good recommendations. 
 
 ---
 
