@@ -86,3 +86,36 @@ These frameworks allow recommender systems to balance computational efficiency i
 ### Two common candidate generation approaches: 
 - Content-based filtering: Uses similarity between content to recommend new content. 
 - Collaborative filtering: Uses similarity between queries (2 or more users) and items (videos, movies) to provide recommendations. 
+
+## Input Features
+### This features are broadly categorized into:
+- **Dense features** (Continuous / real / numerical values that directly input into models) such as; 
+  - numerical ratings
+  - timestamps
+  - year information
+- **Sparse features** (categorical and can vary in cardinality, that require encoding methods like embeddings) such as; 
+  - categories
+  - tags
+ 
+By combining these feature types, models can effectively learn patterns and relationships to generate accurate predictions and recommendations.
+
+### Sparse features classified into: 
+- Univalent (single-value) features represent attributes with a single value, such as a user’s primary language.
+- Multivalent (multi-value) features capture sets of attributes, such as the genres of a movie or tags on a product. Such features are often encoded as one-hot vectors, e.g., [0,1,0]. 
+
+Specifically for sparse-multivalent features, it often leads to excessively high-dimensional. Thus we could converted into a low-dimensional, dense real-valued vector, often referred to as an embedding vector. 
+
+The embedding vectors are initialized randomly and then the values are trained to minimize the final loss function during model training. The embedding network maps each sparse feature value (e.g., genre or actor) to a low-dimensional dense vector representation called an embedding. These embeddings capture the semantic relationships and similarities between different categories. The embedding lookup tables contain pre-computed embeddings for each sparse feature value, allowing for efficient retrieval during the model’s inference.
+
+An example of deep learning model architecture for processing both dense and sparse features. 
+
+<img src="/assets/images/recommendation/rs_101/rs_101_11.webp" alt="drawing"/>
+
+[source](https://medium.com/better-ml/recsys-model-serving-model-architectures-serving-1b5f038848bd)
+
+
+---
+
+## Glosarium
+
+- Latent representations: is key features of the input data. This could be simplified model of the input data, collection of features that captured by models.
