@@ -18,6 +18,9 @@ Optimization
 matchmaking
 {: .badge .badge-pill .badge-info }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## What is recommender systems?
 Systems that could predict what an individual user liked and mirror related items to the user in highly visible sections of the web or apps.
 
@@ -139,27 +142,42 @@ In reality, item-based and user-based collaborative filtering tend to produce si
 - **Models**
   - Truncated SVD
   - The Naive Bayes Classifier
+  - Nearest Neighbors
 
-### Content-based
+### Content-based Filtering
 Recommends items based on user-item profile and metadata. Provide recommendations based on similar item attributes and the profile of an individual user’s preferences.
 
 <img src="/assets/images/recommendation/rs_101/rs_101_02.webp" alt="drawing"/>
 
 | **Pros** | **Cons** |
 |-------------------------- |-------------------------- |
-|{::nomarkdown}<ul><li>Target at an individual level</li><li>Using the user preferences</li><li>Employed in real time</li><li>Accuracy is high compared to collaborative approaches</li><li>The cold-start problem can be easily handled</li><li>Agnostic to crowd preferences</li><li>Content items are stable</li><li>Items are generally fewer than users</li><li>Compatible with new items</li><li>Mitigates cheating (difficult to “game the system”)</li></ul>{:/} | {::nomarkdown}<ul><li>More personalized and narrowed down to only user preferences, thus create low variety.</li><li>No new products that are not related to the user preferences will be shown.</li><li>The user will not be able to look at what is happening around them or what's trending.</li><li>Ineffective for new users (need to extract  relevant keywords when onboarding).</li></ul>{:/} |
+|{::nomarkdown}<ul><li>Target at an individual level - Personalized Recommendations</li><li>Using the user preferences - Capturing Unique User Interests</li><li>Employed in real time</li><li>Accuracy is high compared to collaborative approaches</li><li>The cold-start problem can be easily handled - Effective in Data-Limited Environments</li><li>Agnostic to crowd preferences</li><li>Content items are stable</li><li>Items are generally fewer than users</li><li>Compatible with new items - Ability to Recommend New Items</li><li>Mitigates cheating (difficult to “game the system”)</li><li>Mitigates cheating (difficult to “game the system”)</li><li>Recommendation of Niche Items</li></ul>{:/} | {::nomarkdown}<ul><li>Scalability - Focusing solely on the current user’s information and items</li><li>No new products that are not related to the user preferences will be shown - Limited Exploration of New Interests</li><li>The user will not be able to look at what is happening around them or what's trending - Difficulty in Discovering New Interests</li><li>Ineffective for new users (need to extract relevant keywords when onboarding).</li><li>The model is closely tied to the quality of these hand-engineered features and domain knowledge</li><li>The method may be ineffective in situations where there is a lack of detailed item information or where items possess limited attributes or features.</li></ul>{:/} |
+
+- **Mechanism of Content-Based Filtering**
+  - Examining the attributes or features of items, such as textual descriptions, images, or tags.
+  - Constructing a profile of the user’s preferences based on the attributes of items they have engaged with. 
+  - Recommends items similar to those the user has previously interacted with, drawing on the similarity between the item attributes and the user’s profile.
+
 
 - **Models**
   - KNN (Basic, means, z-scores)
   - The Naive Bayes Classifier
 
-Main methods
-- Items profile
-- User profile and preferences
-- Document vector (NLP)
-- Similarity score
+- **Main methods**
+  - Items profile
+  - User profile and preferences
+  - Document vector (NLP)
+  - Similarity score
 
-### Context-aware based
+- **Examples**
+  
+  <img src="/assets/images/recommendation/rs_101/rs_101_12.webp" alt="drawing" style="max-width: 45%"/>
+  <img src="/assets/images/recommendation/rs_101/rs_101_13.webp" alt="drawing" style="max-width: 45%"/>
+  <img src="/assets/images/recommendation/rs_101/rs_101_14.webp" alt="drawing" style="max-width: 45%"/>
+  <img src="/assets/images/recommendation/rs_101/rs_101_15.webp" alt="drawing" style="max-width: 45%"/>
+
+
+### Context-aware based Filtering
 similiar with content-based recommendations with additional of filter out for current context.
 
 | **Pros** | **Cons** |
@@ -221,12 +239,46 @@ Example:
 ### **Classic algorithms**
 - **Baseline**
 - **NormalPredictor**
-- **SVD algorithm**
+- **SVD and SVD++ algorithm**
   - For handle very large user-rating with high data sparsity
-- **SVD++ algorithm**
+  - SVD++ is an enhancement of standard matrix factorization techniques designed for collaborative filtering in recommender systems. 
+  - SVD++ also incorporates implicit feedback (e.g., which items a user has interacted with but not rated), leading to improved prediction accuracy.
+  - SVD++ builds upon the standard MF model by incorporating implicit feedback, represented as items the user has interacted with (e.g., viewed, purchased, clicked). 
+
 - **Non-negative Matrix Factorization**
   - Fill the missing data and uses matrix decomposition methods and multiply back to get the approximate original matrix and learn the optimal factor vectors.
-- **Alternating Least Squares**
+  - The algorithm performs a decomposition of the (sparse) user-item feedback matrix into the product of two (dense) lower-dimensional matrices. One matrix represents the user embeddings, while the other represents the item embeddings.
+  - In essence, the model learns to map each user to an embedding vector and similarly maps each item to an embedding vector, such that the distance between these vectors reflects their relevance.
+  - Mechanism:
+    - MF first randomly initializes the user and item embedding matrices
+    - Iteratively optimizes the embeddings to decrease the loss between the Predicted Scores Matrix and the Feedback Matrix using loss function.
+    - **Loss Function**
+      - This loss function will minimize the squared distance over the observed ⟨user,item⟩ pairs, between the predicted and actual feedback values over all pairs of observed (non-zero values) entries in the feedback matrix.
+      - Keep in mind that there are unobserved pairs, these condition could be translate as unobserved interactions. This lack of interaction doesn’t necessarily mean that the user dislikes the content—it could simply indicate that they haven’t encountered it yet.
+      - By treating unobserved pairs as negative data points and assigning them a zero value in the feedback matrix, we can minimize the squared Frobenius distance between the actual feedback matrix and the predicted matrix.
+      - A more balanced approach is to use a weighted combination of squared distances for both observed and unobserved pairs. This method combines the advantages of both approaches. The first summation calculates the loss for observed pairs, while the second summation accounts for unobserved pairs, treating them as soft negatives.
+      - Next, we could also need to weight the observed pairs carefully. For example, frequent items (such as extremely popular YouTube items) or frequent queries (from heavy users) may dominate the objective function. To correct for this effect, training examples can be weighted to account for item frequency. 
+    - For new users or items, the concept of **fold-in** is apply. 
+      - **Fold-in** is the process of incorporating a new user or item into the factorization framework without retraining the entire model. Instead of learning all embeddings from scratch, the existing item embeddings V (which are precomputed during training) are held fixed, and only the embedding for the new user (or item) is optimized.
+      - For a new user, the algorithm initializes their embedding vector randomly and optimizes it iteratively to minimize the loss between their known interactions (with items) and the predictions made by the model using the fixed item embeddings. Similarly, for a new item, the user embeddings are fixed, and the new item’s embedding is adjusted.
+
+- **Stochastic Gradient Descent (SGD)**
+  - SGD is a general-purpose optimization algorithm widely used to minimize loss functions in machine learning and deep learning.
+  - Steps in SGD:
+    - Compute Gradient: For each iteration, SGD calculates the gradient of the loss function with respect to the parameters based on a randomly chosen subset of the data.
+    - Parameter Update: Parameters are updated by moving in the direction opposite to the gradient by a small step size, also known as the learning rate.
+    - Repeat: This process continues until convergence or for a predefined number of iterations.
+
+- **Weighted Alternating Least Squares (WALS)**
+  - the loss function is quadratic in each of the two embedding user and item matrices, i.e., U and V. WALS performs MF in an alternating fashion: it iteratively fixes one of the two embedding matrices (such as user or item embeddings) and solves a least squares optimization problem for the other. This alternating approach is repeated until convergence, enabling WALS to handle weighted MF objectives.
+  - This is an efficient algorithm that is particularly well-suited for MF, since it effectively deals with large, sparse matrices common in recommendation systems. WALS can be distributed across multiple nodes, making it efficient for large-scale data.
+  - Optimization Process in WALS:
+    - Fix One Matrix: Start by fixing one matrix, say the user matrix, and then optimize the other matrix (e.g., the item matrix). Put simply, WALS works by alternating between fixing one matrix and optimizing the other:
+      - Fix U and solve (i.e., optimize) for V.
+      - Fix V and solve (i.e., optimize) for U.
+    - Alternate: After solving for the item matrix, fix it and solve for the user matrix.
+    - Iterate Until Convergence: Continue alternating between the two matrices until the objective function converges. Each step can be solved exactly by solving a linear system, leading to efficient convergence.
+
 - **SlopeOne algorithm**
 - **WARP (Weighted Approximate-Rank Pairwise)**
 - **BPR (Bayesian Personalized Ranking)**
@@ -249,6 +301,30 @@ Example:
   - **Neural Collaborative Filtering**
   - **Wide & Deep**
   - **Two-Tower Models (User tower + Item tower)**
+    - are primarily used for retrieval stage, the goal of retrieval is to efficiently select a small subset of potentially relevant items from a huge catalog (often millions).
+
+    - **Mechanism**
+      - The two-tower model consists of two neural networks (towers): one encodes the user (using features like demographics, interaction history, etc.), and the other encodes the item (using features like content, metadata, etc.).
+      - Both embeddings are projected into the same latent vector space, and relevance is computed via a simple similarity measure, usually the dot product or cosine similarity:
+      
+      > score(u,i) = eu ⋅ ei
+      
+      - Because this similarity can be computed efficiently, approximate nearest neighbor (ANN) search can quickly retrieve the top candidate items.
+      - The trained embeddings of query and item towers are stored for fast retrieval.
+
+    - **Implementation**
+      - Collaborative filtering
+        - In collaborative filtering, recommendations are learned from user–item interaction data (e.g., clicks, views, purchases) without needing explicit content features.
+        - The user tower and item tower each learn embeddings that reflect behavioral patterns:
+          - User tower: learns from user IDs and possibly historical interactions.
+          - Item tower: learns from item IDs and co-occurrence patterns.
+        - These embeddings capture collaborative signals—items liked by similar users end up close in embedding space.
+      - Content-based filtering (possible use):
+        - Two-tower models can also incorporate content features directly:
+          - User tower: could use profile data, demographics, or textual preferences.
+          - Item tower: could use metadata, descriptions, or image/text embeddings.
+        - This makes the model suitable when interaction data is sparse (cold start problem).
+
   - **Transformer-based session models**
 
 ### Graph-Recommendation Engine model
@@ -345,7 +421,7 @@ These data could come from internal and external sources. That should be conside
 
 3. Demographic / profile (Users profile and their segment)
 - Age and Account age
-- Sex
+- Sex / Gender
 - Location
 - Target market / user categories
 - Purchasing power
@@ -353,7 +429,8 @@ These data could come from internal and external sources. That should be conside
 4. Preference input (Explicit data from users)
 - Keywords search
 - Preference input
-- Review
+- Reviews
+- Likes or ratings
 - Wishlist / save actions
 - Add-to-cart events
 
