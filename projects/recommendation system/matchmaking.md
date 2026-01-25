@@ -20,6 +20,9 @@ matchmaking
 
 <img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## Introduction
 <p style='text-align: justify;'>
 The efficient alignment of supply and demand is a critical challenge for each transaction operation.</p>
