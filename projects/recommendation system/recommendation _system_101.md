@@ -290,6 +290,7 @@ Example:
 - **SVM**
 - **Tree based model**
 - **Ensemble model**
+- **LightGBM / XGBoost**
 - **Clustering techniques**
   - **KNN (Basic, means, z-scores)**
     - It assigns a class to a particular data point by a majority vote of its k nearest neighbors. The data point is assigned the class that is the most common among its k-nearest neighbors. In the case of regression, it computes the average value for the target variable based on its k-nearest neighbors.
@@ -520,6 +521,10 @@ To give more useful information, help the models learn real behavior, and avoid 
 
 ### Labeling
 
+- **explicit Feedback Labels**
+  - Ratings
+  - Reviews
+
 - **Implicit Feedback Labels**
   - Binary or weighted signals: Label is interaction strength, not explicit rating.
     
@@ -625,6 +630,8 @@ To give more useful information, help the models learn real behavior, and avoid 
   - MRR (Mean Reciprocal Rank)
   - MAP (Mean Average Precision)
   - NDCG (Normalized Discounted Cumulative Gain)
+
+### 
 
 ---
 

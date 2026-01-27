@@ -3,10 +3,10 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Matchmaking
+title: Optimizing Supply and Demand Matchmaking
 parent: Recommendation System
 permalink: /recommendation system/matchmaking
-nav_order: 102
+nav_order: 105
 ---
 
 # Optimizing Supply and Demand Matchmaking
