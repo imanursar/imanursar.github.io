@@ -68,7 +68,9 @@ We will discuss deep more about this framework at [this page](/recommendation sy
 - An ecommerce/online shop merchant could use it to determine the layout of their catalog and order form.
 - Direct marketers could use the basket analysis results to determine what new products to offer their prior customers.
 - It can also be used to improve the efficiency of a promotional campaign
-
+- Market basket analysis mainly works with the ASSOCIATION RULE {IF} -> {THEN}.
+  - IF means Antecedent: An antecedent is an item found within the data
+  - THEN means Consequent: A consequent is an item found in combination with the antecedent. 
 - There are few terminologies that we need to cover: Support, Confidence, and Lift
   - **Support**: It measures the frequency of the association rule in the data. 
     - The number of transactions with combined items  / Total number of transactions.
@@ -82,7 +84,15 @@ We will discuss deep more about this framework at [this page](/recommendation sy
 
 ### Association Rule Algorithm
 ### Apriori Algorithm
-### FP-Growth
+  - It helps to find frequent itemsets in transactions and identifies association rules between them. 
+  - The method employs a “bottom-up” strategy, in which frequent subsets are expanded one item at a time (candidate generation), and groups of candidates are checked against the data.
+  - The limitation of the Apriori Algorithm is frequent itemset generation. It needs to scan the database many times, leading to increased time and reduced performance as a computationally costly step because of a large dataset. It uses the concepts of Confidence and Support.
+### FP-Growth / Frequent Pattern Growth Algorithm (FPGA)
+  - The FP growth algorithm represents data in the form of an FP tree or Frequent Pattern, hence it is a method of mining frequent itemsets.
+  - A Frequent Pattern Tree is a tree structure that is made with the earlier itemsets of the data. 
+  - The main purpose of the FP tree is to mine the most frequent patterns. Every node of the FP tree represents an item of that itemset. The root node represents the null value, whereas the lower nodes represent the itemsets of the data. While creating the tree, it maintains the association of these nodes with the lower nodes, namely, between item sets.
+### AIS Algorithm
+### SETM Algorithm
 
 ## Classic Recommendation Engine model
 ### Popularity-based / package-based
