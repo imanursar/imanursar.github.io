@@ -18,16 +18,16 @@ I am a Data Scientist with more than six years of experience designing, building
 
 Proven track record leading digital transformation initiatives, enhancing operational workflows, and setting team goals, assigning and reviewing work, and providing coaching and development. I work effectively across cross-functional teams and independently, consistently driving measurable outcomes through scalable data architectures and advanced machine learning solutions. My work supports data-driven decision-making and delivers tangible business value across diverse industries.
 
-I have a well-rounded background across the full data value chain — from data engineering and analytics to predictive modeling and AI modeling — enabling me to build complete, insight-driven data systems. now advancing into generative AI and LLM applications for enterprise use.
+I have a well-rounded background across the full data value chain — from data engineering and analytics to predictive modeling and AI modeling — enabling me to build complete, insight-driven data systems. now advancing into data governance and strategic, generative AI and LLM applications for enterprise use.
 
 ### Proficient in leveraging tools such as: 
-- **Data Engineering, Data pipelining and Data Streaming**: SQL, Apache Airflow, Spark, DBT, Kafka.
+- **Data Engineering, Data pipelining and Data Streaming**: SQL, Apache Airflow, Apache Spark, DBT, Apache Kafka.
 - **Data management**: DataHub, Dbeaver, DVC, FastAPI.
-- **Database and Warehousing**: SQL Server, PostgreSQL, BigQuery, MySQL, Trino, Clickhouse, Minio, DuckDB, MongoDB, HDFS, Hive and Supabase.
-- **Data Analytics and Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Superset, and Tableau. 
-- **CI/CD**: Git, Docker, prometheus, Grafana.
+- **Database and Warehousing**: SQL Server, PostgreSQL-PostGIS, BigQuery, MySQL, Trino, Clickhouse, Minio, DuckDB, MongoDB, hadoop-HDFS, Hive and Supabase.
+- **Data Analytics and Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Apache Superset, and Tableau. 
+- **CI/CD**: Git, Docker-Container, prometheus, Grafana.
 - **Machine Learning and AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, YOLO, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
-- **Computer Vision**: Custom scripts, TensorFlow, Pytorch, OpenCV, YOLO, U-net, SAM-Lora.
+- **Computer Vision**: Custom scripts, TensorFlow, Pytorch, OpenCV, YOLO, U-net, SAMLoRA.
 - **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, ArcGIS for Python, and Data Science Deployment framework.
 - **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
 - **Other Tools**: Google sheet, Microsoft Office, Confluence, and Jira.
