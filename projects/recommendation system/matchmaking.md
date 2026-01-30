@@ -6,7 +6,7 @@ layout: default
 title: Optimizing Supply and Demand Matchmaking
 parent: Recommendation System
 permalink: /recommendation system/matchmaking
-nav_order: 105
+nav_order: 99
 ---
 
 # Optimizing Supply and Demand Matchmaking

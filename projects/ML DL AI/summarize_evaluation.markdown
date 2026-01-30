@@ -78,7 +78,7 @@ If you predict 100 “road” pixels and 90 are truly roads, precision = 0.9.
 
 ### **Recall (Sensitivity)**
 **Meaning:**
-Of all true pixels of this class, how many did the model correctly find?
+Of all true pixels of this class, how many did the model correctly find? and it focuses on the false negatives.
 
 **Formula:**
 Recall=TP/(TP+FN​)
