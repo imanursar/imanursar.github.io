@@ -58,7 +58,7 @@ If 95% of your image is background and the model always predicts “background,�
 
 ### **Precision**
 **Meaning:**
-Of all pixels predicted as this class, how many are actually correct?
+Of all pixels predicted as this class, how many are actually correct? and it focuses on the false positives.
 
 **Formula:**
 Precision=TP​/(TP+FP)
