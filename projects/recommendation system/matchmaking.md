@@ -18,7 +18,7 @@ Optimization
 matchmaking
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/supply_demand.webp" alt="drawing" width="500"/>
 
 * Do not remove this line (it will not be displayed)
 {:toc}
@@ -44,15 +44,15 @@ The primary objective of this project is to enable the business team to efficien
 <p style='text-align: justify;'>
 By integrating data from both internal systems and the harvest prediction model, the tool provides reliable, almost real-time supplier recommendations, ensuring high-quality supply sources that meet our business requirements.</p>
 
-<img src="/assets/images/recommendation/matchmaking/issue.png" alt="drawing" width="175" height='300'/>
+<img src="/assets/images/recommendation/matchmaking/issue.webp" alt="drawing" width="175" height='300'/>
 
 
 ## Schema
-<img src="/assets/images/recommendation/matchmaking/schema.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/schema.webp" alt="drawing" width="500"/>
 
 
 ## Overview of the tool
-<img src="/assets/images/recommendation/matchmaking/overview_tool.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/overview_tool.webp" alt="drawing" width="500"/>
 
 
 ## Key Parameters for Matchmaking
@@ -81,8 +81,8 @@ Key columns include:
 
 
 ## Result
-<img src="/assets/images/recommendation/matchmaking/result_1.png" alt="drawing" width="500"/>
-<img src="/assets/images/recommendation/matchmaking/result_2.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/result_1.webp" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/matchmaking/result_2.webp" alt="drawing" width="500"/>
 
 
 ## The Key Benefits

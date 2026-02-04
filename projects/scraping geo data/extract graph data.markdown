@@ -15,7 +15,7 @@ scraping data
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap geo/geodata/oms_graph_01.png" alt="drawing" height="150"/>
+<img src="/assets/images/scrap geo/geodata/oms_graph_01.webp" alt="drawing" height="150"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -40,7 +40,7 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/scrap geo/geodata/oms_graph_01.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_graph_01.webp" alt="drawing"/>
 
 ### Nodes
 

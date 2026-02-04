@@ -28,7 +28,7 @@ google maps API
 
 <p style='text-align: justify;'>One of the most effective ways to gather this data is through data scraping, particularly from sources like Google Maps API. By utilizing Google Maps, we can collect valuable information about businesses, locations, and customer segments in both upstream and downstream markets.</p>
 
-<img src="/assets/images/scrap geo/google_map/scraping_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/google_map/scraping_02.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../scraping geo data/google map data){: .btn }
@@ -44,7 +44,7 @@ geospatial
 ### Introduction
 <p style='text-align: justify;'>When you're looking for places around you—whether it's coffee shops, ATMs, parks, or gas stations—you’re essentially looking for Points of Interest (POIs). These are specific locations that serve a purpose for people, like businesses, landmarks, or public facilities. One of the best ways to fetch and analyze POIs is by using OpenStreetMap (OSM), a rich, community-driven map database.</p>
 
-<img src="/assets/images/scrap geo/nfs/nfs_03.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/nfs/nfs_03.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../scraping geo data/nearby feat spatial){: .btn }
@@ -60,7 +60,7 @@ geospatial
 ### Introduction
 <p style='text-align: justify;'>The OpenStreetMap (OSM) Overpass API is a powerful tool that allows users to query and extract specific geographic data from the vast OpenStreetMap database. Unlike traditional map APIs that focus on rendering maps, Overpass is designed for retrieving raw geospatial data, making it especially useful for developers, researchers, and data analysts. With Overpass, users can filter and fetch details like place names, amenities, and exact geolocations, all without needing to download the entire OSM dataset. This makes it an efficient and flexible solution for anyone looking to work with location-based data in real time.</p>
 
-<img src="/assets/images/scrap geo/geodata/oms_extract_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/geodata/oms_extract_01.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../scraping geo data/extract spatial){: .btn }
@@ -77,7 +77,7 @@ geospatial
 Working with geographic data often requires precise boundaries for cities, districts, or other administrative areas. In this project, we want to create this process seamless by allowing users to extract detailed polygon data directly from OpenStreetMap (OSM). Instead of manually searching for shapefiles or relying on third-party sources, this project enables us to retrieve administrative boundaries programmatically with just a few lines of code. This is especially useful for urban planning, spatial analysis, and mapping applications, as it provides accurate and up-to-date data sourced from the global OSM community.
 </p>
 
-<img src="/assets/images/scrap geo/geodata/oms_polygon_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_01.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../scraping geo data/extract polygon){: .btn }
@@ -96,7 +96,7 @@ When working with geographic networks, having access to raw road and pathway dat
 With this project, we are extracting structured graph data becomes a straightforward process. This project allows us to pull detailed network information, including nodes (intersections or points of interest) and edges (roads, paths, or trails), filtered by specific network types like drive, walk, or bike networks.
 </p>
 
-<img src="/assets/images/scrap geo/geodata/oms_graph_01.png" alt="drawing" height="150"/>
+<img src="/assets/images/scrap geo/geodata/oms_graph_01.webp" alt="drawing" height="150"/>
 
 <span class="fs-3">
 [Read more](../scraping geo data/extract graph){: .btn }

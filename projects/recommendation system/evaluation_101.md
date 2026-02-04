@@ -279,17 +279,17 @@ In ranked systems like search engines, users typically look only at the first fe
     - Diversity measures the degree to which recommended items cover different aspects of the user’s preferences, ensuring that the recommendations are varied rather than repetitive.
     - How to Measure: computing the average pairwise dissimilarity between the recommended items. we can use a cosine similarity measure between item pairs.
     - **Formula**: 
-    > cosine similarity(i,j) = count(users with i and j) / (count(users with i)^1/2) x (count(users with j)^1/2)
+    > `cosine similarity(i,j) = count(users with i and j) / (count(users with i)^1/2) x (count(users with j)^1/2)`
   - **Novelty/Freshness**:
     - Novelty measures the degree to which recommended items are dissimilar to those the user has already seen or interacted with. It aims to introduce new, unfamiliar items to the user, enhancing the exploration of content.
     - How to Measure: Novelty can be measured by considering how frequently an item has been recommended to or interacted with by users. The idea is to recommend items that are less common and thus more novel to the user.
     - **Formula**: 
-    > Novelty(i) = 1 - count(users recommended i)/count(users who have not interacted with i)
+    > `Novelty(i) = 1 - count(users recommended i)/count(users who have not interacted with i)`
   - **Serendipity**:
     - Serendipity is the ability of the recommender system to suggest items that a user might not have thought of but would find interesting or useful. It captures the element of surprise by recommending items that are unexpected yet relevant.
     - Serendipity is a crucial aspect of recommendation quality because it helps users discover new and intriguing items they might not have encountered otherwise, thereby increasing user engagement and satisfaction.
     - How to Measure: Serendipity can be measured by looking at how unexpected and relevant the recommended items are, considering both the user’s historical preferences and the surprise factor.
-    > Serendipity = 1/count(U) ΣΣ Serendipity(i)/count(i)
+    > `Serendipity = 1/count(U) ΣΣ Serendipity(i)/count(i)`
 
 ## Evaluating User Engagement/Business Metrics
   User engagement metrics are used to measure the performance of the entire recommender system (across all its stages) by measuring how much users engage with the recommended items. 
@@ -317,11 +317,11 @@ In ranked systems like search engines, users typically look only at the first fe
   - **Bounce Rate**
     - measure the percentage of users who leave a page after viewing only one item. It is calculated by dividing the number of single-page sessions by the total number of sessions.
     - **Formula**
-    > ` Bounce Rate = Single page sessions/Total sessions`
+    > `Bounce Rate = Single page sessions/Total sessions`
   - **Hit Rate**
     - Hit rate is analogous to click through rate but is more generic. It is concerned with the fact that out of the recommended lists, how many users watched a movie in that visible window. The window size here is custom to each product, for example for Netflix, it would be the screen size.
     - **Formula**
-    > ` Hit Rate = Number of users that clicked within the window/Total number of users presented with the recommendations`
+    > `Hit Rate = Number of users that clicked within the window/Total number of users presented with the recommendations`
 
 
 

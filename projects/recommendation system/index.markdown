@@ -28,7 +28,7 @@ in this topic, we developed a tool that streamlines the matchmaking process betw
 
 The primary objective of this project is to enable the business team to efficiently find the best suppliers for the listed demand, enhancing order generation and improving the fulfillment process.</p>
 
-<img src="/assets/images/recommendation/supply_demand.png" alt="drawing" width="500"/>
+<img src="/assets/images/recommendation/supply_demand.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../recommendation system/matchmaking){: .btn }

@@ -15,7 +15,7 @@ scraping data
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap geo/geodata/oms_polygon_01.png" alt="drawing" width="500"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_01.webp" alt="drawing" width="500"/>
 
 ## Introduction
 <p style='text-align: justify;'>
@@ -38,12 +38,12 @@ This function requires the following parameters:
 
 ## The result
 
-<img src="/assets/images/scrap geo/geodata/oms_polygon_01.png" alt="drawing"/>
-<img src="/assets/images/scrap geo/geodata/oms_polygon_02.png" alt="drawing"/>
-<img src="/assets/images/scrap geo/geodata/oms_polygon_03.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_01.webp" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_02.webp" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_03.webp" alt="drawing"/>
 
 ### Combination between Polygon and amenity at that polygon
-<img src="/assets/images/scrap geo/geodata/oms_polygon_04.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/geodata/oms_polygon_04.webp" alt="drawing"/>
 
 
 ### Geometry data

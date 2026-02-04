@@ -15,7 +15,7 @@ dataset
 geospatial
 {: .badge .badge-pill .badge-secondary }
 
-<img src="/assets/images/scrap geo/remote_03.jpeg" alt="drawing" height="150"/>
+<img src="/assets/images/scrap geo/remote_03.webp" alt="drawing" height="150"/>
 
 ## Introduction
 
@@ -27,7 +27,7 @@ Various characteristics categorize different forms of remotely sensed imagery. F
 
 The electromagnetic spectrum encompasses a range of all types of radiation (energy). Humans can only see radiation in a very small range of the spectrum (the visible spectrum), but mechanical sensors can record radiation in those wavelengths outside of the visible spectrum, for display and analysis by computer systems. 
 
-<img src="/assets/images/scrap geo/remote_01.jpeg" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_01.webp" alt="drawing"/>
 
 Features on the Earth’s surface (water, soil, plants, snow and all manmade objects, etc.) absorb and re-emit energy (conveying spectral properties that uniquely characterize the Earth’s surface and the objects we observe on its surface). Because of these unique spectral properties, we can “see” and analyze Earth’s features using remotely sensed imagery using more than just the spectral data that seen visually.
 
@@ -40,7 +40,7 @@ Features on the Earth’s surface (water, soil, plants, snow and all manmade obj
 
 The U.S. Landsat program consists of a family of Earth imaging satellites, developed and maintained through a partnership between the USGS and NASA. The Landsat program retains the distinction of being the world’s longest-running system of land-observation satellites. Landsat 1 was launched in 1972, and its most recent satellite, [Landsat 9 was launched on September 27, 2021](https://www.usgs.gov/landsat-missions/landsat-9).
 
-<img src="/assets/images/scrap geo/remote_02.jpeg" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_02.webp" alt="drawing"/>
 
 ### Download
 All Landsat images are available for download, at no cost, from the USGS’s EarthExplorer library.
@@ -54,7 +54,7 @@ All Landsat images are available for download, at no cost, from the USGS’s Ear
 ### Channels or Bands
 Distinctive regions of the electromagnetic spectrum define Landsat’s spectral bands, sometimes referred to as channels, but not all sensors cover the same regions. Landsat 8, for example, uses band definitions that differ from previous Landsat sensors. Landsat 9 sensors are the same as Landsat 8. Detail for this band, we can see at [this link](https://www.usgs.gov/faqs/what-are-band-designations-landsat-satellites).
 
-<img src="/assets/images/scrap geo/remote_03.jpeg" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_03.webp" alt="drawing"/>
 
 
 ### Detail for each band
@@ -86,22 +86,22 @@ As with Landsat, some Sentinel images are available to the public without cost f
 ### Channels or Bands
 Sentinel 2 acquires images in 13 spectral bands and various spatial resolutions. 
 
-<img src="/assets/images/scrap geo/remote_04.jpeg" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_04.webp" alt="drawing"/>
 
 
 ## EarthExplorer
 Many other remotely sensed image products and data are available from the USGS data library via Earth Explorer.
 
-<img src="/assets/images/scrap geo/remote_06.jpeg" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_06.webp" alt="drawing"/>
 
-<img src="/assets/images/scrap geo/remote_05.png" alt="drawing"/>
+<img src="/assets/images/scrap geo/remote_05.webp" alt="drawing"/>
 
 ### **Download**
 1. **Sign in to your account**
 
 2. **Searching for a Scene** - by using `search Criteria` tab
 
-    <img src="/assets/images/scrap geo/remote_07.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_07.webp" alt="drawing" height="50"/>
 
     - **Geocoder** - using manual selection
       - Feature (GNIS)
@@ -110,16 +110,16 @@ Many other remotely sensed image products and data are available from the USGS d
     - **KML/Shapefile Upload** - using file uploaded
     - **An additional search method** - to add coordinate to more precise boundary.
     
-    <img src="/assets/images/scrap geo/remote_08.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_08.webp" alt="drawing" height="50"/>
     
     - **Date Range tab** - to filter time windows
 
-    <img src="/assets/images/scrap geo/remote_09.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_09.webp" alt="drawing" height="50"/>
 
     - **Cloud Cover** - to filter only select image with Cloud Cover Range between selected value (e.i. 0% - 10%). Choosing an image with limited to no cloud cover is extremely important for many land analyses. Cloud cover patterns vary over space. In some scenes, part of the image may include a large body of water, so cloud cover over the open water may not matter if you are mapping terrestrial components. Clouds over the ocean may not matter if the application is focused on terrestrial characteristics.
     
-    <img src="/assets/images/scrap geo/remote_10.jpeg" alt="drawing" height="50"/>
-    <img src="/assets/images/scrap geo/remote_11.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_10.webp" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_11.webp" alt="drawing" height="50"/>
 
 3. **Searching for specific dataset** - by using `Data Sets` tab
   - For complete details on the other options, go to [this link](https://www.usgs.gov/landsat-missions/landsat-science-products).
@@ -129,13 +129,13 @@ Many other remotely sensed image products and data are available from the USGS d
     - **Landsat Legacy** - Landsat Legacy consists of a collection of Landsat data that meet specific data quality levels, allowing users to find data suitable for a particular analysis quickly. The sensor, acquisition dates, and processing caliber define the data. The Legacy framework ensures that Landsat products form a consistent archive of known data quality that can support time-series analyses while supporting continuous improvement of the archive and permitting users to access all data as they are acquired.
     - **Images for normalized difference vegetation index (NDVI)** - Bulk ordering for Landsat, MODIS, and others. They are available through on-demand ordering at https://espa.cr.usgs.gov/.
 
-    <img src="/assets/images/scrap geo/remote_12.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_12.webp" alt="drawing" height="50"/>
 
 4. **Add Additional Criteria** - by using `additional Criteria` tab, which provides additional options for filtering the requests of the image data archive—these choices will help focus the number of images that are returned.  
   - In example:
     - **Day/Night Indicator** - To select only specific condition.
 
-    <img src="/assets/images/scrap geo/remote_13.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_13.webp" alt="drawing" height="50"/>
 
 5. **Interpreting the Search Results**
    - Examining The name - The USGS uses a naming convention for Landsat products. Reference the naming convention outlined below to better understand images in the Landsat collection data archive.
@@ -165,13 +165,13 @@ Many other remotely sensed image products and data are available from the USGS d
     ```
    - Examining the tile - Some interest area by be overlaping with 2 or more tiles, so by default the image will be overlap to get single image.
 
-    <img src="/assets/images/scrap geo/remote_15.jpeg" alt="drawing" height="50"/>
+    <img src="/assets/images/scrap geo/remote_15.webp" alt="drawing" height="50"/>
 
    - Examining the preview image - to check our image (i.e. is it cloud -free? is it cover all interest area?)
 
 6. **Downloading the Image**
 
-<img src="/assets/images/scrap geo/remote_14.png" alt="drawing" height="50"/>
+<img src="/assets/images/scrap geo/remote_14.webp" alt="drawing" height="50"/>
 
    - Make sure to copy all metadata
    - Make sure the download and data type is available
