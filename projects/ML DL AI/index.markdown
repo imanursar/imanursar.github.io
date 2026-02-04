@@ -29,7 +29,7 @@ Difference types of evaluation metrics for different type of algorithms.
 In this section, we will focus on evaluation metrics for classification problems. It starts with a confusion matrix, and we go through its derived metrics and their pros and cons.
 
 
-<img src="/assets/images/ml_dl_ai/evaluation_02.webp" alt="drawing" width="500"/>
+<img src="/assets/images/ml_dl_ai/evaluation/evaluation_02.webp" alt="drawing" width="500"/>
 
 <span class="fs-3">
 [Read more](../ml_dl_ai/evaluation){: .btn }
