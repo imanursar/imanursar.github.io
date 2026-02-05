@@ -56,7 +56,7 @@ We can use the four steps of data cleaning: Data cleaning involves repeated cycl
 - Treatment (deleting, editing or leaving the data as it is) phases of data cleaning requires an in depth understanding of all types and sources of errors possible during data collection and entry processes.
 - Documenting changes entails leaving an audit trail of errors detected, alterations, additions and error checking and will allow a return to the original value if required.
 
-<img src="/assets/images/data/data_cleansing_01.png" alt="drawing"/>
+<img src="/assets/images/data/data_cleansing_01.webp" alt="drawing"/>
 
 ## What we have to do first?
 

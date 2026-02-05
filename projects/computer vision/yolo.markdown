@@ -24,19 +24,19 @@ YOLO is a real-time object detection algorithm that transforms how machines reco
 ## Key YOLO Versions and Improvements
 - **YOLOv1 (2016)** introduced the concept of **single-stage detection**. It divides the input image into a grid and predicts bounding boxes and class probabilities for each cell. This model is fast but struggled with small or overlapping objects.
 
-    <img src="/assets/images/computer_vision/yolo/yolo_01.png" alt="drawing" width="500"/>
+    <img src="/assets/images/computer_vision/yolo/yolo_01.webp" alt="drawing" width="500"/>
 
     **Example**: Detecting pedestrians and vehicles in a traffic image for a real-time dashboard in a smart city system.
 
 - **YOLOv2 (YOLO9000)** improved detection accuracy and flexibility. It introduced **anchor boxes** to better predict multiple objects per grid cell and used k-means clustering to select anchor dimensions. It also supported multi-scale training and could detect over 9,000 object categories by combining ImageNet and COCO datasets.
 
-    <img src="/assets/images/computer_vision/yolo/yolo_02.png" alt="drawing" width="500"/>
+    <img src="/assets/images/computer_vision/yolo/yolo_02.webp" alt="drawing" width="500"/>
 
     **Example**: Identifying different species of animals in a crowded wildlife image, even when they are small and close together.
 
 - **YOLOv3** further enhanced accuracy by using a **feature pyramid network (FPN)** to predict objects at three different scales—small, medium, and large. It also adopted residual blocks and multi-label classification, improving detection of objects with varying sizes and overlapping features.
 
-    <img src="/assets/images/computer_vision/yolo/yolo_03.png" alt="drawing" width="500"/>
+    <img src="/assets/images/computer_vision/yolo/yolo_03.webp" alt="drawing" width="500"/>
 
     **Example**: Recognizing drones in the sky, cars on the road, and people on sidewalks in one frame of aerial surveillance footage.
 
@@ -120,9 +120,9 @@ improvement:
 | **YOLOv8** | 2023 (Ultralytics) | Updated PyTorch         | Unified task support (detection, segmentation, classification, pose), simplified API         | Modular, best UX             | All vision tasks in one model      | Instance segmentation + object detection of fish species from underwater video footage |
 
 
-<img src="/assets/images/computer_vision/yolo/yolo_04.png" alt="drawing" width="500"/>
+<img src="/assets/images/computer_vision/yolo/yolo_04.webp" alt="drawing" width="500"/>
 
-<img src="/assets/images/computer_vision/yolo/yolo_05.png" alt="drawing" width="500"/>
+<img src="/assets/images/computer_vision/yolo/yolo_05.webp" alt="drawing" width="500"/>
 
 
 ## YOLO's Advantage
