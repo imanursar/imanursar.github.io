@@ -3,14 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Propensity
+title: Propensity Model
 parent: ML DL AI
 permalink: /ml_dl_ai/propensity
 nav_order: 104
 toc: true
 ---
 
-# Propensity
+# Propensity Model
 
 machine learning
 {: .badge .badge-pill .badge-primary }
@@ -304,10 +304,10 @@ propensity
   - **ROI measurement should be designed upfront.** We must define how to select high-impact users, measure incremental lift, calculate financial impact, and systematically feed campaign outcomes back into the modeling pipeline for continuous improvement.
 
 ## The 3 most valuable propensity models for optimizers
-
-let’s look at three valuable propensity models optimizers can leverage:
+  let’s look at three valuable propensity models optimizers can leverage:
+  
   - **Propensity to buy or convert**. How likely are visitors, leads, and customers to make a purchase or convert to the next step of the funnel? Those who have a lower propensity score need more incentives than others (e.g. we might offer a higher discount if we’re an ecommerce store).
   - **Propensity to unsubscribe**. How likely are recipients, leads, and customers to unsubscribe from our email lists? To those with a higher propensity score, we might try reducing the frequency of emails or sending a special offer to reinforce the value of remaining a subscriber.
   - **Propensity to churn**. Who are our at-risk leads and customers? If they have a high propensity score, we might experiment with in-product win-back campaigns or assign account concierges to reconnect them with our core value proposition.
 
-Propensity modeling is not prescriptive. Knowing that a group of leads has a higher propensity to convert alone is not particularly valuable. What’s valuable is combining that knowledge with optimization know-how to run smarter, more targeted experiments and extract transferable insights.
+  Propensity modeling is not prescriptive. Knowing that a group of leads has a higher propensity to convert alone is not particularly valuable. What’s valuable is combining that knowledge with optimization know-how to run smarter, more targeted experiments and extract transferable insights.
