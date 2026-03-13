@@ -33,8 +33,17 @@ propensity
 
   This problem could be called as propensity problem (a tendency to a particular kind of behavior), which an attempts to predict the likelihood that visitors, leads, and customers will perform certain actions in this case is an transaction within xx days.
 
-  Tim Royston-Webb, CEO of SentryBay, offers a few reasons:
+  A probabilistic estimation of whether your customers will perform any of such actions or not is called a propensity score. Equipped with these scores, you can also make an educated guess of the value each customer brings in real-time.
 
+### Characteristic
+  For companies to be good with predictions, propensity models have to be dynamic, scalable, and adaptive. Let’s go through these characteristics in more detail.
+
+  - **Dynamic** means models should be built in a way to advance with trends, adapt, and learn on new data as it becomes available.
+  - **Scalable** means they shouldn’t be created for a single-use scenario but in a way to produce a wide array of predictions.
+  - **Adaptive** means models should have a proper data pipeline for regular data ingestion, validation, and deployment to timely adjust to changes.
+
+
+  Tim Royston-Webb, CEO of SentryBay, offers a few reasons:
   <blockquote>
       The thing is that we can’t always rely on these statistical methods in the real world. There might be several scenarios where real experiments are not possible: 
   <br>
@@ -106,6 +115,11 @@ propensity
     - Mail Opened / clicked
     - Ad impressions
     - Coupon received / redeemed
+
+  - **Psychographic Information**
+    - Personality characteristics
+    - Opinions
+    - Likes and dislikes
 
 ### Item and Context Information
   - **Metadata item** (Enables semantic matching)
@@ -309,5 +323,7 @@ propensity
   - **Propensity to buy or convert**. How likely are visitors, leads, and customers to make a purchase or convert to the next step of the funnel? Those who have a lower propensity score need more incentives than others (e.g. we might offer a higher discount if we’re an ecommerce store).
   - **Propensity to unsubscribe**. How likely are recipients, leads, and customers to unsubscribe from our email lists? To those with a higher propensity score, we might try reducing the frequency of emails or sending a special offer to reinforce the value of remaining a subscriber.
   - **Propensity to churn**. Who are our at-risk leads and customers? If they have a high propensity score, we might experiment with in-product win-back campaigns or assign account concierges to reconnect them with our core value proposition.
+  - **Model to calculate customer lifetime value (CLV)**. Allows us to estimate the monetary value of purchases/transactions each customer makes during their lifetime with your business. Models can provide us with information about which acquisition campaigns produce customers with the highest CLV so we know which deserve investment.
+  - **Propensity to engage model** allows us to evaluate the propensity of your leads and customers to show proactive behavior. It may be a propensity score showing which website visitors are expected to click on an ad or which citizens will possibly vote for a given party in elections.
 
   Propensity modeling is not prescriptive. Knowing that a group of leads has a higher propensity to convert alone is not particularly valuable. What’s valuable is combining that knowledge with optimization know-how to run smarter, more targeted experiments and extract transferable insights.

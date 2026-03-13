@@ -112,7 +112,7 @@ In ranked systems like search engines, users typically look only at the first fe
   - **ELI5** 
     > “Of all items the user would actually interact with, how many did we successfully put into the top K recommendations?”
   - **Formula**: `Recall@K = (# relevant items in top K) / (total # relevant items)`
-  - elevant items = items the user actually purchased / clicked in the evaluation window.
+    - elevant items = items the user actually purchased / clicked in the evaluation window.
   - **Example**:
     - user relevant = {A, B, C, D}
     - model's top-5 = {A, X, Y, C, Z}
@@ -324,7 +324,16 @@ In ranked systems like search engines, users typically look only at the first fe
     > `Hit Rate = Number of users that clicked within the window/Total number of users presented with the recommendations`
 
 
+## Things to consider while evaluating recommender systems
 
+### Popularity Bias
+There can be a great amount of popularity bias in recommender systems and it is difficult to detect and fix because popular items are relevant and score high on most of the standard metrics. 
+
+### Position bias
+Position bias occurs when items placed higher on a list are more likely to be viewed or bought, irrespective of their actual relevance. As a result, items with lower rankings receive less engagement.
+
+### Degenerate Feedback loop
+When users are limited to interacting with suggested items, and algorithms rely on user feedback from these suggestions for training, a negative feedback loop can emerge. This loop reinforces displaying of items that have been previously shown, potentially resulting in a negative user experience over time due to a significant portion of relevant items remaining undiscovered by the user.
 
 
 
