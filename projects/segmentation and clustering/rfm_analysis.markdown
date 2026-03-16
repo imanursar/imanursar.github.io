@@ -5,7 +5,7 @@
 layout: default
 title: RFM analysis in Hospitality
 parent: Segmentation and Clustering
-permalink: /segment_cluster/rfm/
+permalink: /segment-cluster/rfm/
 nav_order: 100
 ---
 
