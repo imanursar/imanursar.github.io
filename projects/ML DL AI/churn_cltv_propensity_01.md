@@ -89,9 +89,9 @@ The age-time distribution of the customers shows a few clear patterns. There are
 
 When we segment the data by churn label, a trend becomes visible. Customers with higher age-time tend to churn more. However, the risk level stays below 50%. This means the churn signal is gradual, not extreme. It reflects slow disengagement rather than sudden drop-off.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_03.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_05.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_04.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_03.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_05.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_04.webp" alt="drawing" width="300"/>
 
 ### Lag time
 The lag time distribution of the customers shows a consistent transaction pattern. Most customers return within a short interval. On average, **the lag time between transactions is under 25 days.**
@@ -100,9 +100,9 @@ The highest concentration is in the 0–7 day range. This indicates frequent and
 
 When we compare churned and non-churned customers, the pattern remains similar. There are no clear differences between the two groups. Lag time alone does not strongly explain churn behavior in this segment.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_06.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_07.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_08.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_06.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_07.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_08.webp" alt="drawing" width="300"/>
 
 ### Active age time
 The distribution of active age and time for the customers is skewed toward the early stage. Many customers have a short active age. This includes both newly acquired users and those who churn quickly after onboarding.
@@ -111,9 +111,9 @@ As active age increases, the number of customers declines. Fewer customers stay 
 
 When we split the data by churn label, the risk becomes clearer. **Customers with low active age show a churn risk above 50%. This indicates a critical early-stage vulnerability.** The first phase of the customer lifecycle is where retention efforts matter most.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_09.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_10.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_11.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_09.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_10.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_11.webp" alt="drawing" width="300"/>
 
 ### Sleep time
 The sleep-time distribution of the customers highlights three key points. Each reflects a different stage of customer behavior.
@@ -127,8 +127,8 @@ These patterns raise important questions.
 
 Each group requires a different strategy. Point b needs timely reactivation efforts. Point c may require deeper analysis of onboarding and early experience.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_12.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_13.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_12.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_13.webp" alt="drawing" width="300"/>
 
 ### Monetary
 The average revenue distribution of the customers is heavily concentrated at the lower end. **Most customers generate less than 50,000,000 in value. As the revenue increases, the number of customers drops significantly.**
@@ -137,9 +137,9 @@ When we segment by churn label, a clear pattern appears. **Customers with lower 
 
 As revenue increases, the churn risk stabilizes. It plateaus at around 35%. This suggests higher-value customers are relatively more stable. Low-value customers, on the other hand, are more vulnerable to churn.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_14.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_15.webp" alt="drawing"/>
-<img src="/assets/images/ml_dl_ai/ccp/ccp_16.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_14.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_15.webp" alt="drawing" width="300"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_16.webp" alt="drawing" width="300"/>
 
 ### Correlation
 The correlation analysis of churned the customers reveals several useful signals. These customers are defined as having no transactions for more than three months. **Some variables show moderate relationships, while others are weaker but still meaningful**.
@@ -149,7 +149,7 @@ The correlation analysis of churned the customers reveals several useful signals
 - Active age time shows a low negative correlation. Customers who stay active for longer periods are less likely to churn. This highlights the importance of sustained engagement.
 - Other variables, such as total farmers and total revenue, also show negative correlations. While the relationship is not strong, it indicates that higher engagement and value tend to reduce churn risk.
 
-<img src="/assets/images/ml_dl_ai/ccp/ccp_17.webp" alt="drawing"/>
+<img src="/assets/images/ml_dl_ai/ccp/ccp_17.webp" alt="drawing" width="500"/>
 
 ## Conclusions
 - The age-time distribution shows a clear acquisition spike in early 2023.
