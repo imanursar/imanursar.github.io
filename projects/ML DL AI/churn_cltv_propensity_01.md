@@ -3,14 +3,14 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Churn, CLTV and Propensity Analysis (Part 1)
+title: EDA Churn Analysis (Part 1)
 parent: ML DL AI
 permalink: /ml_dl_ai/churn_cltv_propensity_01
 nav_order: 105
 toc: true
 ---
 
-# Churn, CLTV and Propensity Analysis (Part 1)
+# EDA Churn Analysis (Part 1)
 
 Churn Analysis
 {: .badge .badge-pill .badge-primary }
