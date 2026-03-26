@@ -20,6 +20,8 @@ Leader
 1 on 1 meeting
 {: .badge .badge-pill .badge-info }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## **There are two kinds of managers**
 
@@ -34,6 +36,20 @@ Leader
 - Book out 15 minutes after to digest things
 - Try and stay calm, these things are to benefit you both
 - Ensure you've eaten and are hydrated before going in
+- **Be proactive**
+  - these meetings are an **opportunity for development**, not just status updates.
+  - **Career growth** starts with the employee, not the manager.
+
+### H.O.W Feedback Method
+- **Highlight** - Identify what's working well. Start with positives.
+- **Observe** - Share challenges honestly. What's holding you back?
+- **Wish** - Communicate the specific support you need from your manager.
+
+### G.R.I.T. Career Framework
+- **Goal** - Define long-term career objectives.
+- **Reality** - Assess current progress and identify gaps.
+- **Initiative** - Take action through skills, projects, or mentorship.
+- **Timeline** - Set clear milestones for career progression.
 
 ### In The Meeting
 - Take your time, this meeting is for you
@@ -114,6 +130,19 @@ how do you feel about my current workload and work-life balance and do you have 
 - Send any questions that you'd like to go over
 - Never cancel, instead reschedule Straight away
 - Treat these as a priority. Your people are important
+- Agendas should be shared before meetings for efficiency.
+- Start with a human check-in before diving into work discussions.
+- Listen actively - The goal is to unblock, not dominate conversations.
+
+### Manager Coaching Frameworks
+- **Start** - What actions can help the employee grow?
+- **Stop** - Identify any habits slowing them down.
+- **Continue** - Reinforce strengths and highlight what's working.
+
+### The 3Ps Goal-Setting Framework:
+- **Project** - Define the next big deliverable.
+- **Progress** - Track skill development and growth.
+- **Path** - Align career goals and long-term aspirations.
 
 ### In The Meeting
 - Spend the first 5 minutes with easy warm up questions 

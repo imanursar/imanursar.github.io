@@ -25,7 +25,7 @@ Change
 {: .badge .badge-pill .badge-info }
 
 <span class="fs-3">
-[Read more](../knowledge-vaults/managerial/lead_change){: .btn }
+[Read more](../managerial/lead_change){: .btn }
 </span>
 
 

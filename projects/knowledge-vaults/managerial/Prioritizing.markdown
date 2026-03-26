@@ -20,6 +20,9 @@ Leader
 Decision Making
 {: .badge .badge-pill .badge-info }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## How do you prioritize tasks when everything seems urgent?
 categorize tasks based on their **impact** on deadlines and overall project. Anything that's __critical always takes priority__, then anything with upcoming deadlines, and then tasks that can be "Send rescheduled without affecting the flow of the project."
 
@@ -163,6 +166,12 @@ Steps:
 - Then, for each “yes” task, assign it a value from 1 to 10. 1 being “little impact on your goal” and 10 being “the biggest impact on your goal”.
 - Got, the 3 tasks with the biggest number are your high-impact tasks.
 - Now, it’s time to focus your deep work​ sessions on those 3 tasks—and those 3 tasks only. You shouldn’t be working on anything else until you complete them.
+
+## Kanban Board
+Organize & coordinate your team's priorities
+
+<img src="/assets/images/knowledge/managerial/prioritize_08.webp" alt="drawing"/>
+
 
 ## The 1-3-5 Technique
 

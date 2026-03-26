@@ -23,7 +23,7 @@ indexs
 {: .badge .badge-pill .badge-secondary }
 
 <span class="fs-3">
-[Read more](../knowledge-vaults/geospatial/rs-indexs){: .btn }
+[Read more](../geospatial/rs-indexs){: .btn }
 </span>
 
 

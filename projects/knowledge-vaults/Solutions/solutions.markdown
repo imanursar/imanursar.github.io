@@ -23,7 +23,7 @@ Foundation
 {: .badge .badge-pill .badge-secondary }
 
 <span class="fs-3">
-[Read more](../knowledge-vaults/solutions/solution_cases){: .btn }
+[Read more](../solutions/solution_cases){: .btn }
 </span>
 
 
