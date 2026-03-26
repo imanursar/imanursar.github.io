@@ -6,7 +6,7 @@ layout: default
 title: Visualization 101
 nav_order: 100
 parent: kv - Visualization
-permalink: /knowledge-vaults/visualization_101
+permalink: /knowledge-vaults/visualization/visualization_101
 has_toc: false
 grand_parent: Knowledge Vaults
 ---
@@ -294,57 +294,23 @@ The calendar heatmap is used to visualize values over days in a calendar-like vi
   - USE OF COLORS **— Red and green colors should be used to represent values**: Green represents positive and red represents a negative value. **Avoid use of threshold colors on graphs.**
   - THE COLOR SHOULD REPRESENT THE INFORMATION **— Don’t guide your users attention to the less important things by using bold colors for them.**
 
-## Types of Analytical Applications
-
-### STRATEGIC
-  - **Target Users** - Decision makers & Senior Management.
-  - **Analysis type** - High level measures of performance, Snapshots of daily, weekly & monthly data.
-  - **Key Design Considerations**
-    - Displays a high level overview of the business state
-    - Focuses on high-level performance measures and Key KPIs
-    - More focus on actual goals instead of target
-    - Typically displays static snapshots of daily, weekly, or monthly data
-    - Provides limited user interaction
-    - Showcases opportunities available to the business
-  - **Best Practices**
-    - Avoid including too many details
-    - Avoid use of advance visualizations
-    - Highlight outliers effectively
-    - Use thresholds, highlight positive and negative values
-    - Focus on actionable insights rather than making the dashboard attractive
-
-### ANALYTICAL
-  - **Target Users** - Mid management & Planning team.
-  - **Analysis type** - Complex data with rich comparison. Interactive display and historical data.
-  - **Key Design Considerations**
-    - More complex data with rich comparisons
-    - More focus on historic data
-    - Interactive display with high user interaction
-    - Typically displays historic data with YOY (Year on Year) comparison
-    - Showcases an in depth analysis of data
-    - Includes drill down functionalities
-    - Offers the flexibility to filter data from multiple parameters
-    - Includes data discovery capabilities
-  - **Best Practices**
-    - Includes data discovery capabilities
-    - Highlight insights properly
-    - Focus on actionable insights rather than making the dashboard attractive
-
-### OPERATIONAL
-  - **Target Users** - Operational workers.
-  - **Analysis type** - Monitoring activities that are constantly changing. Shows real time or near real time data.
-  - **Key Design Considerations**
-    - Focuses on high level measures of performance and Key KPIs
-    - More focus on real or near real time data
-    - Quick & static snapshot
-    - Typically display static snapshots of daily data
-    - Displays high -level overview of the state of the business
-    - Showcases up and down in daily business
-    - More focus on outliers
-  - **Best Practices**
-    - Avoid putting too many details
-    - Keep visualizations simple but actionable
-    - Make good use of per-attentive attributes
-    - Use thresholds and highlight positive & negative values
-    - Focus on actionable insights rather than making the dashboard attractive
+- **Costums**
+  - <img src="/assets/images/knowledge/viz/viz_05.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_06.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_07.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_08.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_09.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_10.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_11.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_12.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_13.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_14.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_15.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_16.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_17.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_18.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_19.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_20.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_21.webp" alt="drawing" width="450"/>
+  - <img src="/assets/images/knowledge/viz/viz_22.webp" alt="drawing" width="450"/>
 
