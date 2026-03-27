@@ -72,4 +72,4 @@ Foundation
   - <img src="/assets/images/knowledge/viz/viz_20.webp" alt="drawing" width="450"/>
   - <img src="/assets/images/knowledge/viz/viz_21.webp" alt="drawing" width="450"/>
   - <img src="/assets/images/knowledge/viz/viz_22.webp" alt="drawing" width="450"/>
-
+  - <img src="/assets/images/knowledge/viz/viz_23.webp" alt="drawing" width="450"/>

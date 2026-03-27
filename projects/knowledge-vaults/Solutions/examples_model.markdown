@@ -158,6 +158,8 @@ Solutions
    - Machine learning
    - Deep Learning
    - <img src="/assets/images/ml_dl_ai/cases/cases_score_01.webp" alt="drawing" width="300"/>
+2. **Scoring type B**
+   - Bayesian Approximation + custome scoring
 
 ## Spatial Analysis
 1. **Spatial hypotesis and autocorrelation Analysis** 
