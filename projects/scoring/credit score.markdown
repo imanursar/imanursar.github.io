@@ -6,7 +6,7 @@ layout: default
 title: Credit Scoring 101
 parent: Scoring
 permalink: /Scoring/credit scoring 101/
-nav_order: 1
+nav_order: 100
 ---
 
 # Credit scoring 101

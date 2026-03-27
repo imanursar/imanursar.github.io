@@ -6,7 +6,7 @@ layout: default
 title: Scorecard Method
 parent: Scoring
 permalink: /Scoring/scorecard method/
-nav_order: 3
+nav_order: 101
 ---
 
 # Scorecard Method
