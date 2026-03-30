@@ -28,7 +28,7 @@ Solutions
 1. **Scheduling**
    - <img src="/assets/images/ml_dl_ai/cases/sch_01.webp" alt="drawing" width="300"/>
 
-## Spatial Optimization
+## Spatial Development and Optimization
 1. **Location Optimization Using Weighted Parameters**
    - Street network isochrones
    - Population Density (35%)
@@ -46,6 +46,67 @@ Solutions
      - <img src="/assets/images/ml_dl_ai/cases/cases_pc.webp" alt="drawing" width="300"/>
    - P-Median Problem
      - <img src="/assets/images/ml_dl_ai/cases/cases_pm.webp" alt="drawing" width="300"/>
+3. **Asset Management and Optimizing Development**
+   1. **Land and Infrastructure Management**
+      - Slope Area
+      - Soil Categories
+   2. **Land and Infrastructure Development**
+   3. **Lifetime Maintenance Assets**
+   4. **Forecast Management**
+   5. **Spatial-Temporal Development**
+   6. **Digital Twin**
+   7. **Weather and Environment Monitoring**
+   8. **Monitoring of Sustainable Development**
+4. **Fleet Management**
+   1. **Movement**
+   2. **Location**
+   3. **Territory adherence**
+   4. **Geofencing**
+   5. **Incident detection and reporting**
+   6. **Destiny, Capacity, Speed, Time estimation**
+   7. **Safety management**
+   8. **Realtime report**
+   9. **Security and quality report and analysis**
+5. **Visual Management**
+	1. **Worker Activity and Safety**
+6. **Routing Management**
+   - **Scheduling**
+   - **Safety**
+7. **Risk Management**
+   1. **Disaster Management**
+   2. **Realtime Feedback**
+   3. **Impact Area**
+8. **Sustainability Management**
+   1. **Recovery**
+   2. **Revegetation**
+9. **Spatial hypotesis and autocorrelation Analysis** 
+   - <img src="/assets/images/ml_dl_ai/cases/cases_sa_01.webp" alt="drawing" width="300"/>
+   - <img src="/assets/images/ml_dl_ai/cases/cases_sa_02.webp" alt="drawing" width="300"/>
+10. **Distribution and Density**
+   - Heatmap Distribution
+     - <img src="/assets/images/ml_dl_ai/cases/map_adv_8.gif" alt="drawing" width="300"/>
+   - H3 Spatial Index
+   - Topological Measures
+11. **Regionalization and Coverage Area**
+   -  Covering Radius Method
+   -  Voronoi Diagram
+   -  Clustering and Segmentation
+   -  Isochrone
+12. **Spatial Regression Prediction**
+13. **Species Distribution Modeling (SDMs)**
+   - Unsupervised Learning
+   - Supervised Learning
+   - Maxent Model
+14. **Spatial Interpolation**
+   - Nearest ND Interpolator
+   - Inverse Distance Weighted (IDW) interpolation
+   - Kriging-based interpolation 
+15. **Geocoding**
+16. **Analyze Distance and Attractiveness**
+   - Huff Model
+17. **Change Predition at Spatial and Temporal**
+   - Cellular Automata-Markov Model
+
 
 ## Propensity / churn / CLTV
 1. **Buy Till You Die (BTYD) Models**
@@ -161,13 +222,6 @@ Solutions
 2. **Scoring type B**
    - Bayesian Approximation + custome scoring
 
-## Spatial Analysis
-1. **Spatial hypotesis and autocorrelation Analysis** 
-   - <img src="/assets/images/ml_dl_ai/cases/cases_sa_01.webp" alt="drawing" width="300"/>
-   - <img src="/assets/images/ml_dl_ai/cases/cases_sa_02.webp" alt="drawing" width="300"/>
-2. **Heatmap Distribution**
-   - <img src="/assets/images/ml_dl_ai/cases/map_adv_8.gif" alt="drawing" width="300"/>
-
 ## Data collection
 1. **Scraping data**
    - <img src="/assets/images/ml_dl_ai/cases/cases_scrap_01.webp" alt="drawing" width="300"/>
@@ -215,9 +269,39 @@ Solutions
 9.  **Image Captioning**
 
 
+## GeoAI
+1. **Vegetation**
+   - Object Detection - Counting
+   - Segmentation - cover area
+   - Distribution and Density
+     - Forest Canopy Density - `AVI + SSI + BI = Vegetation Density`
+   - Forcasting Area
+   - Sustainability
+   - Indexs
+   - **Species Distribution Modeling (SDMs)**
+   - **Change Predition at Spatial and Temporal**
 
-
-
+2. **Urban Planning**
+   - Object Detection - Counting
+   - Segmentation - cover area
+   - Distribution and Density
+   - Accessibility
+   - Spatial-Temporal Development
+   - Encroachment - Change Detection
+   - Zoning and Regulatory Mapping
+   - Property Value Mapping
+   - POI Prediction for Business Opportunity Mapping
+   - Service Area Optimization
+   - Indexs
+     - Demographic and Economic Index
+     - Market Expansion Index
+     - Market Sharing Index
+     - Livability Index
+   - **Spatial Regression Prediction**
+   - **Monitoring of Sustainable Development**
+   - **Species Distribution Modeling (SDMs)**
+   - **Analyze Distance and Attractiveness**
+   - **Change Predition at Spatial and Temporal**
 
 
 
