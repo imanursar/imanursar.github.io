@@ -14,6 +14,8 @@ nav_order: 10
 Solutions
 {: .badge .badge-pill .badge-primary }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## Linear Optimization
 1. **Invention of intensity modulated radiation therapy (IMRT)**
