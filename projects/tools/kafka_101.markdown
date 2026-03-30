@@ -119,6 +119,8 @@ Kafka is not just a message queue - It is a durable, Scalable event log for real
 
 <img src="/assets/images/tools/kafka/kafka_09.webp" alt="drawing"/>
 
+<img src="/assets/images/tools/kafka/kafka_16.webp" alt="drawing"/>
+
 ### Key Concepts
 - **Topic**: 
   - A logical channel used to categorize and organize messages. Producers write to topics, and consumers read from them.
@@ -219,10 +221,14 @@ Kafka is not just a message queue - It is a durable, Scalable event log for real
 3. **Data Pipeline Orchestration**
 - Works as a backbone for ETL pipelines, allowing ingestion, transformation, and movement of data between systems.
 - Integrates with Kafka Connect to stream data into databases, data lakes (e.g., S3, HDFS), or analytics platforms (e.g., Snowflake, Redshift).
-4. **Log Aggregation & Monitoring**
+4. **Log Aggregation, Monitoring and Alerting**
 - Captures logs from distributed systems and forwards them for real-time analytics and monitoring (e.g., ELK stack).
 5. **Streaming Analytics**
 - Supports real-time analytics by processing event streams and enabling anomaly detection, fraud detection, and personalization.
+6. **Change Data Capture**
+7. **Data Relication**
+8. **Log Aggregation**
+
 
 ## Kafka vs Airflow
 
@@ -239,6 +245,8 @@ Kafka is not just a message queue - It is a durable, Scalable event log for real
 | State Management | Low (event-driven, stateless)   | High (dependency tracking, task retries) |
 | Latency          | Low latency (milliseconds)      | High latency (minutes to hours)          |
 
+  <img src="/assets/images/tools/kafka/kafka_15.webp" alt="drawing"/>
+
 ### Work Together?
 Airflow can trigger and monitor Kafka-based pipelines:
 - **Kafka for Data Streaming**: Stream raw data in real time.
@@ -246,7 +254,6 @@ Airflow can trigger and monitor Kafka-based pipelines:
 - **Integration**: Use Airflow's `KafkaSensor` to trigger workflows when new Kafka events arrive.
 
 ## How to install kafka
-
 Using Docker containers to develop and run Kafka—along with its supporting components—can significantly simplify maintenance and scaling. Containerization standardizes the environment, reduces setup complexity, and makes it easier to replicate or extend the system as needed.
 
 The minimum requirements to set up Kafka are as follows:
