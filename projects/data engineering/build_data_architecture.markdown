@@ -6,7 +6,7 @@ layout: default
 title: Build Ingest Process
 parent: Data Engineering
 permalink: /data engineering/data_ingest
-nav_order: 100
+nav_order: 101
 ---
 
 # Using PostGIS + DLT: Ingesting CSVs into a Medallion Architecture for spatial data.

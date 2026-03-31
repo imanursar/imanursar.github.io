@@ -6,7 +6,7 @@ layout: default
 title: Data Modeling
 parent: Data Engineering
 permalink: /data engineering/data modeling
-nav_order: 101
+nav_order: 102
 ---
 
 #  Data Modeling
