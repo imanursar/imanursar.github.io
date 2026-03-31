@@ -85,29 +85,42 @@ Solutions
    - <img src="/assets/images/ml_dl_ai/cases/cases_sa_01.webp" alt="drawing" width="300"/>
    - <img src="/assets/images/ml_dl_ai/cases/cases_sa_02.webp" alt="drawing" width="300"/>
 10. **Distribution and Density**
-   - Heatmap Distribution
-     - <img src="/assets/images/ml_dl_ai/cases/map_adv_8.gif" alt="drawing" width="300"/>
-   - H3 Spatial Index
-   - Topological Measures
+    - Heatmap Distribution
+      - <img src="/assets/images/ml_dl_ai/cases/map_adv_8.gif" alt="drawing" width="300"/>
+    - H3 Spatial Index
+      - <img src="/assets/images/ml_dl_ai/cases/cases_h3_01.webp" alt="drawing" width="300"/>
+    - Topological Measures
+      - <img src="/assets/images/ml_dl_ai/cases/cases_topo_01.webp" alt="drawing" width="300"/>
 11. **Regionalization and Coverage Area**
-   -  Covering Radius Method
-   -  Voronoi Diagram
-   -  Clustering and Segmentation
-   -  Isochrone
+    - Covering Radius Method
+    - Voronoi Diagram
+      - <img src="/assets/images/ml_dl_ai/cases/cases_voro_01.webp" alt="drawing" width="300"/>
+    - Clustering and Segmentation
+    - Isochrone
 12. **Spatial Regression Prediction**
+    - <img src="/assets/images/ml_dl_ai/cases/regression_01.webp" alt="drawing" width="300"/>
 13. **Species Distribution Modeling (SDMs)**
-   - Unsupervised Learning
-   - Supervised Learning
-   - Maxent Model
+    - Unsupervised Learning
+      - <img src="/assets/images/ml_dl_ai/cases/sdm_01.webp" alt="drawing" width="300"/>
+    - Supervised Learning
+      - <img src="/assets/images/ml_dl_ai/cases/sdm_02.webp" alt="drawing" width="300"/>
+    - Maxent Model
+      - <img src="/assets/images/ml_dl_ai/cases/sdm_03.webp" alt="drawing" width="300"/>
 14. **Spatial Interpolation**
-   - Nearest ND Interpolator
-   - Inverse Distance Weighted (IDW) interpolation
-   - Kriging-based interpolation 
+    - Nearest ND Interpolator
+      - <img src="/assets/images/ml_dl_ai/cases/cases_inter_01.webp" alt="drawing" width="300"/>
+    - Inverse Distance Weighted (IDW) interpolation
+      - <img src="/assets/images/ml_dl_ai/cases/cases_inter_02.webp" alt="drawing" width="300"/>
+    - Kriging-based interpolation
+      - <img src="/assets/images/ml_dl_ai/cases/cases_inter_03.webp" alt="drawing" width="300"/>
 15. **Geocoding**
+    - <img src="/assets/images/ml_dl_ai/cases/geocoding.webp" alt="drawing" width="300"/>
 16. **Analyze Distance and Attractiveness**
-   - Huff Model
+    - Huff Model
+      - <img src="/assets/images/ml_dl_ai/cases/Huff_Gravity_Model.webp" alt="drawing" width="300"/>
 17. **Change Predition at Spatial and Temporal**
-   - Cellular Automata-Markov Model
+    - Cellular Automata-Markov Model
+      - <img src="/assets/images/ml_dl_ai/cases/camarkov_01.gif" alt="drawing" width="300"/>
 
 
 ## Propensity / churn / CLTV
@@ -299,6 +312,7 @@ Solutions
      - Market Expansion Index
      - Market Sharing Index
      - Livability Index
+       - <img src="/assets/images/ml_dl_ai/cases/livability_index_01.webp" alt="drawing" width="300"/>
    - **Spatial Regression Prediction**
    - **Monitoring of Sustainable Development**
    - **Species Distribution Modeling (SDMs)**

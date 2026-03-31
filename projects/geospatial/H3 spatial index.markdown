@@ -19,6 +19,7 @@ index
 {: .badge .badge-pill .badge-info }
 
 <img src="/assets/images/geospatial/snippet/index_h3_cover.png" alt="drawing" width="500"/>
+
 A discrete global grid system for indexing geographies into a hexagonal grid.
 
 ## Introduction
