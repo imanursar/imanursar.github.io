@@ -38,6 +38,14 @@ The primary objective of this doc is to demonstrate how our tool's heat map anal
 <img src="/assets/images/geospatial/heat_map/obj_1.webp" alt="drawing" width="300"/>
 <img src="/assets/images/geospatial/heat_map/obj_2.webp" alt="drawing" width="300"/>
 
+## Strategic Implications
+Applications include:
+- National grid planning and transmission prioritization
+- Long-horizon capital allocation strategy
+- Site pre-screening before detailed parcel due diligence
+- Regional feasibility benchmarking
+- Risk assessment for new infrastructure exposure
+- Identification of structurally advantaged emerging corridors
 
 ## Schema
 <img src="/assets/images/geospatial/heat_map/schema.webp" alt="drawing" width="500"/>
