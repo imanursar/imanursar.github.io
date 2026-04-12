@@ -378,7 +378,13 @@ Solutions
    - Encroachment - Change Detection
      - <img src="/assets/images/knowledge/solution/cases/cases_enc_01.webp" alt="drawing" width="300"/>
    - Zoning and Regulatory Mapping
-   - Property Value Mapping
+   - Property Value Mapping (Predict House Price)
+     - House photos (interior/exterior visuals)
+     - Street view images (neighborhood context)
+     - Human mobility patterns (visitor foot traffic and travel times)
+     - Socioeconomic indicators (census level demographics)
+     - Spatial location and proximity to POIs
+     - <img src="/assets/images/knowledge/solution/cases/cases_hp_01.webp" alt="drawing" width="300"/>
    - POI Prediction for Business Opportunity Mapping
    - Service Area Optimization
    - Indexs
@@ -411,6 +417,13 @@ Solutions
    - **Mineral Detection**
      - Lineament analysis
      - Automated spectral mapping system using ASTER data on Google Earth Engine (GEE)
+     - Machine Learning
+     - Lithological and Structural Mapping
+     - Iron Oxide and Clay Mapping
+   - **Alteration Zone Mapping**
+     - Mixture-Tuned Matched Filtering (MTMF)
+     - Spectral Angle Mapper (SAM)
+   - **Geochemical Anomaly Detection**
 4. **Improvements**
    - Automated cloud and shadow mask segmentation
    - Measurement distance to specific object or area - create grids
@@ -459,7 +472,14 @@ Solutions
      - Hydrogeology of Aquifer Productivity 
      - Magneto field
      - Contours
-
+   - External Data
+     - [OpenStreetMap Data](geofabrik.de)
+     - [Country-level administrative](https://diva-gis.org/data.html)
+     - [GADM (Global Administrative Areas)](https://gadm.org)
+     - [Humanitarian Data Exchange (HDX)](https://data.humdata.org)
+     - [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
+     - [FAO/UNESCO – Soil data of the world](https://www.fao.org/soils-portal/data-hub/soil-maps-and-databases/faounesco-soil-map-of-the-world/en/)
+     - [World Bank Data Catalog](https://datacatalog.worldbank.org/)
 
 
 
