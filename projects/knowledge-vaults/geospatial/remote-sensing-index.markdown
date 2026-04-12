@@ -69,3 +69,5 @@ indexs
 |NWI     |  | (BLUE-NIR) / (BLUE + NIR) | Normalized Indicator Of Water Bodies |
 |RSWI     |  | (RED-SWIR)/ (RED + SWIR) | Identifies Surface And Soil Water Stress |
 |FSWI     |  | (GREEN - NIR) / (GREEN + NIR) | Highlights Flood And Surface Water Extent |
+|BAI     | Burned Area Index | 1/[(RED-0.05)^2 + (NIR-0.2)^2] | Burned land detection, finre damage mapping |
+|MSAVI  | Modified Soil Adjusted Vegetation index | [2NIR+1((2NIR+1)^2-(8NIR-RED))^0.5]/2 | Vegetation detection with minimal soil influence, expecially in early growth stages |
