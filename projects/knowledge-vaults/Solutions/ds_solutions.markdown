@@ -10,7 +10,7 @@ permalink: /knowledge-vaults/solutions/ds-ai-st
 nav_order: 11
 ---
 
-#  DS and AI Strategies
+# DS and AI Strategies
 Solutions
 {: .badge .badge-pill .badge-primary }
 
