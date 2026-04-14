@@ -1,0 +1,258 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: LLM - AI Agent 101
+parent: kv - Solutions
+grand_parent: Knowledge Vaults
+permalink: /knowledge-vaults/solutions/llm101
+nav_order: 99
+---
+
+# Unstructure Note for LLM and AI agent (potential to split)
+Solutions
+{: .badge .badge-pill .badge-primary }
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+
+# Tools
+  - LangChain – the most widely used framework with a massive ecosystem. Provides abstractions for: Models, Tools, Memory, Chains, Agents, Retrivers, Vector stores.
+  - LangGraph – the next evolution for production-grade agent control. solving the limitation of LangChain; agent control flow, LangChain is linear, Graph-based.
+  - Ollama – Run powerful LLMs locally on your own hardware with a single command.
+  - Langflow – A drag-and-drop visual builder for designing and deploying AI agents and RAG workflows.
+  - CrewAI – role-based multi-agent collaboration. with 3 core abstractions: agents, tasks, crew.
+  - AutoGen – conversational multi-agent systems by Microsoft. for building conversation, collaborative, and autonomous multi-agent system.
+  - Agno – lightweight and performance-focused framework.
+  - LlamaIndex – knowledge/data-centric agents framework, designed to connect LLM agents with structured and unstructured data. act as knowledge orchestration.
+  - Flowise – visual agent orchestration framework using no-code
+  - n8n – agent orchastration that work as a node-based workflow automation system where each performs an operation
+  - Relevance AI – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
+  - OpenClaw – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
+  - Open WebUI – A self-hosted, offline-capable ChatGPT alternative
+
+# RAG (Retrieval-Augmented Generation)
+  combines **information retrieval** with a **language model** to generate accurate answers.
+
+  - retrieves relevant data from a knowledge base
+  - uses an LLM to generate a response based on that context
+
+### RAG Pipeline
+  - Raw docs
+  - Chunking
+  - Embedding each chunk
+  - Vector DB
+  - Query embedding
+  - Similarity search
+  - Top-k chunks
+  - Reranker
+  - LLM model
+
+### What RAG system do:
+  - Chunk documents
+  - Turns documents into searchable vectors (embed chunks)
+  - Finds information using semantic search (retrive top-k chunks)
+  - Sends relevant context to the LLM
+  - Generates accurate answeres from the data
+
+### Agentic RAG
+  - Introducing AI agents that can make decisions, select tools, and even refine queries for more accurate and flexible responses.
+
+  - Here’s how Agentic RAG works on a high level:
+    1. The user query is directed to an AI Agent for processing.
+    2. The agent uses short-term and long-term memory to track query context. It also formulates a retrieval strategy and selects appropriate tools for the job.
+    3. The data fetching process can use tools such as vector search, multiple agents, and MCP servers to gather relevant data from the knowledge base.
+    4. The agent then combines retrieved data with a query and system prompt. It passes this data to the LLM.
+    5. LLM processes the optimized input to answer the user’s query.
+
+### Techical
+  - **Embedding** - Convert the text into vectors.
+    - Converting text into vector representations. 
+    - Captures the semantic meaning of the data. 
+    - Make documents searchable using similiarity. 
+  - **VectorDB** - specific database to store vectors
+    - Allows fast semantic search
+    - Examples:
+      - ChromaDB
+
+### RAG Chunking
+  - Chunking decides what knowledge your system is allowed to see.
+  - If you split text by token count, you’re not building retrieval. You’re breaking meaning.
+  - When chunking is wrong, no vector database or reranker can save you.
+
+  - Real RAG chunking is about:
+    - Preserving ideas, not lines
+    - Respecting document structure
+    - Using semantic boundaries instead of arbitrary cuts
+    - Adding overlap so context doesn’t vanish
+    - Treating every chunk as a standalone knowledge unit
+
+  - When chunking is right:
+    - Retrieval improves
+    - Hallucinations drop
+    - Answers become precise
+    - Costs go down
+
+  - When chunking is wrong:
+    - Retrieval fails
+    - Hallucinations increase
+    - Context gets fragmented
+    - Token costs explode
+
+### RAG Chunking Parameter
+  - **Chunk Size** - Measured in token or characters. 
+
+	| Use Case           | Recommended Size               |
+	| ------------------ | ------------------------------ |
+	| FAQs               | 200-400 tokens            |
+	| Documentation      | 400-800 tokens          |
+	| Legal / Contracts | 800-1200 tokens          |
+	| Code            | 200-500 tokens         |
+
+    - Embedding lose precision after ~800 token
+    - Model gets polluted with noise
+  - **Overlap** - Chunks must overlap so knowledge isn't cut.
+    - Overlap preserves:
+      - Definitions
+      - Cross-sentence logic
+      - References
+    - Typical overlap: 10-25%
+  - **Chunking Strategies**
+    - Fixed-Size Chunking
+    - Sentence-Size Chunking
+    - Semantic Chunking
+      - Chunks are split when topic changes.
+      - using sentence embeddings, cosine similarity, break where similarity drops.
+      - This produces; concept-aligned chunks, self-contained knowledge blocks.
+    - Document-structure Chunking
+      - Split by:
+        - Headers
+        - Sections
+        - Paragraphs
+        - Bullet groups
+      - use case for: Docs, Wikis, Policies, Research papers
+    - Hybrid Chunking
+      - Best practice:
+        - Split by document structure
+        - Inside each section, apply semantic chunking
+        - Apply size limits + overlap
+      - This creates:
+        - Logically coherent chunks
+        - Embedding-friendly size
+        - Retrieval-optimized knowledge blocks
+  - **Chunk metadata**
+    - it's store:
+      - id
+      - document name
+      - section
+      - page
+      - token
+      - etc
+    - metadata enable:
+      - Filtering
+      - Source citation
+      - Page-level grounding
+      - Reranking
+
+### RAG Failure Root Cause
+
+  | Failure              | Root Cause               |
+  | -------------------- | ------------------------ |
+  | Model makes things up| Missing chunk            |
+  | Wrong answer         | Chunk too small          |
+  | Vague answer         | Chunk too large          |
+  | High cost            | Over-long chunks         |
+  | Wrong answer         | Chunk too small          |
+  | Low recall           | Chunk boundaries break meaning   |
+
+  Chuncking is bad when:
+  - ask about X, where X defined, who does X work?
+  - answers are: vague, half-correct
+  - missing details
+
+### Chunks size vs Retrieval Accuracy
+
+  | Chunk size           | Retrieval                | LLM Quality              |
+  | -------------------- | ------------------------ | ------------------------ |
+  | Too small						 | High recall, low precision | Fragmented answers     |
+  | Too large						 | Low recall							  | Irrelevent context 			 |
+  | Just right					 | High recall + precision  | Clean answers 					 |
+
+### RAG for Specific data
+  - Tables
+    - stored as: CSV-like text or one chunk per table
+  - Code
+    - chunk by: Function, Class, file
+  - PDFs
+    - Page -> Section -> Paragraph
+
+# Vector Databases
+  - a Storage to stores the Embedding data (which are mathematical representations of meaning) in vector data type.
+  - Powerful to solving semantic queries, ask about similarity and relation.
+  - This DB acts as memory to get the data for LLM Model.
+
+### Techical
+  - **Stores**
+    - Vectors
+    - Metadata
+    - Original content
+  - **Supports**
+    - Fast similarity search
+    - Filtering
+    - Scalable retrieval
+  - **Measure similarity with distance function**
+    - Cosine similarity
+    - Euclidean distance
+    - Dot product
+    - Scoring hybrid system
+    - vector_score * 0.7 + keyword_score * 0.3
+
+### Cost of Vector DB
+  - Large storage for storing vectors
+  - RAM heavy
+  - Indexing is complex
+
+### Core Architecture of a Vector Database
+  - Ingestion Layer - Consume the data
+    - Raw data
+    - Vectors
+    - Metadata
+  - Indexing Layer - Build Appoximate Nearest Neighbor (ANN) indexes. Using Graph and clustering to indexing.
+    - HNSW
+    - IVF
+    - PQ
+  - Storage Layer
+    - Vectors
+    - Metadata
+    - IDs
+  - Query Engine
+    - A vector
+    - Filters
+    - Top K
+    - return most similar items
+
+### Vector DB Usage
+  - Semantic Search
+  - Recommendataion engines
+  - AI agents with memory
+  - Document QA
+  - Similarity matching
+  - Fraud detection
+  - Image and audio search
+
+### Vector DB tools
+  - Dedicated DB Examples:
+    - Chroma
+    - LanceDB
+    - Milvus
+    - Weaviate
+    - Pinecone
+  - DS Support vector search:
+    - PostgreSQL
+    - Cassandra
+    - ClickHouse
+    - OpenSearch
+    - elasticsearch
+    - Redis
