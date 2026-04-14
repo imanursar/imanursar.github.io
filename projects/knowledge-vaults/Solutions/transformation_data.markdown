@@ -10,7 +10,7 @@ permalink: /knowledge-vaults/solutions/transform
 nav_order: 14
 ---
 
-#  Transformations Parameters
+# Transformations Parameters
 Solutions
 {: .badge .badge-pill .badge-primary }
 
