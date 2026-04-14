@@ -10,7 +10,7 @@ permalink: /knowledge-vaults/solutions/solution_cases
 nav_order: 10
 ---
 
-#  Some solutions for specific cases
+# Some solutions for specific cases
 Solutions
 {: .badge .badge-pill .badge-primary }
 
@@ -158,6 +158,9 @@ Solutions
 
 ## Recommendation system
 1. **Market Basket analysis**
+   - APRIORI
+   - Eclat
+   - FP-Growth
 2. **Classic algorithms**
 	- Baseline
 	- NormalPredictor
@@ -288,11 +291,10 @@ Solutions
    - panel data methods
    - mixed effects models
 
-## Impact of Features
+## Ifluential Features
 1. **Feature Importance**
    - Machine Learning + Interpretable model
 2. **Statistic Test**
-3. 
 
 ## Scoring
 1. **Linear Regression**
@@ -355,6 +357,12 @@ Solutions
    - <img src="/assets/images/knowledge/solution/cases/cv_07.webp" alt="drawing" width="300"/>
 8. **Object Tracker**
 9.  **Image Captioning**
+10. **Pose Estimation**
+11. **Face Detection**
+   - Facial Recognition
+   - Emotion Detection
+12. **Anomaly Detection**
+13. **Optical Character Recognition (OCR)**
 
 ## GeoAI
 1. **Vegetation**
@@ -369,6 +377,9 @@ Solutions
    - Indexs
    - **Species Distribution Modeling (SDMs)**
    - **Change Predition at Spatial and Temporal**
+     - Deforestation monitoring
+     - Vegetation phenology variation study
+     - Coastal and Ecosystem monitoring
 2. **Urban, Bussiness and Building**
    - Object Detection - Counting
    - Segmentation - cover area
@@ -407,9 +418,10 @@ Solutions
    - **Monitoring of Sustainable Development**
    - **Species Distribution Modeling (SDMs)**
    - **Analyze Distance and Attractiveness**
-   - **Change Predition at Spatial and Temporal**
+   - **Change Detection and Predition at Spatial and Temporal**
        - Urban Sprawl
          - ML / DL + Cellular Automata
+       - Post-disaster event (damage assessment)
 3. **Mining**
    - **Detection and Segmentation mining pits and tailing dams**
    - **Interactive querying data**
@@ -480,6 +492,8 @@ Solutions
      - [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
      - [FAO/UNESCO – Soil data of the world](https://www.fao.org/soils-portal/data-hub/soil-maps-and-databases/faounesco-soil-map-of-the-world/en/)
      - [World Bank Data Catalog](https://datacatalog.worldbank.org/)
+     - [VIIRS/JPSS1 Lunar BRDF-Adjusted Nighttime Lights Yearly](https://cmr.earthdata.nasa.gov/search/concepts/C3816918646-LAADS.html)
+     - [Weather Himawari Monitor]()
 
 
 
