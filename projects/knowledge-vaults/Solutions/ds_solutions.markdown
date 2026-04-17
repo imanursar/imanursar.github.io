@@ -7,7 +7,7 @@ title: Data Scientist and AI Strategies
 parent: kv - Solutions
 grand_parent: Knowledge Vaults
 permalink: /knowledge-vaults/solutions/ds-ai-st
-nav_order: 11
+nav_order: 12
 ---
 
 # DS and AI Strategies
