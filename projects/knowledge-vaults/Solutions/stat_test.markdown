@@ -7,7 +7,7 @@ title: Statistical Tests
 parent: kv - Solutions
 grand_parent: Knowledge Vaults
 permalink: /knowledge-vaults/solutions/stat_tests
-nav_order: 12
+nav_order: 13
 ---
 
 # Statistical Tests
