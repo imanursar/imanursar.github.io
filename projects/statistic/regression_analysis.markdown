@@ -4,10 +4,9 @@
 
 layout: default
 title: Regression Analysis
-parent: kv - Solutions
-grand_parent: Knowledge Vaults
-permalink: /knowledge-vaults/solutions/regression
-nav_order: 199
+parent: Statistics
+permalink: /statistics/regression
+nav_order: 101
 ---
 
 # Regression Analysis

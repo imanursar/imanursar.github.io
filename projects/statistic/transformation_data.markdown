@@ -4,10 +4,9 @@
 
 layout: default
 title: Transformations Parameters
-parent: kv - Solutions
-grand_parent: Knowledge Vaults
-permalink: /knowledge-vaults/solutions/transform
-nav_order: 14
+parent: Statistics
+permalink: /statistics/transform
+nav_order: 103
 ---
 
 # Transformations Parameters
