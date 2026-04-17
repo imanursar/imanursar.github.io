@@ -115,7 +115,7 @@ How to choose the predictor and the threshold value?
 ## ROC Curve
 ROC curve is a plot that summarizes the performance of a binary classification model on the positive class.
 
-    <img src="/assets/images/ml_dl_ai/evaluation/evaluation_10.webp" alt="drawing" width="400"/>
+<img src="/assets/images/ml_dl_ai/evaluation/evaluation_10.webp" alt="drawing" width="400"/>
 
 - ROC stands for Receiver Operating Characteristic.
 - Graph is plotted against TPR and FPR for various  threshold values.
