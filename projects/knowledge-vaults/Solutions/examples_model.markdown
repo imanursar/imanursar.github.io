@@ -136,7 +136,7 @@ Solutions
     - Cellular Automata-Markov Model
       - <img src="/assets/images/knowledge/solution/cases/camarkov_01.gif" alt="drawing" width="300"/>
 
-## Propensity / churn / CLTV
+## Propensity / Churn / CLTV
 1. **Buy Till You Die (BTYD) Models**
    - <img src="/assets/images/ml_dl_ai/ccp/ccp_21.webp" alt="drawing" width="300"/>
    - <img src="/assets/images/ml_dl_ai/ccp/ccp_26.webp" alt="drawing" width="300"/>
@@ -156,7 +156,7 @@ Solutions
 9. **Cross-sales Models**
    - Next-product-to-buy algorithms
 
-## Recommendation system
+## Recommendation System
 1. **Market Basket analysis**
    - APRIORI
    - Eclat
@@ -208,31 +208,65 @@ Solutions
      - **Deep Reinforcement Learning**
        - Constrained sequential decision-making task and implementing policy-gradient methods (REINFORCE) for heterogeneous fleets with time window constraints.
 
-## Inventory and warehouse
+## Inventory and Warehouse
 1. **ABC analysis**
 
 ## Segmentation
 1. **Clustering**
-   - CentNN
-   - K-means
-   - K-modes
-   - MK-means
-   - K-prototypes
-   - C-means
-   - SOM and minisom
-   - clarans
-   - Affinity Propagation
-   - Mean Shift
-   - Spectral Clustering
-   - Agglomerative Clustering
-   - DBSCAN
-   - OPTICS
-   - Birch
-   - Spectral Co-clustering
-   - Spectral Bi-clustering
-   - Gaussian Mixture
-   - Gaussian HMM
-   - Hierarchical Clustering
+   - **Centroid-Based**
+     - K-means, K-means++, K-means||
+     - K-modes
+     - K-medians
+     - MK-means
+     - K-prototypes
+     - Clara
+     - Clarans
+     - CentNN
+     - Mean Shift
+   - **Graph-Based**
+     - K-spanning Tree
+     - Shared Nearest Neighbor
+     - Betweenness Centrality Based
+     - Highly Connected Components
+     - Maximal CLique
+     - Spectral Co-clustering
+     - Spectral Bi-clustering
+     - Hierarchical Clustering
+     - Spectral Clustering
+     - Agglomerative Clustering
+   - **Kernel-Based**
+     - SOM and minisom
+     - Neural Gas
+     - Fuzzy C-means
+     - Probabilistic C-Means
+   - **Grid-Based**
+     - Wavecluster
+     - Sting
+     - CLIQUE
+     - VBSCAN
+   - **Density-Based**
+     - DBSCAN
+     - AD, FD, LD, OD, PD - DBSCAN
+     - OPTICS
+     - Denclue
+   - **Connectivity-Based**
+     - Birch
+     - UPGMA
+     - AGNES
+     - DIANA
+     - Chameleon
+     - BICO
+     - CURE
+     - Affinity Propagation
+   - **Distribution-Based**
+     - Gaussian Mixture
+     - EM
+     - DMM
+     - DBCLASD
+     - Gaussian HMM
+   - **Fractal-Based**
+     - FractStream
+     - FC
 2. **RFM (recency, frequency, monetary)**
   - <img src="/assets/images/knowledge/solution/cases/cases_p_01.webp" alt="drawing" width="300"/>
 3. **Hyperpersonalized marketing campaigns**
