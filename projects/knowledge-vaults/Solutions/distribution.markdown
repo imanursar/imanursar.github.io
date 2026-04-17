@@ -18,6 +18,8 @@ Solutions
 {:toc}
 
 
+## Distribution Use Cases
+
 | Distribution Type                                                                                            | Use Cases in SCM                                                             | Examples                                                                                                |
 | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Empirical Data Distribution | Modeling real-world phenomena based on historical data                       | \- Customer Demand Patterns <br> - Lead Time Variability <br> - Return Rates                                        |
@@ -35,8 +37,96 @@ Solutions
 | Student t-Distribution <br> <img src="/assets/images/knowledge/solution/dist/dist_11.webp" alt="drawing"/>  | | |
 
 
+## Details
+### Bernoulli Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_12.webp" alt="drawing"/>
 
+### Binomial Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_13.webp" alt="drawing"/>
 
+### Negative Binomial Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_14.webp" alt="drawing"/>
 
+### Negative Binomial Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_15.webp" alt="drawing"/>
 
+### Geometric Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_16.webp" alt="drawing"/>
+
+### poisson Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_17.webp" alt="drawing"/>
+
+### Uniform Distribution (Discrete)
+<img src="/assets/images/knowledge/solution/dist/dist_18.webp" alt="drawing"/>
+
+### Uniform Distribution (Continuous)
+<img src="/assets/images/knowledge/solution/dist/dist_19.webp" alt="drawing"/>
+
+### Uniform Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_20.webp" alt="drawing"/>
+
+### Exponential Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_21.webp" alt="drawing"/>
+
+### Gamma Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_22.webp" alt="drawing"/>
+
+### Gamma Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_23.webp" alt="drawing"/>
+
+### Beta Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_24.webp" alt="drawing"/>
+
+### Beta Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_25.webp" alt="drawing"/>
+
+### Normal Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_26.webp" alt="drawing"/>
+
+### Normal Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_33.webp" alt="drawing"/>
+
+### Chi-square Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_27.webp" alt="drawing"/>
+
+### Student's t Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_28.webp" alt="drawing"/>
+
+### Student's t Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_29.webp" alt="drawing"/>
+
+### F Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_30.webp" alt="drawing"/>
+
+### F Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_31.webp" alt="drawing"/>
+
+### Multinominal Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_32.webp" alt="drawing"/>
+
+### Multinominal Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_34.webp" alt="drawing"/>
+
+### Categorical or Multinoulli Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_35.webp" alt="drawing"/>
+
+### Dirichlet Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_36.webp" alt="drawing"/>
+
+### Dirichlet Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_39.webp" alt="drawing"/>
+
+### Standard Multivariate Normal Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_37.webp" alt="drawing"/>
+
+### Multivariate Normal Distribution
+<img src="/assets/images/knowledge/solution/dist/dist_38.webp" alt="drawing"/>
+
+### Multivariate Normal Distribution (Continuous data)
+<img src="/assets/images/knowledge/solution/dist/dist_40.webp" alt="drawing"/>
+<img src="/assets/images/knowledge/solution/dist/dist_41.webp" alt="drawing"/>
+<img src="/assets/images/knowledge/solution/dist/dist_42.webp" alt="drawing"/>
+<img src="/assets/images/knowledge/solution/dist/dist_43.webp" alt="drawing"/>
+<img src="/assets/images/knowledge/solution/dist/dist_44.webp" alt="drawing"/>
+<img src="/assets/images/knowledge/solution/dist/dist_45.webp" alt="drawing"/>
 
