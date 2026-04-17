@@ -17,6 +17,8 @@ supervised learning
 evaluation
 {: .badge .badge-pill .badge-secondary }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## Key Concepts: TP, FP, FN, TN
 For a given class (say “Road”):
@@ -175,6 +177,20 @@ Dice=2TP/(2TP+FP+FN)
 | Measures | Best When | Sensitive To |
 |-------------------------- |-------------------------- |-------------------------- |
 | Weighted overlap               | Small object detection       | Small-class errors  |
+
+
+## Performance Metrics decision
+
+| Type                      | metrics                   | Important Class               | Details                   |
+|-------------------------- |-------------------------- |------------------------------ |-------------------------- |
+| Class Labels              | G-Mean                    | 2 Classes equally important   |                           |
+| Class Labels              | Accuracy                  | 2 Classes equally important   |< 80%-90% of examples belong to the majority class   |
+| Class Labels              | F1 Score                  | Positive class more important | FN and FP equally costly  |
+| Class Labels              | F0.5 Score                | Positive class more important | FP more costly            |
+| Class Labels              | F2 Score                  | Positive class more important | FN more costly            |
+| Probabilities             | Brier Score               |                               |Need probabilities         |
+| Probabilities             | PR AUC                    | Positive class more important |Need Class labels          |
+| Probabilities             | ROC AUC                   | 2 Classes equally important   |Need Class labels          |
 
 
 ## More Deep explain for Metrics
