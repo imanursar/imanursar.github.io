@@ -63,6 +63,7 @@ Solutions
    1. **Land and Infrastructure Management**
       - Slope Area
       - Soil Categories
+      - Mapping ecosystems of mining sites
    2. **Land and Infrastructure Development**
    3. **Lifetime Maintenance Assets**
    4. **Forecast Management**
@@ -263,7 +264,7 @@ Solutions
      - EM
      - DMM
      - DBCLASD
-     - Gaussian HMM
+     - Hidden Markov Models (HMM)
    - **Fractal-Based**
      - FractStream
      - FC
@@ -272,6 +273,7 @@ Solutions
 3. **Hyperpersonalized marketing campaigns**
 
 ## Marketing budget allocation
+1. **Media Mix Modeling**
 
 ## Marketing strategic 
 1. **Online learning - Thompson Sampling**
@@ -399,7 +401,7 @@ Solutions
 13. **Optical Character Recognition (OCR)**
 
 ## GeoAI
-1. **Vegetation**
+1. **Vegetation and Natural Environment**
    - Object Detection - Counting
      - <img src="/assets/images/knowledge/solution/cases/cases_cover_01.webp" alt="drawing" width="300"/>
    - Segmentation - cover area
@@ -409,11 +411,13 @@ Solutions
    - Forcasting Area
    - Sustainability
    - Indexs
+   - Estimating flashflood likelihood
    - **Species Distribution Modeling (SDMs)**
    - **Change Predition at Spatial and Temporal**
      - Deforestation monitoring
      - Vegetation phenology variation study
      - Coastal and Ecosystem monitoring
+     - Predicting Vegetation Dynamics
 2. **Urban, Bussiness and Building**
    - Object Detection - Counting
    - Segmentation - cover area
@@ -432,6 +436,7 @@ Solutions
      - <img src="/assets/images/knowledge/solution/cases/cases_hp_01.webp" alt="drawing" width="300"/>
    - POI Prediction for Business Opportunity Mapping
    - Service Area Optimization
+   - Geotagged social media activity
    - Indexs
      - Demographic and Economic Index
      - Market Expansion Index
