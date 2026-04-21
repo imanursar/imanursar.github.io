@@ -44,6 +44,30 @@ Solutions
     - Ollama
     - vLLM
 
+# Terms
+  - **Prompt**: The natural language instruction in which we interact with an LLM
+  - **In context learning**: The inferencing that an LLM does and completes the instruction given in the prompt.
+  - **Zero Shot Learning**: The ability of the LLM to respond to the instruction in the prompt without any example.
+  - **One Shot Learning**: When a single example is provided
+  - **Few Shot Learning**: If more than one examples in provided
+
+    <img src="/assets/images/knowledge/llm/model_03.webp" alt="drawing"/>
+
+  - **Context Window**: The maximum number of tokens that an LLM can provide and inference on. This includes both the prompt and the response.
+  - **Max Tokens**: A aparameter to adjust the number of tokens to be used for a particular request. This is capped to the context window.
+  - **Temperature**: LLM outputs area based on the probability of the generated word. Temperature controls the ramdomness of generation. The higher the temperature, the more random is the generation.
+
+    <img src="/assets/images/knowledge/llm/model_04.webp" alt="drawing"/>
+
+  - **Top P / Top N**: Since LLM outputs are based probability, setting a Top Parameter will restrict the selection of next word form the Top 'N' most probable words or Top words summing up to probability 'P'.
+  - **Top P**: The word/token is selected using random-weighted strategy but only from amongst the top words totalling to probability <=P. (for P=0.33 => cake:0.2,donut:0.1)
+  - **Top N**: The word/token is selected using random-weighted strategy but only from amongst the Top 'N' words/tokens. (for N=3 => cake:0.2,donut:0.1,banana:0.02)
+  - **Penalty**: Adjust this factor to reduce thje repetition of tokens in the generated output. Penalty adds a negative weight to tokens that have previously been generated.
+  - **Greedy**: in output softmax layer, The word/token with the largest probability is selected. 
+  - **Random Sampling**: in output softmax layer, The word/token is selected using random-weighted strategy.
+
+---
+
 # RAG (Retrieval-Augmented Generation)
   combines **information retrieval** with a **language model** to generate accurate answers.
 
@@ -52,7 +76,7 @@ Solutions
 
   <img src="/assets/images/knowledge/llm/rag_01.webp" alt="drawing"/>
 
-### RAG Pipeline
+## RAG Pipeline
   - Tech side
     - Raw docs
     - Document Processing
@@ -73,14 +97,14 @@ Solutions
       - Organize with Metadata
   - LLM model
 
-### What RAG system do:
+## What RAG system do:
   - Chunk documents
   - Turns documents into searchable vectors (embed chunks)
   - Finds information using semantic search (retrive top-k chunks)
   - Sends relevant context to the LLM
   - Generates accurate answeres from the data
 
-### Agentic RAG
+## Agentic RAG
   - Introducing AI agents that can make decisions, select tools, and even refine queries for more accurate and flexible responses.
 
   - Here’s how Agentic RAG works on a high level:
@@ -90,7 +114,7 @@ Solutions
     4. The agent then combines retrieved data with a query and system prompt. It passes this data to the LLM.
     5. LLM processes the optimized input to answer the user’s query.
 
-### Techical
+## Techical
 
   | Name                 | Details                            | Examples              |
   | -------------------- | ---------------------------------- | ------------------------ |
@@ -104,7 +128,7 @@ Solutions
   | Model Optimization 	 | \- Compression & Quantization <br> \- API Serving & Scaling  | \- Reduce model size with GPTQ, AWQ, LLM.int8(), and Knowledge Distillation  <br> \- Deploy with vLLM, Triton Inference Server, TensorRT, ONNX, and Ray Serve for efficient inference	 |
   | Evaluation & Benchmarking | \- Benchmarking performance <br> \- Red-Teaming <br> \- Adversarial Testing  | \- HumanEval <br> \- HELM <br> \- OpenAI Eval <br> \- MMLU <br> \- ARC  <br> \- MT-Bench |
 
-### RAG Chunking
+## RAG Chunking
   - Chunking is the pre-processing step of splitting texts into smaller pieces, or "chunks.” Each chunk is the unit of information that is vectorized and stored in a vector database.
   - Chunking decides what knowledge your system is allowed to see.
   - Chunking affects both the information retrieval and the amount of contextual information provided. Get it wrong, and you're either missing crucial context or drowning in irrelevant noise.
@@ -130,7 +154,7 @@ Solutions
     - Context gets fragmented
     - Token costs explode
 
-### RAG Chunking Parameter
+## RAG Chunking Parameter
   - **Chunk Size** - Measured in token or characters. 
 
 	| Use Case           | Recommended Size               |
@@ -162,7 +186,7 @@ Solutions
       - Page-level grounding
       - Reranking
 
-### Chunking Strategies
+## Chunking Strategies
   - **Fixed-Size Chunking**
     - This technique splits the text into chunks of a fixed size, without considering natural breaks or the structure of the content.
     - It's simple and cost-effective, but lacks contextual awareness.
@@ -205,7 +229,7 @@ Solutions
     - maintaining the contextual relationships between tokens across the entire document during the embedding process, and only afterwards dividing these contextually-rich embeddings into chunks.
     - This method can help mitigate issues associated with very long documents, such as expensive LLM calls, increased latency, and a higher chance of hallucination.
 
-### RAG Failure Root Cause
+## RAG Failure Root Cause
 
   | Failure              | Root Cause               |
   | -------------------- | ------------------------ |
@@ -221,7 +245,7 @@ Solutions
   - answers are: vague, half-correct
   - missing details
 
-### Chunks size vs Retrieval Accuracy
+## Chunks size vs Retrieval Accuracy
 
   | Chunk size           | Retrieval                | LLM Quality              |
   | -------------------- | ------------------------ | ------------------------ |
@@ -229,7 +253,7 @@ Solutions
   | Too large						 | Low recall							  | Irrelevent context 			 |
   | Just right					 | High recall + precision  | Clean answers 					 |
 
-### RAG for Specific data
+## RAG for Specific data
   - Tables
     - stored as: CSV-like text or one chunk per table
   - Code
@@ -237,12 +261,14 @@ Solutions
   - PDFs
     - Page -> Section -> Paragraph
 
+---
+
 # Vector Databases
   - a Storage to stores the Embedding data (which are mathematical representations of meaning) in vector data type.
   - Powerful to solving semantic queries, ask about similarity and relation.
   - This DB acts as memory to get the data for LLM Model.
 
-### Techical
+## Techical
   - **Stores**
     - Vectors
     - Metadata
@@ -258,12 +284,12 @@ Solutions
     - Scoring hybrid system
     - vector_score * 0.7 + keyword_score * 0.3
 
-### Cost of Vector DB
+## Cost of Vector DB
   - Large storage for storing vectors
   - RAM heavy
   - Indexing is complex
 
-### Core Architecture of a Vector Database
+## Core Architecture of a Vector Database
   - Ingestion Layer - Consume the data
     - Raw data
     - Vectors
@@ -282,7 +308,7 @@ Solutions
     - Top K
     - return most similar items
 
-### Vector DB Usage
+## Vector DB Usage
   - Semantic Search
   - Recommendataion engines
   - AI agents with memory
@@ -291,7 +317,7 @@ Solutions
   - Fraud detection
   - Image and audio search
 
-### Vector DB tools
+## Vector DB tools
   - Dedicated DB Examples:
     - Chroma
     - LanceDB
@@ -305,3 +331,81 @@ Solutions
     - OpenSearch
     - elasticsearch
     - Redis
+
+---
+
+# Models
+
+## The Transformer Model
+  - The strength of the transformer model is in its **ability to understand the significance and context of every word in a sentence**.
+  - Architecture plays a critical role in defining what objective can each LLM be used for.
+  - LLM size is measured in terms of the number of parameters. 
+  - To optimize the model >> minimise the loss function of the model >> providing **more training tokens** and/or **increasing the number of parameters (model size)** >> **increase Compute cost** (budget, time, GPUs).
+  - The compute optimal number of training tokens should be 20 times the number of parameters.
+  - This means that smaller models can achieve the same performance as the larger ones, if they are trained on larger datasets.
+
+## How does the Transformer model work?
+  - **Tokenization** is the process of breaking down text into smaller units, such as words or phrases, for easier processing and analysis.
+  - **Embedding** is the process where each token is then transformed into a vector in a high-dimensional space. This embedding captures the meaning and context of each word.
+  - **Positional encoding** is the process of adding information to a model about the position of elements in a sequence.
+    
+    <img src="/assets/images/knowledge/llm/model_01.webp" alt="drawing"/>
+
+  - **Encoder**: Encodes each input token into vector by learning self-attention weights & passing them through a FCFF Network.
+  - **Decoder**: Accepts an input token, passes them through the learned attention and FCFF Network to generate new token.
+  - **Self Attention** - The model calculates attention scores for each word, determining how much focus it should put on other words in the sentence when trying to understand a particular word. This helps the model capture relationships and context within the text.
+  - **Multi-headed Self attention** is a mechanism in transformers that runs several self-attention processes in parallel, allowing the model to focus on different parts of the input sequence from different perspectives at the same time.
+  - **Softmax**: Calculates the probability for each word to be the next word in sequence.
+  - **Output layers** of the transformer convert the processed data into an output format suitable for the task at hand, such as classifying the text or generating new text.
+
+  <img src="/assets/images/knowledge/llm/model_02.webp" alt="drawing"/>
+
+## Pre-Train LLM Types
+  - <img src="/assets/images/knowledge/llm/model_05.webp" alt="drawing"/>
+  - <img src="/assets/images/knowledge/llm/model_06.webp" alt="drawing"/>
+  - <img src="/assets/images/knowledge/llm/model_07.webp" alt="drawing"/>
+
+## Pre-train for Domain Adaptation
+  - Developing pre-trained models for a highly specialised domains may be useful when:
+    - There are important terms that are not commonly used in the language.
+    - The meaning of some common terms is entirely different in the domain vis-a-vis the common usage.
+    - Examples: in Legal and medical fields.S
+
+## Computational Cost
+  - 1 Parameter = 4 bytes (32 bit float)
+  - 1 Billion Parameters = 4 x 10E9 bytes = 4GB
+  - Model Parameters = 4 bytes per parameter
+  - 2 Adam Optimisers = +8 bytes per parameter
+  - Gradients = +4 bytes per parameter
+  - Activations = +8 bytes per parameter
+
+  - Total = 4 bytes per parameter + 20 extra bytes per parameter
+  - To store = 4 GB@32 bit full precision
+  - To train = 80 GB@32 bit full precision
+
+  - PetaFLOP/s-day = Number of FLOating Point operations performed at the rate of 1 petaFLOP per second for one day.
+  - 1 petaFLOP per second = 10E15 or 1 Quadrillion floating point operations per second.
+
+---
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
