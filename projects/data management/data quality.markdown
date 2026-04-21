@@ -20,6 +20,9 @@ data management
 
 <img src="/assets/images/data/data_management/damas_03.webp" alt="drawing" width="500"/>
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 ## Introduction
 <p style='text-align: justify;'>
 Data quality defines the credibility of every decision, analysis, and system that depends on information. It is not a cosmetic process or technical afterthought—it is a controlled discipline that determines whether data can be trusted, reused, and acted upon. Managing data quality begins with a shared understanding of its terms and concepts: accuracy, completeness, consistency, and timeliness are not ideals but measurable conditions. Quality management provides the structure to evaluate and correct data continuously, ensuring it remains aligned with business purpose and regulatory expectation.</p>
@@ -51,6 +54,20 @@ The goal of data quality management is to sustain confidence in data across its 
 - Identifying and advocating for opportunities to improve the quality of data, through changes to processes and systems and engaging in activities that measurably improve the quality of data based on data consumer requirements
 
 ---
+
+## Examples Impact of Poor Data Quality on a Bussiness
+
+- Missed opportunities
+- Lost revenue
+- Reduced efficiency
+- Non-optimal Customer Experience 
+- Misanalysis
+- Reputation damage
+- Lack of compliance
+- Generate cost
+
+---
+
 
 ## Business drivers for Data Quality Management
 
