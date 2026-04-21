@@ -76,6 +76,8 @@ Solutions
      10. [Earth quake GEM GLOBAL SEISMIC HAZARD MAP](https://www.globalquakemodel.org/gem)
      11. [Kode Pos Indonesia]()
      12. [IDN Spatial Distribution of Population Estimation](https://hub.worldpop.org)
+     13. [Global Forest Map](https://www.globalforestwatch.org/map/)
+     14. [NASA’s Fire Information for Resource Management System (FIRMS)](https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@0.0,0.0,3.0z)
   8. **Data collection**
      1.  [geospatial datasets Catalogs](https://github.com/opengeos/geospatial-data-catalogs)
      2.  [open datasets on AWS](https://github.com/opengeos/aws-open-data)
