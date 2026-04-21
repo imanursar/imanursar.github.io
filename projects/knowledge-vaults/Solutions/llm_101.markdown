@@ -32,6 +32,17 @@ Solutions
   - Relevance AI – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
   - OpenClaw – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
   - Open WebUI – A self-hosted, offline-capable ChatGPT alternative
+  - Docling - Processing pdf document for LLM-ready
+
+# LLM Model
+  - Open-source LLMs
+    - LLaMA
+    - Mistral
+  - API-based models
+    - OpenAI
+  - Model orchestration 
+    - Ollama
+    - vLLM
 
 # RAG (Retrieval-Augmented Generation)
   combines **information retrieval** with a **language model** to generate accurate answers.
@@ -39,15 +50,27 @@ Solutions
   - retrieves relevant data from a knowledge base
   - uses an LLM to generate a response based on that context
 
+  <img src="/assets/images/knowledge/llm/rag_01.webp" alt="drawing"/>
+
 ### RAG Pipeline
-  - Raw docs
-  - Chunking
-  - Embedding each chunk
-  - Vector DB
-  - Query embedding
-  - Similarity search
-  - Top-k chunks
-  - Reranker
+  - Tech side
+    - Raw docs
+    - Document Processing
+      - Chunking
+    - Embedding generation each chunk
+    - Vectors and original text stored at each DB
+  - User side
+    - Query Processing
+    - Query Embedding
+    - Hybrid search (Similarity)
+    - Top-k chunks
+      - BM25 Search (Top-30)
+      - Vector Search (Top-10)
+      - RRF Fusion (up to Top-40)
+    - Reranker (retrieval)
+      - Jina Cross-Encoder Scoring and top-10 Results
+    - Context Formatting
+      - Organize with Metadata
   - LLM model
 
 ### What RAG system do:
@@ -68,17 +91,23 @@ Solutions
     5. LLM processes the optimized input to answer the user’s query.
 
 ### Techical
-  - **Embedding** - Convert the text into vectors.
-    - Converting text into vector representations. 
-    - Captures the semantic meaning of the data. 
-    - Make documents searchable using similiarity. 
-  - **VectorDB** - specific database to store vectors
-    - Allows fast semantic search
-    - Examples:
-      - ChromaDB
+
+  | Name                 | Details                            | Examples              |
+  | -------------------- | ---------------------------------- | ------------------------ |
+  | Tokenization			   | Convert text into numerical or basic text as tokens | \- SentencePiece <br> \- GPT’s BPE tokenizer |
+  | Embedding						 | \- Convert the text into vectors <br> \- Converting text into vector representations <br> \- Captures the semantic meaning of the data <br> \- Make documents searchable using similiarity |   			 |
+  | VectorDB  					 | \- Pecific database to store vectors <br> \- Allows fast semantic search | \- ChromaDB	 |
+  | LLM Model  					 |   | \- GPT <br> \- T5 <br> \- LLaMA <br> \- Falcon	 |
+  | Pretraining					 |   | \- Causal Language Modeling (CLM) with Cross-Entropy Loss <br> \- Gradient Checkpointing <br> \- Parallelization (FSDP, ZeRO) |
+  | Optimizations				 |   | \- Apply Mixed Precision (FP16/BF16) <br> \- Gradient Clipping <br> \- Adaptive Learning Rate Schedulers for efficiency |
+  | Model Alignment      | \- Supervised Fine-Tuning (SFT) <br> \- Reinforcement Learning from Human Feedback (RLHF)  <br> \- Safety & Constitutional AI | \- Train on high-quality human-annotated datasets (InstructGPT, Alpaca, Dolly) <br> \- Generate responses, rank outputs, train a Reward Model (PPO), and refine using Proximal Policy Optimization (PPO) <br> \- Apply RLAIF, adversarial training, and bias filtering |
+  | Model Optimization 	 | \- Compression & Quantization <br> \- API Serving & Scaling  | \- Reduce model size with GPTQ, AWQ, LLM.int8(), and Knowledge Distillation  <br> \- Deploy with vLLM, Triton Inference Server, TensorRT, ONNX, and Ray Serve for efficient inference	 |
+  | Evaluation & Benchmarking | \- Benchmarking performance <br> \- Red-Teaming <br> \- Adversarial Testing  | \- HumanEval <br> \- HELM <br> \- OpenAI Eval <br> \- MMLU <br> \- ARC  <br> \- MT-Bench |
 
 ### RAG Chunking
+  - Chunking is the pre-processing step of splitting texts into smaller pieces, or "chunks.” Each chunk is the unit of information that is vectorized and stored in a vector database.
   - Chunking decides what knowledge your system is allowed to see.
+  - Chunking affects both the information retrieval and the amount of contextual information provided. Get it wrong, and you're either missing crucial context or drowning in irrelevant noise.
   - If you split text by token count, you’re not building retrieval. You’re breaking meaning.
   - When chunking is wrong, no vector database or reranker can save you.
 
@@ -119,29 +148,6 @@ Solutions
       - Cross-sentence logic
       - References
     - Typical overlap: 10-25%
-  - **Chunking Strategies**
-    - Fixed-Size Chunking
-    - Sentence-Size Chunking
-    - Semantic Chunking
-      - Chunks are split when topic changes.
-      - using sentence embeddings, cosine similarity, break where similarity drops.
-      - This produces; concept-aligned chunks, self-contained knowledge blocks.
-    - Document-structure Chunking
-      - Split by:
-        - Headers
-        - Sections
-        - Paragraphs
-        - Bullet groups
-      - use case for: Docs, Wikis, Policies, Research papers
-    - Hybrid Chunking
-      - Best practice:
-        - Split by document structure
-        - Inside each section, apply semantic chunking
-        - Apply size limits + overlap
-      - This creates:
-        - Logically coherent chunks
-        - Embedding-friendly size
-        - Retrieval-optimized knowledge blocks
   - **Chunk metadata**
     - it's store:
       - id
@@ -155,6 +161,49 @@ Solutions
       - Source citation
       - Page-level grounding
       - Reranking
+
+### Chunking Strategies
+  - **Fixed-Size Chunking**
+    - This technique splits the text into chunks of a fixed size, without considering natural breaks or the structure of the content.
+    - It's simple and cost-effective, but lacks contextual awareness.
+    - Overlapping chunks can be used, allowing adjacent chunks to share some content.
+  - **Recursive Chunking**
+    - Text is initially split using a primary separator, like paragraphs.
+    - If the resulting chunks are too large, secondary separators, like sentences, are applied recursively until the desired chunk size is achieved.
+    - This technique respects the document's structure and is flexible for various use cases.
+  - **Sentence-Size Chunking**
+  - **Semantic Chunking**
+    - In this technique, the text is divided into meaningful units, such as sentences, paragraphs or topic changes, which are then vectorized. 
+    - These units are then combined into chunks based on the cosine distance between their embeddings, with a new chunk formed whenever a significant context shift is detected.
+    - using sentence embeddings, cosine similarity, break where similarity drops.
+    - This produces; concept-aligned chunks, self-contained knowledge blocks.
+  - **Document-structure Chunking**
+    - This technique creates chunks based on the natural divisions within the document, such as headings or sections.
+    - It's very effective for structured data like HTML, Markdown, or code files but it’s less useful when the data lacks clear structural elements.
+    - Split by:
+      - Headers
+      - Sections
+      - Paragraphs
+      - Bullet groups
+    - use case for: Docs, Wikis, Policies, Research papers
+  - **Hybrid Chunking**
+    - Best practice:
+      - Split by document structure
+      - Inside each section, apply semantic chunking
+      - Apply size limits + overlap
+    - This creates:
+      - Logically coherent chunks
+      - Embedding-friendly size
+      - Retrieval-optimized knowledge blocks
+  - **LLM-Based Chunking**
+    - This advanced technique uses a Language Model (LLM) to generate chunks. 
+    - The LLM processes the text and generates semantically isolated sentences or propositions that can stand alone. 
+    - While this method is highly accurate, it is also the most computationally demanding.
+  - **Late Chunking (ColBERT)**
+    - Inverting order of embedding: `Embed the entire document first, then chunk the embeddings`.
+    - This method utilizes a long context embedding model to **create token embeddings for every token in a document**. These token-level embeddings are then **broken up and pooled into multiple embeddings representing each chunk in the text**.
+    - maintaining the contextual relationships between tokens across the entire document during the embedding process, and only afterwards dividing these contextually-rich embeddings into chunks.
+    - This method can help mitigate issues associated with very long documents, such as expensive LLM calls, increased latency, and a higher chance of hallucination.
 
 ### RAG Failure Root Cause
 
@@ -250,7 +299,7 @@ Solutions
     - Weaviate
     - Pinecone
   - DS Support vector search:
-    - PostgreSQL
+    - PostgreSQL (pgvector)
     - Cassandra
     - ClickHouse
     - OpenSearch
