@@ -354,7 +354,6 @@ Solutions
 1. **Logistic Regression**
    - <img src="/assets/images/knowledge/solution/cases/lr_01.webp" alt="drawing" width="300"/>
 
-
 ## Time Series Prediction
 
 ## Distance Measurement
@@ -478,5 +477,41 @@ Solutions
 4. **Improvements**
    - Automated cloud and shadow mask segmentation
    - Measurement distance to specific object or area - create grids
+
+## LLM and Gen AI
+1. **Telecomunication**
+   - Voice identification for prioritization
+   - Chatbot for Q&A
+   - Autonomous assistants
+   - Predict network issues
+   - Cloud management
+   - Network Anamolies Resolution
+     - Reduce manual effort
+     - Speed up fault detection
+     - Improve network reliability
+     - Real-time recommendations
+     - Address problems before they escalate
+     - Ensuring a more stable and efficient network
+   - Network Optimization
+   - Capacity Management
+   - Real-time Issue Detection
+2. **Marketing** 
+   - Targeted offers and recommendations (hyper-Personalization)
+   - Generates personalized messages
+   - Automated Content Creation
+3. **RAG**
+   - Knowledge Management
+   - Customer Support (FAQs, User Manuals and troubleshooting guides)
+   - Research Assistance
+   - Content Curation
+   - Summarisation
+   - Language Translation
+
+
+
+
+
+
+
 
 
