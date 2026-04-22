@@ -369,7 +369,7 @@ Solutions
   - Developing pre-trained models for a highly specialised domains may be useful when:
     - There are important terms that are not commonly used in the language.
     - The meaning of some common terms is entirely different in the domain vis-a-vis the common usage.
-    - Examples: in Legal and medical fields.S
+    - Examples: in Legal and medical fields.
 
 ## Computational Cost
   - 1 Parameter = 4 bytes (32 bit float)
@@ -378,11 +378,9 @@ Solutions
   - 2 Adam Optimisers = +8 bytes per parameter
   - Gradients = +4 bytes per parameter
   - Activations = +8 bytes per parameter
-
   - Total = 4 bytes per parameter + 20 extra bytes per parameter
   - To store = 4 GB@32 bit full precision
   - To train = 80 GB@32 bit full precision
-
   - PetaFLOP/s-day = Number of FLOating Point operations performed at the rate of 1 petaFLOP per second for one day.
   - 1 petaFLOP per second = 10E15 or 1 Quadrillion floating point operations per second.
 
