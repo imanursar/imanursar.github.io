@@ -18,10 +18,12 @@ Solutions
 {:toc}
 
 ## What Is A/B Testing?
-  - A/B testing (also known as split testing or bucket testing) compares two versions of a thing against each other to determine which one performs better.
+  - AB testing (also known as split testing or bucket testing) compares two versions of a thing against each other to determine which one performs better.
   - AB testing is essentially an experiment where two or more variants of a thing are shown to users at random. Statistical analysis is used to determine which variation performs better for a given conversion goal.
+  - Use AB test to determine whether the effect you observed is significant statistically and practically.
 
-  <img src="/assets/images/knowledge/solution/abtesting/abt_01.webp" alt="drawing"/>
+  <img src="/assets/images/knowledge/solution/abtesting/abt_01.webp" alt="drawing" width="450"/>
+  <img src="/assets/images/knowledge/solution/abtesting/abt_18.webp" alt="drawing" width="450"/>
 
 ## Why is it so important?
   - With A/B testing, it can increase customer satisfaction with small changes without changing all things.
@@ -29,12 +31,59 @@ Solutions
     <img src="/assets/images/knowledge/solution/abtesting/abt_02.webp" alt="drawing"/>
   - Measuring impact from an action.
 
+## AB Testing vs Causal Inference
+  - AB testing: Detect effect in a randomized controlled trials
+  - Causal inference: Measure effect in naturalistic observation
+  - <img src="/assets/images/knowledge/solution/abtesting/abt_17.webp" alt="drawing" width="500"/>
+
+  | Comparison          | AB Testing                                            | Causal Inference        |
+  | ------------------- | ----------------------------------------------------- | ----------------------- |
+  | Use Cases           | Minor UI Tweaks (e.g. Color), Online Ads optimization | Optional treatment or feature, Offline Ads performance |
+  | Randomization       | Random assignment                                     | Self-selection; observational study    |
+  | Experiment Duration | Short-Term; 1 to 2 weeks                              | Long-Term; 1 to 3 Months  |
+  | Statistical Method  | T-Test, Z-Test, Mann Whitney U-Test                   | PSM, DID, RDD, Synthetic Controls |
+  | Limitations         | Limits the test to a single variable                  | Difficult to establish causality in non-experimental settings |
+
 ## Workflow
   - <img src="/assets/images/knowledge/solution/abtesting/abt_03.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/solution/abtesting/abt_04.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/solution/abtesting/abt_05.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/solution/abtesting/abt_06.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/solution/abtesting/abt_07.webp" alt="drawing"/>
+  - <img src="/assets/images/knowledge/solution/abtesting/abt_19.webp" alt="drawing"/>
+
+## AB Testing Cheatsheet
+  - **Hypothesis Statements**
+    - Business Hypothesis: We expect a metric to noticeably decline/stay neural/increase.
+    - Statistical Hypothesis
+      - Ho: No change on KPI
+      - Ha: Change on KPI
+  - **Experiment Parameters**
+    - Significance Level: α= 0.01 to 0.10
+    - Practical Significance: ▲ >= 0.1% to 10%
+    - Statistical Power: Power = 80 to 95%
+    - Sample Size Calculation
+    - Experiment Duration: 1 to 4 weeks
+    - Randomization: User, device, geo
+  - **Launch Decision**
+    
+      | P-Value   | Metric Outcome       | Decision    |
+      | --------- | -------------------- | ----------- |
+      | 0.02      | Significant Increase | Launch      |
+      | 0.08      | Significant Increase | Launch with caution |
+      | 0.08      | Not Significant Increase | Run experiment longer |
+      | 0.08      | Not Significant Increase | Run experiment longer |
+      | 0.08      | Significant Decrease | Do not launch |
+      | 0.02      | Significant Decrease | Do not launch |
+  
+  - **Violation Checks**
+    - SUTVA
+    - Novelty Effect
+    - Change Aversion
+    - Holiday Effect
+    - Sample Ratio Mismatch
+    - Instrumentation Effect
+    - Survivorship Bias
 
 ## How to Perform an A/B Test?
   - **Define metrics**
@@ -83,7 +132,7 @@ Solutions
   - The interpretation is as follows: were we to repeat, many times, the experiment in p-value% of those experiments the outcome would feature at least prob %.
   - [material](https://www.tandfonline.com/doi/pdf/10.1080/00031305.2016.1154108?needAccess=true)
 
-## Repeated significance testing errors    
+## Repeated significance testing errors
   - **Assuming there is no underlying difference between A and B, how often will we see a difference like we do in the data just by chance?** The answer to that question is called the significance level, and “statistically significant results” mean that the significance level is low, e.g. 5% or 1%. 
   - However, the significance calculation makes a **critical assumption** that you have probably violated without even realizing it: ***that the sample size was fixed in advance*.** If instead of deciding ahead of time, “this experiment will collect exactly 1,000 observations,” you say, “we’ll run it until we see a significant difference,” *all the reported significance levels become meaningless*. This result is completely counterintuitive and all the A/B testing packages out there ignore it.
   - The problem will be present if you ever find yourself “peeking” at the data and stopping an experiment that seems to be giving a significant result. The more you peek, the more your significance levels will be off.
@@ -125,6 +174,17 @@ Solutions
       - **The effect size** - The value describes the difference in terms of the number of standard deviations that the means are different. This value is the minimal difference we want to detect by the A/B test.
 
 > The broad lesson is that there is always something we won’t be able to control.
+
+## Pitfall and Remedy
+  - **Mistake novelty effect as real effect**
+    - Novelty effect is when customers engage with a new feature simply because it's new, but not because they like it. You might see the treatment gets more engagement than control in the beginning, but it's not the real effect. 
+    - Remedy: Instead of analyzing all customers with the same cut-off for start time and end time, do a cohort analysis based on when customers get assigned to the treatment group, and see whether this effect wears off with time.
+  - **Cannibalization**
+    - The treatment you test might have a positive impact for your experiment, but it might hurt other features on the website, and that's why it's call 'cannibalization'. But sometimes the effect is hard to measure.
+    - Remedy: use linear models to estimate interaction effect. You can create four cohorts and analyze them: the cohort that are in controls for both experiments, the cohort that in treatments for both experiments, and also isolate the cohorts that are only in one experiment. You need to make sure the cohorts have similar duration of exposure to compare. Try to understand the entire customer journey, top priority business metrics to optimize for, instead of just focusing on the performance of your experiment. Understand the ecosystem of where your feature lives in.
+  - **"Cherry-pick" metrics for launch decisions**
+    - Sometimes decision makers really want to launch a feature, and they would pick whatever looks positive to support their decisions, which violates the principals of statistical testing.
+    - Remedy: have no more than three core metrics, and have 1-2 secondary metrics to make decisions. The key is to decide on those metrics BEFORE you start experimentation, and stick to them. Don't move the goal posts just because you want to launch it. If you see something interesting, investigate it, treat it as a new assumption, and don't make your decision based on an unexpected change.
 
 ## Report
   - **Result’s Significance Status** - Does the variant perform significantly better/worst than the control?
