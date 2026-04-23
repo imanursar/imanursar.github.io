@@ -19,20 +19,21 @@ Solutions
 
 
 # Tools
-  - LangChain – the most widely used framework with a massive ecosystem. Provides abstractions for: Models, Tools, Memory, Chains, Agents, Retrivers, Vector stores.
-  - LangGraph – the next evolution for production-grade agent control. solving the limitation of LangChain; agent control flow, LangChain is linear, Graph-based.
-  - Ollama – Run powerful LLMs locally on your own hardware with a single command.
-  - Langflow – A drag-and-drop visual builder for designing and deploying AI agents and RAG workflows.
-  - CrewAI – role-based multi-agent collaboration. with 3 core abstractions: agents, tasks, crew.
+  - **LangChain** – the most widely used framework with a massive ecosystem. Provides abstractions for: Models, Tools, Memory, Chains, Agents, Retrivers, Vector stores.
+    - LangChain provides modular components for working with LLMs in applications. E.I. prompt templates for various use cases, memory to store LLM interactions, tools for working with external datasets and APIs, Pre-built chains optimised, and Agents (PAL, ReAct).
+  - **LangGraph** – the next evolution for production-grade agent control. solving the limitation of LangChain; agent control flow, LangChain is linear, Graph-based.
+  - **Ollama** – Run powerful LLMs locally on your own hardware with a single command.
+  - **Langflow** – A drag-and-drop visual builder for designing and deploying AI agents and RAG workflows.
+  - **CrewAI** – role-based multi-agent collaboration. with 3 core abstractions: agents, tasks, crew.
   - AutoGen – conversational multi-agent systems by Microsoft. for building conversation, collaborative, and autonomous multi-agent system.
-  - Agno – lightweight and performance-focused framework.
-  - LlamaIndex – knowledge/data-centric agents framework, designed to connect LLM agents with structured and unstructured data. act as knowledge orchestration.
-  - Flowise – visual agent orchestration framework using no-code
-  - n8n – agent orchastration that work as a node-based workflow automation system where each performs an operation
-  - Relevance AI – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
-  - OpenClaw – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
-  - Open WebUI – A self-hosted, offline-capable ChatGPT alternative
-  - Docling - Processing pdf document for LLM-ready
+  - **Agno** – lightweight and performance-focused framework.
+  - **LlamaIndex** – knowledge/data-centric agents framework, designed to connect LLM agents with structured and unstructured data. act as knowledge orchestration.
+  - **Flowise** – visual agent orchestration framework using no-code
+  - **n8n** – agent orchastration that work as a node-based workflow automation system where each performs an operation
+  - **Relevance AI** – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
+  - **OpenClaw** – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
+  - **Open WebUI** – A self-hosted, offline-capable ChatGPT alternative
+  - **Docling** - Document parser for LLM-ready
 
 # LLM Model
   - Open-source LLMs
@@ -69,12 +70,19 @@ Solutions
 ---
 
 # RAG (Retrieval-Augmented Generation)
-  combines **information retrieval** with a **language model** to generate accurate answers.
-
-  - retrieves relevant data from a knowledge base
-  - uses an LLM to generate a response based on that context
+  - Combines **information retrieval** with a **language model** to generate accurate answers.
+  - Retrieves more accurate, contextually appropriate, relevant data from a knowledge base
+  - Uses an LLM to generate a response based on that context
+  - RAG systems augment LLM model's generative capabilities with real-time retrieval of information, ensuring responses are fluent, factually grounded, and relevant.
+  - Implementing RAG involves considerations such as the size of the context window and the need for data retrieval and storage in appropriate formats
 
   <img src="/assets/images/knowledge/llm/rag_01.webp" alt="drawing"/>
+
+  - **Core components**:
+    - Embedding generator
+    - Retriever module
+    - Prompt Constructor
+    - Generator (LLM model)
 
 ## RAG Pipeline
   - Tech side
@@ -104,15 +112,20 @@ Solutions
   - Sends relevant context to the LLM
   - Generates accurate answeres from the data
 
-## Agentic RAG
-  - Introducing AI agents that can make decisions, select tools, and even refine queries for more accurate and flexible responses.
+## RAG type
 
-  - Here’s how Agentic RAG works on a high level:
-    1. The user query is directed to an AI Agent for processing.
-    2. The agent uses short-term and long-term memory to track query context. It also formulates a retrieval strategy and selects appropriate tools for the job.
-    3. The data fetching process can use tools such as vector search, multiple agents, and MCP servers to gather relevant data from the knowledge base.
-    4. The agent then combines retrieved data with a query and system prompt. It passes this data to the LLM.
-    5. LLM processes the optimized input to answer the user’s query.
+  | Type               | Details               | Examples               |
+	| ------------------ | ------------------------------ | ------------------------------ |
+	| Standard           | Basic retrieval + context for Q&A   | answering questions from documents (fact-based Q&A, knowledge base assistants) |
+	| Fusion             | multiple queries → better retrieval results  | combining multiple retrieval strategies for better coverage (large-scale enterprise search) |
+	| Corrective         | verifies or fixes responses  | reducing hallucinations and fixing incorrect outputs (high-stakes domains like legal or healthcare) |
+	| Agentic            | step-by-step reasoning with tools | automating workflows (research assistants, task automation, multi-step reasoning) |
+	| Modular            | flexible pipeline (swap components) | building flexible systems that can be customized per use case (AI platforms, SaaS tools) |
+	| Multimodal         | works with text, images, etc. | working with images, audio, and text together (medical reports, visual QA systems) |
+	| Graph              |  | understanding relationships in structured data (fraud detection, knowledge graphs) |
+	| Hybrid             |  | improving search accuracy in enterprise systems (combining keyword + semantic search) |
+	| Multi-query        |  | handling vague or ambiguous user queries (customer support bots) |
+	| Re-ranking         |  | improving result quality in search engines and recommendation systems |
 
 ## Techical
 
@@ -127,6 +140,14 @@ Solutions
   | Model Alignment      | \- Supervised Fine-Tuning (SFT) <br> \- Reinforcement Learning from Human Feedback (RLHF)  <br> \- Safety & Constitutional AI | \- Train on high-quality human-annotated datasets (InstructGPT, Alpaca, Dolly) <br> \- Generate responses, rank outputs, train a Reward Model (PPO), and refine using Proximal Policy Optimization (PPO) <br> \- Apply RLAIF, adversarial training, and bias filtering |
   | Model Optimization 	 | \- Compression & Quantization <br> \- API Serving & Scaling  | \- Reduce model size with GPTQ, AWQ, LLM.int8(), and Knowledge Distillation  <br> \- Deploy with vLLM, Triton Inference Server, TensorRT, ONNX, and Ray Serve for efficient inference	 |
   | Evaluation & Benchmarking | \- Benchmarking performance <br> \- Red-Teaming <br> \- Adversarial Testing  | \- HumanEval <br> \- HELM <br> \- OpenAI Eval <br> \- MMLU <br> \- ARC  <br> \- MT-Bench |
+
+## Optimizing RAG
+  - **Chunking Strategy**
+  - **Hybrid Search**: (combination of traditional keyword retrieval (BM25) + dense (vector-based) retrieval)
+  - **Metadata Filtering**: use tag, source, type, date, etc.
+  - **Prompt Engineering**
+  - **Caching Results**: speeds up repeated queries
+  - **Multi-hop RAG**: breaks complex queries into sub-questions and retrieves and reasons across RAG.
 
 ## RAG Chunking
   - Chunking is the pre-processing step of splitting texts into smaller pieces, or "chunks.” Each chunk is the unit of information that is vectorized and stored in a vector database.
@@ -154,7 +175,7 @@ Solutions
     - Context gets fragmented
     - Token costs explode
 
-## RAG Chunking Parameter
+### RAG Chunking Parameter
   - **Chunk Size** - Measured in token or characters. 
 
 	| Use Case           | Recommended Size               |
@@ -186,7 +207,7 @@ Solutions
       - Page-level grounding
       - Reranking
 
-## Chunking Strategies
+### Chunking Strategies
   - **Fixed-Size Chunking**
     - This technique splits the text into chunks of a fixed size, without considering natural breaks or the structure of the content.
     - It's simple and cost-effective, but lacks contextual awareness.
@@ -229,7 +250,7 @@ Solutions
     - maintaining the contextual relationships between tokens across the entire document during the embedding process, and only afterwards dividing these contextually-rich embeddings into chunks.
     - This method can help mitigate issues associated with very long documents, such as expensive LLM calls, increased latency, and a higher chance of hallucination.
 
-## RAG Failure Root Cause
+### RAG Failure Root Cause
 
   | Failure              | Root Cause               |
   | -------------------- | ------------------------ |
@@ -245,7 +266,7 @@ Solutions
   - answers are: vague, half-correct
   - missing details
 
-## Chunks size vs Retrieval Accuracy
+### Chunks size vs Retrieval Accuracy
 
   | Chunk size           | Retrieval                | LLM Quality              |
   | -------------------- | ------------------------ | ------------------------ |
@@ -253,13 +274,58 @@ Solutions
   | Too large						 | Low recall							  | Irrelevent context 			 |
   | Just right					 | High recall + precision  | Clean answers 					 |
 
-## RAG for Specific data
+### RAG Chunking for Specific data
   - Tables
     - stored as: CSV-like text or one chunk per table
   - Code
     - chunk by: Function, Class, file
   - PDFs
     - Page -> Section -> Paragraph
+
+## RAG + Graph
+  - Graph RAG treats the knowledge base as a network of entities.
+  - During indexing, an LLM (or NER pipeline) extracts triples (subject, predicate, object) from every document. Entities become nodes, relationships become edges, and the resulting knowledge graph is stored in Graph database. (Neo4j, Kuzu, TigerGraph).
+  - At query time, the system does hybrid retrieval: it identifies anchor entities from the query, traverses the graph 1-3 hops to collect connected context, and pulls relevant text chunks then merges both into the LLM prompt.
+  - "Find me facts that are connected to the question."
+    - Retrieval: deterministic graph traversal + vector search
+    - Entities carry explicit relationships
+    - Multi-hop paths preserved across documents
+    - Answers can cite a traceable chain of evidence
+  
+### RAG + Graph Comparison
+
+  | Dimension              | Traditional RAG                                             | Graph RAG                                                            |
+  | ---------------------- | ----------------------------------------------------------- | -------------------------------------------------------------------- |
+  | Retrieval mechanism    | Cosine similarity over dense vector embeddings (ANN search) | Graph traversal (Cypher / SPARQL) + vector search as a hybrid step   |
+  | Data representation    | Flat text chunks embedded as n-dimensional vectors          | Typed entities (nodes) + typed relationships (edges) with properties |
+  | Multi-hop reasoning    | Weak — chunks retrieved independently, no logical chaining  | Strong — k-hop traversal explicitly follows A→B→C paths              |
+  | Cross-document linking | Only if the same entity appears semantically in both chunks | Native — shared entities create explicit edges across sources        |
+  | Explainability         | Low — retrieval is a black-box similarity score             | High — retrieval path is a traceable subgraph with named edges       |
+  | Indexing cost          | 1× baseline (one embedding pass per chunk)                  | 10–100× baseline (LLM extraction + dedup + graph build)              |
+  | Update latency         | Seconds — embed new chunk, upsert to vector store           | Minutes to hours — re-extract entities, merge into graph, re-embed   |
+  | Query latency          | ~20–100 ms typical ANN lookup                               | ~100–500 ms; grows with traversal depth and fan-out                  |
+  | Scalability            | Horizontal scaling is straightforward; vectors shard well   | Sharding graphs while preserving edges is architecturally harder     |
+  | Best data type         | Unstructured text: docs, wikis, FAQs, support tickets       | Entity-rich domains: legal, healthcare, finance, supply chain        |
+
+### Advantages
+  - Multi-hop questions: answer the question that requires chaining two and three facts together.
+  - Disambiguation across documents: the same entity appears with different surface forms across sources. (similiar word with same meaning but difference letters)
+  - Temporal / versioned fact: Policies, org charts, product specs change over time. Similarity search retrieves whatever is most similar regardless of version Graph RAG can attach [valid_from, valid_to] intervals to edges and query point-in-time.
+
+### Disadvantages
+  - Create and extract weak edges will give noisy / ambiguous result.
+  - Questions without entity anchors will falls back the graph RAG to vector search adding latency without value.
+  - High-velocity corpora (such as realtime data, fast update data) will be difficult cases for graph re-extraction that is typically batch-scheduled.
+
+## Agentic RAG
+  - Introducing AI agents that can make decisions, select tools, and even refine queries for more accurate and flexible responses.
+
+  - Here’s how Agentic RAG works on a high level:
+    1. The user query is directed to an AI Agent for processing.
+    2. The agent uses short-term and long-term memory to track query context. It also formulates a retrieval strategy and selects appropriate tools for the job.
+    3. The data fetching process can use tools such as vector search, multiple agents, and MCP servers to gather relevant data from the knowledge base.
+    4. The agent then combines retrieved data with a query and system prompt. It passes this data to the LLM.
+    5. LLM processes the optimized input to answer the user’s query.
 
 ---
 
@@ -386,11 +452,165 @@ Solutions
 
 ---
 
+# Fine Tuning
+  - Few shot learning might not work for smaller LLMs and it also takes up a lot of space in the context window.
+  - **Fine Tuning is a supervised learning process**, where you take a labelled dataset of prompt-completion pairs to adjust the weights of an LLM.
+  - **Instruction Fine Tuning** is a strategy where **the LLM is trained on examples of Instructions and how the LLM should respond to those instructions**. Instruction Fine Tuning leads to improved performance on the instruction task.
+  - Full Fine Tuning is where all the LLM parameters are updated. It requires enough memory to store and process all the gradients and other components.
 
+## Catastrophic Forgetting
+  - Fine Tuning on a single task can significantly improve the performance of the model on that task. However, because the model weights get updated, the instruct model's performance on other tasks (which the base model performed well on) can get reduced. 
+  - Avoiding Catastrophic Forgetting
+    - If you only want the model to perform well on the trained task, it is unnecessary.
+    - Perform fine tuning on multiple tasks, this will require lots of examples for each task.
+    - Perform Parameter Efficient Fine Tuning (PEFT)
+
+## Fine Tuning Techniques
+  - **Parameter Efficient Fine Tuning (PEFT)** introduce to only retrains and fine tunes a subset of model parameters.
+    - <img src="/assets/images/knowledge/llm/model_09.webp" alt="drawing"  width="500"/>
+    - **Methods**:
+      - Selective: Select a subset of initial LLM parameters to fine tune.
+      - Reparameterization: Reparameterize model weights using Low Rank Representation (LoRA)
+      - additive: Add trainable layers or parameters to the original model (Adapters Soft Prompting)
+  - **LoRA (Low Rank Adaptations)**
+    - **Methods**:
+      - Most of original LLM weights are frozen.
+      - 2 rank decomposition matrices are injected.
+      - Product of rank decompositions matrices is of the same dimensions as the LLM weights.
+      - The product is added to the LLM weights.
+      - There's no impact on inference latency since the number of parameters remains the same.
+      - Applying LoRA to just the attention layer is enough.
+    - LoRA can reduce the number of training parameters to ~20% and can be trained on a single GPU.
+    - Separate LoRA matrices can be trained for each task and switch out the weights for each task.
+  - **Soft Prompts : Prompt Tuning (not Prompt Engineering)**
+    - Additional trainable tokens (soft prompts) are added to the prompt which are learnt during the supervised learning process.
+    - Soft prompt tokens are added to the embedding vectors and have the same length as the embedding.
+    - Between 20-100 tokens are sufficient for fine tuning.
+    - Soft prompts can take any value in the embedding space and through supervised learning, the values are learnt.
+    - Like in LoRA, separate soft prompts can be trained for each task and switch out the weights for each task.
+
+## Measure the performance of a fine tuned LLM
+  - The outputs of LLM are non-deterministic. Similar texts with difference meaning will leads to wrong decision. (i.e. negative sentence (using not), difference focus action in sentence)
+  - Two widely used evaluation metrics:
+    - Rouge
+      - Used for text summarisation
+      - Compares a summary to one or more reference summaries
+      - <img src="/assets/images/knowledge/llm/model_08.webp" alt="drawing"  width="500"/>
+    - Bleu Score
+      - Used for text translation
+      - Compares to human-generated translations
+      - BLEU (Bi-Lingual Evaluation Understudy) SCORE = Average (precision score across a range of n-gram sizes)
 
 ---
 
+# RLHF and Human Value
+  - LLMs should align with Helpfulness, Honesty and Harmlessness (HHH)
 
+## Reinforcement Learning from Human Feedback (RLHF)
+  - Reinforcement Learning based on Human Feedback data
+    - examples:
+      - Maximises helpfulness
+      - Minimises harm
+      - Avoids dangerous topics
+      - Increases honesty
+
+## Workflow
+  - <img src="/assets/images/knowledge/llm/model_10.webp" alt="drawing"  width="500"/>
+  - The agent (fine-tuned instruct LLM) in its environment (Context Window) takes one action (of generating text) from all available actions in the action space (the entire vocabulary of tokens/words in the LLM).
+  - The outcome of this action (the generated text) is evaluated by a human and is given a reward if the outcome (the generated text) aligns with the goal. If the outcome does not align with the goal, it is given a negative reward or no reward. 
+  - This is an iterative process and each step is called a rollout.
+  - The model weights are adjusted in a manner that the total rewards at the end of the process are maximised. 
+  - In practice, instead of a human giving a feedback continually, a classification model called the **Reward Model** is trained based on human generated training examples
+
+## How is Reward Model training data created from Human Feedback
+  - <img src="/assets/images/knowledge/llm/model_11.webp" alt="drawing"  width="500"/>
+  - <img src="/assets/images/knowledge/llm/model_12.webp" alt="drawing"  width="500"/>
+  - <img src="/assets/images/knowledge/llm/model_13.webp" alt="drawing"  width="500"/>
+  - Proximal Policy Optimisation or PPO is a popular choice for training the reinforcement learning algorithms
+
+## Proximal Policy Optimisation (PPO)
+  - PPO helps us optimise a large language model (LLM) to be more aligned with human preferences. We want the LLM to generate responses that are helpful, harmless, and honest.
+  - PPO works in cycles with two phases:
+    - **In Phase I**, the LLM **completes prompts and carries out experiments**. These experiments help us update the LLM based on the reward model, which captures human preferences. The reward model determines the rewards for prompt completions. It tells us how good or bad the completions are in terms of meeting human preferences.
+    - **In Phase II**, we have **the value function**, which estimates the expected total reward for a given state. It helps us evaluate completion quality and acts as a baseline for our alignment criteria. The value loss minimises the difference between the actual future reward and its estimation by the value function. This helps us make better estimates for future rewards. Phase 2 involves updating the LLM weights based on the losses and rewards from Phase 1.
+  - PPO ensures that these updates stay within a small region called the **trust region**. This keeps the updates stable and prevents us from making drastic changes.
+  - **The main objective of PPO is to maximise the policy loss**. We want to update the LLM in a way that generates completions aligned with human preferences and receives higher rewards.
+  - The policy loss includes an estimated advantage term, which compares the current action (next token) to other possible actions. We want to make choices that are advantageous compared to other options.
+  - Maximising the advantage term leads to better rewards and better alignment with human preferences.
+  - **PPO also includes the entropy loss, which helps maintain creativity** in the LLM. It encourages the model to explore different possibilities instead of getting stuck in repetitive patterns.
+  - The PPO objective is a weighted sum of different components. It updates the model weights through back propagation over several steps.
+  - After many iterations, we arrive at an LLM that is more aligned with human preferences and generates better responses.
+  - there are other techniques like Q-learning and direct preference optimisation.
+
+## How to avoid Reward Hacking
+  - Reward hacking happens when the language model finds ways to maximise the reward without aligning with the original objective.
+  - Example: model generates language that sounds exaggerated or nonsensical but still receives high scores on the reward metric.
+  - To prevent reward hacking, the original LLM is introduced as a reference model, whose weights are frozen and serve as a performance benchmark.
+  - During training iterations, the completions generated by both the reference model and the updated model are compared using KL divergence. **KL divergence measures how much the updated model has diverged from the reference model in terms of probability distributions**.
+  - Depending on the divergence, **a shift penalty is added to the rewards calculation**. The shift penalty penalises the updated model if it deviates too far from the reference model, encouraging alignment with the reference while still improving based on the reward signal.
+  - <img src="/assets/images/knowledge/llm/model_14.webp" alt="drawing"  width="500"/>
+
+## Scaling Human Feedback : Self Supervision with Constitutional AI
+  - Constitutional AI involves training models using a set of rules and principles that govern the model's behaviour, forming a "constitution".
+  - The training process for Constitutional AI involves two phases:
+    - **The supervised learning phase**, the model is **prompted with harmful scenarios** and asked to critique its own responses based on constitutional principles. The revised responses, conforming to the rules, are used to fine-tune the model.
+    - **The reinforcement learning phase**, known as reinforcement learning from AI feedback (RLAIF), uses **the fine-tuned model to generate responses based on constitutional principles**.
+  - <img src="/assets/images/knowledge/llm/model_15.webp" alt="drawing"  width="500"/>
+
+## Chain of Thought (for Reasoning)
+  - Chain of thought prompting involves including intermediate reasoning steps in examples used for one or few-shot inference.
+  - This approach teaches the model how to reason through the task by mimicking the chain of thought a human might follow.
+  - Chain of thought prompting can be used for various types of problems, not just arithmetic, to improve reasoning performance.
+
+## Program-aided Language Models (PAL)
+  - Is a framework that pairs LLMs with external code interpreters to perform calculations and improve accuracy.
+  - PAL uses chain of thought prompting to generate executable Python scripts that are passed to an interpreter for execution.
+  - The prompt includes reasoning steps in natural language as well as lines of Python code for calculations. 
+  - Variables are declared and assigned values based on the reasoning steps, allowing the model to perform arithmetic operations.
+  - The completed script is then passed to a Python interpreter to obtain the answer to the problem.
+
+## ReAct : Reasoning and Action
+  - ReAct combines chain of thought reasoning with action planning in LLMs.
+  - It uses structured examples to guide the LLM's reasoning and decision-making process.
+  - Examples include a question, thought (reasoning step), action (pre-defined set of actions), and observation (new information).
+  - Actions are limited to predefined options like search, lookup, and finish.
+  - The LLM goes through cycles of thought, action, and observation until it determines the answer.
+  - Instructions are provided to define the allowed actions and provide guidance to the LLM.
+
+---
+
+# Responsible AI
+  - **Toxicity**: Toxic language or content that can be harmful or discriminatory towards certain groups. Mitigation strategies include curating training data, training guardrail models to filter out unwanted content, providing guidance to human annotators, and ensuring diversity among annotators.
+  - **Hallucinations**: False or baseless statements generated by the model due to gaps in training data. To mitigate this, educate users about the technology's limitations, augment models with independent and verified sources, attribute generated output to training data, and define intended and unintended use cases.
+  - **Intellectual Property**: The risk of using data returned by models that may plagiarise or infringe on existing work. Addressing this challenge requires a combination of technological advancements, legal mechanisms, governance systems, and approaches like machine unlearning and content filtering/blocking.
+
+---
+
+# Deployment
+
+## Principles
+  - Need to considering factors such as:
+    - Model speed
+    - Compute budget
+    - Trade-offs between performance and speed/storage
+    - Interaction with external data
+    - Delivery the output (API interface)
+
+  - <img src="/assets/images/knowledge/llm/model_16.webp" alt="drawing"  width="500"/>
+
+---
+
+# Update
+
+  |  Topic                                    | Training Duration                                 | Customisation                                                                  | Objective                                 | Expertise     |
+  | ----------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------ | ----------------------------------------- | ------------- |
+  | **Pre-training**                          | Days / Weeks / Months                             | \- Architecture<br> \- Size<br> \- Vocabulary<br> \- Context Window<br> \- Training Data     | Next token preditction      | High          |
+  | **Prompt Engineering**                    | Not required                                      | \- Only prompt customisation                                                   | Increase task performance                 | Low           |
+  | **Fine tuning / Prompt tuning**           | Minutes / Hours                                   | \- Task specific tuning<br> \- Domain specific data<br> \- Update model / adapter weights | Increase task performance      | Medium        |
+  | **RLHF / RLAIF**                          | Minutes / Hours + data collection for reward model| \- Train reward model [HHH goals]<br> \- Update model / adapter weights        | Increase alignment with human preferences | Medium - High |
+  | **Compression / Optimisation / Deployment** | Minutes /Hours                                  | \- Reduce model size<br> \- Faster inference                                   | Increase inference performance            | Medium        |
+
+---
 
 
 
