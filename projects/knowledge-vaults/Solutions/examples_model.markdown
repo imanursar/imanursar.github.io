@@ -215,13 +215,9 @@ Solutions
 ## Segmentation
 1. **Clustering**
    - **Centroid-Based**
-     - K-means, K-means++, K-means||
-     - K-modes
-     - K-medians
-     - MK-means
-     - K-prototypes
-     - Clara
-     - Clarans
+     - K-means, K-means++, MK-means
+     - K-modes, K-medians, K-prototypes
+     - Clara, Clarans
      - CentNN
      - Mean Shift
    - **Graph-Based**
