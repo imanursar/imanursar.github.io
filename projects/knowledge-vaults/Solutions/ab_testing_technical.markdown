@@ -7,7 +7,7 @@ title: A/B Testing Technical 101
 parent: kv - Solutions
 grand_parent: Knowledge Vaults
 permalink: /knowledge-vaults/solutions/abtest-tech
-nav_order: 102
+nav_order: 103
 ---
 
 # A/B Testing Technical 101 - Statistic method

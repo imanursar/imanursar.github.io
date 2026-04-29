@@ -7,7 +7,7 @@ title: A/B Testing 101
 parent: kv - Solutions
 grand_parent: Knowledge Vaults
 permalink: /knowledge-vaults/solutions/abtest
-nav_order: 101
+nav_order: 104
 ---
 
 # A/B Testing 101
