@@ -28,7 +28,13 @@ I have a well-rounded background across the full data value chain — from data 
 - **CI/CD**: Git, Docker-Container, prometheus, Grafana.
 - **Machine Learning and AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, YOLO, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
 - **Computer Vision**: Custom scripts, TensorFlow, Pytorch, OpenCV, YOLO, U-net, SAMLoRA.
-- **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, ArcGIS for Python, and Data Science Deployment framework.
+- **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, ArcGIS for Python API, and Data Science Deployment framework.
+- **LLM and GenAI**: 
+  - **Document processing**: Docling, markitdown
+  - **Vector Database**: Milvus
+  - **Semantic Search**: FAISS
+  - **Model retrieval**: Huggingface
+  - **Framework AI agents**: Langchain
 - **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
 - **Other Tools**: Google sheet, Microsoft Office, Confluence, and Jira.
 

@@ -136,15 +136,24 @@ Solutions
 
   | Name                 | Details                            | Examples              |
   | -------------------- | ---------------------------------- | ------------------------ |
+  | Document crawler     |   | \- Scrapy ✅ <br> \- BeautifulSoup ✅ |
+  | Document parsing   	 | \- PDF corpus  | \- pdfplumber ✅ <br> \- Docling ✅ <br> \- Crawler logic ✅ <br> \- Camelot <br> \- Tabula |
   | Tokenization			   | Convert text into numerical or basic text as tokens | \- SentencePiece <br> \- GPT’s BPE tokenizer |
-  | Embedding						 | \- Convert the text into vectors <br> \- Converting text into vector representations <br> \- Captures the semantic meaning of the data <br> \- Make documents searchable using similiarity |   			 |
-  | VectorDB  					 | \- Pecific database to store vectors <br> \- Allows fast semantic search | \- ChromaDB	 |
-  | LLM Model  					 |   | \- GPT <br> \- T5 <br> \- LLaMA <br> \- Falcon	 |
-  | Pretraining					 |   | \- Causal Language Modeling (CLM) with Cross-Entropy Loss <br> \- Gradient Checkpointing <br> \- Parallelization (FSDP, ZeRO) |
-  | Optimizations				 |   | \- Apply Mixed Precision (FP16/BF16) <br> \- Gradient Clipping <br> \- Adaptive Learning Rate Schedulers for efficiency |
+  | Embedding						 | \- Convert the text into vectors <br> \- Converting text into vector representations <br> \- Captures the semantic meaning of the data <br> \- Make documents searchable using similiarity | \- OpenAI - text-embedding-3-* <br> \- Azure OpenAI <br> \- DashScope - text-embedding-v3 <br> \- Bedrock - amazon.titan-embed-text-v2 <br> \- Vertex AI - text-embedding-005 <br> \- Voyage AI - voyage-3  <br> \- Cohere - embed-english-v3.0 <br> \- SiliconFlow - BAAI/bge-large-zh-v1.5 <br> \- Hugging Face - Any TEI-served model ✅ |
+  | VectorDB  					 | \- Pecific database to store vectors <br> \- Allows fast semantic search | \- ChromaDB <br> \- Milvus ✅ <br> \- DynamoDB <br> \- OpenSearch <br> \- Qdrant <br> \- pgvector <br> \- Pinecone <br> \- Weaviate |
+  | Sematic Search    	 |   | \- FAISS ✅ |
+  | Reranking Function   |   | \- Weighted Ranker ✅ <br> \- RRF Ranker ✅ <br> \- Boost Ranker ✅ <br> \- Decay Ranker ✅ <br> \- Model Ranker ✅ |
+  | Reranking Model    	 |   | \- TEI ✅ <br> \- Cohere <br> \- Voyage AI <br> \- SiliconFlow |
+  | LLM Model  					 |   | \- GPT <br> \- T5 ✅ <br> \- LLaMA ✅ <br> \- Falcon <br> \- Mistral ✅ <br> \- Phi ✅  <br> \- Gemini |
   | Model Alignment      | \- Supervised Fine-Tuning (SFT) <br> \- Reinforcement Learning from Human Feedback (RLHF)  <br> \- Safety & Constitutional AI | \- Train on high-quality human-annotated datasets (InstructGPT, Alpaca, Dolly) <br> \- Generate responses, rank outputs, train a Reward Model (PPO), and refine using Proximal Policy Optimization (PPO) <br> \- Apply RLAIF, adversarial training, and bias filtering |
-  | Model Optimization 	 | \- Compression & Quantization <br> \- API Serving & Scaling  | \- Reduce model size with GPTQ, AWQ, LLM.int8(), and Knowledge Distillation  <br> \- Deploy with vLLM, Triton Inference Server, TensorRT, ONNX, and Ray Serve for efficient inference	 |
+  | Model Optimization 	 | \- Compression & Quantization <br> \- API Serving & Scaling \- Reduce model size with GPTQ, AWQ, LLM.int8(), and Knowledge Distillation  <br> \- Deploy with vLLM, Triton Inference Server, TensorRT, ONNX, and Ray Serve for efficient inference | \- FastAPI ✅ <br> \- vLLM ✅ |
+  | Model collection  	 |   | \- Hugging Face ✅ |
+  | Pretraining					 |   \- Causal Language Modeling (CLM) with Cross-Entropy Loss <br> \- Gradient Checkpointing <br> \- Parallelization (FSDP, ZeRO) | |
+  | Optimizations				 |   \- Apply Mixed Precision (FP16/BF16) <br> \- Gradient Clipping <br> \- Adaptive Learning Rate Schedulers for efficiency | |
   | Evaluation & Benchmarking | \- Benchmarking performance <br> \- Red-Teaming <br> \- Adversarial Testing  | \- HumanEval <br> \- HELM <br> \- OpenAI Eval <br> \- MMLU <br> \- ARC  <br> \- MT-Bench |
+  | Orchestrator      	 |  \- Orchestrated conversation flow & intent detection | \- LangChain ✅ <br> \- LangGraph <br> \- LangSmith <br> \- LlamaIndex <br> \- Azure AI Foundry <br> \- Ollama ✅ |
+  | AI Agents      	     |   | \- Microsoft Autogen <br> \- Agno <br> \- OpenAI Agent Kit <br> \- CrewAI |
+
 
 ## LLM Aided Retrieval - Optimizing RAG
   - **Chunking Strategy**
