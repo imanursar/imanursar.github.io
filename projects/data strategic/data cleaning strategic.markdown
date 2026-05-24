@@ -29,11 +29,21 @@ A small guidance for data team to find the right data cleaning strategy
 <p style='text-align: justify;'>
 Even with the best error prevention strategies in place, there will still be a need for actively and systematically searching for, detecting and remedying errors/problems in a planned way to find pattern of error. As patterns of errors are identified, data collection and entry procedures should be adapted to correct those patterns and reduce future errors.
 
-In analytic and modeling perspective, there are some main guidelines that need to be fulfilled such as: Quality data beats fancy algorithms, or Garbage in, garbage out. A simple algorithm can outweigh a complex one just because it was given enough and high-quality data.</p>
+In analytic and modeling perspective, there are some main guidelines that need to be fulfilled such as: Quality data beats fancy algorithms, or Garbage in, garbage out. A simple algorithm can outweigh a complex one just because it was given enough and high-quality data.
+
+It improves data quality and ensures reliable analysis and decisions.</p>
 
 #### Where the errors come from?
+
 <img src="/assets/images/data/data_cleansing_cover.webp" alt="drawing"/>
 
+#### Common Data Issues
+- Missing Values
+- Duplicates
+- Inconsistent Formats
+- Outliers
+- Invalid data
+- Irrelevant data
 
 ## Sources of Error
 Many of the sources of error in databases fall into one or more of the following categories: 
@@ -66,6 +76,7 @@ We can use the four steps of data cleaning: Data cleaning involves repeated cycl
 - Data cleaning should focus on those errors that are beyond small technical variations and that produce a major shift within or beyond the analysis. (in another word, clean a big and impactful error first).
 
 ## Screening Data
+
 Examine data for the following possible errors:
 - **Spelling and formatting irregularities** - Are categorical variables written incorrectly? Is the date format consistent? For numeric fields are all of the values numbers? Etc.
 - **Lack of data** - Do some categories have far fewer lists compared to others?
@@ -86,6 +97,7 @@ Common mistakes in examples:
 - Overall **lack of consistency** within the answers provided by a respondent (e.g. the response to questions on main needs is not in line with sector specific questions).
 
 ## How we detect those errors?
+
 we can implement screening methods, from simpler to more complex, are:
 
 - Screening of columns after sorting
@@ -103,6 +115,7 @@ we can implement screening methods, from simpler to more complex, are:
 
 ## Diagnosing Data
 #### What diagnosing data mean?
+
 finding the cause for the errors.
 
 There are a multitude of possible diagnoses for each suspected data point:
@@ -213,3 +226,6 @@ Main recommendations or corrections can include:
 - In extreme cases, it may be necessary to **reconduct some field assessment** (few sites) or contact again enumerators to ask additional information or more details or confirm some records.
 
 **Data cleaning often leads to insight into the nature and severity of error-generating processes or in some cases, it leads to fraud detection.**
+
+
+> Clean data isn't glamorous, but it's the foundation of every greate insight. Take the time, it pay off.
