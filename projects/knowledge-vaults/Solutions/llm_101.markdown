@@ -21,45 +21,94 @@ Solutions
 # Tools
   - **LangChain** – the most widely used framework with a massive ecosystem. Provides abstractions for: Models, Tools, Memory, Chains, Agents, Retrivers, Vector stores.
     - LangChain provides modular components for working with LLMs in applications. E.I. prompt templates for various use cases, memory to store LLM interactions, tools for working with external datasets and APIs, Pre-built chains optimised, and Agents (PAL, ReAct).
+    - is a framework for developing applications powered by large language models (LLMs). 
   - **LangGraph** – the next evolution for production-grade agent control. solving the limitation of LangChain; agent control flow, LangChain is linear, Graph-based.
   - **Ollama** – Run powerful LLMs locally on your own hardware with a single command.
   - **Langflow** – A drag-and-drop visual builder for designing and deploying AI agents and RAG workflows.
   - **CrewAI** – role-based multi-agent collaboration. with 3 core abstractions: agents, tasks, crew.
-  - AutoGen – conversational multi-agent systems by Microsoft. for building conversation, collaborative, and autonomous multi-agent system.
+  - **AutoGen** – conversational multi-agent systems by Microsoft. for building conversation, collaborative, and autonomous multi-agent system.
   - **Agno** – lightweight and performance-focused framework.
-  - **LlamaIndex** – knowledge/data-centric agents framework, designed to connect LLM agents with structured and unstructured data. act as knowledge orchestration.
+  - **LlamaIndex** 
+    - knowledge/data-centric agents framework, designed to connect LLM agents with structured and unstructured data. act as knowledge orchestration.
+    - is a simple, flexible data framework for connecting custom data sources to large language models (LLMs).
+  - **vLLM** – an open-source for LLM serving performance. 
+    - using virtual memory for the KV cache, vLLM only allocates physical GPU memory as needed, eliminating memory fragmentation and avoiding pre-allocation.
   - **Flowise** – visual agent orchestration framework using no-code
   - **n8n** – agent orchastration that work as a node-based workflow automation system where each performs an operation
   - **Relevance AI** – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
   - **OpenClaw** – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
   - **Open WebUI** – A self-hosted, offline-capable ChatGPT alternative
   - **Docling** - Document parser for LLM-ready
+  - **FAISS ( Facebook AI Similarity Search)** – a library that allows us to quickly search for multimedia documents that are similar to each other, and thus it acts like a Vector Database.
 
 # LLM Model
   - Open-source LLMs
     - LLaMA
     - Mistral
+    - Qwen
+    - Gemma
+    - TinyLlama
+    - Phi
+    - Deepseek
   - API-based models
     - OpenAI
+    - Custom huggingface + FastAPI
   - Model orchestration 
     - Ollama
     - vLLM
+    - Custom huggingface + FastAPI
 
 # Terms
+  - **Vector Embedding**: is a list of floating-point numbers that represents the meaning of a piece of data, not its characters or keywords. The numbers are produced by a machine learning model trained to place semantically similar content close together in a high-dimensional numeric space.
+
+    <img src="/assets/images/knowledge/llm/model_17.webp" alt="drawing" width="300"/>
+
+  - **Embedding model**: would place their vectors near each other in that space. That proximity is what makes similarity search work: you embed the user’s query, find the stored vectors closest to it, and return those rows.
   - **Prompt**: The natural language instruction in which we interact with an LLM
+  - **Token**: is a small piece of text, it can be a word, a part of a word, or a single character.
+    - **word token**: whole words as tokens.
+    - **subword token**: Parts of the words as tokens.
+    - **character token**: Single characters as tokens.
+
+    <img src="/assets/images/knowledge/llm/model_18.webp" alt="drawing" width="300"/>
+
+  - **Attention**: It allows the model to look at all tokens in the input and decide which ones are important for the current task.
+    - **Self-Attention**: Each word in the sentence pays attention to all other words in the same sentence.
+    - **Cross-Attention**: Used in models like encoder-decoder. Decoder pays attention to the encoder output.
+    - **Multi-Head Attention**: The model learns multiple attention patterns in parallel to understand different types of relationships
+
+    <img src="/assets/images/knowledge/llm/model_19.webp" alt="drawing" width="300"/>
+
+  - **Transformer layer**: is a block that takes input, processess it using attention and other operations, and pass it to the next layer.
+
+    <img src="/assets/images/knowledge/llm/model_20.webp" alt="drawing" width="300"/>
+
   - **In context learning**: The inferencing that an LLM does and completes the instruction given in the prompt.
   - **Zero Shot Learning**: The ability of the LLM to respond to the instruction in the prompt without any example.
   - **One Shot Learning**: When a single example is provided
   - **Few Shot Learning**: If more than one examples in provided
 
-    <img src="/assets/images/knowledge/llm/model_03.webp" alt="drawing"/>
+    <img src="/assets/images/knowledge/llm/model_03.webp" alt="drawing" width="300"/>
 
-  - **Context Window**: The maximum number of tokens that an LLM can provide and inference on. This includes both the prompt and the response.
+  - **Context Window**: The maximum number of tokens ("memory") that an LLM can provide and inference on. This includes both the prompt and the response. THe model can only see what's inside the window and drop the old one (sliding window). This will:
+    - Limits how much information the model can consider.
+    - Affects the model's ability to understand long conversations.
+    - Improtant for tasks like summarization, code analysis, RAG, etc.
+    - Bigger context window = better performance on complex tasks.
+  - **Next-Token Prediction**: Model predics the most likely next token one step at a time. The model doesn't know the "truth". It just picks the most likely token based on patterns it learned.
   - **Max Tokens**: A aparameter to adjust the number of tokens to be used for a particular request. This is capped to the context window.
-  - **Temperature**: LLM outputs area based on the probability of the generated word. Temperature controls the ramdomness of generation. The higher the temperature, the more random is the generation.
+  - **Temperature**: LLM outputs area based on the probability of the generated word. Temperature controls the ramdomness of generation. The higher the temperature, the more random is the generation. It means:
+    - low (0.0): More focused, deterministic and predictable.
+    - medium (0.7): Balanced creativity and accuracy.
+    - high (1.5): Mode creative, random and diverse.
 
-    <img src="/assets/images/knowledge/llm/model_04.webp" alt="drawing"/>
+    <img src="/assets/images/knowledge/llm/model_04.webp" alt="drawing" width="300"/>
 
+  - **Hallucinate**: LLMs are incredibly good at generating text, but they don't actually "know" facts. They predict the most likely next words based on patterns in their training data. It happens when:
+    - Limited knowledge from what model trained on.
+    - No real-time awareness and real-time information.
+    - The Model predicts what sounds most likely, an pattern prediction, not truth.
+    - THe model can be very confident even when the information is completely wrong.Confidence is not accuracy.
   - **Top P / Top N**: Since LLM outputs are based probability, setting a Top Parameter will restrict the selection of next word form the Top 'N' most probable words or Top words summing up to probability 'P'.
   - **Top P**: The word/token is selected using random-weighted strategy but only from amongst the top words totalling to probability <=P. (for P=0.33 => cake:0.2,donut:0.1)
   - **Top N**: The word/token is selected using random-weighted strategy but only from amongst the Top 'N' words/tokens. (for N=3 => cake:0.2,donut:0.1,banana:0.02)
@@ -70,13 +119,14 @@ Solutions
 ---
 
 # RAG (Retrieval-Augmented Generation)
-  - Combines **information retrieval** with a **language model** to generate accurate answers.
+  - Combines **information retrieval** with a **language model** to generate accurate, relevant, less hallucination, private-secure and up-to-date answers.
+  - Instead of relyinh only on what the model was trained on, RAG lets the model look up information from trusted sources before generating a response.
   - Retrieves more accurate, contextually appropriate, relevant data from a knowledge base
   - Uses an LLM to generate a response based on that context
   - RAG systems augment LLM model's generative capabilities with real-time retrieval of information, ensuring responses are fluent, factually grounded, and relevant.
   - Implementing RAG involves considerations such as the size of the context window and the need for data retrieval and storage in appropriate formats
 
-  <img src="/assets/images/knowledge/llm/rag_01.webp" alt="drawing"/>
+  <img src="/assets/images/knowledge/llm/rag_01.webp" alt="drawing" width="500"/>
 
   - **Core components**:
     - Embedding generator
@@ -140,7 +190,7 @@ Solutions
   | Document parsing   	 | \- PDF corpus  | \- pdfplumber ✅ <br> \- Docling ✅ <br> \- Crawler logic ✅ <br> \- Camelot <br> \- Tabula |
   | Tokenization			   | Convert text into numerical or basic text as tokens | \- SentencePiece <br> \- GPT’s BPE tokenizer |
   | Embedding						 | \- Convert the text into vectors <br> \- Converting text into vector representations <br> \- Captures the semantic meaning of the data <br> \- Make documents searchable using similiarity | \- OpenAI - text-embedding-3-* <br> \- Azure OpenAI <br> \- DashScope - text-embedding-v3 <br> \- Bedrock - amazon.titan-embed-text-v2 <br> \- Vertex AI - text-embedding-005 <br> \- Voyage AI - voyage-3  <br> \- Cohere - embed-english-v3.0 <br> \- SiliconFlow - BAAI/bge-large-zh-v1.5 <br> \- Hugging Face - Any TEI-served model ✅ |
-  | VectorDB  					 | \- Pecific database to store vectors <br> \- Allows fast semantic search | \- ChromaDB <br> \- Milvus ✅ <br> \- DynamoDB <br> \- OpenSearch <br> \- Qdrant <br> \- pgvector <br> \- Pinecone <br> \- Weaviate |
+  | VectorDB  					 | \- Pecific database to store vectors <br> \- Allows fast semantic search | \- ChromaDB <br> \- Milvus ✅ <br> \- DynamoDB <br> \- OpenSearch <br> \- Qdrant <br> \- pgvector ✅ <br> \- Pinecone <br> \- Weaviate |
   | Sematic Search    	 |   | \- FAISS ✅ |
   | Reranking Function   |   | \- Weighted Ranker ✅ <br> \- RRF Ranker ✅ <br> \- Boost Ranker ✅ <br> \- Decay Ranker ✅ <br> \- Model Ranker ✅ |
   | Reranking Model    	 |   | \- TEI ✅ <br> \- Cohere <br> \- Voyage AI <br> \- SiliconFlow |
@@ -151,9 +201,8 @@ Solutions
   | Pretraining					 |   \- Causal Language Modeling (CLM) with Cross-Entropy Loss <br> \- Gradient Checkpointing <br> \- Parallelization (FSDP, ZeRO) | |
   | Optimizations				 |   \- Apply Mixed Precision (FP16/BF16) <br> \- Gradient Clipping <br> \- Adaptive Learning Rate Schedulers for efficiency | |
   | Evaluation & Benchmarking | \- Benchmarking performance <br> \- Red-Teaming <br> \- Adversarial Testing  | \- HumanEval <br> \- HELM <br> \- OpenAI Eval <br> \- MMLU <br> \- ARC  <br> \- MT-Bench |
-  | Orchestrator      	 |  \- Orchestrated conversation flow & intent detection | \- LangChain ✅ <br> \- LangGraph <br> \- LangSmith <br> \- LlamaIndex <br> \- Azure AI Foundry <br> \- Ollama ✅ |
+  | Orchestrator      	 |  \- Orchestrated conversation flow & intent detection | \- LangChain ✅ <br> \- LangGraph ✅ <br> \- LangSmith <br> \- LlamaIndex ✅ <br> \- Ollama ✅  <br> \- vLLM ✅ <br> \- Azure AI Foundry|
   | AI Agents      	     |   | \- Microsoft Autogen <br> \- Agno <br> \- OpenAI Agent Kit <br> \- CrewAI |
-
 
 ## LLM Aided Retrieval - Optimizing RAG
   - **Chunking Strategy**
@@ -346,6 +395,16 @@ Solutions
     4. The agent then combines retrieved data with a query and system prompt. It passes this data to the LLM.
     5. LLM processes the optimized input to answer the user’s query.
 
+## Example Use Cases
+  - Enterprise Knowledge Bases
+  - Customer Support Bots
+  - Research and Summarization
+  - Legal and Compliance Assistant
+  - Healthcare Information Retrieval
+  - Sales and Marketing Intelligence (Product comparisons)
+  - E-commerce Product Assistant
+  - Personal AI with your Data
+
 ---
 
 # Vector Databases
@@ -428,6 +487,10 @@ Solutions
 
 # Models
 
+## Workflow LLM
+
+  <img src="/assets/images/knowledge/llm/model_21.webp" alt="drawing" width="300"/>
+
 ## The Transformer Model
   - The strength of the transformer model is in its **ability to understand the significance and context of every word in a sentence**.
   - Architecture plays a critical role in defining what objective can each LLM be used for.
@@ -452,6 +515,17 @@ Solutions
 
   <img src="/assets/images/knowledge/llm/model_02.webp" alt="drawing"/>
 
+## Model Type
+  - **BERT**: Bidirectional Encoder Representations from Transformers.
+    - the encoder-only Transformer that reads in both directions.
+    - Using Masked Language Modelling (MLM) and Next Sentence Prediction (NSP) giving it deep bidirectional context representations for languange understanding tasks.
+    - BERT's solution: mask tokes at random (MLM), then train the model to predict them (NSP) using full bidirectional context simultaneously seeing left and right.
+    - Use cases:
+      - Sentiment analysis
+      - Question answering
+      - Named entity recognition
+      - Matural language inference
+
 ## Pre-Train LLM Types
   - <img src="/assets/images/knowledge/llm/model_05.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/llm/model_06.webp" alt="drawing"/>
@@ -475,6 +549,73 @@ Solutions
   - To train = 80 GB@32 bit full precision
   - PetaFLOP/s-day = Number of FLOating Point operations performed at the rate of 1 petaFLOP per second for one day.
   - 1 petaFLOP per second = 10E15 or 1 Quadrillion floating point operations per second.
+
+## Model Format
+
+  ### Reason for different formats
+  - **Quantization**: Shrinking 16-bit weights down to 4-bit or 8-bit to save VRAM without losing intelligence.
+  - **Hardware Tuning**: Optimizing math operations specifically for NVIDIA, GPUs.
+  - **Fast Loading**: Using "Zero-copy" techniques to map files directly to memory instread of slow reading.
+  - **Security**: Moving from unsafe formats (i.e. pickle) that could execute malicious code.
+
+  ### The Format
+  - **Safetensors**
+    - Is a simple, fast, and seure way to store model weights.
+    - Impossible to run malware during loading.
+    - Loads 2x-5x faster that old .bin files.
+    - Better for cloud with high security and speed.
+  - **GGUF**: Universal CPU + GPU format (llama.cpp)
+    - For local inference.
+    - It puts the models weights and metadata in one single file.
+    - Easily offload layers form CPU to GPU.
+    - Contains all instructions needed to run (no config.json needed).
+    - High compression: supports 2,3,4,5,6,8-bit quantization. (Q2_K to Q8_0)
+    - Quality: ~92% at Q4_K_M
+    - self-contained single file (weights, tokenizer, metadata)
+  - **GPTQ vs AWQ**
+    - Specific for dedicated NVIDIA GPU, used to fit large models into VRAM.
+    - Vram savings: ~4x and speedup: ~2-3x.
+    - Accuracy at low bit.
+    - **GPTQ**: Gradient-based post-training quantization
+      - Post-training quatization.
+      - 3-4 bit.
+      - Quality: ~90% retained
+      - speed: 2-4x faster than FP16
+      - Uses Hessian approximation. Compesates quatization error layer-by-layer.
+    - **AWQ**: Activation-aware weight quantization
+      - Activation-Aware Quantization. It protects "important" weights during compression. with better quality at 4-bit.
+      - INT4 bit
+      - Quality: ~95% highest of all
+      - speed: fastest on vLLM
+      - Protects top 1% of weights. keeps salient channels at high precision.
+  - **EXL2**
+    - Is the latest evolution for local GPU users, built on top of the ExLlamaV2 engine.
+    - It's built for pure performance.
+    - Mixed Precision: It can use different bit-rates for different layers. This maximizes quality where it matters most.
+    - 8-bit Cache: Uses advanced caching to allow for massive context windows (up to 128k+) on consumer cards.
+  - **BitsAndBytes**: on-the-fly quantization for fine-tuning
+    - 3 / 8 bit.
+    - Quality: ~85% at 4-nit NF4
+    - supports training with QLoRA enabled
+    - Quantizes on model load.
+  - **FP8** 8-bit floating point
+    - the GPU-native format
+    - 8 bit float
+    - Quality: ~99% near-BF16
+    - Native 8-bit float on GPU
+    - halves memory vs FP16 with minimum quality loss
+
+## Model Optimization
+  - **PEFT (parameter efficient fine-tuning)**: Fine-tune only small parts of the model instead of the full model.
+  - **Quantization**: Reduce mdoel precision (16-bit -> 8-bit -> 4-bit) to reduce memory and improve speed.
+  - **LoRA (low-rank adaptation)**: Adds lightweight trainable adapters to an LLM.
+  - **QLoRA (quantized low-rank adaptation)**: LoRA + Quantization for low-memory fine-tuning.
+  - **RAG (retrieval augmented generation)**: Fetch external knowledge dynamically instead of retraining the model.
+  - **Distillation (knowledge distillation)**: Train a smaller "student" model using a larger "teacher" model.
+  - **Pruning**: Remove unnecessary weights/neurons to make models smaller and faster.
+  - **Flash Attention**: Optimized attention mechanism for faster and memory-efficient inference.
+  - **KV Cache (key-value cache)**: Reuse previously computed tokens for faster text generation.
+  - **MoE (Mixture of Experts)**: activate only specific parts of the model instead of the entire model. 
 
 ---
 

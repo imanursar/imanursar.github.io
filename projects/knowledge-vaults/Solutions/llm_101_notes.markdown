@@ -7,7 +7,7 @@ title: LLM - AI Agent 101 Notes
 parent: kv - Solutions
 grand_parent: Knowledge Vaults
 permalink: /knowledge-vaults/solutions/llm101-notes
-nav_order: 99
+nav_order: 100
 ---
 
 # LLM Script Notes
