@@ -30,11 +30,10 @@ I have a well-rounded background across the full data value chain — from data 
 - **Computer Vision**: Custom scripts, TensorFlow, Pytorch, OpenCV, YOLO, U-net, SAMLoRA.
 - **GIS Tools**: ArcGIS Pro, ArcGIS Enterprise, ArcGIS Deep Learning Frameworks, ArcGIS for Python API, and Data Science Deployment framework.
 - **LLM and GenAI**: 
-  - **Document processing**: Docling, markitdown
-  - **Vector Database**: Milvus
-  - **Semantic Search**: FAISS
-  - **Model retrieval**: Huggingface
-  - **Framework AI agents**: Langchain
+  - **Document crawler**: Scrapy, BeautifulSoup
+  - **Document processing**: Docling, markitdown, pdfplumber
+  - **Vector Database and Semantic Search**: Milvus, pgvector, FAISS
+  - **Framework for LLM and AI agents**: Huggingface, Langchain, LangGraph, Ollama, vLLM
 - **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
 - **Other Tools**: Google sheet, Microsoft Office, Confluence, and Jira.
 
