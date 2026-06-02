@@ -4,9 +4,8 @@
 
 layout: default
 title: Pgvector - 101
-parent: kv - Solutions
-grand_parent: Knowledge Vaults
-permalink: /knowledge-vaults/solutions/pgvector101
+parent: LLM and Gen-AI
+permalink: /llm_genai/pgvector101
 nav_order: 101
 ---
 
