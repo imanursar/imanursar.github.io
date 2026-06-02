@@ -47,7 +47,10 @@ plugins:
 
 
 markdown: kramdown
+
+kramdown:
   input: GFM
+  syntax_highlighter: rouge
 color_scheme: light
 nav_enabled: true
 
