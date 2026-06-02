@@ -4,7 +4,7 @@
 
 layout: default
 title: Statistics
-nav_order: 98
+nav_order: 99
 has_children: true
 heading_anchors: true
 permalink: /statistics/
