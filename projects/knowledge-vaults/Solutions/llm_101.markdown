@@ -23,7 +23,7 @@ Solutions
     - LangChain provides modular components for working with LLMs in applications. E.I. prompt templates for various use cases, memory to store LLM interactions, tools for working with external datasets and APIs, Pre-built chains optimised, and Agents (PAL, ReAct).
     - is a framework for developing applications powered by large language models (LLMs). 
   - **LangGraph** – the next evolution for production-grade agent control. solving the limitation of LangChain; agent control flow, LangChain is linear, Graph-based.
-  - **Ollama** – Run powerful LLMs locally on your own hardware with a single command.
+  - **Ollama** – Run powerful LLMs locally on our own hardware with a single command.
   - **Langflow** – A drag-and-drop visual builder for designing and deploying AI agents and RAG workflows.
   - **CrewAI** – role-based multi-agent collaboration. with 3 core abstractions: agents, tasks, crew.
   - **AutoGen** – conversational multi-agent systems by Microsoft. for building conversation, collaborative, and autonomous multi-agent system.
@@ -36,7 +36,7 @@ Solutions
   - **Flowise** – visual agent orchestration framework using no-code
   - **n8n** – agent orchastration that work as a node-based workflow automation system where each performs an operation
   - **Relevance AI** – enterprise-focused agent with capabilities in knowledge integration, workflow automation, and operational decision-making with focuses specifically on business operation.
-  - **OpenClaw** – The always-on personal AI agent that lives on your device and talks to you through WhatsApp, Telegram, and 50+ other platforms.
+  - **OpenClaw** – The always-on personal AI agent that lives on our device and talks to us through WhatsApp, Telegram, and 50+ other platforms.
   - **Open WebUI** – A self-hosted, offline-capable ChatGPT alternative
   - **Docling** - Document parser for LLM-ready
   - **FAISS ( Facebook AI Similarity Search)** – a library that allows us to quickly search for multimedia documents that are similar to each other, and thus it acts like a Vector Database.
@@ -63,7 +63,7 @@ Solutions
 
     <img src="/assets/images/knowledge/llm/model_17.webp" alt="drawing" width="300"/>
 
-  - **Embedding model**: would place their vectors near each other in that space. That proximity is what makes similarity search work: you embed the user’s query, find the stored vectors closest to it, and return those rows.
+  - **Embedding model**: would place their vectors near each other in that space. That proximity is what makes similarity search work: we embed the user’s query, find the stored vectors closest to it, and return those rows.
   - **Prompt**: The natural language instruction in which we interact with an LLM
   - **Token**: is a small piece of text, it can be a word, a part of a word, or a single character.
     - **word token**: whole words as tokens.
@@ -116,10 +116,49 @@ Solutions
   - **Greedy**: in output softmax layer, The word/token with the largest probability is selected. 
   - **Random Sampling**: in output softmax layer, The word/token is selected using random-weighted strategy.
 
+# Implementation
+  - **Standardize the process** – A standardized process helps align the team members and ensures a smooth new member onboarding process (especially in this chaos).
+  - **Defines clear milestones** – A straightforward way to track our work, measure it, and make sure we’re on the right path.
+  - **Identify decision points** – LLM-native development is full of unknowns and "small experimentation". Clear decision points make it easy to mitigate our risk and always stay lean with our development effort.
+  - **Define a "budget" or timeframe.** – Cost tracking
+  - **Experiment** – Whether we choose a bottom-up or top-down approach for our experimentation phase, our goal is to maximize the result succession rate. By the end of the first experimentation iteration, we should have some PoC (that stakeholders can play with) and a baseline we achieved.
+    - **The Bottom-Up approach** – Start lean, very lean, embracing the "one prompt to rule them all" philosophy. It establishes a baseline for our system. From there, continuously iterate and refine our prompts, employing prompt engineering techniques to optimize outcomes. As we identify weaknesses in our lean solution, split the process by adding branches to address those shortcomings.
+    - **The Top-Down Strategy** – Starts by designing the LLM-native architecture from day one and implementing its different steps/chains from the beginning. This way, we can test our workflow architecture as a whole and squeeze the whole lemon instead of refining each leaf separately.
+  - **Retrospective** – By the end of our research phase, we can understand the feasibility, limitations, and cost of building such an app. This helps us decide whether to productionize it and how to design the final product and its UX.
+  - **Productization** – Develop a production-ready version of our project and integrate it with the rest of our solution by following standard SWE best practices and implementing a feedback and data collection mechanism.
+  - **Optimizating the solution**
+    - **Prompt engineering techniques** – Like Few Shots, Role assignment, or even Dynamic few-shot.
+    - **Expanding the Context Window** from simple variable information to complex RAG flows can help improve the results.
+    - **Experimenting with different models** – Different models perform differently on different tasks. Also, the large LLMs are often not very cost-effective, and it’s worth trying more task-specific models.
+    - **Prompt dieting** – I learned that putting the SOP¹ (specifically, the prompt and the requested output) through a "diet" usually improves latency. By reducing the prompt size and the steps the model needs to go through, we can reduce both the input and output the model needs to generate. Be aware that the diet might also cause quality degradation, so it’s important to set up a sanity test before doing so.
+    - **Splitting the process** into smaller steps can also be very beneficial and make optimizing a subprocess of our SOP¹ easier and feasible.
+  - **Feedback loop** – How do we measure success? Is it simply a "thumb up/down" mechanism or something more sophisticated that considers the adoption of our solution? It is also important to collect this data.
+  - **Caching** – Unlike traditional SWE, caching can be very challenging when we involve a generative aspect in our solution.
+  - Debuggability and tracing – Ensure we have set up the right tools to track a "buggy" input and track it throughout the process. – Ensure we have set up the right tools to track a "buggy" input and track it throughout the process.
+
+# Stages of an LLM in Production
+  - **Pre-training** – Train from scratch on trillions of tokens from web, books, code and curated datasets.
+  - **fine-tuning** – Teach domain-specific skills. Supervised fine-tuning on labeled (instruction -> response pairs). It best for domain language, adjusts behavior, brand tone, and custome skills.
+    - QLoRA, LoRA - fine-tune a 7B model on a single GPU in hours.
+  - **Alignment** – Train the model to prefer outputs human actually like, match human preferences. This is what makes a model "helpful" to reduce hallucinations, follow instructions. Approaches:
+    - RLHF – Classic, complex, needs a reward model.
+    - DPO – Simpler, skips the reward model entirely.
+    - GRPO – used by DeepSeek-R1.
+  - **Distillation** – A large model as Teacher (GPT-4, Llama 70B), it trains a small model as student (near-equivalent quality). Student learns from teacher's outputs + soft probabilities. Near-equivalent quality at a fraction of size. Make it permanently smaller. Change the model itself (unlike quantization), best for reducing inference cost long-term, but quality loss varies by domain.
+  - **Quantization** – Shrink memory with same model. I.e. FP16 with 140GB, 70B model in 16-bit -> quantize to 4-bit -> 4-BIT ~35GB same 70B model. Popular formats: GPTQ, AWQ, GGUF, BnB, FP8. That would ~75% size reduction with minimal quality loss. This enables for local deployment and edge inference with ~5% accuracy drop.
+  - **Serving** – All at once for GPU memory management, batching, KV cache, queue management. This would stripe cut inference costs by 73% with maximize token/sec at low latency.
+  - **monitoring** – catch failure before users do. stack with: prometheus -> grafana -> pagerduty.
+    - Token/sec
+    - p95/p99 latency
+    - KV cache utilization
+    - Queue depth
+    - GPU memory + error rate
+
 ---
 
 # RAG (Retrieval-Augmented Generation)
   - Combines **information retrieval** with a **language model** to generate accurate, relevant, less hallucination, private-secure and up-to-date answers.
+  - `RAG = Retrieval + Augmented + Generation`
   - Instead of relyinh only on what the model was trained on, RAG lets the model look up information from trusted sources before generating a response.
   - Retrieves more accurate, contextually appropriate, relevant data from a knowledge base
   - Uses an LLM to generate a response based on that context
@@ -133,6 +172,10 @@ Solutions
     - Retriever module
     - Prompt Constructor
     - Generator (LLM model)
+
+## Schema
+
+  {% include whimsical.html src="https://whimsical.com/embed/EaVTkCZnTn61tmXHzVd2Xm@9kGbMz9Kzt" %}
 
 ## RAG Pipeline
   - Tech side
@@ -219,10 +262,10 @@ Solutions
 
 ## RAG Chunking
   - Chunking is the pre-processing step of splitting texts into smaller pieces, or "chunks.” Each chunk is the unit of information that is vectorized and stored in a vector database.
-  - Chunking decides what knowledge your system is allowed to see.
-  - Chunking affects both the information retrieval and the amount of contextual information provided. Get it wrong, and you're either missing crucial context or drowning in irrelevant noise.
-  - If you split text by token count, you’re not building retrieval. You’re breaking meaning.
-  - When chunking is wrong, no vector database or reranker can save you.
+  - Chunking decides what knowledge our system is allowed to see.
+  - Chunking affects both the information retrieval and the amount of contextual information provided. Get it wrong, and we're either missing crucial context or drowning in irrelevant noise.
+  - If we split text by token count, we’re not building retrieval. You’re breaking meaning.
+  - When chunking is wrong, no vector daetabase or reranker can save us.
 
   - Real RAG chunking is about:
     - Preserving ideas, not lines
@@ -242,6 +285,22 @@ Solutions
     - Hallucinations increase
     - Context gets fragmented
     - Token costs explode
+
+## RAG Optimization
+  - Everything starts with data quality.
+  - Poor chunking leads to:
+    - Too large → noisy, low precision
+    - Too small → missing context
+  - Hybrid search (semantic + keyword) becomes essential
+  - Re-ranking is critical to prioritize true relevance—not just similarity
+  - Enforce context. Too much information leads to the “lost in the middle” effect.
+  - LLMs may ignore retrieved context unless prompts enforce:
+    - Grounding
+    - Citations
+    - Context adherence
+  - Continuous feedback loops
+  - Performance monitoring
+  - Adaptive tuning to evolving data
 
 ### RAG Chunking Parameter
   - **Chunk Size** - Measured in token or characters. 
@@ -398,12 +457,14 @@ Solutions
 ## Example Use Cases
   - Enterprise Knowledge Bases
   - Customer Support Bots
+  - Ask-the-docs chatbot
   - Research and Summarization
   - Legal and Compliance Assistant
   - Healthcare Information Retrieval
   - Sales and Marketing Intelligence (Product comparisons)
   - E-commerce Product Assistant
-  - Personal AI with your Data
+  - Personal AI with our Data
+  - Support agent assistant
 
 ---
 
@@ -621,14 +682,14 @@ Solutions
 
 # Fine Tuning
   - Few shot learning might not work for smaller LLMs and it also takes up a lot of space in the context window.
-  - **Fine Tuning is a supervised learning process**, where you take a labelled dataset of prompt-completion pairs to adjust the weights of an LLM.
+  - **Fine Tuning is a supervised learning process**, where we take a labelled dataset of prompt-completion pairs to adjust the weights of an LLM.
   - **Instruction Fine Tuning** is a strategy where **the LLM is trained on examples of Instructions and how the LLM should respond to those instructions**. Instruction Fine Tuning leads to improved performance on the instruction task.
   - Full Fine Tuning is where all the LLM parameters are updated. It requires enough memory to store and process all the gradients and other components.
 
 ## Catastrophic Forgetting
   - Fine Tuning on a single task can significantly improve the performance of the model on that task. However, because the model weights get updated, the instruct model's performance on other tasks (which the base model performed well on) can get reduced. 
   - Avoiding Catastrophic Forgetting
-    - If you only want the model to perform well on the trained task, it is unnecessary.
+    - If we only want the model to perform well on the trained task, it is unnecessary.
     - Perform fine tuning on multiple tasks, this will require lots of examples for each task.
     - Perform Parameter Efficient Fine Tuning (PEFT)
 

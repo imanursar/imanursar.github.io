@@ -47,6 +47,7 @@ plugins:
 
 
 markdown: kramdown
+  input: GFM
 color_scheme: light
 nav_enabled: true
 
