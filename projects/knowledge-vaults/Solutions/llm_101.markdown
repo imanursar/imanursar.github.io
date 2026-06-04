@@ -59,6 +59,9 @@ Solutions
     - Custom huggingface + FastAPI
 
 # Terms
+  - **LLMs**: The transformer-based systems that learned to read, write, reason, and code by predicting one word at a time.
+  - **Instruction Tuning (SFT)**: Fine-tune on curated instruction-response pairs. This teaches the model to follow instructions, answer questions, and behave as a helpful assistant rather than just completing text. Transforms a text predictor into an interactive system.
+  - **Alignment (RLHF / Constitutional Al)**: Use human feedback or Al-generated preferences to align the model with human values. RLHF trains a reward model from human rankings, then optimizes the LLM to maximize that reward. Constitutional Al uses a set of principles to self-improve.
   - **Vector Embedding**: is a list of floating-point numbers that represents the meaning of a piece of data, not its characters or keywords. The numbers are produced by a machine learning model trained to place semantically similar content close together in a high-dimensional numeric space.
 
     <img src="/assets/images/knowledge/llm/model_17.webp" alt="drawing" width="300"/>
@@ -66,9 +69,14 @@ Solutions
   - **Embedding model**: would place their vectors near each other in that space. That proximity is what makes similarity search work: we embed the user’s query, find the stored vectors closest to it, and return those rows.
   - **Prompt**: The natural language instruction in which we interact with an LLM
   - **Token**: is a small piece of text, it can be a word, a part of a word, or a single character.
-    - **word token**: whole words as tokens.
-    - **subword token**: Parts of the words as tokens.
-    - **character token**: Single characters as tokens.
+    - Tokenization Techniques:
+      - **Byte Pair Encoding (BPE)**: learns the most efficient vocabulary from billions of words of training data splits by frequency.
+      - **WordPiece**: Similar to BPE, WordPiece focuses on subword units and is often used in models like BERT.
+      - **SentencePiece**: A data-driven approach that tokenizes text into subwords or characters without a pre-defined vocabulary, particularly useful for morphologically rich languages.
+    - The tokenization method employed:
+      - **word token**: whole words as tokens.
+      - **subword token**: Parts of the words as tokens.
+      - **character token**: Single characters as tokens.
 
     <img src="/assets/images/knowledge/llm/model_18.webp" alt="drawing" width="300"/>
 
@@ -153,6 +161,12 @@ Solutions
     - KV cache utilization
     - Queue depth
     - GPU memory + error rate
+  - **Optimization**
+    - Designing prompt templates with structure.
+    - Advance the prompt instruction with examples.
+    - Adjust tradeoff between creativity vs accuracy. temperature = 0 mean facts, temperature = 1+ mean creative.
+    - Control length of prompt token to optimize cost and speed
+    - 
 
 ---
 
@@ -216,14 +230,16 @@ Solutions
 	| ------------------ | ------------------------------ | ------------------------------ |
 	| Standard           | Basic retrieval + context for Q&A   | answering questions from documents (fact-based Q&A, knowledge base assistants) |
 	| Fusion             | multiple queries → better retrieval results  | combining multiple retrieval strategies for better coverage (large-scale enterprise search) |
-	| Corrective         | verifies or fixes responses  | reducing hallucinations and fixing incorrect outputs (high-stakes domains like legal or healthcare) |
-	| Agentic            | step-by-step reasoning with tools | automating workflows (research assistants, task automation, multi-step reasoning) |
+	| Corrective         | verifies queries or fixes responses  | reducing hallucinations and fixing incorrect outputs (high-stakes domains like legal or healthcare) |
+	| Agentic            | step-by-step reasoning loop with tools | automating workflows (research assistants, task automation, multi-step reasoning) |
 	| Modular            | flexible pipeline (swap components) | building flexible systems that can be customized per use case (AI platforms, SaaS tools) |
 	| Multimodal         | works with text, images, etc. | working with images, audio, and text together (medical reports, visual QA systems) |
-	| Graph              |  | understanding relationships in structured data (fraud detection, knowledge graphs) |
-	| Hybrid             |  | improving search accuracy in enterprise systems (combining keyword + semantic search) |
+	| Graph              | knowledge graph | understanding relationships in structured data (fraud detection, knowledge graphs), cross-document reasoning and multi-hop queries |
+	| Hybrid             | combine between dense + sparse search and reranker | improving search accuracy in enterprise systems (BM/25 keyword - lexical search + semantic search) |
 	| Multi-query        |  | handling vague or ambiguous user queries (customer support bots) |
 	| Re-ranking         |  | improving result quality in search engines and recommendation systems |
+	| Adaptive           | The system adaptively decides whether retrieval is needed based on the query type, and proceeds accordingly |  |
+
 
 ## Techical
 
@@ -260,7 +276,25 @@ Solutions
     - Core component: information >> Query Parser >> Search term + Filter
   - **Compression**: Using LLM we could increase the number of results we can put in the context by shrinking the responses to only the relevant information.
 
-## RAG Chunking
+## RAG Optimization
+  - Everything starts with data quality.
+  - Poor chunking leads to:
+    - Too large → noisy, low precision
+    - Too small → missing context
+  - Hybrid search (semantic + keyword) becomes essential
+  - Re-ranking is critical to prioritize true relevance—not just similarity
+  - Enforce context. Too much information leads to the “lost in the middle” effect.
+  - LLMs may ignore retrieved context unless prompts enforce:
+    - Grounding
+    - Citations
+    - Context adherence
+  - Continuous feedback loops
+  - Performance monitoring
+  - Adaptive tuning to evolving data
+
+---
+
+# RAG Chunking
   - Chunking is the pre-processing step of splitting texts into smaller pieces, or "chunks.” Each chunk is the unit of information that is vectorized and stored in a vector database.
   - Chunking decides what knowledge our system is allowed to see.
   - Chunking affects both the information retrieval and the amount of contextual information provided. Get it wrong, and we're either missing crucial context or drowning in irrelevant noise.
@@ -285,22 +319,6 @@ Solutions
     - Hallucinations increase
     - Context gets fragmented
     - Token costs explode
-
-## RAG Optimization
-  - Everything starts with data quality.
-  - Poor chunking leads to:
-    - Too large → noisy, low precision
-    - Too small → missing context
-  - Hybrid search (semantic + keyword) becomes essential
-  - Re-ranking is critical to prioritize true relevance—not just similarity
-  - Enforce context. Too much information leads to the “lost in the middle” effect.
-  - LLMs may ignore retrieved context unless prompts enforce:
-    - Grounding
-    - Citations
-    - Context adherence
-  - Continuous feedback loops
-  - Performance monitoring
-  - Adaptive tuning to evolving data
 
 ### RAG Chunking Parameter
   - **Chunk Size** - Measured in token or characters. 
@@ -377,7 +395,7 @@ Solutions
     - maintaining the contextual relationships between tokens across the entire document during the embedding process, and only afterwards dividing these contextually-rich embeddings into chunks.
     - This method can help mitigate issues associated with very long documents, such as expensive LLM calls, increased latency, and a higher chance of hallucination.
 
-### RAG Failure Root Cause
+### RAG Chunking Failure Root Cause
 
   | Failure              | Root Cause               |
   | -------------------- | ------------------------ |
@@ -409,7 +427,9 @@ Solutions
   - PDFs
     - Page -> Section -> Paragraph
 
-## RAG + Graph
+---
+
+# RAG + Graph
   - Graph RAG treats the knowledge base as a network of entities.
   - During indexing, an LLM (or NER pipeline) extracts triples (subject, predicate, object) from every document. Entities become nodes, relationships become edges, and the resulting knowledge graph is stored in Graph database. (Neo4j, Kuzu, TigerGraph).
   - At query time, the system does hybrid retrieval: it identifies anchor entities from the query, traverses the graph 1-3 hops to collect connected context, and pulls relevant text chunks then merges both into the LLM prompt.
@@ -443,6 +463,8 @@ Solutions
   - Create and extract weak edges will give noisy / ambiguous result.
   - Questions without entity anchors will falls back the graph RAG to vector search adding latency without value.
   - High-velocity corpora (such as realtime data, fast update data) will be difficult cases for graph re-extraction that is typically batch-scheduled.
+
+---
 
 ## Agentic RAG
   - Introducing AI agents that can make decisions, select tools, and even refine queries for more accurate and flexible responses.
@@ -729,6 +751,26 @@ Solutions
       - Compares to human-generated translations
       - BLEU (Bi-Lingual Evaluation Understudy) SCORE = Average (precision score across a range of n-gram sizes)
 
+## QLoRA
+  - QLora (quantized low-rank adaptation) combines 4-bit quantization with LoRA adapters to enable efficient fine-tuning of large language models on commodity hardware.
+    - Quantized: 4-bit NF4 precision
+    - Low-Rank: small adapter matrices
+    - adaptation: task-specific tuning
+  - Fine-tune billion-parameter LLMs on a single comsumer GPU - without sacrificing performance.
+  - This will solved: hardware cost, time and compute, catastrophic forgetting.
+  - Steps:
+    - Quantize the base model to 4-bit: The frozen pretrained model is quantized using NF4 (NormalFloat4), reducing memory by ~75% while preserving information by matching the normal distribution of weights.
+    - Attach LoRA adapters: Small trainable low-rank matrices (rank r) are injected into each attention layer. Only these adapters (~0.1% of params) are trained.
+    - Dequantize for gradient computation: During the forward pass, weights are temporarily dequantized to BF16 for accurate gradient calculation, then re-quantized to save memory.
+    - Paginated memory management: NVIDIA's unified memory handles gradient checkpointing spills gracefully, preventing OOM crashes during training.
+  - Goals:
+    - Domain-specific models
+    - Instruction following
+    - Code generation models
+    - on-device / edge AI
+    - Research and prototyping
+  - 
+
 ---
 
 # RLHF and Human Value
@@ -840,7 +882,21 @@ Solutions
 
 ---
 
+# AI Agent
 
+## AI Agent Memory
+  - **short-term memory**: working memory inside the context window for immediate reasoning and reset every session.
+  - **Long-term memory**: Persistent storage (DB) restieved across sessions. Best for personal assistants.
+  - **Episodic memory**: Timestamped records of specific events. Best for self-improving agents, and debugging behavior.
+  - **Semantic memory**: Distilled facts - what the agent knows. Best for domain-expert agents and research assistants.
+  - **Prosedural memory**: Learned skills how to do things. For repeated multi-step workflows.
+    - repeated task
+    - pattern extraction
+    - reusable procedure: tools, prompt template, fine-tuned weights.
+  - **Shared memory**: a common memory pool for multi-agent systems. For multi-agent orchestration.
+  - 
+
+---
 
 
 
