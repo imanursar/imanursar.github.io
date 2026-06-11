@@ -18,26 +18,6 @@ Solutions
 {:toc}
 
 
-# Load Documents
-
-  ```python
-  from langchain.document_loaders import PyPDFLoader 
-  from langchain.text_splitter import ( RecursiveCharacterTextSplitter)
-
-  # Load a PDF
-  loader = PyPDFLoader("knowledge_base.pdf") 
-  documents = loader.load()
-  
-  # Split into overlapping chunks
-  splitter = RecursiveCharacterTextSplitter(
-              chunk_size=512,
-              chunk_overlap=64,
-              separators=["\n\n", "\n", ""]
-            )
-  
-  chunks = splitter.split_documents(documents)
-  ```
-
 # Tokenization
 
   ```python

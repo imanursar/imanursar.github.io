@@ -10,8 +10,10 @@ nav_order: 101
 ---
 
 # Pgvector - 101
-Solutions
+Vector Database
 {: .badge .badge-pill .badge-primary }
+Postgresql
+{: .badge .badge-pill .badge-secondary }
 
 * Do not remove this line (it will not be displayed)
 {:toc}

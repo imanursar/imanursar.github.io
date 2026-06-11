@@ -707,6 +707,8 @@ Solutions
   - **Fine Tuning is a supervised learning process**, where we take a labelled dataset of prompt-completion pairs to adjust the weights of an LLM.
   - **Instruction Fine Tuning** is a strategy where **the LLM is trained on examples of Instructions and how the LLM should respond to those instructions**. Instruction Fine Tuning leads to improved performance on the instruction task.
   - Full Fine Tuning is where all the LLM parameters are updated. It requires enough memory to store and process all the gradients and other components.
+  - The process of taking the base model and continuing to train it on a small, specific dataset, so it becomes an expert in a narrow task. Instead of knowing a little about averything, it know a lot about specific domain. It learns product's tone, terminology, appropriate responses, matches the conventions and FAQ answers.
+  - It resolved a limitation of Prompting. Because it internalises the pattern, need less tokens at inference, more reliable, and can be trained on proprietary data that we would never want to put in a prompt or based model.
 
 ## Catastrophic Forgetting
   - Fine Tuning on a single task can significantly improve the performance of the model on that task. However, because the model weights get updated, the instruct model's performance on other tasks (which the base model performed well on) can get reduced. 
@@ -756,6 +758,14 @@ Solutions
     - Quantized: 4-bit NF4 precision
     - Low-Rank: small adapter matrices
     - adaptation: task-specific tuning
+  - A neural network is made up of many weight matrices uses to make predictions. Full fine-tuneing would update every single number in every one of there matrices. LoRA makes a key observation: **The updates to there weight matrices during fine-tuning tend to be low-rank**. This means that change from `before training` to `after training` can be decomposed into two much smaller matrices multipled together. Instead of updating the full matrix `W` (i.e. 4096 x 4096 = 16 million numbers), LoRA trains two tiny matrices:
+    ```
+    W_update = A x B
+    where A is (4096 x r) and B is (r x 4096)
+    and r is a small number i.e. 16 
+    ```
+  if r = 16, we go from training 16 million number to training just 2 x (4096 x 16) = 131000 numbers. That roughly **0.8% of the original parameters**. This why LoRA adapters are tiny - jsut a few hundred MB - While the base model stays untouched and can be shared across many different LoRA adapters for different tasks.
+  - QLoRA takes this one step further: it first quantises the base model to 4-bit precision (cutting memory by 4x), then applies LoRA on top.
   - Fine-tune billion-parameter LLMs on a single comsumer GPU - without sacrificing performance.
   - This will solved: hardware cost, time and compute, catastrophic forgetting.
   - Steps:
@@ -769,7 +779,23 @@ Solutions
     - Code generation models
     - on-device / edge AI
     - Research and prototyping
+
+## Fine-Tune with QLoRA
+  - Steps:
+    - Base LLM model
+    - Load in 4-bit QLoRA Mode
+    - Freeze almost All base weights or 99.35% Frozen
+    - Attach LoRa Adapters A x B matrices (r=16)
+    - Training Dataset (examples formatted as prompts)
+    - SFT Trainer
+    - Training Result
+      - LoRA adapter
+      - Base Model Unchanged reusable
+    - Fine-Tuned Model (Base + Adapter domain-specialist)
+
+  - Unsloth: is a drop-in replacement for Hugging Face Transformers that is 2x faster and uses 60-70% less VRAM. It does this by replacing standard PyTorch operations with hand-written CUDA kernels - low-level GPU code that does the same maths with less memory overhead.
   - 
+
 
 ---
 
