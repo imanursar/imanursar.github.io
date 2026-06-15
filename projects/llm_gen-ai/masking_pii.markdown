@@ -18,9 +18,11 @@ PII
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+Self-hosted web interface for detecting and masking PII data using an LLM model. Fully offline and customizable.
+
 # Schema
 
-
+  {% include whimsical.html src="https://whimsical.com/embed/EaVTkCZnTn61tmXHzVd2Xm@8ADn3nfZACauWrMNNNkjN1CJWEquE6Ajo6rm" %}
 
 # Video
 

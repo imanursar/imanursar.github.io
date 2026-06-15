@@ -18,6 +18,8 @@ rag
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+The self-hosted web interface for LLMs is fully offline, customizable, and capable of searching and explaining contexts using internal data.
+
 # Schema
 
   {% include whimsical.html src="https://whimsical.com/embed/EaVTkCZnTn61tmXHzVd2Xm@8ADn3nfZACaumLQZ9CPhznESdqZzH6zaVyyc" %}
