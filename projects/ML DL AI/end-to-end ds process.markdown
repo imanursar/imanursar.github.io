@@ -6,7 +6,7 @@ layout: default
 title: End-to-End Data Science Workflow 
 parent: ML DL AI
 permalink: /ml_dl_ai/end-to-end
-nav_order: 98
+nav_order: 97
 ---
 
 #  End-to-End Data Science Workflow 

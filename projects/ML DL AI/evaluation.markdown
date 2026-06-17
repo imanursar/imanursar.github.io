@@ -6,7 +6,7 @@ layout: default
 title: How to evaluate your machine learning models?
 parent: ML DL AI
 permalink: /ml_dl_ai/evaluation
-nav_order: 99
+nav_order: 98
 ---
 
 #  How to evaluate your machine learning models?
