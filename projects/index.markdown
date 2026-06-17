@@ -23,7 +23,7 @@ I have a well-rounded background across the full data value chain — from data 
 ### Proficient in leveraging tools such as: 
 - **Data Engineering, Data pipelining and Data Streaming**: SQL, Apache Airflow, Apache Spark, DBT, Apache Kafka.
 - **Data management**: DataHub, Dbeaver, DVC, FastAPI.
-- **Database and Warehousing**: SQL Server, PostgreSQL-PostGIS, BigQuery, MySQL, Trino, Clickhouse, Minio, DuckDB, MongoDB, hadoop-HDFS, Hive and Supabase.
+- **Database and Warehousing**: SQL Server, PostgreSQL-PostGIS, BigQuery, MySQL, Trino, Clickhouse, Minio, DuckDB, neo4j, hadoop-HDFS, Hive and Supabase.
 - **Data Analytics and Visualization**: Metabase, Power BI, Google Cloud Platform (GCP), Looker, Streamlit, Apache Superset, and Tableau. 
 - **CI/CD**: Git, Docker-Container, prometheus, Grafana.
 - **Machine Learning and AI**: Python, TensorFlow, Pytorch, scikit-learn, OpenCV, YOLO, Python Libraries, Azure AI Solution, and Data Science Deployment Framework.
@@ -33,7 +33,7 @@ I have a well-rounded background across the full data value chain — from data 
   - **Document crawler**: Scrapy, BeautifulSoup
   - **Document processing**: Docling, markitdown, pdfplumber
   - **Vector Database and Semantic Search**: Milvus, pgvector, FAISS
-  - **Framework for LLM and AI agents**: Huggingface, Langchain, LangGraph, Ollama, vLLM
+  - **Framework for LLM and AI agents**: Huggingface, Langchain, LangGraph, Ollama, vLLM, llama index.
 - **Web**: HTML, PHP, Just the Docs - Ruby, MkDocs - Python, and Github Actions.
 - **Other Tools**: Google sheet, Microsoft Office, Confluence, and Jira.
 
@@ -74,6 +74,10 @@ I have a well-rounded background across the full data value chain — from data 
       - Designed robust data pipelines and data management structures to support enterprise-scale operations.
       - Implemented data governance and privacy standards, ensuring consistent compliance across internal platforms.
       - Developed and launched a Data Service module integrated with internal tools to enable advanced spatial analytics.
+    - **AI-Powered Data Intelligence**: Developed self-hosted LLM solutions to enhance enterprise data accessibility, automation, and privacy.
+    	- Private Knowledge Retrieval System: Enabling users to search, retrieve, and understand organizational knowledge while maintaining full data control.
+    	- Agentic AI & Enterprise Data Assistant: Web interface integrating LLMs, Agentic AI, and internal data sources. Enabled to translating user queries into database searches, contextual analysis, and automated summaries.
+    	- AI-Based PII Protection Framework: Automated Personally Identifiable Information (PII) detection and masking.
 
   ---
 
