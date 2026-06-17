@@ -112,3 +112,30 @@ This function requires the following parameters:
 
 ## The result
 <img src="/assets/images/description/desc_16.webp" alt="drawing"/>
+
+or we can used external library such as `pivottablejs` and `sweetviz` using this function to create pivot table for categorical column type.
+
+```python
+describe.pivot_table(main_data,file_name)
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data Input
+- **file_name** (`string`):         Output filename
+
+## The result
+<img src="/assets/images/description/desc_32.webp" alt="drawing"/>
+
+```python
+describe.sweetviz(main_data,target,name_file)
+```
+
+This function requires the following parameters:
+- **main_data** (`dataframe`):      Data Input
+- **target** (`string`):            Targeted column
+- **file_name** (`string`):         Output filename
+
+## The result
+<img src="/assets/images/description/desc_33.webp" alt="drawing"/>
+
+_________________

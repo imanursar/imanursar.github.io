@@ -101,3 +101,24 @@ This function requires the following parameters:
 <img src="/assets/images/description/desc_31.webp" alt="drawing"/>
 
 _________________
+
+## Forth Example
+
+Show descriptive statistic of datasets.
+Count value for categorical and std for numerical, next seperate cat and num columns and return data with filling nan.
+
+by calling `describe.fillna_separate_obj` we can calculate more deep analysis for missing value.
+
+
+```python
+describe.fillna_separate_obj(main_data,fill_cat,fill_num)
+```
+This function requires the following parameters:
+- **main_data** (`dataframe`):  Data input
+- **fill_cat** (`string`):  Value for filling the null value at categorical type data
+- **fill_num** (`string`):  Value for filling the null value at numerical type data
+
+
+### The result
+
+<img src="/assets/images/description/desc_34.webp" alt="drawing"/>
