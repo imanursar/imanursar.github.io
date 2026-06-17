@@ -115,36 +115,38 @@ Semakin lama kinerja model akan menurun seiring waktu. Istilah ini dikenal denga
 ## Machine Learning Deployment Schema
 - **Batch scoring**: Ini adalah kategori deployment saat model memproses seluruh dataset yang telah dikumpulkan dari waktu ke waktu untuk menghasilkan prediksi baru.Kategori ini digunakan saat keputusan model tidak harus segera ditetapkan.
 
-Pada kategori ini, proses scoring biasanya dilakukan pada jadwal tertentu. Untuk menjadwalkan proses batch scoring, pertimbangkan beberapa hal berikut:
-1. Ketersediaan data.
-2. Seberapa sering keputusan bisnis harus diambil.
-3. Berapa lama proses yang dibutuhkan untuk menjalankan proses batch scoring.
+  Pada kategori ini, proses scoring biasanya dilakukan pada jadwal tertentu. Untuk menjadwalkan proses batch scoring, pertimbangkan beberapa hal berikut:
+  1. Ketersediaan data.
+  2. Seberapa sering keputusan bisnis harus diambil.
+  3. Berapa lama proses yang dibutuhkan untuk menjalankan proses batch scoring.
 
 - **Real-time scoring**: Pertumbuhan dan peningkatan data digital berimbas pada kebutuhan untuk memproses data segera saat diterima atau disebut juga secara real-time. Kategori ini digunakan saat waktu merupakan sumber daya yang penting dalam model machine learning.
 
-Berikut beberapa hal yang perlu Anda pertimbangkan saat menggunakan teknik deployment ini.
-1. Siapa yang menerima hasil prediksi, apakah manusia atau sistem otomatis?
-2. Jika manusia yang akan menerima, bagaimana ia akan menerima hasilnya? Apakah lewat perangkat seluler, atau lewat media lain?
-3. Jika sistem otomatis yang menerima, apa yang selanjutnya akan dilakukan oleh sistem setelah menerima prediksi?
-4. Apakah hasilnya akan digunakan sebagai sistem peringatan untuk manusia (misal peringatan dini terjadi bencana) atau untuk mengontrol proses lain?
+  Berikut beberapa hal yang perlu Anda pertimbangkan saat menggunakan teknik deployment ini.
+  1. Siapa yang menerima hasil prediksi, apakah manusia atau sistem otomatis?
+  2. Jika manusia yang akan menerima, bagaimana ia akan menerima hasilnya? Apakah lewat perangkat seluler, atau lewat media lain?
+  3. Jika sistem otomatis yang menerima, apa yang selanjutnya akan dilakukan oleh sistem setelah menerima prediksi?
+  4. Apakah hasilnya akan digunakan sebagai sistem peringatan untuk manusia (misal peringatan dini terjadi bencana) atau untuk mengontrol proses lain?
 
 ## Machine Learning Deployment Strategy
+
 Tiga strategi deployment yang umum digunakan:
-1. **Recreate Deployment**: Strategi penerapan ulang bekerja dengan sepenuhnya menurunkan versi aplikasi lama sebelum Anda meningkatkan versi aplikasi baru. Saat melakukan pembaruan, Anda harus menurunkan atau mematikan versi lama, kemudian melakukan penerapan dengan versi baru.
 
-Kelebihan dari strategi ini adalah kesederhanannya. Anda tidak perlu mengelola lebih dari satu versi aplikasi secara paralel. Sehingga Anda tidak perlu melakukan penyesuaian lagi terhadap data dan aplikasi. Sedangkan kekurangan dari strategi ini adalah adanya downtime (waktu henti) selama proses pembaruan. Hal ini tentu akan berdampak pada pengguna yang harus menunggu sistem mati dan menyala kembali dalam durasi waktu tertentu.
+- **Recreate Deployment**: Strategi penerapan ulang bekerja dengan sepenuhnya menurunkan versi aplikasi lama sebelum Anda meningkatkan versi aplikasi baru. Saat melakukan pembaruan, Anda harus menurunkan atau mematikan versi lama, kemudian melakukan penerapan dengan versi baru.
 
-2. **Blue-Green Deployment**: Pada blue-green deployment, Anda melakukan dua penerapan yang identik dari aplikasi. Strategi ini berguna saat Anda ingin menerapkan versi baru aplikasi sekaligus memastikan bahwa layanan aplikasi tetap tersedia saat penerapan diperbarui. Pada diagram di atas, warna biru merepresentasikan versi aplikasi saat ini, sedangkan warna hijau adalah aplikasi versi baru. Hanya satu versi yang menyala/hidup pada satu waktu. Rute lalu lintas diarahkan ke penerapan biru sementara penerapan hijau dibuat dan diuji. Setelah proses pengujian selesai, Anda mengubah rute lalu lintas ke versi baru (versi hijau). Jika penerapan berhasil, Anda dapat mempertahankan penerapan biru untuk kemungkinan proses muat ulang atau menonaktifkannya.
+  Kelebihan dari strategi ini adalah kesederhanannya. Anda tidak perlu mengelola lebih dari satu versi aplikasi secara paralel. Sehingga Anda tidak perlu melakukan penyesuaian lagi terhadap data dan aplikasi. Sedangkan kekurangan dari strategi ini adalah adanya downtime (waktu henti) selama proses pembaruan. Hal ini tentu akan berdampak pada pengguna yang harus menunggu sistem mati dan menyala kembali dalam durasi waktu tertentu.
 
-Kelebihan strategi ini adalah rilis aplikasi dapat dilakukan dengan segera tanpa perlu ada waktu henti. Versi yang lebih baru dapat diuji secara internal sebelum merilisnya ke pengguna. Penerapan biru/hijau memastikan bahwa proses yang terjadi di lingkungan hijau tidak mempengaruhi sumber daya di lingkungan biru. Hal ini tentu mengurangi risiko penerapan.
+- **Blue-Green Deployment**: Pada blue-green deployment, Anda melakukan dua penerapan yang identik dari aplikasi. Strategi ini berguna saat Anda ingin menerapkan versi baru aplikasi sekaligus memastikan bahwa layanan aplikasi tetap tersedia saat penerapan diperbarui. Pada diagram di atas, warna biru merepresentasikan versi aplikasi saat ini, sedangkan warna hijau adalah aplikasi versi baru. Hanya satu versi yang menyala/hidup pada satu waktu. Rute lalu lintas diarahkan ke penerapan biru sementara penerapan hijau dibuat dan diuji. Setelah proses pengujian selesai, Anda mengubah rute lalu lintas ke versi baru (versi hijau). Jika penerapan berhasil, Anda dapat mempertahankan penerapan biru untuk kemungkinan proses muat ulang atau menonaktifkannya.
 
-Akan tetapi, strategi ini memiliki kekurangan yaitu kebutuhan sumber daya seperti biaya dan operasional menjadi dua kali lipat selama proses penerapan.
+  Kelebihan strategi ini adalah rilis aplikasi dapat dilakukan dengan segera tanpa perlu ada waktu henti. Versi yang lebih baru dapat diuji secara internal sebelum merilisnya ke pengguna. Penerapan biru/hijau memastikan bahwa proses yang terjadi di lingkungan hijau tidak mempengaruhi sumber daya di lingkungan biru. Hal ini tentu mengurangi risiko penerapan.
 
-3. **Rolling Update Deployment**: Rolling Update Deployment adalah strategi pembaruan yang mengalihkan lalu lintas secara bertahap ke versi baru. Pada strategi ini, Anda memperbarui bagian demi bagian aplikasi yang sedang berjalan dan tidak melakukan pembaruan secara bersamaan.
+  Akan tetapi, strategi ini memiliki kekurangan yaitu kebutuhan sumber daya seperti biaya dan operasional menjadi dua kali lipat selama proses penerapan.
 
-Kelebihan strategi ini antara lain, tidak ada waktu henti (downtime) dan Anda dapat memperbarui target penerapan secara bertahap, misalnya satu per satu atau dua per dua. Lalu lintas produksi dapat diarahkan ke target deployment setelah versi baru aplikasi siap menerimanya. Pembaruan secara bertahap ini mengurangi risiko penerapan yang disebabkan oleh ketidakstabilan. Risiko yang mungkin terjadi ini hanya akan mempengaruhi sebagian pengguna.
+- **Rolling Update Deployment**: Rolling Update Deployment adalah strategi pembaruan yang mengalihkan lalu lintas secara bertahap ke versi baru. Pada strategi ini, Anda memperbarui bagian demi bagian aplikasi yang sedang berjalan dan tidak melakukan pembaruan secara bersamaan.
 
-Kekurangan strategi ini adalah proses muat ulang yang lambat karena proses penerapannya secara bertahap. Selain itu, ada kemungkinan terjadi masalah dengan kompatibilitas. Hal ini karena kode baru dan kode lama berjalan secara bersamaan. Oleh karena itu, Anda perlu memastikan bahwa penerapan baru dapat membaca dan menangani data yang disimpan oleh versi lama.
+  Kelebihan strategi ini antara lain, tidak ada waktu henti (downtime) dan Anda dapat memperbarui target penerapan secara bertahap, misalnya satu per satu atau dua per dua. Lalu lintas produksi dapat diarahkan ke target deployment setelah versi baru aplikasi siap menerimanya. Pembaruan secara bertahap ini mengurangi risiko penerapan yang disebabkan oleh ketidakstabilan. Risiko yang mungkin terjadi ini hanya akan mempengaruhi sebagian pengguna.
+
+  Kekurangan strategi ini adalah proses muat ulang yang lambat karena proses penerapannya secara bertahap. Selain itu, ada kemungkinan terjadi masalah dengan kompatibilitas. Hal ini karena kode baru dan kode lama berjalan secara bersamaan. Oleh karena itu, Anda perlu memastikan bahwa penerapan baru dapat membaca dan menangani data yang disimpan oleh versi lama.
 
 ## Model type
 Jenis-jenis ML model dibedakan menjadi 2 berdasarkan cara dilatihnya:
@@ -205,19 +207,21 @@ matriks apa yang perlu kita monitor?
 # Scale the ML model
 - **Scaling With Respect To training data**: Your model is only as good as the underlying data on which it is trained, and it usually is. Retraining your model is absolutely necessary when underlying assumptions about the data change.
 - **Scaling With Respect To data deluge**: big business -> big data -> might want to consider parallel computing or batch processing (say using SGD optimization) and parallelize processes like cross-validation and hyperparameter tuning.
+
   >look for a distributed version of algorithms!
-It is also prudent to use checkpoints while retraining serialized/pickled models, as you do not have to rebuild it from scratch just because you received an additional data.
+
+  It is also prudent to use checkpoints while retraining serialized/pickled models, as you do not have to rebuild it from scratch just because you received an additional data.
 - **Scaling With Respect To framework**: what is the level of abstraction you desire?
-Compare the frameworks based on how good their community support is, how easily does it allow third-party integrations, and whether or not it can support Distributed ML
+  Compare the frameworks based on how good their community support is, how easily does it allow third-party integrations, and whether or not it can support Distributed ML
 - **Scaling With Respect To features**: It is only reasonable to find that with the passage of time, new predictors come to light, which were previously ignored or considered unimportant.
 
-Make sure that the addition of these features is not leading towards overfitting the model and that you are able to witness an improvement on your validation sets as well.
+  Make sure that the addition of these features is not leading towards overfitting the model and that you are able to witness an improvement on your validation sets as well.
 
-Even better, implement regularization techniques to be extra sure that your coefficients don’t take extreme values and that the model isn’t too complex.
+  Even better, implement regularization techniques to be extra sure that your coefficients don’t take extreme values and that the model isn’t too complex.
 
-The accuracy improvements must justify increased maintenance and training costs.
+  The accuracy improvements must justify increased maintenance and training costs.
 
 - **Scaling With Respect To actual predictions**: As your the number of prediction requests keep pouring in, it is time to think about whether your model is churning out predictions fast enough. especially without GPU support.
 
-Deployment using backend APIs or make it available to the world as hardware-accelerated models on the web
+  Deployment using backend APIs or make it available to the world as hardware-accelerated models on the web
 
