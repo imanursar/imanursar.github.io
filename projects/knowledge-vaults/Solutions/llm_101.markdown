@@ -367,9 +367,12 @@ Solutions
     - These units are then combined into chunks based on the cosine distance between their embeddings, with a new chunk formed whenever a significant context shift is detected.
     - using sentence embeddings, cosine similarity, break where similarity drops.
     - This produces; concept-aligned chunks, self-contained knowledge blocks.
-  - **Document-structure Chunking**
-    - This technique creates chunks based on the natural divisions within the document, such as headings or sections.
+    - This strategic will give advantage to give higher retrieval precision and less context pollution.
+    - Workflow: Text -> Sentence Embeddings -> Similarity Scoring -> Meaning Boundary Detection -> Semantic Chunks
+  - **Document-structure Chunking / Hierarchical Chunking**
+    - This technique creates chunks based on the natural divisions within the document, such as headings or sections, subsection and paragraph.
     - It's very effective for structured data like HTML, Markdown, or code files but it’s less useful when the data lacks clear structural elements.
+    - This give advantage to maintains parent-child relationships and better navigation.
     - Split by:
       - Headers
       - Sections
@@ -394,6 +397,10 @@ Solutions
     - This method utilizes a long context embedding model to **create token embeddings for every token in a document**. These token-level embeddings are then **broken up and pooled into multiple embeddings representing each chunk in the text**.
     - maintaining the contextual relationships between tokens across the entire document during the embedding process, and only afterwards dividing these contextually-rich embeddings into chunks.
     - This method can help mitigate issues associated with very long documents, such as expensive LLM calls, increased latency, and a higher chance of hallucination.
+  - **Agentic Chunking**
+    - Adaptive chunking, agent decides strategy dynamically and no single splitter.
+    - E.I. a mixed doc will be analyze with agent reasoning (LLM analysis), each part will be execute with difference action (finance data -> needs precision -> table chunker, health data -> needs semantic context -> semantic splitter).
+    - Workflow: input doc -> classifier / agent, choose strategy, optimized chunks.
 
 ### RAG Chunking Failure Root Cause
 
@@ -609,6 +616,15 @@ Solutions
       - Named entity recognition
       - Matural language inference
 
+  | Character            | SLM                      | LLM                      |
+  | -------------------- | ------------------------ | ------------------------ |
+  | Architecture    		 | <10B (compact, efficient) | 10B+ (deeper, complex)  |
+  | Task Complexity 		 | Simpler, single-step tasks | Complex, multi-step tasks |
+  | Long COntext Recall  | Short context window (limit memory, requires RAG / chunking) | Long context window (tracks entity, connects distant details reliably, less reliant on external retrieval) |
+  | Latency and Cost     | Lightweight, low compute, fast inference, low latency and cost | Heavy compute, slower inference, higher latency, higher cost |
+  | Deployment and privacy | Deploy on edge/on-device local | Deploy on cloud / API, external inference dependency |
+  | Where Each Fits      | fast and efficient AI | Powerful and versatile AI (agent workflow, multimodal) |
+
 ## Pre-Train LLM Types
   - <img src="/assets/images/knowledge/llm/model_05.webp" alt="drawing"/>
   - <img src="/assets/images/knowledge/llm/model_06.webp" alt="drawing"/>
@@ -699,6 +715,17 @@ Solutions
   - **Flash Attention**: Optimized attention mechanism for faster and memory-efficient inference.
   - **KV Cache (key-value cache)**: Reuse previously computed tokens for faster text generation.
   - **MoE (Mixture of Experts)**: activate only specific parts of the model instead of the entire model. 
+
+## Evaluation
+
+  | Metric               | Detail                                                                                      | Workflow                     | How we measure                                                 |
+  | -------------------- | ------------------------------------------------------------------------------------------- | ---------------------------- | -------------------------------------------------------------- |
+  | Faithfulness				 | Measures whether the output is factually consistent with the given context or instructions. | Input → LLM → Output → Check vs context |  \- Faithfulness Score (0 to 1) <br> \- Supported Statements % |
+  | Hallucination Rate   | Measures the proportion of information in the response that is not supported by the context or real-world facts. | Input → LLM → Output → Detect unsupported claims or fabricated facts |  \- Hallucination Rate (%) <br> \- % of Unsupported Statements |
+  | Answer Relevance	   | Measures how relevant the response is to the user's question. | Question → LLM → Relevance Check |  \- Relevance Score (0 to 1) <br> \- Human or LLM Judge Score |
+  | Correctness          | Measures whether the answer is factually correct. | Question → LLM → Compare with Ground Truth reference |  \- Accuracy (%) <br> \- Exact Match (EM) <br> \- F1/ROUGE/BLEU |
+  | Coherence & Fluency	 | Measures the quality of language, grammar, and readability. | Question → LLM → Evaluate Language Quality and fluency |  \- Fluency Score (1-5) <br> \- Perplexity Score |
+  | Toxicity & Safety 	 | Measures whether the response contains harmful, toxic, or unsafe content. | Question → LLM → Safety Check / Toxicity Classifier |  \- Toxicity Score (0 to 1) <br> \- % Flagged Responses |
 
 ---
 

@@ -24,7 +24,6 @@ Self-hosted AI interface for LLMs, Agentic AI, and internal data. Fully offline,
 
   {% include whimsical.html src="https://whimsical.com/embed/EaVTkCZnTn61tmXHzVd2Xm@8ADn3nfZACauTPwJSrBC82Q8Gb3hvmoyXfNR" %}
 
-
 # Video
 
   {% include video.html src="/assets/videos/ask_the_database.mp4" %}
