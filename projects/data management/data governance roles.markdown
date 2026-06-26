@@ -6,7 +6,7 @@ layout: default
 title: Data Governance Roles
 parent: Data Management BoK
 permalink: /data management/dg-roles
-nav_order: 110
+nav_order: 200
 ---
 
 #  Data Quality

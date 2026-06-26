@@ -6,7 +6,7 @@ layout: default
 title: Data Quality
 parent: Data Management BoK
 permalink: /data management/data quality
-nav_order: 101
+nav_order: 110
 ---
 
 #  Data Quality
@@ -30,6 +30,12 @@ Data quality defines the credibility of every decision, analysis, and system tha
 <p style='text-align: justify;'>
 The goal of data quality management is to sustain confidence in data across its lifecycle. It links business drivers to operational principles, establishing a framework for assessment, improvement, and governance. The lifecycle is iterative: measure, analyze, improve, and monitor. Techniques and activities—profiling, validation, cleansing, and stewardship—exist to enforce these standards, not decorate them. Implementation succeeds only when governance embeds accountability into process and culture. Data quality is not achieved once; it is maintained deliberately, as part of how the organization works.
 </p>
+
+---
+
+## Context Diagram
+
+<img src="/assets/images/data/data_management/dq/dq_01.webp" alt="drawing"/>
 
 ---
 
