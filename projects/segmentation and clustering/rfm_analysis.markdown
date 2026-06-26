@@ -66,7 +66,7 @@ historical data
 We use past guest behaviour to differentiate/segment similar guests into one group.
 
 What metrics we could use to segment guests? 
-It could be driven by business processes. i.e. Recency, Frequency and Monetary, or we can use Promo, Duration, Engagement.
+It could be driven by business processes. e.g. Recency, Frequency and Monetary, or we can use Promo, Duration, Engagement.
 
 <img src="/assets/images/segment_cluster/rfm/rfm_02.webp" alt="drawing"/>
 
@@ -136,7 +136,7 @@ Result from K-mean with 8 segments.
 ### the treatment
 we can continue to create intervention segmentations base on guest segmentation criteria.
 
-i.e. assign a treatment to some segments like:
+e.g. assign a treatment to some segments like:
 1. Activation
   - Create brand awareness
   - Offer Membership / Promo / Reward

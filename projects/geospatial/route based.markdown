@@ -62,7 +62,7 @@ On this result, we use Euclidean distance to make calculation faster. After we a
 
 
 ## Get the distances for each locations
-There are several method to get the distances for each locations. I.e.:
+There are several method to get the distances for each locations. e.g.:
 
 - Openstreetmap.org (OSM)
 is a digital map database of the world built through crowdsourced volunteered geographic information (VGI). **it is means free but not accurate**. You can read usage policy OSM [here](http://wiki.openstreetmap.org/wiki/Tile_usage_policy).
