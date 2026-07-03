@@ -104,7 +104,7 @@ Solutions
     - Improtant for tasks like summarization, code analysis, RAG, etc.
     - Bigger context window = better performance on complex tasks.
   - **Next-Token Prediction**: Model predics the most likely next token one step at a time. The model doesn't know the "truth". It just picks the most likely token based on patterns it learned.
-  - **Max Tokens**: A aparameter to adjust the number of tokens to be used for a particular request. This is capped to the context window.
+  - **Max Tokens**: A parameter to adjust the number of tokens to be used for a particular request. This is capped to the context window.
   - **Temperature**: LLM outputs area based on the probability of the generated word. Temperature controls the ramdomness of generation. The higher the temperature, the more random is the generation. It means:
     - low (0.0): More focused, deterministic and predictable.
     - medium (0.7): Balanced creativity and accuracy.
@@ -120,7 +120,9 @@ Solutions
   - **Top P / Top N**: Since LLM outputs are based probability, setting a Top Parameter will restrict the selection of next word form the Top 'N' most probable words or Top words summing up to probability 'P'.
   - **Top P**: The word/token is selected using random-weighted strategy but only from amongst the top words totalling to probability <=P. (for P=0.33 => cake:0.2,donut:0.1)
   - **Top N**: The word/token is selected using random-weighted strategy but only from amongst the Top 'N' words/tokens. (for N=3 => cake:0.2,donut:0.1,banana:0.02)
-  - **Penalty**: Adjust this factor to reduce thje repetition of tokens in the generated output. Penalty adds a negative weight to tokens that have previously been generated.
+  - **Penalty**: Adjust this factor to reduce the repetition of tokens in the generated output. Penalty adds a negative weight to tokens that have previously been generated.
+    - **Frequency penalty**: Penalizes token repetation based on frequency. positive value reduce repetition. value range = -2 to 2.
+    - **Presence penalty**: Encourages the model to use new tokens that haven't been generated. value range = -2 to 2.
   - **Greedy**: in output softmax layer, The word/token with the largest probability is selected. 
   - **Random Sampling**: in output softmax layer, The word/token is selected using random-weighted strategy.
 
@@ -167,6 +169,33 @@ Solutions
     - Adjust tradeoff between creativity vs accuracy. temperature = 0 mean facts, temperature = 1+ mean creative.
     - Control length of prompt token to optimize cost and speed
     - 
+
+# Prompt Engineering
+  - **Zero-shot Prompting**: ask the model to perform a task without any examples.
+    - Fast, simple and works well for general tasks.
+  - **Few-shot Prompting**: provide a few examples to show the model the pattern you want.
+    - Improves accuracy by showing the desired pattern.
+    - **give the examples** at prompt.
+  - **Chain-of-Thought (CoT)**: Encorage step-by-step reasoning for complex problems.
+    - Improves reasoning and reduces logical errors.
+    - Ask to **think step by step** at prompt
+  - **Role Prompting**: Assign a role or persona to get better, context-aware reponses.
+    - Sets context and improves tone, depth and relevance.
+    - Add **You are a ----** at prompt.
+  - **Tree of Thought (ToT)**: Explore multiple reasoning paths and choose the best answer.
+    - Better for complex problems with multiple solution paths.
+    - model explores options and selects the best path.
+  - **Self-Consistency**: Generate multiple answers via CoT and pick the most consistent one.
+    - More reliable answers by reducing random errors.
+    - Ask to **think step by step** at prompt and lets model to chose the consistent answer one.
+  - **Constraint-based Prompting**: Add rules, limits, or formats to control the output.
+    - Ensures structured, consistent, and usable outputs.
+    - Add **Rules: ----**
+  - **Retireval-Augmented prompting (RAG)**: provide external knowledge or context to the model to answer accurately.
+    - Reduces hallucinations, grounded answer and keeps answers factual.
+  - **Reflection / Verification**: ask the model to review and verify its own answer.
+    - Improves accuracy and builds trust in outputs.
+    - Ask to **Review your answer. is it correct? if not fix it** at prompt.
 
 ---
 
@@ -239,8 +268,7 @@ Solutions
 	| Multi-query        |  | handling vague or ambiguous user queries (customer support bots) |
 	| Re-ranking         |  | improving result quality in search engines and recommendation systems |
 	| Adaptive           | The system adaptively decides whether retrieval is needed based on the query type, and proceeds accordingly |  |
-
-
+ 
 ## Techical
 
   | Name                 | Details                            | Examples              |
@@ -833,17 +861,42 @@ Solutions
       - Compares to human-generated translations
       - BLEU (Bi-Lingual Evaluation Understudy) SCORE = Average (precision score across a range of n-gram sizes)
 
+## LoRA Fine-Tuning
+  - Workflow:
+    - Pretrained LLM (based Weights): Base model trained on large datasets.
+    - Frozen Weights: original model parameters remain unchanged.
+    - LoRA Layes (add A and B matrices): Small trainable matrices added to the model.
+    - Fine-Tuning (training): Train only LoRA parameters.
+    - Adapted model: Specialized model for a target task.
+
+  - This process will train fewer than ~ 1% of model parameters are trainable, not all weights.
+
+  - Advantages:
+    - Lower cost with fewer parameters to train
+    - Faster Training
+    - Small checkpoints - only adapter weights are saved
+    - Memory efficient - lower GPU memory usage
+    - Reusable - multiple adapters for different tasks
+
 ## QLoRA
   - QLora (quantized low-rank adaptation) combines 4-bit quantization with LoRA adapters to enable efficient fine-tuning of large language models on commodity hardware.
     - Quantized: 4-bit NF4 precision
     - Low-Rank: small adapter matrices
     - adaptation: task-specific tuning
   - A neural network is made up of many weight matrices uses to make predictions. Full fine-tuneing would update every single number in every one of there matrices. LoRA makes a key observation: **The updates to there weight matrices during fine-tuning tend to be low-rank**. This means that change from `before training` to `after training` can be decomposed into two much smaller matrices multipled together. Instead of updating the full matrix `W` (i.e. 4096 x 4096 = 16 million numbers), LoRA trains two tiny matrices:
+
     ```
-    W_update = A x B
-    where A is (4096 x r) and B is (r x 4096)
-    and r is a small number i.e. 16 
+    W' = W + W_update
+    W_update = A x B (alpha/rr)
+
+    where:
+      A = (4096 x r)
+      B = (r x 4096)
+      rr= Rank of the Low-Rank matrices (smaller = fewer params)
+      alpha= LoRA scaling Factor
+      r = a small number i.e. 16 
     ```
+
   if r = 16, we go from training 16 million number to training just 2 x (4096 x 16) = 131000 numbers. That roughly **0.8% of the original parameters**. This why LoRA adapters are tiny - jsut a few hundred MB - While the base model stays untouched and can be shared across many different LoRA adapters for different tasks.
   - QLoRA takes this one step further: it first quantises the base model to 4-bit precision (cutting memory by 4x), then applies LoRA on top.
   - Fine-tune billion-parameter LLMs on a single comsumer GPU - without sacrificing performance.
@@ -959,6 +1012,82 @@ Solutions
   - **Toxicity**: Toxic language or content that can be harmful or discriminatory towards certain groups. Mitigation strategies include curating training data, training guardrail models to filter out unwanted content, providing guidance to human annotators, and ensuring diversity among annotators.
   - **Hallucinations**: False or baseless statements generated by the model due to gaps in training data. To mitigate this, educate users about the technology's limitations, augment models with independent and verified sources, attribute generated output to training data, and define intended and unintended use cases.
   - **Intellectual Property**: The risk of using data returned by models that may plagiarise or infringe on existing work. Addressing this challenge requires a combination of technological advancements, legal mechanisms, governance systems, and approaches like machine unlearning and content filtering/blocking.
+
+## Guardrails for AI System
+  <img src="/assets/images/knowledge/llm/guardrails_01.webp" alt="drawing"  width="500"/>
+
+  - **Guardrails** = controls that keep your Al system safe, accurate, and on-topic at every stage of the pipeline.
+  - Guardrails are what stand between "the model can technically generate this" and "this is actually safe to ship to users"
+  - An LLM by itself has no concept of "appropriate," "safe," or "correct for this business".
+  - Guardrails are the rules, filters, and checks you wrap around the model to enforce those things A REAL SCENARIO.
+
+## Guardrails keep the issues such as:
+  - Prompt injection: user manipulates the model into ignoring its instructions
+  - Hallucination: model confidently states false information as fact
+  - Off-topic drift: support bot starts giving relationship advice, medical opinions, financial tips
+  - PII: model exposes another user's data pulled from context leakage: or training.
+  - Toxic or biased output: model generates harmful, offensive, or discriminatory content
+  - Brand damage: model says something inconsistent with company tone, policy, or legal position
+
+## The 3 levels of guardrails
+  - It's best to implement 3 distinct stages of the guardrails
+    - User Input / INPUT FILTER: catches problems before the model ever sees them.
+    - Preventing:
+      - Prompt Injection
+      - PII in user input
+      - Malformed input
+      - Jailbreak patterns
+      - Off-topic requests
+      - Toxic languange
+    - How to prevent it:
+      - Pattern and rule based filtering
+      - LLM-based input classification (using SLM: Haiku, GPT-4o-mini)
+      - Topic and scope restriction (using SLM for classification)
+      - PII Detection and Redaction (using NER-based detection)
+    - Prompt / SYSTEM RULES: shapes how the model behaves through instruction design
+      - what prompt guardrails do:
+        - Constrain topic and tone
+        - Force grounding in retrieved context
+        - Define refusl behaviour for out of scope
+        - Add instructions resistant to overrides
+      - add: `System: You must follow these rules: 1. xxxx 2. xxxx`
+    - Output / OUTPUT FILTER: catches problems after generation, before the user sees them.
+      - what prompt guardrails do:
+        - Hallucinated facts
+        - toxic content
+        - brand violations
+        - PII leakage
+        - format violations
+        - competitor mentions
+      - Groundedness / Faithfulness Check
+        - Verifies the generated answer is actually supported by the retrieved context
+        - Uses an LLM-as-judge to compare generated claims against source context.
+      - Structured Output Validation
+        - Endures output matches a required schema before it's used downstream.
+        - Pydantic schema validation structure, types rejects malformed output before production.
+      - Toxicity and content moderation
+        - Scans generated output for harmful, offensive, or policy violation context.
+        - Dedicated models classify text across categories (hate, violance, self-harm).
+      - PII and senditive data leakage check
+        - Scans generated output to ensure no sensitive data is being exposed.
+        - Same logic as input-level PII checks, applied to output final safety net. 
+      - Self-critique / Reflection layer
+        - The model reviews its own output against defined criteria before it's finalized.
+        - Adds a reflection loop: generate, critique against rules, revise.
+
+## Guardrails for RAG Systems
+  - Retrieval-time access control: Ensure users only retrieve documents they're authorized to see.
+  - Context injection filtering: Sanitize retrieved documents themselves.
+  - Groundedness enforcement: Output traceable back to retrieved context
+  - Citation verification: Verify the citation actually supports the claim.
+
+## Guardrails for Agentic Systems
+  - Agents need guardrails beyond text generation because they take real actions.
+    - Tool call validation
+    - Scope limiting
+    - Budget/rate limits
+    - Action approval gates
+    - Loop detection
 
 ---
 
