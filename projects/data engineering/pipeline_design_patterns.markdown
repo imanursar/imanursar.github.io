@@ -54,7 +54,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Leverages the computational power of modern data warehouses.
 - Limitations: Exposes unprocessed data to users, which may result in data quality or privacy concerns.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_03.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_04.webp" alt="drawing"/>
 
 ### EtLT (Extract, Transform, Load, Transform)
 - Purpose: Combines fast availability with initial data cleaning and post-load transformations.
@@ -64,7 +64,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Handles multi-source integration after initial transformation.
 - Limitations: Requires managing both pre-load and post-load transformation stages.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_04.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_05.webp" alt="drawing"/>
 
 ### Data Virtualisation
 - Purpose: Provides on-demand data access by creating virtual views without physical duplication.
@@ -77,7 +77,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Limited functionality compared to ETL or ELT, making it less suitable for complex transformations or advanced analytics.
   - Its read-only nature restricts data manipulation capabilities.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_05.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_06.webp" alt="drawing"/>
 
 ### Streaming Pipelines
 - Purpose: Processes and delivers data in real-time, ensuring continuous updates for systems or applications.
@@ -87,7 +87,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Ensures smooth handling of high-frequency, continuous data streams.
 - Limitations: Requires specialised tools and infrastructure for stream processing and may involve higher costs than batch pipelines.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_06.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_07.webp" alt="drawing"/>
 
 ### Lambda Architecture
 - Purpose: Combines batch and stream processing to achieve both real-time updates and batch accuracy.
@@ -99,7 +99,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Simultaneous handling of high-latency and low-latency use cases.
 - Limitations: Increases complexity and operational overhead.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_07.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_08.webp" alt="drawing"/>
 
 ### Kappa Architecture:
 - Purpose: Simplifies data processing by eliminating the batch layer and relying solely on streaming with historical data replay.
@@ -109,7 +109,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Offers flexibility with replay capabilities for historical data.
 - Limitations: Depends on a robust and scalable stream processing system.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_08.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_09.webp" alt="drawing"/>
 
 ### Data Mesh (Decoupled Architecture):
 - Purpose: Supports decentralised teams with autonomy while maintaining centralised governance and discoverability.
@@ -119,7 +119,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Ensures consistent data standards across the organisation.
 - Limitations: Relies on robust governance frameworks and consistent cataloguing practices.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_09.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_10.webp" alt="drawing"/>
 
 ### Data Lakehouse:
 - Purpose: Blends the structured querying capabilities of data warehouses with the flexibility and scalability of data lakes.
@@ -132,7 +132,7 @@ A data pipeline is a system that moves, processes, and transforms data throughou
   - Reduces duplication by combining data lake and warehouse capabilities.
 - Limitations: Requires careful management of data across the three layers to avoid inconsistencies and inefficiencies.
 
-<img src="/assets/images/data/data_pipeline/data_pipeline_10.webp" alt="drawing"/>
+<img src="/assets/images/data/data_pipeline/data_pipeline_11.webp" alt="drawing"/>
 
 ## Challenges and Trends in Data Pipelines
 Modern pipelines face growing complexity with increasing data volumes, diverse formats, and real-time requirements. 
