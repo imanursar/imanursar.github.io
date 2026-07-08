@@ -19,4 +19,4 @@ data strategic
 
 ## Schema
 
-  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@or4CdLRbgrof89Fif5fkMMJVEzcrqYELJEyG7kopZ" %}
+  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@or4CdLRbgroiH45SXVVwLBxRqcK84koT4jAYHHxrH" %}
