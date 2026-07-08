@@ -4,8 +4,8 @@
 
 layout: default
 title: Data Governance Roles
-parent: Data Management BoK
-permalink: /data management/dg-roles
+parent: Data Strategic
+permalink: /data strategic/dg-roles
 nav_order: 200
 ---
 

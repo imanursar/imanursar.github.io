@@ -4,8 +4,8 @@
 
 layout: default
 title: Data Architecture
-parent: Data Management BoK
-permalink: /data management/data_arch
+parent: Data Strategic
+permalink: /data strategic/data_arch
 nav_order: 120
 ---
 
@@ -38,14 +38,73 @@ Data architecture provides a structured framework for organizing and managing an
 - **Strong Covernance**: Ensure compliance with all regulations and enable root cause analysis through clear data lineage.
 
 ## Fundamentals
-- **Reusability**: Design reusable components and templates for common tasks like data ingestion and transformation. 
-  - Example: All data ingestion pipelines are created from a standardized template.
+- **Extensibility**
+  - **Modular / Reusability**: Design reusable components and templates for common tasks like data ingestion and transformation. 
+    - Example: All data ingestion pipelines are created from a standardized template.
+  - **Pluggability**
+- **Agility**
+  - **Deployability**
+    - Installability
+    - Upgradeability
+    - Portability
+  - **Configurability**
+    - Compatibility
+  - **Maintainability**
+    - Testability
+    - Ease to development
+- **Scalability**
+  - **Traffic Pattern**
+    - Diurnal Pattern: **predictable, cyclical variations in traffic volume** that occur over a 24-hour period, typically characterized by high traffic during working hours and low traffic at night. This gradual rise and fall allows systems to adapt through auto-scaling and standard load balancing, as the increase in demand is smooth and foreseeable.
+    - Thundering Herd: is not about total volume but about synchronized, simultaneous access to a shared resource by a large number of clients or processes. This occurs when **traffic spikes in a sudden, coordinated burst** (e.g., cache expiration, flash sales, or retry storms) rather than gradually. 
+      - Peak time
+      - Densely Populated Area
 - **Metadata Management**: Establish a system to define and maintain metadata for all datasets, ensuring data is easily discoverable and understood.
   - Example: Automatically register target tables in a data catalog.
 - **Data Governance**: Implement data standards and policies to ensure data quality, consistency, and compliance.
   - Example: Enforce data contracts on all output tables and validate data against those contracts.
+  - **Consistency**
+    - Data Freshness
+  - **Usability**
+    - API Contract
+    - Learnability
+    - Accessability
+  - **Availablility**
+    - Deployment Stamps: enhances availability by partitioning a platform into multiple, independent, and identical units (stamps) that contain full copies of the application stack, including compute, storage, and networking. This architecture ensures that a failure in one stamp does not affect others, limiting the blast radius and allowing for 99.99%+ availability when combined with multi-Availability Zone deployments.
+    - Geodes: ensures high data availability by deploying backend services into multiple geographically distributed nodes, known as geodes, which operate in an active-active style.
+  - **Observeability**
+    - Alerts and Monitoring
+    - L1 / L2 / L3: In general infrastructure and data observability, these levels denote the scope of monitoring. 
+      - L1 (Edge/Network): Focuses on ingress, latency, and packet errors. 
+      - L2 (Service/Application): Tracks request flows, errors, and business events. 
+      - L3 (Data/Storage): Monitors query performance and throughput within data warehouses.
+    - Logging
 - **Migration Planning**: Analyze existing systems, identify risks, and create a plan for migrating to the new architecture. 
   - Example: Convert existing ETL jobs into modern, metadata-driven data pipelines.
+- **Security**
+  - **Auditability**
+  - **Legality**
+    - Compliance
+    - Privacy
+    - Certifications
+  - **Authentication and Authorization**
+    - MFA
+- **Durability**
+  - **Replication**
+  - **Fault Tolerance**
+  - **Archivability**
+- **Resiliency**
+  - **Recoverability**
+    - Disaster Recovery
+  - **Design Pattern**
+    - Bulkhead: Prevent one leaking compartment from sinking the whole ship. 
+      - Example: The low process ETL suddenly consumes all CPU, everything becomes slow. 
+      - With Bulkhead, Reserve resources for each process.
+    - Circuit Breaker: Stop repeatedly trying a broken engine.
+      - Example: a fail process will create repeat retry process that will lead to shutdown process. If healthy: Resume work.
+      - With Circuit Breaker, after repeated failures, stop sending requests. Wait. 
+    - Leader Election: Decide which captain is in charge.
+      - Example: Imagine three schedulers, without leader election. All three execute: Data loads three times. Leads to duplicates.
+      - With Leader Election, each process will be queue for become leader and execute it process.
 
 ## Layers
 - **Data Ingestion**: Define how data in different formats (batch, streaming) is acquired and initially stored. 

@@ -4,8 +4,9 @@
 
 layout: default
 title: Data Quality Profiling Report
-parent: Data Strategic
-permalink: /data strategic/data quality report
+parent: Data Quality
+grand_parent: Data Strategic
+permalink: /data strategic/data_quality/data quality report
 nav_order: 103
 ---
 

@@ -4,8 +4,9 @@
 
 layout: default
 title: Data Cleaning Strategic
-parent: Data Strategic
-permalink: /data strategic/data cleaning
+parent: Data Quality
+grand_parent: Data Strategic
+permalink: /data strategic/data_quality/data cleaning
 nav_order: 100
 ---
 
