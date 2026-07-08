@@ -1,12 +1,75 @@
-<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
-  <iframe
-      src="{{ include.src }}"
-      style="
-          position:absolute;
-          top:0;
-          left:0;
-          width:100%;
-          height:100%;
-          border:none;">
-  </iframe>
+<div class="whimsical-wrapper">
+  <button class="whimsical-fullscreen-btn" type="button">
+      ⛶
+  </button>
+
+  <div class="whimsical-container">
+      <iframe
+          class="whimsical-frame"
+          src="{{ include.src }}"
+          allow="fullscreen"
+          allowfullscreen
+          loading="lazy">
+      </iframe>
+  </div>
 </div>
+
+<style>
+.whimsical-wrapper{
+  position:relative;
+  width:100%;
+  margin:1rem 0;
+}
+
+.whimsical-container{
+  position:relative;
+  width:100%;
+  padding-bottom:56.25%;
+}
+
+.whimsical-frame{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.whimsical-fullscreen-btn{
+  position:absolute;
+  top:8px;
+  right:8px;
+  z-index:10;
+
+  padding:.35rem .7rem;
+  border:none;
+  border-radius:4px;
+
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  cursor:pointer;
+}
+</style>
+
+<script>
+if (!window.whimsicalInit) {
+
+  window.whimsicalInit = true;
+
+  document.addEventListener("click", function(e){
+
+      const btn = e.target.closest(".whimsical-fullscreen-btn");
+      if(!btn) return;
+
+      const iframe = btn.parentElement.querySelector(".whimsical-frame");
+
+      if(document.fullscreenElement){
+          document.exitFullscreen();
+      }else{
+          iframe.requestFullscreen();
+      }
+
+  });
+
+}
+</script>
