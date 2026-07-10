@@ -23,6 +23,10 @@ data management
 ## Definition
 Data architecture provides a structured framework for organizing and managing an organization's data assets. It defines how data is collected, stored, transformed, and used to meet business needs while adhering to data governance standards and policies.
 
+- The blueprint for how data is collected, stored, integrated and used.
+- Defines standards, models, and rules for data across the organization.
+- Connects business goals with technical solutions.
+
 ## Problems To Solve by Data Architecture
 - **System Incompatibilities**: Existing systems may be outdated and unable to work together, hindering data access and analysis.
 - **Compliance Risks**: Lack of proper data governance practices can lead to regulatory violations and fines.
@@ -129,19 +133,33 @@ Data architecture provides a structured framework for organizing and managing an
 ## Types of data architecture
 - Centralized
   - Data brought into one main platform.
-  - single governance model
-  - strong consistancy and reporting
+  - Single governance model
+  - Strong consistancy and reporting
+  - Data flows into a single core platform.
+  - pros: strong control, consistency
+  - cons: can be a bottleneck 
 - Decentralized
-  - ownership spread across domains and teams.
-  - local schemas, metadata, and access rules.
-  - good for outonomy and speed.
+  - Ownership spread across domains and teams.
+  - Local schemas, metadata, and access rules.
+  - Good for outonomy and speed.
+  - Domains own and manage their data.
+  - pros: flexiblity, domain expertise
+  - cons: risk of inconsistency without governance
 - Hybrid
-  - blend of centralized and decentralized.
-  - balance scale, integration, and agility.
-  - common modern approach.
+  - Blend of centralized and decentralized.
+  - Balance scale, integration, and agility.
+  - Common modern approach.
+  - Mix of central standards + domain autonomy
+  - Central policies, local implementations.
 
 ## Types of data models
 - Conceptual
 - Logical
 - Physical
 
+## Core Components
+- Data Access and Consumption
+- Semantic / Modeling Layer
+- Storage and processing
+- Ingestion and integration
+- Data sources
