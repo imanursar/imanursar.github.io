@@ -47,7 +47,7 @@ Solutions
      1. [Weather Himawari Monitor]()
   5. **Land Boundary**
      1. Land Use
-        - [Esri | Sentinel-2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=114.79523%2C1.25118%2C6.66&mode=step&timeExtent=2017%2C2024&year=2024&landCover=Built+Area)
+        - [Esri - Sentinel-2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=114.79523%2C1.25118%2C6.66&mode=step&timeExtent=2017%2C2024&year=2024&landCover=Built+Area)
         - [Land Use](https://overturemaps.org/)
         - [Land Cover](https://overturemaps.org/)
         - [Segments](https://overturemaps.org/)
