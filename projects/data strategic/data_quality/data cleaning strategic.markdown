@@ -46,6 +46,30 @@ It improves data quality and ensures reliable analysis and decisions.</p>
 - Invalid data
 - Irrelevant data
 
+### Data Quality Issues Root Causes
+- Lack of Business Rule Validation
+- Business Process Change
+- Business Application Update
+- Data Entry Issue
+  - Duplicates
+  - Missing values
+  - Invalid values
+  - Lack of consistency Checks
+  - lack of uniqueness Rules
+- Lack Schema Validation
+  - Schema changed
+  - Data conversion issue
+- Internal Process
+  - Data Transformation issue
+  - Data Processing issue
+  - Data Enrichment issue
+- SLA
+  - Freshness Monitoring
+- External
+  - Software Bug
+  - Network Failure
+  - Outdated Credentials
+
 ## Sources of Error
 Many of the sources of error in databases fall into one or more of the following categories: 
 - **Measurement errors** - Data is generally intended to measure some physical process, subjects or objects, that can have systematic or random errors in their design and execution.
