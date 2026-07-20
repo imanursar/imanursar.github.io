@@ -499,21 +499,224 @@ data strategic
   - **Example**
     - Apache Airflow: Dynamic Task Mapping. The feature lets us create tasks dynamically from a data provider function. A perfect fit for generating late data integration tasks for the static lookback window duration.
 
+### Dynamic Late Data Integrator
+  Having a static tolerance period is not always possible, and sometimes we may need a more dynamic approach that will just load the partitions impacted by the late data.
+
+  Using Dynamic Late Data Integrator patter to handle variability and integrate only the partitions with late data. The implementation leverages a lookback window that is dynamic, which means that all the backfilled partitions really contain late data. To make this happen, the dynamic approach requires an additional data structure to store the last execution time, and eventually, the last update time for each partition.
+
+  <img src="/assets/images/data/data_pattern/data_pattern_09.webp" alt="drawing"/>
+
+  <img src="/assets/images/data/data_pattern/data_pattern_10.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Concurrency
+      - If our pipeline supports concurrent executions, dynamic late data integration may generate duplicated late data integration runs.
+
+      <img src="/assets/images/data/data_pattern/data_pattern_11.webp" alt="drawing"/>
+
+      - Shows what could happen in a pipeline running four different jobs in parallel, with late data in each processed partition.
+      - We need to `add an extra column` to the state table that will keep the partition status either as already processed or as being processed. -
+      - Consequently, the query retrieving the partitions to backfill should add this column as an `extra filtering condition` to ignore the partitions already planned for late data integration. 
+      - Each pipeline needs to `start with the task that updates the is_processed column` of the currently processed partition. That way, we can avoid having the next execution generate the current partition as the one to backfill. Also, this task should run only if the execution of the previous run succeeded.
+      - The task that generates the partitions to backfill should now also `update all retrieved partitions as having been processed`. It should run only if its previous execution succeeded. This dependency on the past runs helps avoid race conditions and triggering the same partitions in two different runs.
+      - `The task updating the last processed time should additionally set the Is processed flag to false`. That way, if the partition gets new late data, it can still be replayed.
+      
+      <img src="/assets/images/data/data_pattern/data_pattern_12.webp" alt="drawing"/>
+
+      - If the task that generates partitions to backfill fails, its future executions will not run due to the dependency on the previous run. Consequently, the pipeline will get stuck in a long in-progress state requiring our manual intervention to unblock it.
+    - Stateful pipelines and very late data
+      - with the last successful run having taken place on 2024-10-20. There hasn’t been any late data so far, but the next day’s execution spots late data ingested for the partition of 2024-09-21.Since our job is stateful, we will need to regenerate all executions from 2024-09-21 to 2024-10-20 to guarantee the correctness of our dataset.
+    - Scheduling complexity
+      - Depending on our storage layer, getting the last modification time for each partition might not be easy. This step can involve dealing with the internal details of a storage technology or even implementing the update tracking table on our own.
+  
+  - **Example**
+    - Apache Airflow: Dynamic Task Mapping. `depends_on_past` attribute.
+    - Delta Lake: DeltaLog class
+
+## Filter
+### Filter Interceptor
+ TBN
+
+## Fault Tolerance
+  A form of protection that ensures recoverability for continuous data processing workflows, such as streaming ones. The challenge with these workflows is to know when to start after stopping the job. 
+### Checkpointer
+  The fatal error is particularly critical in stream processing. These applications are working on continuously arriving events that are often stored in an appendonly log.
+
+  To avoid reprocessing past data, our job must keep track of the most recent position in the consumed data source, as well as the computed state. The Checkpointer pattern implements this tracking mechanism.
+
+  `Checkpointing` consists of recording the data processing process in a more persistens storage than the job’s environment, which may change when we restart it.
+
+  - **Approaches**
+    - Data processing framework based
+      - Rely on a data processing framework, the progress information may be recorded in the environment managed by the framework itself. 
+    - Data store based
+      - Using the data store SDK, we may be interacting with the data store layer for the checkpoint information.
+
+  - **Implementations**
+    - Configuration driven: where we only configure the checkpointing frequency and delegate the execution to our library.
+    - Intentional checkpointing action from the code. Here, after reading and processing the records, wou’ll be responsible for confirming this operation to avoid getting the same data in the next execution.
+
+  - **Example**
+    - Apache Spark Structured Streaming and Apache Flink: store the progress metadata. The `checkpointLocation` attribute.
+    - Apache Kafka SDK: __consumer_offsets
+    - Amazon Kinesis Client Library (KCL): checkpoint Amazon DynamoDB table.
+
+  - **Consequences**
+    - Delivery guarantee versus latency trade-off
+      - Position tracking is not an expensive operation in terms of latency. It only accumulates some numbers for each input partition in memory and persists them once in a while to a persistent storage.
+      - Tracking the state may have a more significant latency impact as the state will probably be many times bigger than those numeric positions.
+      - we’ll need to balance the latency requirements and the processing guarantee. The more frequent the checkpoints are, the slower the job will be due to checkpoint creation overhead.
+    - Exactly-once feeling
+      - There could be multiple tasks working in parallel and in an asynchronous manner. If one of them fails in the middle of the work before triggering the checkpoint, the restart will involve retries and reprocessing of the already successful records.
 
 
+# Idempotency Design Patterns
+  Idempotency is the process that return no matter how many times we invoke the function, we always get the same result. It’s a way to ensure that no matter how many times we run a data processing job, we’ll always get consistent output without duplicates or with clearly identifiable duplicates.
 
+  Avoiding duplicates will not always be possible. If we generate the data to a messaging system that doesn’t support transactional producers, retries can still generate duplicated entries. But this issue could be handle at consumers side that will be able to indetify those records as such.
+## Overwriting
+  The first idempotency family covers the data removal scenario. Removing existing data before writing new data is the easiest approach. However, running it on big datasets can be compute intensive. For that reason, to handle the removal, we can use data- or metadata-based solutions.
+### Fast Metadata Cleaner
+  Metadata operations are often the fastest since they don’t need to interact with the data files. We often say that the metadata part operates on the logical level instead of the physical one.  
 
+  To achieve idempotency, the Fast Metadata Cleaner pattern relies on dataset partitioning and data orchestration. We need to define the partitioning carefully since it directly impacts the idempotency granularity.
 
+  Granularity defines at the same time the units on top of which we can apply the metadata operations to clean the table. It has an important consequence for backfilling.
 
+  This pattern could be used at incremental and partitioned datasets or full dataset.
 
+  - **The adaptation consists of adding these extra steps**
+    - Analyze the execution date and decide whether the pipeline should start a new idempotency granularity or continue with the previous one. 
+    - Create the idempotency environment. 
+    - Update the single abstraction exposing the idempotency context tables.
 
+  <img src="/assets/images/data/data_pattern/data_pattern_13.webp" alt="drawing"/>
 
+  - **Consequences**
+    - Granularity and backfilling boundary
+      - The pattern defines an idempotency granularity that is also a backfilling granularity.
+      - If we replay the pipeline, we have to do it from the task that creates a partitioned table. Otherwise, we’ll end up with an inconsistent dataset.
+      - if we partition the data on a weekly basis and we need to backfill for only one day, we have no choice but to rerun the whole week. This doesn’t mean we’ll have to reprocess full pipelines for other days, though. If only one day generated an invalid dataset, it’s enough to replay only the data loading step for the remaining days.
+    - Metadata limits
+      - Also be aware of the limits of our data store. The pattern relies on creating dedicated partitions or tables, but unfortunately, it often won’t be possible to create them indefinitely.
+      - To overcome these limitation issues, we can add a freezing step to transform the mutable idempotent tables into immutable ones, thus reducing the partition scope. For example, weekly tables could turn into monthly or yearly tables if there are no possible changes after a freezing period.
+    - Data exposition layer
+      - The final point is about access. The dataset is not living in a single place anymore, and our end users may not want to know the internal details of the design and may instead prefer to access the data from a single point of entry.
+      - Use a solution similar to a database view, such as a logical structure grouping multiple tables and exposing them as a single unit.
+    - Schema evolution
+      - Another challenge is schema evolution. If our idempotency tables get a new optional field, we’ll need a separate pipeline to update the schema of already existing tables.
 
+  - **Example**
+    - Scripts: Remove / secure the rows `DELETE` operation, inserts processed rows `INSERT` operation. Or better process using `TRUNCATE` or `DROP` operation.
+    - Apache Airflow + PostgreSQL table: `BranchPythonOperator` + `PostgresViewManagerOperator` operator.
 
+### Data Overwrite
+  If using a metadata operation is not an option, we need to apply a data operation. When the metadata layer is unavailable or using it involves a lot of effort, we can rely on the data layer and the Data Overwrite pattern.
 
+  Running the overwriting command doesn’t guarantee our data will disappear. If we use a data store–supporting time travel feature, thus making it possible to restore the dataset to one of its past versions, the data blocks will still be there after we execute the overwrite. They will only be deleted after the configured retention period or after running the vacuum operation to reclaim unused space if the command is supported.
 
+  - **Solution**
+    - A data processing framework
+      - We may simply need to set an option while configuring our data writer. Once we’ve configured our data writer, the data processing framework will do the rest (i.e., cleaning the existing files before writing).
+    - work directly with SQL
+      - use a combination of `DELETE FROM` and `INSERT INTO` operations.
+      - A more concise alternative to `DELETE` and `INSERT` leverages the `INSERT OVERWRITE` command. This alternative overwrites the whole table with the records from the INSERT part of the statement. `INSERT OVERWRITE` doesn’t support selecting rows to overwrite, whereas the combination of `DELETE` and `INSERT` operations does.
+      - Use the data loading commands available in our data store.  such as `LOAD DATA OVERWRITE` in BigQuery, support data overwriting natively. The others should be preceded with a `TRUNCATE TABLE` command.
 
+  - **Example**
+    - Apache Spark: save mode, `.write.mode('overwrite')`.
+    - Apache Flink: the write mode properties
+    - Delta Lake: replaceWhere option
+    - Databricks and Snowflake: `INSERT OVERWRITE` command.
+    - BigQuery: `writeDisposition` in the jobs feature, `--replace=true` flag.
+    - SQL: 
+      - `DELETE FROM` and `INSERT INTO` operations.
+      - `INSERT OVERWRITE` command.
+      - `LOAD DATA OVERWRITE` in BigQuery.
+      - `TRUNCATE TABLE` command.
 
+  - **Consequences**
+    - Data overhead
+      - Since there is a data operation involved, the pattern can perform poorly if the overwritten dataset is big and not partitioned. We can try to mitigate this overhead by applying some storage optimizations, like partitioning. They should reduce the volume of data to overwrite and hence make the replacement action faster.
+    - Vacuum need
+      - A `DELETE` operation might not remove the data immediately from the disk. This happens with table file formats and relational databases, where deleted data blocks, albeit not accessible by users with `SELECT` queries, still exist on disk.
+      - To reclaim the space occupied by these dead rows, we will need to run a vacuum process that will remove them for real.
 
+## Updates
+  This is the case with updated incremental datasets, in which each new version generated by our data provider contains only a subset of modified or updated data. If we try to rewrite the whole dataset, we’ll have to do some preparation work to keep only the most recent version of each entity. 
+### Merger
+  In a nutshell, If we don’t have the complete dataset available —for example, if we’re working with the incremental changes streamed from a database in our problem statement— we need to consider combining changes with an existing dataset. that’s what the Merger pattern does.
 
+  The Merger pattern, requires us to interact with the data to combine new and existing rows. 
+
+  - **Workflow**
+    - Define the attributes we’re going to use to combine the new dataset with the old one. We can use a single property —such as the user ID— or combination of several properties, if it guarantees uniqueness across the dataset.
+    - Find a way to combine datasets in our processing layer. The common one is the `MERGE` (aka `UPSERT`) command.
+    - Define the behavior for each of the possible scenarios, which are as follows:
+      - `Insert`: The entry from the new dataset doesn’t exist in our current dataset. Therefore, it’s a new record we have to add.
+      - `Update`: Both datasets store a given record, but it’s very likely that the new dataset will provide an updated version of the record.
+      - `Delete`: This is the trickiest case because the Merger pattern doesn’t support deletes. If a record is missing from the dataset we want to merge, nothing will happen. For that reason, deletes are only possible if they’re expressed as `soft deletes` (i.e., updates with an attribute marking a given record as removed). That way, we can detect the change and apply a hard or soft delete to our data.
+    - the `MERGE` statement covering all three scenarios.
+
+  - **Code**
+    ```sql
+    MERGE INTO dedp.devices_output AS target
+    USING dedp.devices_input AS input
+    ON target.type = input.type AND target.version = input.version
+    WHEN MATCHED AND input.is_deleted = true THEN
+    DELETE
+    WHEN MATCHED AND input.is_deleted = false THEN
+    UPDATE SET full_name = input.full_name
+    WHEN NOT MATCHED AND input.is_deleted = false THEN
+    INSERT (full_name, version, type) VALUES (input.full_name, input.version, input.type)
+    ```
+
+  - **Consequences**
+    - Uniqueness
+      -  This is the first and most important requirement. The data must define some immutable attributes we can use to safely identify each record. Otherwise, the merge logic will simply not work because instead of updating a row in case of backfilling, it might insert a new one, leading to inconsistent duplicates.
+   -  I/O
+      -  Merger is a data-based pattern. It works directly at the data blocks level, which makes it more compute intensive.
+   -  Incremental datasets with backfilling
+      -  We need to be aware of a shortcoming of the Merger pattern in the context of backfilling. In case of incremental dataset, the backfill will start from the most recent version, and leads to some of them are missing in the parts of the table at the time backfilling will occur. To mitigate this issue, we may need to implement a restore mechanism outside the pipeline that will roll back the table to the first replayed execution. It’s relatively easy to do if the database natively supports this `versioning capability`.
+
+  - **Example**
+    - Apache Airflow + SQL query: `MERGE` + `UPDATE` + `WHEN NOT MATCHED THEN` + `WHEN MATCHED THEN` +`INSERT` operation.
+    - Script: `UPSERT` operation.
+
+### Stateful Merger
+  The Merger pattern lacks some consistency for datasets during the backfillings. If consistency is important, we can use stateful merger pattern.
+
+  Whenever we need to restore a dataset, the Merger pattern won’t be enough because it focuses only on the merge action. But there is an alternative called a Stateful Merger pattern that provides data restoration capability via an extra state table.
+
+  This extra state table involves some changes in the pipeline. The workflow now has an additional step in the beginning to restore the merged table if needed and another at the end to update the state table. 
+
+  - **Workflow**
+    - The merge operation completes, it creates a new version of the merged table.
+    - The completion also triggers another task that retrieves the created table version and associates it with the pipeline’s execution time.
+    - The restore process will happen only when the pipeline runs in the backfilling mode. Otherwise, it will do nothing.
+    - To implement this backfilling detection logic, our data orchestrator should provide a context for the execution, and from this context, we can learn about the execution mode (backfilling or normal run), we can simply analyze this context metadata.
+    - If that’s not the case, we need to implement some logic leveraging the state table. The high-level logic consists of the following:
+      - Getting the version of the table created by the previous pipeline’s run. If this version is missing, it means we’ll run the pipeline for the first time or backfill the first pipeline’s execution.
+      - Comparing the current dataset version with the dataset version created by the previous pipeline’s execution.
+      - If the two versions are the same, there is nothing to restore as the pipeline is running in the normal mode.
+      - If the two versions are different, it means the pipeline has entered into the backfilling scenario. 
+
+  - **Consequences**
+    - Versioned data stores
+      - The presented implementation of the Stateful Merger pattern requires our data store to be versioned. That’s the only way we can track the state and restore the table to a prior version. If we don’t work on a database with versioning capabilities, such as table file formats, we should slightly adapt the implementation to our use case.
+      - <img src="/assets/images/data/data_pattern/data_pattern_14.webp" alt="drawing"/>
+      - Instead of versioning the table, the pipeline loads all raw data into a dedicated raw data table with a column storing the execution time. The backfilling detection logic verifies whether the raw data table has some records for the execution times in the future.
+    - Vacuum operations
+      - After the configured retention duration, they remove files that are not used anymore by the dataset. Consequently, some of the prior versions will become unavailable at that moment.
+    - Metadata operations
+      - Compaction doesn’t overwrite the data but only combines smaller files into bigger ones. But despite this no-data action, it also creates a new version of the table. As a result, if we always use the previous version from the state table in the restore action, we will miss the operations made between two merge runs.
+
+  - **Example**
+    - Apache Airflow: the job’s execution time + delta table version created retrieves the table version
+    - Delta Lake
+    - Apache Spark: `spark.sql` operation
+
+## Database
+  Rely on the databases to guarantee idempotency.
+### Keyed Idempotency
 
