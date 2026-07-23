@@ -21,7 +21,7 @@ data strategic
 
 # Schema
 
-  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@8ADn3nfZACarxeMf2a56uqYni4ZFxNUNM3yH" %}
+  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@5q5DGgrhCn2GCDRZuCYHh1y356hvoVXE" %}
 
 # Data Ingestion Design Patterns
 ## Full Load 
@@ -719,4 +719,323 @@ data strategic
 ## Database
   Rely on the databases to guarantee idempotency.
 ### Keyed Idempotency
+  This pattern uses key-based data stores and an idempotent key generation strategy. This mix results in writing data exactly once, no matter how many times we try to save a record.
+
+  In the context of a key-based database, idempotency applies to the key generation logic on the data processing side. When it comes to the actual implementation, we should start by finding immutable properties for the key generation. Our input dataset may already have unique attributes for our use case. 
+
+  However, the key may not always be available. Instead, we could use the combination of e.g. the user ID and the first visit time to generate an idempotent key. Although this is a valid solution, if our job stopped because of an unexpected runtime error, and after the restart, the session ID changed because of late data written to the input data store.
+
+  In the context of idempotent key generation for a user session, the event time attribute is mutable (i.e., the value may change between runs). For that reason, it’s safer to use an immutable value, like an append time, which is the time a given entry was physically written to the streaming broker.
+
+  - **Consequences**
+    - Database dependent
+      - Even though our job generates the same keys every time, it doesn’t mean the pattern will apply everywhere. We might already deduce that it works well for databases with key-based support, such as NoSQL solutions.
+    - Mutable data source
+      - Besides duplicated entries, compaction can be configured to remove events that are too old. In that context, if we restart the job and the compaction deleted the first event used for the key creation, we’ll take the next record from the log and logically break the idempotency guarantee.
+
+  - **Example**
+    - Apache Kafka: `append time`
+    - Amazon Kinesis Data Streams: `approximate arrival timestamp`
+    - Apache Spark: defines a unique key composed of e.g. the `session_id` and `user_id` fields. 
+
+### Transactional Writer
+  Transactions are another powerful database capability that can help us implement idempotent data producers. Transactions provide all-or-nothing semantics, where changes are fully visible to consumers only when the writer confirms them. This confirmation step is more commonly known as `commit`.
+
+  The best way to protect our consumers from the incomplete data issue is to leverage the transactions with the Transactional Writer pattern. It relies on the native database transactional capacity so that any of the in-progress but not committed changes will not be visible to downstream readers.
+
+  - **Workflow**
+    - The producer initializes the transaction.
+      - In the explicit mode, we need to call a transaction initialization instruction, such as START TRANSACTION or BEGIN.
+      - In the implicit mode, our data processing layer handles the transaction opening on our behalf.
+    - Write the data.
+      - The changes are added to the database but remain private to our transaction scope.
+    - Commit
+      - When we have finished writing the data, do we need to change the new records’ visibility to make them publicly available to consumers. 
+      - If there is an issue, instead of publishing the data, we need to discard it by calling the action that is the opposite of the commit step, which is `rollback`.
+
+      - <img src="/assets/images/data/data_pattern/data_pattern_15.webp" alt="drawing"/>
+
+      - From a low-level point of view, there are **two implementations** that we will use, depending on our processing model. 
+        - **Standalone jobs or ELT workloads processing** datasets at the data storage layer (e.g. BigQuery, Redshift, or Snowflake). The transaction is usually declarative and fully managed by the data store, and the processing can be distributed.
+        - **Multiple tasks work in parallel** to write a dataset to the same output.
+        - The transaction is local (i.e., task based). Each task performs an isolated transaction. This works well as long as we don’t encounter any job retries.
+        - The whole job is transactional. In this mode, the job initializes the transaction before it starts running the tasks, and it commits the transaction once all the tasks complete their work. This provides a stronger guarantee than the local transaction but is also more challenging to achieve.
+
+  The idempotency comes from `the all-or-nothing transactions semantics`. In case of any error, the producer doesn’t commit the transaction, which leads to either an automatic rollback or orphan records in the data storage layer that are not visible to the readers.
+
+  - **Consequences**
+    - Commit step
+      - Unlike a nontransactional write, a transactional one involves two extra steps, which are opening and committing the transaction, alongside resolving data conflicts at both stages. The steps may have an impact on the overall data availability latency.
+    - Distributed processing
+      - Distributed data processing frameworks’ support for transactions is not global. 
+    - Idempotency scope
+      - the idempotency is limited to the transaction itself. if a distributed data processing framework uses local (i.e., task-based) transactions without any further coordination to store already committed tasks, any job restart will rewrite the data from committed transactions.
+
+  - **Example**
+    - Modern table file formats (Delta Lake, Apache Iceberg, and Apache Hudi)
+    - Streaming brokers (Apache Kafka)
+    - Data warehouses (AWS Redshift and GCP BigQuery)
+    - Relational database management systems (PostgreSQL, MySQL, Oracle, and SQL Server).
+
+## Immutable Dataset
+### Proxy
+  Case: We need to rework the pipeline to keep each copy but expose only the most recent table from a single place. The requirement expects the dataset to be immutable and thus written only once. To achieve this, we can implement the Proxy pattern. 
+
+  - **Workflow**
+    -  We must guarantee the immutability by loading the new data into a different location each time. A good and easy solution is to use time-stamped or versioned tables. Their names are suffixed with a version or a timestamp to distinguish them. To keep the immutability, all writing permissions should be removed from these tables after creating them. Than, they will be writable only once. Another alternative is using storage layer, where we could enhance the access controls with a locking mechanism `write once read many (WORM)`.
+    - Create a single data access point, which is the proxy. It’ll be a passthrough view that exposes the most recent table without any data transformations in the SELECT statement. If our data store doesn’t support a specific view, we’ll have to create a similar structure on our own.
+
+    - <img src="/assets/images/data/data_pattern/data_pattern_16.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Database support
+      - Not all databases have this great view feature, which will be an immutable access point to expose underlying changing datasets. Although it can be replaced with a manifest file.
+    - Immutability configuration
+      - We can enforce immutability at the data orchestration level by configuring the output of the triggered writing task. 
+
+  - **Examples**
+    - Apache Airflow + PostgreSQL: loading the data into a hidden internal table `COPY` command. `CREATE OR REPLACE VIEW` command for refresh view and write the new dataset to a different table.
+
+
+# Data Value
+  Data value design patterns purpose is to augment the dataset to improve its usefulness for end users. 
+## Data Enrichment
+  Raw data will be poor because of technical constraints. Data enrichment patterns overcome this limitation and make data more useful.
+### Static Joiner
+  Enrich dataset using static reference dataset. The at-rest character of the joined dataset presents the perfect condition for using the Static Joiner pattern. The pattern also works for streaming pipelines.
+
+  The implementation requires a list of attributes from both datasets that may be used to combine the datasets. 
+
+  Besides this **keyed condition**, the combination may also **expect some time constraints**, especially when the enrichment dataset implements some form of slowly changing dimensions. In that case, we could implement a time-sensitive static joiner variation of the initial pattern.
+
+  - **Example**
+    - SQL + SCD table: `JOIN` statement.
+    - Programmatic API: direct process, materialized API data.
+    - Programmatic API + idempotency: materialized API data.
+    - Apache Spark + API: Stream-to-batch join. `.join` operation.
+
+  <img src="/assets/images/data/data_pattern/data_pattern_17.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Late data and consistency
+      - In an ideal scenario, the data would evolve at the same pace as events are produced. But with late data, this scenario needs to mitigate. To mitigate the latency issue in streaming pipelines, we can use the Dynamic Joiner pattern.
+      - It considers the enrichment dataset to be a dynamic one and uses adapted join conditions in that context. The mitigation is simpler for batch pipelines, where we can rely on the orchestration to wait for the enrichment dataset to be present.
+    - Idempotency
+      - If we backfill a batch pipeline, we should ask ourself whether the outcome must be idempotent for the enrichment dataset. If that’s the case we may need to bring the enrichment dataset into our data layer to control the time aspects before doing the join.
+      - The situation is even trickier when it comes to the external datasets hidden behind an API. Here too, ideally, we should be able to issue time-based queries, but this may not be possible. The solution could be adding this temporality into our internal data store and writing all enrichment records there.
+
+### Dynamic Joiner
+  The Static Joiner pattern isn’t the best fit for combining two streaming datasets. The problem lies in the data perception. Streaming stands for a continuously moving dataset, with as-soon-aspossible processing, while static batch workloads operate on more slowly evolving data.
+
+  The Dynamic Joiner pattern, which is better suited for that kind of data as both datasets are in motion. 
+
+  The implementation shares some points with the Static Joiner, the identification of the keys and the definition of the join method—there is one extra requirement: **time boundaries**. Without this dedicated time management strategy, there’s a risk that many of the joins will be empty. It’s simply because the two datasets may have different latencies. The enrichment dataset can be late compared with the enriched dataset or vice versa. To mitigate this issue, dynamic joins are often completed with additional **time conditions**.
+
+  Defining these time conditions implies having a time-bounded buffer for joined records on both streams. The faster data source can align its time semantics with the slower data source. The buffer gives some extra time for joins to happen.  This extra time is often an allowed latency difference between the data sources.
+
+  The buffer involves a streaming aspect called the `garbage collection (GC) watermark`. Even though technically, we can always decide to keep events from both streams forever, this will require significant hardware resources and will fail sooner or later if we cannot scale our infrastructure indefinitely. A better approach is to define when events that are too old should go away from each buffer, meaning when we should use a GC watermark. This obviously means losing the join if one of the records comes really late, but that’s the tradeoff for having a manageable size buffer.
+
+  <img src="/assets/images/data/data_pattern/data_pattern_18.webp" alt="drawing"/>
+
+  Due to the difference, to maximize the success rate of the joined records, Stream A buffers all unmatched keys for a period time. Then, when Stream B catches up, Stream A tries to find the corresponding rows either from the incoming data or directly from the buffer. If there is no match, the GC watermark removes records that are older than Stream B’s oldest event time.
+
+  - **Consequences**
+    - Space versus exactness trade-off
+      - Due to the GC watermark and time boundaries, we may not be able to get all the joins that are possible. We can optimize efficency by increasing buffer space, but it’ll cost us more hardware resources. On the other hand, reducing space optimizes storage but may reduce the likelihood of matching if the latency difference is too big.
+    - Late data
+      - Late data is another reason for missed joins. Stream processing, due to its inherently lower latency processing semantics, has a weaker tolerance for late data integration in the pipelines.
+
+  But neither of the two data enrichment patterns presented here will give us a 100% guarantee of the join results without any extra effort, due to this late data arrival issue.
+
+  - **Example**
+    - Apache Spark: `.join` operation + `withWatermark` expression.
+    - Apache Flink: `temporal table joins`.
+
+## Data Decoration
+### Wrapper
+  Wrapping consists of adding an extra behavior or attribute(s) to an object. It also helps separate the original parts of a record from transformed parts.
+
+  The process here is to clearly separate the computed values from the original ones to simplify processing logic but keep the original structure for debugging needs.
+
+  The idea is to add an extra abstraction at the record’s level. The abstraction wraps the original values with a high-level envelope. In addition to these initial attributes, the envelope references computed attributes that may come from the input data itself or from the execution context. 
+
+  A design pattern that encapsulates an original data record inside another structure while attaching additional metadata, computed attributes, execution context, processing state, or governance information, without mutating the original record.
+
+  - There are four different wrapping implementations for structured data:
+    - Implementation 1 stores the original row in a flat structure and all computed columns as nested attributes.
+    - Implementation 2 does the opposite (i.e., it stores computed rows as a single flat structure).
+    - Implementation 3 stores all columns in a flat structure at the same level.
+    - Implementation 4 stores the data in two separate tables that can be joined later by a unique key.
+
+  The first two implementations use a denormalization approach that may be faster at reading. The third one uses the normalized approach, which may be slower at reading but can be a better choice if we need to logically isolate the datasets or when we simply can’t change the original structure.
+
+  <img src="/assets/images/data/data_pattern/data_pattern_19.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Domain split
+      - This is the logical implication because the pattern divides attributes for a given domain. 
+      - If we implement the Wrapper, we’ll find user-related fields in two different high-level structures: raw and computed. Although this approach has some advantages, such as making a clear distinction between transformed and nontransformed values, it also makes data retrieval more complicated.
+      - As a trade-off, we could consider the wrapped data to be the data belonging to the first storage layers of our system, like the Silver layer from our use case, and not the final data exposed to the users, for whom this separation may be confusing.
+    - Size
+      - Decorated values form an intrinsic part of the processed record, and therefore, they impact the overall size and network traffic. When it comes to the size impact in the Wrapper pattern, we can mitigate the limitations if our data storage format supports data source projection. With this feature, we can select the columns we are interested in and ask the data source to physically access only them.
+
+  - **Example**
+    - Apache Spark + PySpark API: `wrapping` operation.
+    - Apache Spark + SQL: `decorated` operation. (e.g. `NAMED_STRUCT` function).
+
+  - **Case**
+    - Original
+
+      ```
+      data
+      ---------
+      customer_id
+      age
+      order
+      ---------
+      ```
+
+      ```json
+      {
+      "customer_id": 1001,
+      "age": 22,
+      "order": 6000
+      }
+      ```
+
+    - Original + Transform
+    
+      ```
+      folder
+      ----------------------
+      Average = 88
+      Grade = A
+      Rank = 5
+      Comment = Excellent
+      ----------------------
+      Original Report Card
+      ----------------------
+      customer_id
+      age
+      order
+      ----------------------
+      ```
+
+      ```json
+      {
+          "original":{
+              "customer_id":1001,
+              "age":22,
+              "salary":6000
+          },
+
+          "computed":{
+              "risk_score":0.72,
+              "segment":"Gold",
+              "fraud_probability":0.02
+          },
+
+          "metadata":{
+              "quality_score":98,
+              "pipeline":"CustomerRiskV3",
+              "processing_time":"2026-07-23"
+          }
+      }
+      ```
+
+  - **Architecture**
+      ```sequence
+                  Source Record
+                        │
+                        ▼
+              Wrapper / Envelope
+      ┌───────────────────────────┐
+      │ Metadata                  │
+      │ Computed Attributes       │
+      │ Processing Context        │
+      │ Lineage                   │
+      │ Validation Results        │
+      │                           │
+      │     Original Record       │
+      └───────────────────────────┘
+      ```
+
+  - **Core Components**
+    
+    ```sequence
+      Envelope
+        ├── Original Data
+        ├── Derived Data
+        ├── Metadata
+        ├── Processing Context
+        ├── Validation
+        ├── Audit
+        └── Lineage
+    ```
+
+### Metadata Decorator
+  This process is needs for hide the extra records in the metadata layer of our data store.
+
+  For example, in actively evolve process, we need some visibility into thei mpact of the released version on the generated data. To simplify our maintenance activity, we need to add some technical context to each generated record, such as the job version.
+
+  Including the technical context in the record with the Wrapper pattern is not an option here. This information may not be relevant to our consumers since they’re not interested in our internal data processing details. Instead, we can leverage the metadata layer of our data store to apply the Metadata Decorator pattern.
+
+  The implementation will depend on our data store capabilities for handling metadata. If it supports the metadata out of the box, we will be able to associate each written record with a dedicated metadata attribute. Since this attribute is a native part of the data producer’s capabilities, the implementation is relatively straightforward.
+
+  - **Example**
+    - Apache Kafka: list of optional header key-value pairs. `includeHeaders` command.
+    - Common object stores: define the metadata attributes as tags
+    - Relational or NoSQL databases: Simulate the decoration by including the metadata within the data part but without publicly exposing it to end users. (E.g. a column `processing_context` with value `{"job_version”: “v1.0.3”, “processing_time”:"2023-06-10T10:02:00Z"}`)
+    - Relational or NoSQL databases: store the processing context in a dedicated table
+
+  - **Consequences**
+    - Implementation
+      - Implementation can also be challenging for table datasets, where, as demonstrated before, we’ll often need to define an extra column or table to handle the metadata information. Although this works, it requires more effort than for data stores that natively support metadata decoration.
+    - Data
+      - Even though there is no technical limitation on what type of information we can put into the metadata layer, we should avoid writing business-related attributes there, such as shipment addresses or invoice amounts.
+
+## Data Aggregation
+### Distributed Aggregator
+  - **Case**
+    - Building an online analytical processing (OLAP) cube, thereby reducing all data to an aggregated format that’s well suited to our dash boarding scenarios. The result should include basic statistics (count, average duration, etc.) across multiple axes (user geography, devices, etc.).
+    - The dataset is stored in daily event time partitions, and the analytics cubes should represent daily and weekly views.
+    - The Distributed Aggregator pattern leverages multiple machines that together form a single execution unit called a cluster. These servers individually don’t have enough capacity to process the whole input dataset, but together, they divide the work and can handle this scenario.
+    - Execution of the Distributed Aggregator involves a step to exchange records that were initially loaded into different machines, across the network. As a result, the reduce function can operate on all necessary collocated rows. The action depicted is called a `shuffle`. Often, it is one of the first latency trouble‐ makers because of the network traffic cost.
+
+  - **Consequences**
+    - Additional network exchange
+      - The pattern involves two network exchanges. 
+      - The first brings input data to each node.
+      - The second network exchange comes from the Distributed Aggregator pattern because it’s a required step to gather related data on the same server. This is one of the possible latency issues to look at when problems arise.
+    - Data skew
+      - With unbalanced distribution dataset, the cost of moving it across the network and processing it in a single node will be the highest. 
+      - Some techniques exist to prevent the skew, such as salting, which consists of adding an extra value (aka salt) to the grouping key and performing the first grouping operation on the salted column.
+      - Next, if we need to get the results for the original grouping key, we’ll need to aggregate the outcome of the salted column’s aggregation again.
+    - Scaling
+      - A node has completed all planned reduce opera‐ tions, it may still be in use by the hardware layer for fault tolerance reasons.
+      - If the whole reduce computation fails and gets restarted, this data won’t need to be reshuffled again—but when there is no failure, the node will still be there but will not be reclaimed as long as the processing is running. If we want to avoid keeping it for all that time, we can opt for a component called shuffle service.
+      - Shuffle service is an additional compute component that is responsible for storing and serving only shuffle data.
+
+  - **Example**
+    - Spache Spark + PostgreSQL + JSON: `Exchange hashpartitioning` node
+    - GCP BigQuery: Google Cloud Storage (GCS) service + `external table`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
