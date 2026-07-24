@@ -31,6 +31,7 @@ Solutions
      5. Rainfall Intensity
      6. Nighttime Lights
         - [VIIRS/JPSS1 Lunar BRDF-Adjusted Nighttime Lights Yearly](https://cmr.earthdata.nasa.gov/search/concepts/C3816918646-LAADS.html)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_2_6.webp" alt="drawing"/>
      7. Kode Pos
         - [kodepos](https://kodepos.posindonesia.co.id/)
         - [nomor.net](https://nomor.net/)
@@ -48,6 +49,7 @@ Solutions
   5. **Land Boundary**
      1. Land Use
         - [Esri - Sentinel-2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=114.79523%2C1.25118%2C6.66&mode=step&timeExtent=2017%2C2024&year=2024&landCover=Built+Area)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_5_1.webp" alt="drawing"/>
         - [Land Use](https://overturemaps.org/)
         - [Land Cover](https://overturemaps.org/)
         - [Segments](https://overturemaps.org/)
@@ -56,6 +58,7 @@ Solutions
         - [Global Forest Map](https://www.globalforestwatch.org/map/)
      3. Field
         - [the Fields of The World (FTW) Explorer](https://fieldsofthe.world/ftw-inference-app)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_5_3.webp" alt="drawing"/>
      4. Plantation
      5. Building
         - [buildings](https://overturemaps.org/)
@@ -65,7 +68,8 @@ Solutions
      6. Water (Lake, River)
         - [Water](https://overturemaps.org/)
      7. Fire Detection
-        - [NASA’s Fire Information for Resource Management System (FIRMS)](https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@0.0,0.0,3.0z)
+        - [Fire Information for Resource Management System (FIRMS)](https://firms.modaps.eosdis.nasa.gov/map/#d:24hrs;@0.0,0.0,3.0z)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_5_7.webp" alt="drawing"/>
      8. Natural
      9.  Soil
         - [FAO/UNESCO – Soil data of the world](https://www.fao.org/soils-portal/data-hub/soil-maps-and-databases/faounesco-soil-map-of-the-world/en/)
@@ -107,11 +111,11 @@ Solutions
         - [Fiber Optic]()
      6. Water Resource
      7. Infrastructures
-  6. **External Data**
+  8. **External Data**
      1. [Humanitarian Data Exchange (HDX)](https://data.humdata.org)
      2. [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
      3. [World Bank Data Catalog](https://datacatalog.worldbank.org/)
-  7. **Data collection**
+  9. **Data collection**
      1.  [geospatial datasets Catalogs](https://github.com/opengeos/geospatial-data-catalogs)
      2.  [open datasets on AWS](https://github.com/opengeos/aws-open-data)
      3.  [open geospatial datasets on AWS](https://github.com/opengeos/aws-open-data-geo)
