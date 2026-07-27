@@ -7,7 +7,7 @@ title: Scoring
 nav_order: 94
 has_children: true
 heading_anchors: true
-permalink: /scoring/
+permalink: /scoring
 has_toc: false
 ---
 
