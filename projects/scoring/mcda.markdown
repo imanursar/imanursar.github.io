@@ -191,7 +191,7 @@ decision
   - Transitivity Break Rate: A normalized measure of how many transitivity violations exist relative to the theoretical maximum.
   - Both criteria should return True, and the transitivity break rate should be 0, indicating robust decision-making consistency.
 
-## Dataset
+## Case 1
 ### Load dataset
   we use dataset extracted from from historical time series cryptocurrencies. The nine available alternatives are based on the ranking of the 20 cryptocurrencies with the largest market capitalization calculated on the basis of circulating supply, according to information retrieved from Cryptocurrency Historical Prices" retrieved on July 21st, 2021, from there only the  coins with  complete data between October 9th, 2018 to July 6th of 2021.
 
@@ -288,3 +288,79 @@ decision
   | LTC          | 6                | 4                    | 4      |
   | XLM          | 4                | 7                    | 7      |
   | XRP          | 9                | 8                    | 9      |
+
+
+## Case 2
+### Load dataset
+  we use Electric Vehicles dataset with some parameters to define EV performance.
+
+  ```python
+  df = pd.read_csv('vans.csv')
+  matrix
+  ```
+
+  | code | name                                | manufacturer                                                       | carryfying capacity | max velocity | travel range | engine power | engine torque | battery charging 100% | battery charging 80% | battery capacity | price |
+  | ---- | ----------------------------------- | ------------------------------------------------------------------ | ------------------- | ------------ | ------------ | ------------ | ------------- | --------------------- | -------------------- | ---------------- | ----- |
+  | A1   |  EVI MD                             |  Electric Vehicles International                                   | 3000                | 96           | 145          | 200          | 610           | 10                    | 120                  | 99               | 120   |
+  | A2   |  EVI Walk-In Van                    |  Electric Vehicles International/Freightliner Custom Chassis Corp. | 2000                | 100          | 145          | 200          | 610           | 10                    | 120                  | 99               | 90    |
+  | A3   |  e-NV200+                           |  Nissan                                                            | 705                 | 120          | 170          | 80           | 270           | 4                     | 30                   | 24               | 25    |
+  | A4   |  e-Wolf Omega 0.7                   |  e-Wolf                                                            | 613                 | 140          | 180          | 140          | 400           | 8                     | 40                   | 24.2             | 50    |
+  | A5   |  Minicab-MiEV Truck                 |  Mitsubishi Motors Corp.                                           | 350                 | 100          | 110          | 30           | 196           | 4.5                   | 15                   | 10.5             | 12.9  |
+  | A6   |  Mitsubishi Minicab-MiEV (10.5 kWh) |  Mitsubishi Motors Corp.                                           | 350                 | 100          | 100          | 30           | 196           | 4.5                   | 15                   | 10.5             | 15.5  |
+  | A7   |  Mitsubishi Minicab-MiEV (16kWh)    |  Mitsubishi Motors Corp.                                           | 350                 | 100          | 150          | 30           | 196           | 7                     | 35                   | 16               | 18.7  |
+  | A8   |  Partner Panel Van                  |  Peugeot                                                           | 635                 | 110          | 170          | 49           | 200           | 8                     | 35                   | 22.5             | 31.5  |
+  | A9   |  Phoenix Motorcars SUV              |  Phoenix Motorcars                                                 | 340                 | 150          | 160          | 110          | 500           | 6                     | 10                   | 35               | 45    |
+  | A10  |  Piaggio Porter electric-power      |  Piaggio Porter                                                    | 750                 | 57           | 110          | 10           | 80            | 8                     | 120                  | 35               | 24.4  |
+
+## The Code
+  By calling, `statistic.mdca_comparing_v2` we can generate MDCA with defined objective, weights, and what type MDCA algorithm that we want.
+
+  ```python
+  rank_score, rank = mdca_comparing_v2(type_list, main_data, objectives:list=[], weights=None, alt:str='', is_plot=False)
+  ```
+
+  This function requires the following parameters:
+  - **main_data** (`dataframe`):      Data Input
+  - **objectives** (`list`):          List of objective with max min value.
+  - **weights** (`list`):             List of weight value between 0 - 1.
+  - **alt** (`str`):                  name for each row or alternative.
+  - **type_list** (`list`):           List of MDCA algorithm.
+  - **is_plot** (`boolean`):          to show plot for MDCA algorithm.
+
+## The result
+  <img src="/assets/images/scoring/mcda/mcda_06.webp" alt="drawing"/>
+
+  <img src="/assets/images/scoring/mcda/mcda_07.webp" alt="drawing"/>
+
+### Rank Score
+
+  | topsis | mabac    | comet  | spotis | alternatives                        |
+  | ------ | -------- | ------ | ------ | ----------------------------------- |
+  | 0.5762 | 0.2286   | 0.7459 | 0.368  |  EVI MD                             |
+  | 0.5619 | 0.1993   | 0.6906 | 0.3973 |  EVI Walk-In Van                    |
+  | 0.4593 | 0.0675   | 0.3961 | 0.5291 |  e-NV200+                           |
+  | 0.4641 | 0.0732   | 0.3991 | 0.5234 |  e-Wolf Omega 0.7                   |
+  | 0.4296 | \-0.0129 | 0.282  | 0.6095 |  Minicab-MiEV Truck                 |
+  | 0.4271 | \-0.0178 | 0.2762 | 0.6144 |  Mitsubishi Minicab-MiEV (10.5 kWh) |
+  | 0.3982 | \-0.0489 | 0.2208 | 0.6455 |  Mitsubishi Minicab-MiEV (16kWh)    |
+  | 0.4117 | \-0.016  | 0.2781 | 0.6126 |  Partner Panel Van                  |
+  | 0.4981 | 0.1284   | 0.4969 | 0.4682 |  Phoenix Motorcars SUV              |
+  | 0.2997 | \-0.1852 | 0.0765 | 0.7818 |  Piaggio Porter electric-power      |
+
+### Ranking
+
+  | topsis | mabac | comet | spotis | alternatives                        |
+  | ------ | ----- | ----- | ------ | ----------------------------------- |
+  | 1      | 1     | 1     | 1      |  EVI MD                             |
+  | 2      | 2     | 2     | 2      |  EVI Walk-In Van                    |
+  | 5      | 5     | 5     | 5      |  e-NV200+                           |
+  | 4      | 4     | 4     | 4      |  e-Wolf Omega 0.7                   |
+  | 6      | 6     | 6     | 6      |  Minicab-MiEV Truck                 |
+  | 7      | 8     | 8     | 8      |  Mitsubishi Minicab-MiEV (10.5 kWh) |
+  | 9      | 9     | 9     | 9      |  Mitsubishi Minicab-MiEV (16kWh)    |
+  | 8      | 7     | 7     | 7      |  Partner Panel Van                  |
+  | 3      | 3     | 3     | 3      |  Phoenix Motorcars SUV              |
+  | 10     | 10    | 10    | 10     |  Piaggio Porter electric-power      |
+
+
+
