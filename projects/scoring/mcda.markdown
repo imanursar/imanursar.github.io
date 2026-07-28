@@ -191,6 +191,67 @@ decision
   - Transitivity Break Rate: A normalized measure of how many transitivity violations exist relative to the theoretical maximum.
   - Both criteria should return True, and the transitivity break rate should be 0, indicating robust decision-making consistency.
 
+## Spatial Multi-Criteria Analysis (SMCA)
+  SMCA is the GIS implementation of MCDA where every criterion has a spatial (geographic) component. SMCA extends exactly the same idea of MCDA into geographic space. Instead of evaluating alternatives, it evaluates every pixel or every parcel or every location using multiple spatial criteria.
+
+  Example: Where should a new hospital be built?
+  Criteria: 
+  - Near population
+  - Near roads
+  - Far from flood area
+  - Flat terrain
+  - Near electricity
+  - Land ownership
+  - Existing healthcare coverage
+  
+  Every criterion is represented as a GIS layer.
+  - Population Density Raster
+  - Road Distance Raster
+  - Flood Hazard Raster
+  - Slope Raster
+  - Electric Grid Raster
+  - Land Cost Raster
+
+  SMCA combines these layers into one suitability map. 
+  
+  - The input: Mostly GIS datasets:
+    - Raster
+    - Vector
+    - DEM
+    - Satellite
+    - Road Network
+    - Land Use
+    - Elevation
+  - The output as `Suitability` with range between 0 to 100 or categories such as: Very unsuitable, Suitable, Highly suitable. Unlike MCDA, the result is a map, not merely a ranked list.
+
+### SMCA Workflow
+  - Problem
+  - Acquire Data
+  - Spatial Layers
+  - Preprocessing
+  - Spatial / Raster Standardization
+  - Spatial Constraints
+  - Criteria Weighting
+  - Spatial Overlay
+  - Suitability Mapping
+  - Sensitivity Analysis
+
+### Advantages of SMCA
+  Compared with traditional MCDA, SMCA offers several additional capabilities:
+  - Evaluates millions of geographic alternatives simultaneously.
+  - Produces a visual suitability map instead of only a ranked list.
+  - Explicitly models spatial relationships such as proximity, adjacency, and connectivity.
+  - Integrates diverse GIS data sources, including raster, vector, DEMs, and remote sensing.
+  - Supports scenario analysis by varying weights, criteria, or exclusion constraints.
+
+### Limitations of SMCA
+  SMCA also inherits MCDA's limitations and adds spatial-specific challenges:
+  - Results are highly sensitive to the choice of criterion weights.
+  - Data quality and spatial resolution strongly influence outcomes.
+  - Raster cell size can affect suitability patterns (modifiable areal unit and scale effects).
+  - Criteria may be spatially correlated (e.g., roads and urban areas), introducing redundancy if not accounted for.
+  - Large, high-resolution datasets can require substantial computational resources.
+
 ## Case 1
 ### Load dataset
   we use dataset extracted from from historical time series cryptocurrencies. The nine available alternatives are based on the ranking of the 20 cryptocurrencies with the largest market capitalization calculated on the basis of circulating supply, according to information retrieved from Cryptocurrency Historical Prices" retrieved on July 21st, 2021, from there only the  coins with  complete data between October 9th, 2018 to July 6th of 2021.
