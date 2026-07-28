@@ -197,6 +197,46 @@ Solutions
     - Improves accuracy and builds trust in outputs.
     - Ask to **Review your answer. is it correct? if not fix it** at prompt.
 
+# Prompting Frameworks
+  - **T-A-G**
+    - Define - [TASK]
+    - State - [ACTION]
+    - Clarity - [GOAL]
+    - Example:
+      - [TASK] Prepare me for tomorrow's Tesco Scotch QBR.
+      - [ACTION] Summarize category trend, promo performance, key competitor moves, and account risks. 
+      - [GOAL] Give me 3 talking points, 2 risks, and 1 commercial ask.
+  - **C-A-R-E**
+    - Give the - [CONTEXT]
+    - Describe - [ACTION]
+    - Clarify the - [RESULT]
+    - Give [EXAMPLE]
+    - Example:
+      - [CONTEXT] You are supporting a Tanqueray insights lead preparing for a leadership question on urban Indian gin drinkers. 
+      - [ACTION] Summarize the top themes from recent consumer commentary.
+      - [RESULT] A one-page insight brief with tensions, occasions, and implications. 
+      - [EXAMPLE] Use bullet points and include evidence snippets.
+  - **R-A-C-E**
+    - Specify - Define who the AI should be [ROLE]
+    - Describe - state exactly what you want AI to do [ACTION]
+    - Give the - Provide the background, inputs, and constraints [CONTEXT]
+    - Describe - Specify the output format and quality bar [EXPECTATION]
+    - Example:
+      - [ROLE] Act as a UK KAM.
+      - [ACTION] Draft a customer-ready brief.
+      - [CONTEXT] Johnnie Walker performance at Tesco over the last quarter.
+      - [EXPECTATION] Keep it concise, commercial, and action-oriented.
+  - **R-I-S-E**
+    - Specify - [ROLE]
+    - Describe - [INPUT]
+    - Ask for - [STEPS]
+    - Describe - [EXPECTATION]
+    - Example:
+    - [ROLE] Act as a brand manager.
+    - [INPUT] Baileys winter campaign brief.
+    - [STEPS] Stress-test the brief, identify ambiguities, suggest 3 creative territories.
+    - [EXPECTATION] Present output in a review-ready table.
+
 ---
 
 # RAG (Retrieval-Augmented Generation)
