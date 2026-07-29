@@ -3,7 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Heat Map Analysis
+title: Optimizing Cross-Docking Location Through Heat Map Analysis
 parent: Geospatial
 permalink: /geospatial/heat map analysis/
 nav_order: 2
