@@ -25,8 +25,12 @@ Solutions
   2. **Demographic**
      1. Population
         - [IDN Spatial Distribution of Population Estimation](https://hub.worldpop.org)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_2_1_1.webp" alt="drawing"/>
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_2_1_2.webp" alt="drawing"/>
      2. Purchasing Power
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_2_2.webp" alt="drawing"/>
      3. Household
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_2_3.webp" alt="drawing"/>
      4. Water Availability
      5. Rainfall Intensity
      6. Nighttime Lights
@@ -44,8 +48,10 @@ Solutions
         - [Infrastructure](https://overturemaps.org/)
         - [Places](https://overturemaps.org/)
         - [POI](https://maps.google.com/)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_3_1.webp" alt="drawing"/>
   4. **Weather**
      1. [Weather Himawari Monitor]()
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_4_1.gif" alt="drawing"/>
   5. **Land Boundary**
      1. Land Use
         - [Esri - Sentinel-2 Land Cover Explorer](https://livingatlas.arcgis.com/landcoverexplorer/#mapCenter=114.79523%2C1.25118%2C6.66&mode=step&timeExtent=2017%2C2024&year=2024&landCover=Built+Area)
@@ -90,7 +96,48 @@ Solutions
      21. Hydrogeology of Aquifer Productivity 
      22. Magneto field
      23. Contours
-  6. **Administrative**
+  6. **Energy and Mining**
+     1. Potential Resources and Reserves of non-Metal Minerals
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_1.webp" alt="drawing"/>
+     2. Mining Area
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_2.webp" alt="drawing"/>
+     3. Potential Resources and Reserves of Metal Minerals
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_3.webp" alt="drawing"/>
+     4. Geothermal Resources
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_4.webp" alt="drawing"/>
+     5. Active Fault
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_5.webp" alt="drawing"/>
+     6. Forest Area
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_6.webp" alt="drawing"/>
+     7. Continental Shelf Boundary
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_7.webp" alt="drawing"/>
+     8. MOU Fisheries Sea Boundary
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_8.webp" alt="drawing"/>
+     9.  Territorial Boundary
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_9.webp" alt="drawing"/>
+     10. EEZ Boundary
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_10.webp" alt="drawing"/>
+     11. Baseline Boundary
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_11.webp" alt="drawing"/>
+     12. Additional Zone
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_12.webp" alt="drawing"/>
+     13. Mining Business Permit Area (Wilayah Izin Usaha Pertambangan - WIUP)
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_13.webp" alt="drawing"/>
+     14. Solar Energy Potential
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_14.webp" alt="drawing"/>
+     15. Volcanic Geology
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_15.webp" alt="drawing"/>
+     16. Volcanic Geological Disaster
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_16.webp" alt="drawing"/>
+     17. Earthquake Geological Disaster
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_17.webp" alt="drawing"/>
+     18. Tsunami Geological Disaster
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_18.webp" alt="drawing"/>
+     19. Liquefaction Vulnerability
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_19.webp" alt="drawing"/>
+     20. Power Grid
+        - <img src="/assets/images/knowledge/solution/data_collection/dc_6_20.webp" alt="drawing"/>
+  7. **Administrative**
      1. Collection
         - [Country-level Administrative](https://diva-gis.org/data.html)
         - [GADM (Global Administrative Areas)](https://gadm.org)
@@ -98,7 +145,7 @@ Solutions
         - [Division Area](https://overturemaps.org/)
         - [Division Boundary](https://overturemaps.org/)
         - [BPS and Kemendagri](https://sig.bps.go.id/bridging-kode/index)
-  7. **Network Utility**
+  8. **Network Utility**
      1. Road
         - [Connectors](https://overturemaps.org/)
         - [Segments](https://overturemaps.org/)
@@ -111,11 +158,11 @@ Solutions
         - [Fiber Optic]()
      6. Water Resource
      7. Infrastructures
-  8. **External Data**
+  9.  **External Data**
      1. [Humanitarian Data Exchange (HDX)](https://data.humdata.org)
      2. [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
      3. [World Bank Data Catalog](https://datacatalog.worldbank.org/)
-  9. **Data collection**
+  10. **Data collection**
      1.  [geospatial datasets Catalogs](https://github.com/opengeos/geospatial-data-catalogs)
      2.  [open datasets on AWS](https://github.com/opengeos/aws-open-data)
      3.  [open geospatial datasets on AWS](https://github.com/opengeos/aws-open-data-geo)
