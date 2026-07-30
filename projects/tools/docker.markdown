@@ -18,6 +18,9 @@ container
 Docker
 {: .badge .badge-pill .badge-info }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
+
 <img src="/assets/images/tools/docker_01.webp" alt="drawing"  width="500"/>
 
 ## What Are Containers?
@@ -385,11 +388,77 @@ docker ps
 docker-compose down
 ```
 
+## Best Practice
+- Use Official Images
+  -  
+    ```yaml
+    FROM node: 14-alpine
+    ```
+  - Ensures security, reliability and regular updates
+- Use Specific Version
+  -  
+    ```yaml
+    FROM node:14.17.0-alpine3.13
+    ```
+  - Using the latest tag is unpredictable
+- Multi-Stage Builds
+  - 
+    ```yaml
+    FROM build-image AS build # Build steps
+    FROM production-image COPY --from-build /app/app
+    ```
+  - Reduces final image size by excluding build tools and dependencies
+- Use dockerignore
+  -  
+    ```yaml
+    node_modules 
+    npm-debug.log
+    ```
+  - Excludes unnecessary files
+- Use the Least Privileged User
+  -  
+    ```yaml
+    RUN useradd -m myuser 
+    USER myuser 
+    CMD node index.js
+    ```
+  - Enhances security by limiting container privileges
+- Use Env Variables
+  -  
+    ```yaml
+    ENV APP_HOME /app 
+    WORKDIR $APP_HOME
+    ```
+  - Increases portability across environments
+- Order Matters for Caching
+  -  
+    ```yaml
+    FROM debian
+    RUN apt-get update
+    RUN apt-get -y install openjdk ssh vim COPY./app
+    CMD ["java", "-jar", "/app/target/app.jar"]
+    ```
+  - Order steps from least to most frequently changing to optimize caching
+- Label Your Images
+  -  
+    ```yaml
+    LABEL maintainer="name@example.com" 
+    LABEL version="1.0"
+    ```
+  - Improves organization and image management
+- Scan Images
+  -  
+    ```yaml
+    docker scan
+    ```
+  - Find security vulnerabilities
+
 ## Conclusion
 
 Docker has transformed how we develop, deploy, and manage applications. By understanding key concepts like containers, Dockerfiles, volumes, networks, and best practices, you can build scalable and efficient applications. Docker Compose further simplifies multi-container orchestration, making it easier to manage complex applications.
 
 By following these guidelines, you ensure that your Dockerized applications are reliable, secure, and optimized for production use.
+
 
 
 
