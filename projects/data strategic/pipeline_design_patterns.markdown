@@ -4,13 +4,13 @@
 
 layout: default
 title: Pipeline Design Patterns 101
-parent: Data Engineering
-permalink: /data engineering/pipeline
-nav_order: 99
+parent: Data Strategic
+permalink: /data strategic/pipeline
+nav_order: 89
 ---
 
 # Pipeline Design Patterns 101
-data engineering
+data Strategic
 {: .badge .badge-pill .badge-primary }
 data modeling
 {: .badge .badge-pill .badge-secondary }
