@@ -5,7 +5,7 @@
 layout: default
 title: Pipeline Design Patterns 101
 parent: Data Strategic
-permalink: /data strategic/pipeline
+permalink: /data strategic/pipeline_101
 nav_order: 89
 ---
 
