@@ -1020,8 +1020,30 @@ data strategic
     - Spache Spark + PostgreSQL + JSON: `Exchange hashpartitioning` node
     - GCP BigQuery: Google Cloud Storage (GCS) service + `external table`
 
+### Local Aggregator
+  We have a streaming job that generates windows for data in a partitioned streaming broker. The data volume is static, and we don’t expect any sudden variations or changes in the underlying partitioning. As a result, the partitions number will never change. 
 
+  On the surface, the Local Aggregator pattern still performs some aggregations, it does so locally with the single network exchange of reading the input data. This solution works thanks to the fixed partitioning schema and correct input data distribution. All records that are relevant for a given grouping key are already present in the same input partition, so there’s no need to load them from other places.
 
+  - **Advantage**
+    - The lack of shuffle
+    - Fully isolated: meaning they won’t need to wait for the data on other tasks and can move forward.
+
+  The implementation effort should focus here on the producer side. It must guarantee to write a record with a particular grouping key to the same physical partition. On the consumer side, some of the tools provide facility methods to adapt the prepartitioned dataset to its shuffle format.
+
+  - **Example**
+    - Kafka Streams: `groupByKey` method
+    - pache Spark: per-partition operations, such as `mapPartitions` and `foreach Partition`.
+
+  The logic we’ve just presented applies to the partitioned data sources whose volume is too big to be processed in a single machine. However, if we are working on a non-partitioned or partitioned but small dataset, we don’t need to worry about static numbers of partitions. 
+
+  - **Consequences**
+    - Scaling
+      - Scaling is the most visible issue. The pattern depends on the static nature of the data source and consistent partitioning. If we can’t guarantee one of these conditions (e.g. given key will always be available from only one processing partition), the pattern won’t work correctly because it’ll create one or multiple groups for a given key whenever we change storage partitions.
+      - For scaling, we could do it with a dedicated data storage reorganization task, which would regenerate the partition assignments for all the records.
+    - Grouping keys
+      - For partitioned data sources with static numbers of partitions, the pattern also expects one grouping key logic for all consumers.
+      - It would involve writing the same record in multiple places, each time with a different grouping key.
 
 
 
