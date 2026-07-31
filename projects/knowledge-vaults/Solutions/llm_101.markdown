@@ -237,6 +237,14 @@ Solutions
     - [STEPS] Stress-test the brief, identify ambiguities, suggest 3 creative territories.
     - [EXPECTATION] Present output in a review-ready table.
 
+# Small Languange Models (SLMs)
+  - Small Language Models are compact LLMs typically ranging from hundreds of millions to ~10B parameters.
+  - What defines SLMs isn't just size, but intent:
+    - Built for efficiency, not brute force
+    - Optimized for specific tasks or environments 
+    - Designed to run closer to the user (edge, local, private infra)
+  - SLMs trade raw scale for focus, speed, and deployability.
+
 ---
 
 # RAG (Retrieval-Augmented Generation)
