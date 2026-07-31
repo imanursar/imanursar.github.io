@@ -27,6 +27,11 @@ Data architecture provides a structured framework for organizing and managing an
 - Defines standards, models, and rules for data across the organization.
 - Connects business goals with technical solutions.
 
+## Big Picture
+
+{% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@8ADn3nfZACaxXXiFbJiceGroy3DYmD1fVCBZ?color-mode=system" %}
+
+
 ## Problems To Solve by Data Architecture
 - **System Incompatibilities**: Existing systems may be outdated and unable to work together, hindering data access and analysis.
 - **Compliance Risks**: Lack of proper data governance practices can lead to regulatory violations and fines.
