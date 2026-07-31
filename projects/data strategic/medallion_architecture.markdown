@@ -6,7 +6,7 @@ layout: default
 title: Data Medallion Architecture
 parent: Data Strategic
 permalink: /data strategic/medallion
-nav_order: 86
+nav_order: 87
 ---
 
 # Data Medallion Architecture
