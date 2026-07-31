@@ -9,8 +9,7 @@ permalink: /data strategic/dg
 nav_order: 200
 ---
 
-#  Data Quality
-
+#  Data Governance
 data government
 {: .badge .badge-pill .badge-primary }
 roles
@@ -208,8 +207,9 @@ data management
 
 ---
 
-## Master Data Management
+# Master Data Management
 
+## Master Data Principles
 ### Validation – Preventing Bad Data at the Source
   One of the cornerstones of eective Master Data Management is prevention. The cost of poor data quality increases the further it travels through your systems— incorrect master data at entry creates cascading issues across sales, finance, supply chain, and reporting. That's why **robust data validation at the point of creation is crucial**.
 
@@ -236,3 +236,47 @@ data management
   Instead, build domain-specific approaches. **Define validation rules, approval hierarchies, enrichment requirements, and lifecycle policies for each master data type**. This might mean one set of controls for new materials and a different approach for supplier onboarding. The goal isn't to add complexity—it's to add relevance.
 
   Tailoring your MDM approach by domain increases both relevance and efficiency. It also shows business stakeholders that their unique needs are understood— which boosts trust and collaboration.
+
+## Core Master Data Management Processes
+  - Collection and modelling
+  - Quality and standardization
+  - Matching, SSOT and golden record
+  - Governance and stewardship
+  - Distribution and synchronization
+
+## MDM Architecture Styles
+  There is no single right way to do master data management. Organizations choose a style based on the amount of control they wish to have over the master data and the amount of change they can handle.
+
+  - **Registry**: `Records remain in their source systems while MDM maintains only the links and a thin index`. Quick and easy to launch, with the golden record put together on the fly. Ideal for quick and easy success.
+  - **Consolidation**: `Records are pulled into a central hub` where they are used to create golden records for reporting, while `creation and editing remain in source systems`. Ideal for analytics and reporting scenarios.
+  - **Co-existence**: `Data is mastered centrally and written back to the source systems to ensure both are aligned`. A well-balanced style that requires a disciplined approach to integration. Best for blending operational and analytical needs.
+  - **Centralized**: `The hub is the central point for generating and keeping master data`. The highest quality and most tightly controlled, with the most changes to existing workflows. Best for situations that require utmost uniformity.
+
+---
+
+## Data Governance vs Data Management
+
+### Data governance
+  Data governance: Define the rules, roles, and standards to ensure data is trusted, secure, and used responsibly.
+
+  - **Roles**
+    - Define the direction, policies, standard and principles for data use.
+    - Establish roles and accountability
+    - Ensure compliance, ethics, manage risks, privacy, and regulations.
+    - Define and Govern data quality
+    - Build trust in data. Promote data quality, transparancy and consistent definition.
+    - Focus on `why`
+      - Why the data exists
+      - How it should be used
+      - Who can use it
+
+### Data Management
+  Implement the processes and practices to collect, store, protect and deliver data efficiently.
+
+  - **Roles**
+    - Manage the data lifecycle: collect, store, process and dispose of data properly.
+    - Operate data quality: implement checks, monitor quality and fix data issues.
+    - Protect data: secure access, manage backups, and ensure availability.
+    - Deliver data: provide the right data, in the right format, at the right time.
+    - Focus on `how`
+      - How data is handled, processed, and delivered.
