@@ -3,13 +3,13 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Data Catalog and Lineage
+title: Data Catalog
 parent: Data Engineering
 permalink: /data engineering/data_cat_lin
 nav_order: 105
 ---
 
-#  Data Catalog and Lineage
+#  Data Catalog
 data engineering
 {: .badge .badge-pill .badge-primary }
 query
