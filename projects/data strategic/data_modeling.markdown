@@ -53,3 +53,17 @@ data strategic
   | Solves               | Consistent KPIs, semantic search, AI reasoning                            | Data quality, lineage, reproducibility                  | Efficient storage and data integrity                      |
   | Typical technologies | Semantic models, knowledge graphs, metadata catalogs, business glossaries | Lakehouse platforms, ETL/ELT frameworks                 | ER modeling tools, relational databases                   |
   | Example              | "Revenue", "Customer", "Harvest Productivity" have one agreed definition  | Bronze → Silver → Gold pipeline for sensor and ERP data | Customer, Order, Product tables with keys and constraints |
+
+  | Aspect                | Medallion Architecture    | Star Schema                              | Snowflake Schema                          |
+  | --------------------- | ------------------------- | ---------------------------------------- | ----------------------------------------- |
+  | Primary question      | How should data flow?     | How should analytical data be organized? | How should analytical data be normalized? |
+  | Focus                 | ETL/ELT pipeline          | Analytics performance and simplicity     | Storage efficiency and normalization      |
+  | Main concept          | Bronze → Silver → Gold    | Fact + denormalized dimensions           | Fact + normalized dimensions              |
+  | Level                 | Data pipeline             | Data warehouse design                    | Data warehouse design                     |
+  | Optimized for         | Data quality and lineage  | Fast BI queries                          | Reduced redundancy                        |
+  | Typical users         | Data Engineers            | BI Developers, Analysts                  | Data Architects, DBAs                     |
+  | Number of joins       | Not applicable            | Few                                      | Many                                      |
+  | Storage               | Multiple dataset versions | Larger dimension tables                  | Smaller dimension tables                  |
+  | Query performance     | Depends on storage engine | Generally faster                         | Generally slower due to additional joins  |
+  | Ease of understanding | Moderate                  | High                                     | Medium to Low                             |
+
