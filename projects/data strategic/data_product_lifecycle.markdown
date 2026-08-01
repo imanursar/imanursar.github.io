@@ -20,3 +20,8 @@ data strategic
 ## Schema
 
   {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@or4CdLRbgroiH45SXVVwLBxRqcK84koT4jAYHHxrH" %}
+
+
+## Data Lifecycle Management
+
+  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@8ADn3nfZACaz3eVLY3Wre97wwyWu9V2EKhaD?color-mode=system" %}
