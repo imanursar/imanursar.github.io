@@ -23,4 +23,5 @@ data strategic
 
 ## Detail Data Architecture
 
-  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@8ADn3nfZACavnEvU9SKtCC6d1nKL2CNYMNcd?color-mode=light" %}
+  {% include whimsical.html src="https://whimsical.com/embed/JSC42FRTDvPy9vcbdQRpaG@8ADn3nfZACavi4TxV9mH2ELthSCmKew5Srkb?color-mode=system" %}
+
