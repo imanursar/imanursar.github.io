@@ -6,7 +6,7 @@ layout: default
 title: Data Quality
 parent: Data Management BoK
 permalink: /data management/data quality
-nav_order: 110
+nav_order: 113
 ---
 
 #  Data Quality

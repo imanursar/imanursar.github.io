@@ -6,7 +6,7 @@ layout: default
 title: Data	Integration	and	Interoperability
 parent: Data Management BoK
 permalink: /data management/dii
-nav_order: 105
+nav_order: 108
 ---
 
 #  Data	Integration	and	Interoperability

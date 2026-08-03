@@ -6,7 +6,7 @@ layout: default
 title: Big Data and Data Science
 parent: Data Management BoK
 permalink: /data management/bd_ds
-nav_order: 111
+nav_order: 114
 ---
 
 # Big Data and Data Science

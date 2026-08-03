@@ -6,7 +6,7 @@ layout: default
 title: Data Management Maturity Assessment
 parent: Data Management BoK
 permalink: /data management/data_maturity
-nav_order: 112
+nav_order: 115
 ---
 
 # Data Management Maturity Assessment
