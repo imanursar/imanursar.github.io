@@ -67,7 +67,6 @@ design patterns
     - Denormalized dimension tables 
     - Simple structure, fast queries
     - Best for Simple analytics
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_02.webp" alt="drawing"/>
 
   - **Snowflake Schema**
@@ -75,7 +74,6 @@ design patterns
     - Reduced redundancy, complex structure
     - Better for maintenance
     - Best for Complex dimensions
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_03.webp" alt="drawing"/>
     
   - **Galaxy Schema**
@@ -83,7 +81,6 @@ design patterns
     - Supports complex business models 
     - Also called Fact Constellation
     - Best for Enterprise-wide
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_04.webp" alt="drawing"/>
 
 ### Fact Table Types
@@ -91,21 +88,18 @@ design patterns
     - Records individual transactions
     - Captures at the lowest grain
     - Most common fact table type
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_06.webp" alt="drawing"/>
 
   - **Periodic Snapshot Fact Table**
     - Captures state at regular intervals 
     - Contains semi-additive measures 
     - Good for trend analysis
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_07.webp" alt="drawing"/>
     
   - **Accumulating Snapshot Fact Table**
     - Tracks process milestones
     - One row per business process 
     - Updated as process evolves
-
     - <img src="/assets/images/data/data_strategic/data_warehouse/ware_08.webp" alt="drawing"/>
 
   <img src="/assets/images/data/data_strategic/data_warehouse/ware_05.webp" alt="drawing"/>
