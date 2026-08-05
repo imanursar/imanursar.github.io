@@ -18,7 +18,7 @@ data modeling
 
 ## Bussiness Logic Schema
 
-	{% include whimsical.html src="https://whimsical.com/embed/GMPERFgj2syo1xBhpDEBeX@or4CdLRbgiy5mZJdooLsqZb5UPJcyi1FCvfgioTFQ?color-mode=system" %}
+  {% include whimsical.html src="https://whimsical.com/embed/GMPERFgj2syo1xBhpDEBeX@or4CdLRbgiy5mZJdooLsqZb5UPJcyi1FCvfgioTFQ?color-mode=system" %}
 
 ## Data Perspective Schema
 
