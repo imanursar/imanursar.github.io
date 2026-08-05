@@ -17,6 +17,8 @@ enterprise
 open sources
 {: .badge .badge-pill .badge-secondary }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 # How to decise to move between open source vs commercial enterprise software
   The decision to move between open source, commercial enterprise software, or a hybrid architecture is not determined by company size alone. 

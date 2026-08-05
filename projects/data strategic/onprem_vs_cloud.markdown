@@ -17,6 +17,8 @@ on-premise
 cloud
 {: .badge .badge-pill .badge-secondary }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 # How to decise to move between on-premises vs cloud
   The decision to move between on-premises, cloud, or hybrid cloud is fundamentally a business architecture decision, not merely an infrastructure decision.
