@@ -14,11 +14,11 @@ heading_anchors: true
 <img src="/assets/images/about_me/circle.png" alt="drawing" width="100"/>
 
 ## About Me
-I am a Data Scientist with more than six years of experience designing, building, and optimizing AI-driven and data-centric solutions that address complex business challenges. Skilled in leading data-driven strategies, collaborating with cross-functional teams, and independently executing complex projects. My background spans the full data value chain, including data engineering, analytics, predictive machine learning, and AI development, data strategy, enabling deliver end-to-end, insight-driven systems.
+Experienced Data Scientist with more than seven years of expertise in designing, building, and delivering AI-driven and data-centric solutions that solve complex business challenges. Proven ability to lead cross-functional initiatives, collaborate with business and technical stakeholders, and independently execute high-impact projects from strategy through implementation.
 
-Proven track record leading digital transformation initiatives, enhancing operational workflows, and setting team goals, assigning and reviewing work, and providing coaching and development. I work effectively across cross-functional teams and independently, consistently driving measurable outcomes through scalable data architectures and advanced machine learning solutions. My work supports data-driven decision-making and delivers tangible business value across diverse industries.
+I specialize in machine learning, deep learning, data strategy, enterprise analytics, and the design of scalable data platforms that transform data into measurable business value. I build enterprise data capability that improves operational efficiency, strengthens governance, and enables strategic decision-making across organizations.
 
-I have a well-rounded background across the full data value chain — from data engineering and analytics to predictive modeling and AI modeling — enabling me to build complete, insight-driven data systems. now advancing into data governance and strategic, generative AI and LLM applications for enterprise use.
+My expertise spans the entire data value chain—including data engineering, data warehousing, analytics, predictive modeling, and AI solution development—allowing me to deliver end-to-end, insight-driven data products and platforms. I am also expanding this capability through enterprise Generative AI and Large Language Model (LLM) applications to accelerate intelligent automation and business innovation.
 
 ### Proficient in leveraging tools such as: 
 - **Data Engineering, Data pipelining and Data Streaming**: SQL, Apache Airflow, Apache Spark, DBT, Apache Kafka.
