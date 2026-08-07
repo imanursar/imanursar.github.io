@@ -158,26 +158,26 @@ Solutions
         - [Fiber Optic]()
      6. Water Resource
      7. Infrastructures
-  9.  **External Data**
-   1. [Humanitarian Data Exchange (HDX)](https://data.humdata.org)
-   2. [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
-   3. [World Bank Data Catalog](https://datacatalog.worldbank.org/)
+  9. **External Data**
+     1.  [Humanitarian Data Exchange (HDX)](https://data.humdata.org)
+     2.  [MapCruzin – Various environmental, demographic, and infrastructure]( https://mapcruzin.com)
+     3.  [World Bank Data Catalog](https://datacatalog.worldbank.org/)
   10. **Data collection**
-   1.  [geospatial datasets Catalogs](https://github.com/opengeos/geospatial-data-catalogs)
-   2.  [open datasets on AWS](https://github.com/opengeos/aws-open-data)
-   3.  [open geospatial datasets on AWS](https://github.com/opengeos/aws-open-data-geo)
-   4.  [STAC endpoints for the AWS Open Data Program](https://github.com/opengeos/aws-open-data-stac)
-   5.  [The Google Earth Engine data catalog](https://github.com/opengeos/Earth-Engine-Catalog)
-   6.  [list of geospatial datasets on NASA's Common Metadata Repository (CMR)](https://github.com/opengeos/NASA-CMR-STAC)
-   7.  [A list of STAC endpoints retrieved](https://github.com/opengeos/stac-index-catalogs)
-   8.  [The Maxar Open Data STAC Catalog](https://github.com/opengeos/maxar-open-data)
-   9.  [Some commonly used geospatial datasets](https://github.com/opengeos/data)
-   10.  [NASA Earthdata Search](search.earthdata.nasa.gov)
-   11.  [NASA Worldview](worldview.earthdata.nasa.gov/)
-   12.  [NOAA Data Access Viewer](coast.noaa.gov)
-   13.  [NOAA CLASS (Comprehensive Large Array-data Stewardship System)](www.class.noaa.gov)
-   14.  [Geo-Airbus Defense](intelligence.airbus.com)
-   15. [JAXA Global ALOS 3D World](eorc.jaxa.jp)
+     1.  [geospatial datasets Catalogs](https://github.com/opengeos/geospatial-data-catalogs)
+     2.  [open datasets on AWS](https://github.com/opengeos/aws-open-data)
+     3.  [open geospatial datasets on AWS](https://github.com/opengeos/aws-open-data-geo)
+     4.  [STAC endpoints for the AWS Open Data Program](https://github.com/opengeos/aws-open-data-stac)
+     5.  [The Google Earth Engine data catalog](https://github.com/opengeos/Earth-Engine-Catalog)
+     6.  [list of geospatial datasets on NASA's Common Metadata Repository (CMR)](https://github.com/opengeos/NASA-CMR-STAC)
+     7.  [A list of STAC endpoints retrieved](https://github.com/opengeos/stac-index-catalogs)
+     8.  [The Maxar Open Data STAC Catalog](https://github.com/opengeos/maxar-open-data)
+     9.  [Some commonly used geospatial datasets](https://github.com/opengeos/data)
+     10. [NASA Earthdata Search](search.earthdata.nasa.gov)
+     11. [NASA Worldview](worldview.earthdata.nasa.gov/)
+     12. [NOAA Data Access Viewer](coast.noaa.gov)
+     13. [NOAA CLASS (Comprehensive Large Array-data Stewardship System)](www.class.noaa.gov)
+     14. [Geo-Airbus Defense](intelligence.airbus.com)
+     15. [JAXA Global ALOS 3D World](eorc.jaxa.jp)
 
 
 
