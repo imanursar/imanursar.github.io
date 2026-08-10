@@ -4,7 +4,7 @@
 
 layout: default
 title: Geoprocessing Model - Automating with Python
-nav_order: 7
+nav_order: 107
 parent: ArcGIS Pro
 permalink: /ArcGIS/automate python
 ---

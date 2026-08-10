@@ -4,7 +4,7 @@
 
 layout: default
 title: Change Detection
-nav_order: 11
+nav_order: 111
 parent: ArcGIS Pro
 permalink: /ArcGIS/change_detection
 ---

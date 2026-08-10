@@ -4,7 +4,7 @@
 
 layout: default
 title: Exploring geospatial relationships
-nav_order: 2
+nav_order: 102
 parent: ArcGIS Pro
 permalink: /ArcGIS/geospatial relationships
 ---

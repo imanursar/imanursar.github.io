@@ -4,7 +4,7 @@
 
 layout: default
 title: Snippet
-nav_order: 1
+nav_order: 101
 parent: ArcGIS Pro
 permalink: /ArcGIS/snippet
 ---

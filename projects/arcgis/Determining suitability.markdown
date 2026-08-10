@@ -4,7 +4,7 @@
 
 layout: default
 title: Determining suitability
-nav_order: 10
+nav_order: 110
 parent: ArcGIS Pro
 permalink: /ArcGIS/suitability
 ---

@@ -4,7 +4,7 @@
 
 layout: default
 title: Water Extraction and Change Detection
-nav_order: 12
+nav_order: 112
 parent: ArcGIS Pro
 permalink: /ArcGIS/water extraction
 ---
