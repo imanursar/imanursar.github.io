@@ -20,7 +20,9 @@ Solutions
 ## Geospatial
 ### Remote Sensing
 1. [USGS Earth Explorer - Lansat dataset](earthexplorer.usgs.gov)
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_1_1.webp" alt="drawing"/>
 2. [Sentinel / Copernicus Browser](https://browser.dataspace.copernicus.eu/?zoom=5&lat=50.16282&lng=20.78613&demSource3D=%22MAPZEN%22&cloudCoverage=30&dateMode=SINGLE)
+	- <img src="/assets/images/knowledge/solution/data_collection/dc_1_2.webp" alt="drawing"/>
 
 ### Demographic
 1. Population
@@ -39,8 +41,10 @@ Solutions
 7. Kode Pos
   - [kodepos](https://kodepos.posindonesia.co.id/)
   - [nomor.net](https://nomor.net/)
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_7.webp" alt="drawing"/>
 8. Collection
   - [MBI](https://www.mbi-geodata.com/)
+    - 
   - [kependudukan_kemendagri_kelurahan]()
 
 ### POI
@@ -150,6 +154,7 @@ Solutions
    - [Division Area](https://overturemaps.org/)
    - [Division Boundary](https://overturemaps.org/)
    - [BPS and Kemendagri](https://sig.bps.go.id/bridging-kode/index)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_7_6.webp" alt="drawing"/>
 
 ### Network Utility
 1. Road
