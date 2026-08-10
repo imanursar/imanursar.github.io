@@ -9,7 +9,7 @@ parent: ArcGIS Pro
 permalink: /ArcGIS/esri_products
 ---
 
-# Basic Presenting Map Project
+# ESRI products
 arcgispro
 {: .badge .badge-pill .badge-primary }
 geospatial
@@ -19,9 +19,8 @@ map
 esri
 {: .badge .badge-pill .badge-info }
 
-# ELI5 version of ESRI products
 
-### ArcGIS Pro (Desktop GIS)
+## ArcGIS Pro (Desktop GIS)
 - Think of it like Microsoft Word or Photoshop, but for maps.
 - You install it on your computer.
 - You can draw maps, analyze locations, and make fancy visualizations.
@@ -29,7 +28,7 @@ esri
 
 ArcGIS Pro is a desktop application that professionals use to create, analyze, and manage maps and geographic data. Think of it as the “power tool” for GIS specialists. It runs on a computer, allows advanced analysis, and is where most of the heavy lifting of data preparation and map design happens.
 
-### ArcGIS Online (Cloud GIS)
+## ArcGIS Online (Cloud GIS)
 - This is like Google Drive for maps.
 - It lives in the cloud (online).
 - You can upload your maps from ArcGIS Pro and share them with others through a website.
@@ -38,7 +37,7 @@ ArcGIS Pro is a desktop application that professionals use to create, analyze, a
 
 ArcGIS Online is a cloud-based platform for sharing and using maps. Instead of keeping maps only on a specialist’s computer, ArcGIS Online makes them available through a web browser or mobile app. This allows wider audiences—managers, field staff, or the public—to view, interact with, and sometimes update maps without needing technical software.
 
-### ArcGIS Enterprise (On-Premises GIS Platform)
+## ArcGIS Enterprise (On-Premises GIS Platform)
 - Imagine a company says: “We want our own private Google Drive for maps, locked inside our office building.”
 - That’s ArcGIS Enterprise → it’s the same idea as ArcGIS Online, but you install it on your organization’s own servers.
 - You get more control, security, and the ability to connect with internal company data.
