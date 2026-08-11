@@ -1045,19 +1045,143 @@ data strategic
       - For partitioned data sources with static numbers of partitions, the pattern also expects one grouping key logic for all consumers.
       - It would involve writing the same record in multiple places, each time with a different grouping key.
 
+## Sessionization
+  Sessions are special kinds of aggregators since they combine events related to the same activity. In each of the activities, we create a session composed of a starting point, session events, and an ending point.
+### Incremental Sessionizer
+  A session sounds like a real-time component, but the generation method also supports batch processing.
 
+  - **Cases**
+    We records visit events in an hourly partitioned location, thus for one session may be present in multiple consecutive partitions, the problem belongs to the incremental processing family. To solve it, we can leverage the Incremental Sessionizer pattern.
 
+    The implementation requires setting up the following three storage spaces:
+    - **Input dataset storage**: This stores the raw events we need to correlate in the sessionization pipeline. There, we’ll find the hourly partitioned visits from the problem statement.
+    - **Completed sessions storage**: This is the place where we’ll write all finished sessions. Eventually, we could also write the ongoing sessions here as well, but ideally, we should distinguish them from the completed sessions (e.g. add atribute like `is_final` set to false whenever a session is still active).
+    - **Pending sessions storage**: Store all sessions spread across multiple partitions that will be closed in one of the next executions. There are two differences between this and completed sessions storage. 
+      - First, it must remain private and evolve with our internal logic. End users doesn’t need to be aware of the details, and if they were, we would have less evolution flexibility.
+      - Second, the data format for the sessions can be different from the format in completed sessions storage. We could include some technical or internals details here, such as execution ID, if it would be helpful in defining the processing logic.
+    
+    We also need to define the workflow logic. The logic starts by combining the input dataset with all pending sessions generated in the previous execution. The combination happens for each session entity—such as a user, product, or visit—and it can generate the following:
+    - A new session if there is no pending session for a given session entity.
+    - A restored session with new data coming from the read input.
+    - A restored session without new session data. This session will probably be about to expire in this or the next execution, depending on the expiration rules we ’ve defined.
 
+    Once we complete this combination, we’ll get session data to process, possibly composed of previous and new records. On top of that, we need to apply sessionization logic that defines three states:
+    - **Initialization**: When a session starts. For example, it can start when a particular event type occurs such as visiting the home page of our blog.
+    - **Accumulation**: When a session is live. What do we do with new incoming data? For example, we could store the visited pages in order.
+    - **Finalization**: When a session stops. A session can finish when a particular event type occurs or because of a period of inactivity.
 
+    <img src="/assets/images/data/data_pattern/data_pattern_20.webp" alt="drawing"/>
 
+    In the schema, we can see the execution flow with all involved storage spaces. The transformation loads pending sessions created in the previous run and new data available in the input dataset. Afterward, all completed sessions go into the publicly exposed storage while all pending sessions are written elsewhere to keep them alive and available for the next job execution.
 
+    Implement WINDOW function or a GROUP BY expression for processing logic.
 
+  - **Consequences**
+    - Inactivity period
+      - The inactivity period defines how long we can keep a session open. The longer it is, the more late data we can include in the session. But this will require more compute and storage resources to handle the late data.
+      - We should find the right balance between the compute requirements and the business logic because it’ll be challenging to have both.
+      - A long inactivity period threshold will also keep the sessions in the hidden space for that amount of time.
+      - A partial session is not a completed session, and it may change in subsequent versions. 
+      - It’s therefore important to flag the ongoing sessions—for example, with an attribute like is_completed: false
+    - Data freshness
+      - The Incremental Sessionizer works for batch pipelines, which are still the first choice of processing mode for data teams.
+      - This will make the insights often come very late compared to real time.
+      - To mitigate this issue and still be able to use batch pipelines, we can create the partial sessions introduced in the previous section.
+    - Late data, event time partitions, and backfilling
+      - If our sessionization logic relies on event time partitioning, late data will be a problem as we may miss sessions for already processed partitions.
+      - A session generated for the partition at 09:00 directly impacts the session at 10:00, the one at 10:00 impacts the one at 11:00, and so on.
+      - This dependency is also visible in backfilling. If we rerun the session generation logic for one partition, we’ll have to do the same for all subsequent partitions. This can become expensive very quickly.
+      - The simple solution of replaying all partitions after the backfilled one is easy for the code but costly.
+      - On the other hand, having a smart detection method to find entities to backfill and rerunning only them from a dedicated backfill pipeline optimizes the cost but adds extra complexity.
 
+  - **Examples**
+    - Apache Airflow: DELETE FROM statements -> runs the session generation query -> loads all input data into a temporary -> session-scoped visits table -> insert pending and finished.
 
+### Stateful Sessionizer
+  If data freshness is an issue, the Incremental Sessionizer will not help us. We should use another sessionization pattern that performs great on top of the stream processing layer, thanks to its more frequent and smaller iterations.
 
+  For need to access the session in a lower latency, it available in our streaming broker within seconds, although it need some modification that default streaming pipelines won’t help either because they are stateless.
 
+  Stateful pipelines bring an extra component called a state store. In our sessionization context, the state store plays the same role as the pending sessions storage zone in the Incremental Sessionizer.
 
+  But this storage for pending sessions is not the Stateful Sessionizer’s only similarity to the Incremental Sessionizer. The Stateful Sessionizer’s implementation follows the same workflow as for the Incremental Sessionizer:
+  - Creating a session, or resuming the sessionizer.
+  - Combines the created or resumed session with new incoming records according to our business logic.
+  - If the session is completed or the partial sessions need to be available to consumers, the pattern transforms and writes the pending session record into the final output. Additionally, if the session is not completed, this step also writes the new state to the state store.
+  
+  <img src="/assets/images/data/data_pattern/data_pattern_21.webp" alt="drawing"/>
 
+  The schema illustrates the interaction between a stateful data processing job and its state store. There are two flavors of the store. 
+  - The first one is for fast access. It lives in memory, which of course involves volatility.
+  - To overcome the risk of losing the state in case of failure or restart, the job synchronizes the state regularly to a more resilient fault tolerance storage.
 
+  The data processing logic can rely on the following data processing abstractions:
+  - **Session windows**: a window created for each session key. Its length is specified by a gap duration, which is the maximum allowable period of inactivity between two events with the same session key before it creates a new session windows. 
+  - **Arbitrary stateful processing**: This approach requires more implementation effort but it also provides more flexibility.
 
+  - **Consequences**
+    - At-least-once processing
+      - Saving the state on fault tolerance storage doesn’t happen during every state update. Instead the writing process (checkpointing) occurs irregularly. Any stopped job restarts from the last successful checkpoint, leading to at-least-once processing.
+    - Scaling
+      - Changing the compute capacity in this stateful context may involve state rebalancing. The job will not be able to process the data as long as the particular state keys are not assigned to new workers.
+    - Inactivity period length
+      - Need to set the right balance to keep the total cost acceptable and include as many sessions as possible. That will impact to hardware pressure and output freshness.
+    - Inactivity period time
+      - Besides emitting the sessions to the output storage, the solution will also need to manage the expiration of the state for all completed sessions. E.g. from incoming events and time-based expiration.
 
+  - **Examples**:
+    - Apache Spark: stateful mapping function
+    - Apache Flink: `VisitToSessionConverter` convertor
+
+## Data Ordering
+### Bin Pack Orderer
+  One of the nightmares for ordered data delivery at scale is partial commits. E.g. from a bulk API to write multiple items and optimize network communication.
+
+  From events process, the data need to expose from an external API to external websites for analytics purposes. To optimize the cost, the job must be common for all consumers. It has to create a processing time window of 10 minutes with per-minute aggregates, and in the end, it must flush the buffer to different outputs provided by consumers. The events must be delivered individually for each minute and consumer, and in event time order.
+
+  We can solve the problem if we deliver each record individually. But, that implies significant network overhead as we’ll need to initialize as many requests as there are records. We  can mitigate the issue by relying on the bulk operations that together with the Bin Pack Orderer pattern.
+
+  The implementation follows two important steps:
+  - Responsible for grouping all related events and sorting them. The result will be records sorted within the same entity.
+  - We need to pack those rows in bins individually. We create isolated subsets that we can deliver through a bulk API without worrying about completeness, duplicates, and partial commits.
+
+  - **Workflow**
+    - Sorts the records by their grouping key and time
+    - The algorithm places the sorted rows into delivery bins so that there is only one grouping key in each bin. The bins can be arrays or lists.
+    - Emits bins sequentially.
+      - It doesn’t interfere with the ordering for the retried grouping key. because there is only a  single occurrence per bin.
+      - The next bin isn’t delivered as long as the current one is not fully written to the output.
+
+    - <img src="/assets/images/data/data_pattern/data_pattern_22.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Retries
+      - The pattern guarantees ordering inside the same execution.
+      - If our whole pipeline fails, then the retry will involve already emitted results.
+    - Complexity
+      - The bin packer is definitely more difficult to implement than a classical sort.
+      - It requires a custom sorting and bin creation logic.
+  
+  - **Examples**
+    - Apache Spark: a local sorting mechanism + a local group by event_time.
+
+### FIFO Orderer
+  This pattern can be good for use cases that don’t require low latency or a large volume of data. Expecially the requirement is to deliver each record as soon as possible, so any buffering to optimize the network traffic is not an option.
+  
+  Buffering and bulk requests help reduce network overhead in data transmission. However, in environments with more relaxed delivery constraints FIFO Orderer pattern will more suitable. 
+
+  It doesn’t require any specific sorting algorithm since the requirement is to send data in the `first in, first out (FIFO)` manner. Instead, it only detects the records and issues the delivery request. An important thing is to get the delivery acknowledgment for each record before proceeding to the next one. Otherwise, it may lead to issues of data being out of order or lost.
+
+  - **Examples**
+    - API delivering one record at a time
+    - a bulk API with concurrency 1 level
+    - Apache Kafka: `produce(...)` function + synchronous `flush(...)` invocation or producer delivers each record individually.
+    - Apache Kafka: for bulk requests, `producer({max.in.flight.requests.per.connection})`
+
+  - **Consequences**
+    - I/O overhead and latency
+      - Despite the possibility of using bulk API under some conditions in some data stores, is the I/O overhead and resulting increased latency as the data store and data producer must handle requests individually.
+      - Instead of sending one network request for many records, the FIFO Orderer pattern sends one request for each input row.
+      - Reduce this impact by leveraging multithreading, meaning by issuing the individual requests from multiple processes of our producer. The only problem is guaranteeing the ordering between these processes due to isolated and not aware of each other.
+    - FIFO is not exactly once
+      - FIFO stands only for delivering the oldest records first, and it doesn’t guarantee the exactly-once delivery by itself. To mitigate this issue, we’ll need to rely on one of the idempotency patterns.
