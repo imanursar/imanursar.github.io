@@ -6,7 +6,7 @@ layout: default
 title: End-to-End Data Pipeline
 parent: Data Engineering
 permalink: /data engineering/ete_dp
-nav_order: 100
+nav_order: 82
 ---
 
 # End-to-End Data Pipeline
