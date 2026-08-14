@@ -1185,3 +1185,87 @@ data strategic
       - Reduce this impact by leveraging multithreading, meaning by issuing the individual requests from multiple processes of our producer. The only problem is guaranteeing the ordering between these processes due to isolated and not aware of each other.
     - FIFO is not exactly once
       - FIFO stands only for delivering the oldest records first, and it doesn’t guarantee the exactly-once delivery by itself. To mitigate this issue, we’ll need to rely on one of the idempotency patterns.
+
+# Data Flow Design
+  The goal of data flow design patterns is to design and coordinate all steps required to generate a dataset. This involves actions like chaining various tasks in a pipeline, creating parallel or exclusive execution branches, or even managing the dependency of physically separated pipelines.
+
+  Data flow design patterns operate at two different levels:
+  - Data orchestration, where they work in one or many data pipelines. Design patterns useful when we want to address the cross-teams collaboration issue. This level can leverage to manage the concurrency of our pipelines.
+  - Data processing layer, which is the environment of our job. Design patterns help to better organize business logic to make it more obvious and easier to maintain over time. With sequence patterns, we can coordinate tasks or pipelines within a single pipeline or across many pipelines.
+## Sequence
+  This is an important factor that will impact the complexity, performance, and maintenance of the pipelines. This pattern will address the issue when a data processing job writing the processed dataset to multiple places, but when we need to replay only the loading part for one of the database, it dont have to restart the whole execution.
+### Local Sequencer
+  It orchestrates tasks locally (i.e., within the same pipeline or data processing job).
+
+  The good engineering practice is: 
+  - To simplify complex logic consists of decomposing it into smaller and therefore more approachable steps
+  - Reorganization improves readability 
+  - Highlights the separation of concerns
+
+  The end goal is to decouple one big component into multiple smaller but connected items that will be run sequentially. The dependency between tasks should be organized according to the dataset dependencies. 
+
+  E.g. in Ingestion process, we should create two tasks: Readiness Marker pattern (to check the data), and full loeader pattern (to physically load the data). As image below, we can implement them either as dependent tasks (with **data orchestration layer dependency**) or as a single task (with **data processing layer dependency**).
+
+  <img src="/assets/images/data/data_pattern/data_pattern_23.webp" alt="drawing"/>
+
+  Criteria to decide whether the sequence should be based on the data orchestration layer or the data processing layer:
+  - **Separation of concerns**: Putting all operations in the same item can make things harder to understand. A good indicator here is naming difficulty. If we struggle to find the name or if the name is too long in our opinion, this may be an indicator that we put too many operations into the single task on the data processing layer.
+  - **Maintainability**: Relying on data processing sequentiality is also challenging for maintenance. In cases of backfilling or automatic retries, we will recompute all successful tasks prior to the failed one.
+  - **Implementation effort**: The data orchestrator may provide different abstractions to perform common tasks out of the box, such as running a SQL query or executing an API call. If we combine all tasks into a single unit, we won’t be able to leverage this facility.
+
+  - **Consequences**
+    - Boundaries
+      - If we define boundaries incorrectly, execution time may grow too much or even impact other pipelines if we can’t scale the scheduler in our data orchestration logic. It’s therefore important to find a good balance between the scope and the number of tasks.
+      - A good rule of thumb that applies to both the data processing layer and the data orchestration layer is to think about **restart boundaries** (i.e., `what are the tasks that should be able to restart individually?`). Thus the tasks should fail individually and shouldn’t impact each other and capable to restart individually. 
+      - Regarding the data processing job, we’ll often put the boundary between the most compute-expensive operations.
+      - We can also reason for the logic separation in terms of transactions. If two or more operations must be performed as a single unit, it makes sense to keep them together.
+
+  - **Examples**
+    - The data orchestration layer
+      - Apache Airflow: Combining tasks consists of using the `>>` sign to express the dependency because the left side must run before the right one.
+    - The data processing level
+      - SQL
+      - API: python and Pyspark
+      - The idea here is to consider each previously defined variable as an input for the next step, until we reach the data writing stage.
+
+### Isolated Sequencer
+  There is needs to not include the dashboards dataset transformation directly in our data preparation pipeline. The data visualization team asked us to provide the cleansed and enriched dataset only. The data visualization team will handle the transformation on its own.
+
+  The problem statement introduces two pipelines where one provides data to another. The objective here is to find a way to combine physically isolated pipelines. As with the Local Sequencer, the most important concern is the identification of boundaries. 
+  
+  The easiest solution consists of dividing the pipeline in terms of consumers and providers, or teams. If our team provides the dataset to a different team, then naturally, we can draw a boundary to create two isolated pipelines.
+
+  We may also face a situation in which we are the provider and a consumer at the same time. This may happen when the processed dataset is used by other pipelines within our team’s scope to generate other datasets. 
+  
+  How to do it:
+  - To define boundaries in that context, we can analyze the complexity of the pipeline. 
+  - Finding the triggering mechanism. There are two strategies here: data based and task based.
+    - **The data-based strategy** is based on the `Readiness Marker pattern`. The data producer generates the dataset and a marker file to indicate it’s ready for processing. The consumer listens for this marker file and starts the work as soon as it detects the creation.
+    - **The task-based strategy**, the data producer doesn’t create a marker file. Instead, it directly triggers the pipeline responsible for consuming the generated dataset.
+
+  The two approaches have different couplings and shared responsibilities:
+  - Pipelines from the data-based solution are loosely coupled. The only requirement is to respect the marker file.
+  - The pipelines that form the task-based solution are tightly coupled. This means that, albeit physically separated, they can’t live alone.
+  - In the data-based approach, the dataset consumer has more freedom. It can even decide to use a different dataset without notifying the data provider.
+  - the task-based strategy, the consumer can’t simply decide to skip the dataset as the producer has the direct trigger mechanism.
+
+  <img src="/assets/images/data/data_pattern/data_pattern_24.webp" alt="drawing"/>
+
+  - **Consequences**
+    - Scheduling
+      - The task-based solution doesn’t impact just the evolution part. It is the scheduling frequency. The two pipelines should share the same schedule so that the producer can directly trigger the consumer. If that’s not the case, one of them will need to introduce more complexity.
+      - If it’s the producer, it will need to add a condition to skip the triggering part for some of the planned execution schedules. 
+      - If it’s the consumer, it’ll have to do the same but by adapting its schedule to the producer and running the pysical data processing only when needed.
+    - Communication
+      - The Isolated Sequencer addresses pipelines managed by different teams, among other things and need a good communication culture.
+      - Either as a producer or as a consumer, we can add a mechanism that checks if the condition on the other side didn’t change.
+  
+  - **Examples**
+    -  Apache Airflow
+
+
+
+
+
+
+
