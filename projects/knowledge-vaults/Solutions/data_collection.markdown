@@ -44,7 +44,6 @@ Solutions
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_7.webp" alt="drawing"/>
 8. Collection
   - [MBI](https://www.mbi-geodata.com/)
-    - 
   - [kependudukan_kemendagri_kelurahan]()
 
 ### POI
@@ -98,6 +97,8 @@ Solutions
 18. Earth Quake (Hazard, Risk)
     - [Earth quake GEM GLOBAL SEISMIC HAZARD MAP](https://www.globalquakemodel.org/gem)
     - [Seismic Hazard Maps of Indonesia](https://hazard.openquake.org/gem/)
+    - [BMKG]()
+      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_27.webp" alt="drawing"/>
 19. Bathymetry
 20. Hydrogeology Lithology Aquifer 
 21. Hydrogeology of Aquifer Productivity 
@@ -113,8 +114,10 @@ Solutions
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_3.webp" alt="drawing"/>
 4. Geothermal Resources
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_4.webp" alt="drawing"/>
-5. Active Fault
+5. Active Geological Fault
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_5.webp" alt="drawing"/>
+    - [BMKG]()
+      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_24.webp" alt="drawing"/>
 6. Forest Area
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_6.webp" alt="drawing"/>
 7. Continental Shelf Boundary
@@ -141,8 +144,12 @@ Solutions
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_17.webp" alt="drawing"/>
 18. Tsunami Geological Disaster
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_18.webp" alt="drawing"/>
+    - [BMKG]()
+      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_25.webp" alt="drawing"/>
 19. Liquefaction Vulnerability
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_19.webp" alt="drawing"/>
+    - [BMKG]()
+      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_26.webp" alt="drawing"/>
 20. Power Grid
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_20.webp" alt="drawing"/>
 
