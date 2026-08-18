@@ -18,16 +18,41 @@ LLM
 * Do not remove this line (it will not be displayed)
 {:toc}
 
+# Traditional Search vs Semantic Search
+  - traditional search understands words, but it doesn't understand their meaning. 
+  - It simply compares text. 
+  - This approach works well for exact keyword matching but struggles when different words have similar meanings. 
+
+# Semantic Search
+  - Semantic search works differently from compare text approach. Instead of matching words, it tries to understand the meaning behind the user's query. 
+  - Semantic search recognizes that: car, automobile, vehicle are closely related. Similarly, maintain, service, repair also have similar meanings.
+  - Because semantic search understands meaning, it returns much more relevant results. This is exactly why modern AI search systems feel much smarter than traditional keyword search. 
 
 # Vector Databases
-  - a Storage to stores the Embedding data (which are mathematical representations of meaning) in vector data type.
+  - a Storage to stores the Embedding data / vector (which are mathematical representations of meaning) in vector data type.
   - Powerful to solving semantic queries, ask about similarity and relation.
   - This DB acts as memory to get the data for LLM Model.
+  - Why not use a normal database:
+    - Relational databases are optimized for exact matching, sorting, filtering, and transactional operations. 
+    - They are not designed to perform high-speed similarity searches across millions of high-dimensional vectors. 
+    - Vector databases use specialized indexing algorithms that make similarity search incredibly fast.
+
+## Vector Space
+  - Like a plotting cities on a map, Embeddings work in a similar way. Instead of physical locations, each sentence occupies a position inside a mathematical space called `vector space`.
+  - In this space:
+    - Sentences with similar meanings are located close together. 
+    - Sentences with different meanings are farther apart. 
+
+# Embedding
+  - An embedding is a numerical representation of data. 
+  - Instead of storing text as words, an AI model converts the text into a long list of numbers.
+  - These numbers capture the meaning of the sentence. 
+  - This numerical representation is called an embedding vector. Two sentences with similar meanings produce vectors that are close together. Two unrelated sentences produce vectors that are farther apart. This is the key idea behind semantic search.
 
 ## Embedding Flow
   - <img src="/assets/images/llm_genai/vector_01.webp" alt="drawing" width="500"/>
 
-## Techical
+# Techical
   - **Stores**
     - Vectors
     - Metadata
@@ -46,6 +71,11 @@ LLM
     - Dot product
     - Scoring hybrid system
     - vector_score * 0.7 + keyword_score * 0.3
+
+## Measuring Similarity
+  - Once text has been converted into vectors, comparing two pieces of text becomes a mathematical problem. 
+  - Instead of comparing words, we compare vectors. 
+  - One of the most common techniques is called Cosine Similarity.  Cosine Similarity measures how similar two vectors are. If two vectors point in nearly the same direction, they are considered highly similar. If they point in different directions, they are less similar. 
 
 ## Cost of Vector DB
   - Large storage for storing vectors
@@ -127,6 +157,7 @@ LLM
   - Similarity matching
   - Fraud detection
   - Image and audio search
+  - Enterprise Knowledge Bases
 
 ## Vector DB tools
   - Dedicated DB Examples:
