@@ -39,20 +39,46 @@ Postgresql
   CREATE EXTENSION IF NOT EXISTS vector;
   ```
 
+## Verify the extension
+
+  ```sql
+  SELECT * FROM pg_extension WHERE extname = 'vector';
+  ```
+
+## Check available operators
+
+  ```sql
+  SELECT
+    opfname AS operator_family,
+    opcname AS operator_class
+  FROM pg_opclass
+  WHERE opcname LIKE 'vector%';
+  ```
+
 ## Creating a Table with a Vector Column
 
   ```sql
+  DROP TABLE IF EXISTS products;
   CREATE TABLE products (
     id          SERIAL PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT,
     description TEXT,
+    metadata    JSONB DEFAULT '{}',
     price       NUMERIC(8,2),
-    embedding   vector(1536)
+    embedding   vector(1536),
+    create_at   TIMESTAMP DEFAULT NOW()
   );
   ```
 
   The vector(1536) column holds one embedding per row. That number must match the output dimension of your model; adjust it accordingly if you use a different one.
+
+## Create index for faster similarity search (HNSW - recommended)
+  
+  ```SQL
+    CREATE INDEX ON products
+    USING hnsw (embedding vector_cosine_ops);
+  ```
 
 ## Insert the data
 
@@ -73,9 +99,11 @@ Postgresql
     name,
     category,
     description,
-    embedding <-> '[0.80, 0.19, 0.40]' AS distance
+    embedding <-> '[0.80, 0.19, 0.40]' AS distance,
+    1 - (embedding <-> '[0.80, 0.19, 0.40]') AS similarity,
+    (embedding <-> '[0.80, 0.19, 0.40]') * -1 AS similarity_inner_prod,
   FROM products
-  ORDER BY distance
+  ORDER BY distance -- smallest first = most similar
   LIMIT 3;
   ```
 
@@ -83,9 +111,9 @@ Postgresql
 
   | Operator | Metric                  | Notes                                     |
   | -------- | ----------------------- | ----------------------------------------- |
-  | `<->`    | L2 (Euclidean) distance | Straight-line gap between two vectors     |
-  | `<=>`    | Cosine distance         | Angle between vectors; ignores magnitude  |
-  | `<#>`    | Negative inner product  | Negate the result to get similarity       |
+  | `<->`    | L2 (Euclidean) distance | Straight-line gap between two vectors - Lower distance = more similar     |
+  | `<=>`    | Cosine distance         | Angle between vectors; ignores magnitude - Lower distance = more similar  |
+  | `<#>`    | Negative inner product  | Negate the result to get similarity (maximum similarity) - More negative = more similar (for normalized vectors)      |
   | `<+>`    | L1 (Manhattan) distance | Sum of absolute per-dimension differences |
   | `<~>`    | Hamming distance        | Binary vectors only                       |
   | `<%>`    | Jaccard distance        | Binary vectors only                       |
@@ -99,24 +127,31 @@ Postgresql
 
   Most LLM-based embedding APIs produce normalized or near-normalized vectors, where semantic meaning is encoded in direction, not magnitude. Because of this, cosine distance generally delivers more accurate semantic rankings for search and retrieval workloads.
 
-## Adding an Index for Performance
+## Indexing
 
   Without an index, every similarity query performs a full sequential scan: PostgreSQL computes the distance between the query vector and every row in the table. That is acceptable at ten thousand rows. At a million rows, query latency becomes a serious problem.
 
   Index types on pgvector:
 
   - **Hierarchical Navigable Small Worlds (HNSW)** constructs a **multi-layer graph** where each node connects to a bounded number of neighbors across multiple levels of resolution. HNSW gives the best speed-to-recall ratio of the two options, but constructing the graph requires more memory and takes longer than IVFFlat.
+    - Fast queries
+    - More memory
+    - Handles updates
+    - default setting
+
+    <img src="/assets/images/llm_genai/vector/pg_01.webp" alt="drawing" />
+
   - **Inverted File Flat (IVFFlat)** partitions the vector space into a **fixed number of clusters** during index construction, then at query time searches only the clusters closest to the query vector. It builds faster and uses less memory, but those cluster boundaries are fixed at build time. 
+    - Fast build
+    - Less memory
+    - Static data
+    - Less cost
 
-  ```sql
-  CREATE INDEX ON products
-  USING hnsw (embedding vector_cosine_ops)
-  WITH (m = 16, ef_construction = 64);
-  ```
+    <img src="/assets/images/llm_genai/vector/pg_02.webp" alt="drawing" />
 
-  where:
-  - m = the maximum connections per node in the graph
-  - ef_construction = controls the size of the candidate list during graph construction.
+  - Comparison
+    
+    - <img src="/assets/images/llm_genai/vector/pg_03.webp" alt="drawing" />
 
   **The operator class in your index must match the distance operator in your queries**. Always verify with EXPLAIN that the index is being used when needed.
 
@@ -129,9 +164,107 @@ Postgresql
   | `<~>`          | `bit_hamming_ops`    |
   | `<%>`          | `bit_jaccard_ops`    |
 
-## Filtering
+## HNSW Index
+  - Adding an hnsw Index
 
+    ```sql
+    CREATE INDEX products_hnsw_idx ON products
+    USING hnsw (embedding vector_cosine_ops)
+    WITH (m = 16, ef_construction = 64);
+    ```
+
+    where:
+    - m = the maximum connections per node in the graph
+    - ef_construction = controls the size of the candidate list during graph construction. with good default = 40.
+
+  - Check index size
+    
+    ```sql
+    SELECT
+        indexname,
+        pg_size_pretty(pg_relation_size(indexname::regclass)) AS size
+    FROM pg_indexes
+    WHERE tablename = 'documents';
+    ```
+
+  - Set search parameter
+  
+    ```sql
+    -- Higher = more accurate but slower
+    SET hnsw.ef_search = 100;
+    ```
+
+  - Verify index
+
+    ```sql  
+    EXPLAIN ANALYZE
+    SELECT content
+    FROM documents
+    ORDER BY embedding <=> (
+      SELECT array_agg(random())::vector(1536) 
+      FROM generate_series(1, 1536)
+    )
+    LIMIT 5;
+    ```
+
+## IVFFLAT Index
+  - Create IVFFlat index. lists = number of clusters (rule: sqrt(rows) to rows/1000). For 1M rows: lists = 1000.
+
+    ```sql
+    -- First, check how many rows you have
+    SELECT COUNT(*) FROM documents;
+    ```
+
+  - Create index with appropriate lists value
+    - For small datasets (< 1000 rows) - `WITH (lists = 10)`
+    - For medium datasets (1000-100K rows) - `WITH (lists = 100)`
+    - For large datasets (100K-10M rows) - `WITH (lists = 1000)`
+
+    ```sql
+    CREATE INDEX documents_embedding_ivfflat_idx ON documents
+    USING ivfflat (embedding vector_cosine_ops)
+    WITH (lists = 10);
+    ```
+
+  - Check index size
+
+    ```sql
+    SELECT
+        indexname,
+        pg_size_pretty(pg_relation_size(indexname::regclass)) AS size
+    FROM pg_indexes
+    WHERE tablename = 'documents';
+    ```
+
+  - Set probes for queries. Default is 1 and good default is 10, increase for accuracy.
+
+    ```sql
+    SET ivfflat.probes = 10;
+    ```
+
+  - Verify index is being used
+
+    ```sql
+    EXPLAIN ANALYZE
+    SELECT content
+    FROM documents
+    ORDER BY embedding <=> (
+      SELECT array_agg(random())::vector(1536) 
+      FROM generate_series(1, 1536)
+    )
+    LIMIT 5;
+    ```
+
+  - Rebuild Index: After inserting >10% new data, consider:
+
+    ```sql
+    REINDEX INDEX documents_embedding_ivfflat_idx;
+    ```
+
+## Filtering
   Similarity search becomes more useful when combined with ordinary SQL filters. pgvector integrates directly with PostgreSQL’s query planner, so you can combine vector ordering with WHERE clauses, JOINs, and aggregations without learning a separate query language.
+
+  > Filter FIRST, then rank by similarity
 
   ```sql
   SELECT
