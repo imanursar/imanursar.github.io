@@ -48,6 +48,8 @@ chromedb
   Semantic Search
   ```
 
+<img src="/assets/images/tools/chromadb/chromadb_01.webp" alt="drawing" />
+
 ## Library
 
   ```python
@@ -120,7 +122,7 @@ chromedb
 
   Or we could supply the embedding using pre-define from chromedb such as `text-embedding-3-small`.
 
-## What Does a Collection Store? 
+### What Does a Collection Store? 
   Every item stored inside a collection contains several pieces of information.
  
   Typically, each record consists of:
@@ -152,7 +154,7 @@ chromedb
 
   ChromaDB document IDs must be unique within a collection. If you try to `add()` an ID that already exists, you'll get an error. `delete_collection()` wipes the collection so we can start over — in your own projects, prefer `collection.update()` (covered later in this lecture) when you just want to change existing documents instead of re-inserting everything. 
 
-## Adding Documents
+## Add
 
   ```python
   collection.add(
@@ -199,6 +201,15 @@ chromedb
   )
   ```
 
+## upsert
+
+  ```python
+  collection.upsert( 
+      ids=["doc2"],
+      documents=["Python is widely used for AI and Machine Learning."]
+  )
+  ```
+
 ## View and count
 
   ```python
@@ -218,8 +229,7 @@ chromedb
   {'ids': ['doc11', 'doc21', 'doc31'], 'embeddings': None, 'documents': ['Python is widely used for AI and Machine Learning.', 'Vector databases store embeddings.', 'ChromaDB is an open-source vector database.'], 'uris': None, 'included': ['documents'], 'data': None, 'metadatas': None}
   ```
 
-
-## What Happens During Insertion? 
+### What Happens During Insertion? 
   ChromaDB performs several operations automatically. 
 
   ```mermaid
@@ -235,6 +245,16 @@ chromedb
   ```
 
   Once complete, the document becomes searchable.
+
+## Default embedding function
+
+  ```python
+  from chromadb.utils import embedding_functions
+
+  default_ef = embedding_functions.DefaultEmbeddingFunc
+
+  emb = default_ef("input text")
+  ```
 
 ## Why Persistent Storage Matters 
   Persistent storage is essential because it allows us to:
