@@ -20,7 +20,7 @@ LLM
 {:toc}
 
 # Vector Databases
-  - a Storage to stores the Embedding data / vector (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-eﬃcient queries based on similarity.
+  - specialized systems designed as a storage for managing and retrieving unstructured data to stores the Embedding data / vector (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-eﬃcient queries based on similarity.
   - Powerful to solving semantic queries, ask about similarity and relation.
   - This DB acts as memory to get the data for LLM Model.
 
@@ -84,7 +84,7 @@ LLM
   - **Schema-less Design**: don’t require schema - allowing more ﬂexibility in handling various data types and  structures
 
 # Embedding
-  - An embedding is a numerical representation of data. 
+  - An embedding is a numerical representation of data. This data are numerical representations derived from machine learning models, encapsulating the semantic meaning of unstructured data.
   - Embeddings  are vectors that encodes semantic similarities between the items they represent.
   - Instead of storing text as words, an AI model converts the text into a long list of numbers.
   - These numbers capture the meaning of the sentence. 
@@ -255,7 +255,7 @@ LLM
   | DATABASE | BEST FOR                                               | PRICING                            | SELF-HOST | Tier              |
   | -------- | ------------------------------------------------------ | ---------------------------------- | --------- | ----------------- |
   | pgvector | PostgreSQL Users, Hybrid Search, Simple Use Cases      | Free (Open Source) or Cloud        | ✔         |Enterpise Standard |
-  | Pinecone | Managed Service, Scalability, Ease of Use              | Tiered (Usage-based) / Free Tier   | ❌        |Managed Vector DB  |
+  | Pinecone | Managed Service, Scalability, Ease of Use, serverless  | Tiered (Usage-based) / Free Tier   | ❌        |Managed Vector DB  |
   | Chroma   | Local Development, Python Ecosystem, Rapid Prototyping | Free (Open Source) / Cloud (Soon)  | ✔         |Local dev Vector DB|
   | Qdrant   | High Performance, Rust-based, Filtering & Search       | Free (Open Source) / Cloud Managed | ✔         |Rising star        |
   | Weaviate | GraphQL, Modules (ML models), Production-ready         | Free (Open Source) / Cloud Managed | ✔         |Rising star        |
@@ -273,3 +273,9 @@ LLM
       C[Want managed?]-->G[Qdrant];
   ```
 
+  Answer these questions
+  - What's your scale? user activity, data storage.
+  - What's your ops capacity? who is managing the operation?
+  - What's your budget priority?
+  - Need data integration? is it standalone, or will join with other data or need ACID transaction?
+  - Lock-in tolerance?
