@@ -174,8 +174,12 @@ Postgresql
     ```
 
     where:
-    - m = the maximum connections per node in the graph
+    - m = the maximum connections per node in the graph.
+      - low (8-16): smaller index, faster builds.
+      - high (32-64): larger index, higher accuracy.
     - ef_construction = controls the size of the candidate list during graph construction. with good default = 40.
+      - low (32-64): Faster search
+      - high (200+): higher accuracy
 
   - Check index size
     
