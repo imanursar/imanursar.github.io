@@ -623,7 +623,10 @@ Solutions
   | Modern usage           | Hybrid search              | Hybrid search                |
 
 ## BM25 or Best Match 25
-  - Technic to search by frequency methods.
+  - Technic to search by frequency methods. Thus not good at synonyms and semantic meaning.
+  - This method uses:
+    - Exact matches
+    - Frequence and rare terms
   - BM25 scores a document against a query by looking at it from multiple directions. Its main components are:
     - TF term frequency component: asks how often the term appears in this specific document. BM25 applies a saturation function rather than just using the raw frequency. Because of this saturation function the score grows rapidly in the starting and then flattens.
     - IDF component: how difficult it is to find a term anywhere in the corpus. IDF gives rare terms more weightage. 
@@ -697,6 +700,12 @@ Solutions
     - OpenSearch
     - elasticsearch
     - Redis
+
+## Hybrid search
+  Vector seach could fail when:
+  - Searching specific code name that leads to **no semantic meaning**.
+  - Searching acronyms, exact names, or uncommon words - **model does's know abbreviations**.
+  - <img src="/assets/images/knowledge/llm/vector_11.webp" alt="drawing" width="500"/>
 
 ## Lost in the middle
   - The Problem that Hybrid Search Does Not Solve is how the model give attention to the chunks of information. althought LLM model reads all of them, its attention is not uniform across the context window. 
@@ -1150,6 +1159,13 @@ Solutions
     - Delivery the output (API interface)
 
   - <img src="/assets/images/knowledge/llm/model_16.webp" alt="drawing"  width="500"/>
+
+## Optimizing
+  - Reduce dimensions
+  - Quantization
+  - Batch queries
+  - Cache frequent queries
+  - Setup the right size without over-provision
 
 ---
 
