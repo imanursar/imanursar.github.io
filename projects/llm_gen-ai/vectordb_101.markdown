@@ -20,7 +20,7 @@ LLM
 {:toc}
 
 # Vector Databases
-  - specialized systems designed as a storage for managing and retrieving unstructured data to stores the Embedding data / vector (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-eﬃcient queries based on similarity.
+  - specialized systems designed as a storage for managing and retrieving unstructured data to stores the Embedding data / high-dimensional vectors (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-eﬃcient queries based on similarity.
   - Powerful to solving semantic queries, ask about similarity and relation.
   - This DB acts as memory to get the data for LLM Model.
 
@@ -126,26 +126,54 @@ LLM
 
 # Techical
   - **Stores**
-    - Vectors
+    - Vector types
     - Metadata
     - Original content
+  - **Schemas**
+    - Dimension
+    - columns
+    - Tables
+    - Keys (e.g. primary keys)
   - **Supports**
     - Fast similarity search
     - Filtering
     - Scalable retrieval
+    - Insert, delete and update process
+    - Relationships (e.g. graph)
+    - Monitoring and logging
+    - Authentication and Authorization
+    - Security, Data Encryption and Privacy Measures
+    - Auditing and Compliance Requirements
+    - Disaster Recovery and Backup Strategies
   - **Indexing**
     - Inverted Indexes
     - K-d Trees
     - Priority Queues
-    - Local Sensitive Hashing (LSH): Similar vectors have higher chances of sharing similar hash codes.
-    - Hierarchical Navigable Small World (HNSW): Organize vectors into difference layers with varying probabilities into a hierarchical graph structure. 
-    - Approximate Nearest Neighbor Oh Yeah (ANNOY): Organize high-dimensional data using binary tree.
+    - Local Sensitive Hashing (LSH)
+      - Similar vectors have higher chances of sharing similar hash codes.
+      - Enables efficient nearst-neighbor searches.
+      - Uses multiple hash functions for compact data representation.
+    - Hierarchical Navigable Small World (HNSW)
+      - Organize vectors into difference layers with varying probabilities into a hierarchical graph structure. 
+    - Approximate Nearest Neighbor Oh Yeah (ANNOY)
+      - Organize high-dimensional data using binary tree.
   - **Measure similarity with distance function**
     - Cosine similarity
     - Euclidean distance
     - Dot product
     - Scoring hybrid system
     - vector_score * 0.7 + keyword_score * 0.3
+  - **Optimizing**
+    - Partitioning
+    - Caching
+    - Scaling
+      - Horizontal scaling: adding more nodes/servers.
+        - Sharding
+        - Replication
+      - vertical scaling: upgrading hardware.
+    - Load balancing
+    - Asynchronous processing
+    - Indexing and query optimization
 
 ## Measuring Similarity
   - Once text has been converted into vectors, comparing two pieces of text becomes a mathematical problem. 
@@ -249,8 +277,6 @@ LLM
     - OpenSearch
     - elasticsearch
     - Redis
-  
-   Outer pipes Cell padding
 
   | DATABASE | BEST FOR                                               | PRICING                            | SELF-HOST | Tier              |
   | -------- | ------------------------------------------------------ | ---------------------------------- | --------- | ----------------- |
@@ -279,3 +305,13 @@ LLM
   - What's your budget priority?
   - Need data integration? is it standalone, or will join with other data or need ACID transaction?
   - Lock-in tolerance?
+
+## Analogy
+
+  | Context   | Vector                                       | Geometry                           |
+  | --------- | -------------------------------------------- | ---------------------------------- |
+  | Data type | storing a vector data (or list in python)    | Free (Open Source) or Cloud        |
+  | Pinecone  | Managed Service, Scalability, Ease of Use, serverless  | Tiered (Usage-based) / Free Tier   |
+  | Chroma    | Local Development, Python Ecosystem, Rapid Prototyping | Free (Open Source) / Cloud (Soon)  |
+  | Qdrant    | High Performance, Rust-based, Filtering & Search       | Free (Open Source) / Cloud Managed |
+  | Weaviate  | GraphQL, Modules (ML models), Production-ready         | Free (Open Source) / Cloud Managed |
