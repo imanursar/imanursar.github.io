@@ -20,7 +20,7 @@ LLM
 {:toc}
 
 # Vector Databases
-  - specialized systems designed as a storage for managing and retrieving unstructured data to stores the Embedding data / high-dimensional vectors (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-eﬃcient queries based on similarity.
+  - Specialized systems designed as a storage for managing and retrieving unstructured data to stores the Embedding data / high-dimensional vectors (which are mathematical representations of meaning) in vector data type or multi-dimensional space to perform high-efficient queries based on similarity.
   - Powerful to solving semantic queries, ask about similarity and relation.
   - This DB acts as memory to get the data for LLM Model.
 
@@ -85,7 +85,7 @@ LLM
 
 # Embedding
   - An embedding is a numerical representation of data. This data are numerical representations derived from machine learning models, encapsulating the semantic meaning of unstructured data.
-  - Embeddings  are vectors that encodes semantic similarities between the items they represent.
+  - Embeddings are vectors that encodes semantic similarities between the items they represent.
   - Instead of storing text as words, an AI model converts the text into a long list of numbers.
   - These numbers capture the meaning of the sentence. 
   - This numerical representation is called an embedding vector. Two sentences with similar meanings produce vectors that are close together. Two unrelated sentences produce vectors that are farther apart. This is the key idea behind semantic search.
