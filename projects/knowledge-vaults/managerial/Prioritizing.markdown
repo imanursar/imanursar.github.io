@@ -85,10 +85,10 @@ Score tasks with formula:
 
 Higher score = Higher priority
 
-R = # people it'll affect
-I = How much it'll help
-C = How sure you are
-E = How hard it'll be
+- R = # people it'll affect
+- I = How much it'll help
+- C = How sure you are
+- E = How hard it'll be
 
 ## The ABCDE Method (For Teams)
 
