@@ -285,7 +285,7 @@ LLM
   | Chroma   | Local Development, Python Ecosystem, Rapid Prototyping | Free (Open Source) / Cloud (Soon)  | ✔         |Local dev Vector DB|
   | Qdrant   | High Performance, Rust-based, Filtering & Search       | Free (Open Source) / Cloud Managed | ✔         |Rising star        |
   | Weaviate | GraphQL, Modules (ML models), Production-ready         | Free (Open Source) / Cloud Managed | ✔         |Rising star        |
-  | Milvus   | Large-scale Deployments, High Throughput, Feature-rich | Free (Open Source) / Cloud Managed | ✔         |Rising star        |
+  | Milvus   | Large-scale Deployments, High Throughput, Feature-rich | Free (Open Source) / Cloud Managed | ✔         |Enterpise level    |
 
 ## Vector DB Decision Framework
 
@@ -308,10 +308,13 @@ LLM
 
 ## Analogy
 
-  | Context   | Vector                                       | Geometry                           |
-  | --------- | -------------------------------------------- | ---------------------------------- |
-  | Data type | storing a vector data (or list in python)    | Free (Open Source) or Cloud        |
-  | Pinecone  | Managed Service, Scalability, Ease of Use, serverless  | Tiered (Usage-based) / Free Tier   |
-  | Chroma    | Local Development, Python Ecosystem, Rapid Prototyping | Free (Open Source) / Cloud (Soon)  |
-  | Qdrant    | High Performance, Rust-based, Filtering & Search       | Free (Open Source) / Cloud Managed |
-  | Weaviate  | GraphQL, Modules (ML models), Production-ready         | Free (Open Source) / Cloud Managed |
+  | Context                     | vector                                                 | geometry                                                    |
+  | --------------------------- | ------------------------------------------------------ | ----------------------------------------------------------- |
+  | data basic                  | unstructured data                                      | unstructured data                                           |
+  | data type                   | storing a vector data                                  | storing a geometry data                                     |
+  | how it store (in python)    | commonly store as list in python                       | commonly store as geom or list in python                    |
+  | how data visualized         | [0.12, 0.86, 0.32, 0.1, 0.3 ..., 0.23]                 | POLYGON ((8.45950 13.82035, 8.47341 13.83227))              |
+  | Objects type                | dense and sparse                                       | point, polygon, and multipolygon                            |
+  | what element that data hold | numerical data in float data type                      | numerical data in float data type                           |
+  | meaning                     | store position of text in matematical space            | store position of thing in space                            |
+  | how it store in DB          | \- Combine with transactional data using vector extension <br>\- Store in single file at folder in local <br>\- Dedicated database| \- combine with transactional data using pg_geometry extension <br>\- Store in single folder as fgdb <br>\- Dedicated database |
