@@ -37,15 +37,11 @@ chromedb
 ## Framework
 
   ```mermaid
-  Document
-    ↓
-  Chunking
-    ↓
-  Embeddings
-    ↓
-  ChromaDB
-    ↓
-  Semantic Search
+  flowchart TD;
+      A[Document]-->B[Splitting];
+      B-->C[Embeddings];
+      C-->D[ChromaDB];
+      D-->E[Semantic Search];
   ```
 
 <img src="/assets/images/tools/chromadb/chromadb_01.webp" alt="drawing" />
@@ -75,7 +71,7 @@ chromedb
 ## Collections
   A collection is one of the most important concepts in ChromaDB. Think of a collection as being similar to a table in a relational database.
 
-  ```mermaid
+  ```
   Database
     |
     +-- Books
@@ -233,15 +229,11 @@ chromedb
   ChromaDB performs several operations automatically. 
 
   ```mermaid
-  Document
-    ↓
-  Generate Embedding 
-    ↓ 
-  Store Vector 
-    ↓ 
-  Store Document 
-    ↓
-  Store Metadata
+  flowchart TD;
+      A[Document]-->B[Generate Embedding];
+      B-->C[Store Vector];
+      C-->D[Store Document];
+      D-->E[Store Metadata];
   ```
 
   Once complete, the document becomes searchable.
