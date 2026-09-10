@@ -318,3 +318,6 @@ LLM
   | what element that data hold | numerical data in float data type                      | numerical data in float data type                           |
   | meaning                     | store position of text in matematical space            | store position of thing in space                            |
   | how it store in DB          | \- Combine with transactional data using vector extension <br>\- Store in single file at folder in local <br>\- Dedicated database| \- combine with transactional data using pg_geometry extension <br>\- Store in single folder as fgdb <br>\- Dedicated database |
+
+
+  
