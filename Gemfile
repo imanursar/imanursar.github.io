@@ -18,6 +18,8 @@ source "https://rubygems.org"
 # comment when pushing updates to github
 # gem "minima", "~> 2.5"
 
+gem "jekyll"
+gem "webrick"
 gem "just-the-docs"
 # gem 'jekyll-spaceship'
 gem 'jekyll-toc'
