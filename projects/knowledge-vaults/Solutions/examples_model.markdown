@@ -205,9 +205,9 @@ Solutions
     - <img src="/assets/images/knowledge/solution/cases/cases_sd_02.webp" alt="drawing" width="300"/>
 3. **Route-based combinatorial optimization problems**
     - **Traveling Sales Problem (TSP)**
-	<img src="/assets/images/knowledge/solution/cases/cases_tsp_01.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_tsp_01.webp" alt="drawing" width="300"/>
     - **Vehicle Routing Problem (VRP)**
-	<img src="/assets/images/knowledge/solution/cases/cases_tsp_02.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_tsp_02.webp" alt="drawing" width="300"/>
     - **Deep Reinforcement Learning**
        - Constrained sequential decision-making task and implementing policy-gradient methods (REINFORCE) for heterogeneous fleets with time window constraints.
 
@@ -324,13 +324,13 @@ Solutions
     - <img src="/assets/images/knowledge/solution/cases/cases_ano_01.webp" alt="drawing" width="300"/>
 2. **Proximity and Clustering**
     - K-Nearest Neighbors (KNN)
-		<img src="/assets/images/knowledge/solution/cases/cases_ano_02.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_ano_02.webp" alt="drawing" width="300"/>
 3. **Time Series**
     - STL Decomposition
-		<img src="/assets/images/knowledge/solution/cases/cases_ano_03.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_ano_03.webp" alt="drawing" width="300"/>
 4. **Machine Learning**
     - Isolation Forest Model
-		<img src="/assets/images/knowledge/solution/cases/cases_ano_04.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_ano_04.webp" alt="drawing" width="300"/>
 
 ## Influential Features
 1. **Feature Importance**
@@ -413,7 +413,7 @@ Solutions
     - Object Detection - Counting
        - <img src="/assets/images/knowledge/solution/cases/cases_cover_01.webp" alt="drawing" width="300"/>
     - Segmentation - cover area
-		<img src="/assets/images/knowledge/solution/cases/cases_cover_02.webp" alt="drawing" width="300"/>
+       - <img src="/assets/images/knowledge/solution/cases/cases_cover_02.webp" alt="drawing" width="300"/>
     - Distribution and Density
        - Forest Canopy Density - `AVI + SSI + BI = Vegetation Density`
     - Forcasting Area
@@ -450,7 +450,7 @@ Solutions
        - Market Expansion Index
        - Market Sharing Index
        - Livability Index
-		<img src="/assets/images/knowledge/solution/cases/livability_index_01.webp" alt="drawing" width="300"/>
+         - <img src="/assets/images/knowledge/solution/cases/livability_index_01.webp" alt="drawing" width="300"/>
     - Hyperscale Infrastructure Intelligence Index
        - Electricity resources accessibility
        - High-voltage transmission adjacency
