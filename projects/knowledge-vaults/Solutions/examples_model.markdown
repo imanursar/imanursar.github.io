@@ -19,46 +19,47 @@ Solutions
 
 ## Linear Optimization
 1. **Invention of intensity modulated radiation therapy (IMRT)**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_01.webp" alt="drawing" width="300"/>
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_02.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_01.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_02.webp" alt="drawing" width="300"/>
 2. **Maximize revenue**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_03.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_03.webp" alt="drawing" width="300"/>
 3. **Price and Demand Optimization**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_04.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_04.webp" alt="drawing" width="300"/>
 4. **Transportation Problem (Distribution Network)**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_05.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_05.webp" alt="drawing" width="300"/>
 5. **Assignment Problem**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_06.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_06.webp" alt="drawing" width="300"/>
 6. **Transshipment problem**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_07.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_07.webp" alt="drawing" width="300"/>
 7. **Combinational Problem**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_08.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_08.webp" alt="drawing" width="300"/>
 8. **Scenario Analysis**
-   - <img src="/assets/images/knowledge/solution/cases/cases_lp_09.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_09.webp" alt="drawing" width="300"/>
 
 ## Integer Optimization
 1. **Scheduling**
-   - <img src="/assets/images/knowledge/solution/cases/sch_01.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/sch_01.webp" alt="drawing" width="300"/>
 2. **Knapsack problem**
 
 ## Spatial Development and Optimization
 1. **Location Optimization Using Weighted Parameters**
-   - Street network isochrones
-   - Population Density (35%)
-     - <img src="/assets/images/knowledge/solution/cases/cases_solo_01.webp" alt="drawing" width="300"/>
-   - Accessibility weighted (25%)
-   - Coverage gaps (15%)
-   - Constain areas - Competitor and own-brand (25% if absence)
+    - Street network isochrones
+    - Population Density (35%)
+    	<img src="/assets/images/knowledge/solution/cases/cases_solo_01.webp" alt="drawing" width="300"/>
+    - Accessibility weighted (25%)
+    - Coverage gaps (15%)
+    - Constain areas - Competitor and own-brand (25% if absence)
 2. **Real World Facility Location Problem**
-   - Location Set Covering Problem (LSCP)
-     - <img src="/assets/images/knowledge/solution/cases/cases_lscp_01.webp" alt="drawing" width="300"/>
-     - <img src="/assets/images/knowledge/solution/cases/cases_lscp_02.webp" alt="drawing" width="300"/>
-   - Maximal Coverage Location Problem (MCLP)
-     - <img src="/assets/images/knowledge/solution/cases/cases_mclp.webp" alt="drawing" width="300"/>
-   - P-Center Problem
-     - <img src="/assets/images/knowledge/solution/cases/cases_pc.webp" alt="drawing" width="300"/>
-   - P-Median Problem
-     - <img src="/assets/images/knowledge/solution/cases/cases_pm.webp" alt="drawing" width="300"/>
+	- Location Set Covering Problem (LSCP)
+		<img src="/assets/images/knowledge/solution/cases/cases_lscp_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_lscp_02.webp" alt="drawing" width="300"/>
+    - Maximal Coverage Location Problem (MCLP)
+		<img src="/assets/images/knowledge/solution/cases/cases_mclp.webp" alt="drawing" width="300"/>
+    - P-Center Problem
+		<img src="/assets/images/knowledge/solution/cases/cases_pc.webp" alt="drawing" width="300"/>
+    - P-Median Problem
+		<img src="/assets/images/knowledge/solution/cases/cases_pm.webp" alt="drawing" width="300"/>
+		
 3. **Asset Management and Optimizing Development**
    1. **Land and Infrastructure Management**
       - Slope Area
@@ -82,10 +83,10 @@ Solutions
    8. **Realtime report**
    9. **Security and quality report and analysis**
 5. **Visual Management**
-	1. **Worker Activity and Safety**
+   1. **Worker Activity and Safety**
 6. **Routing Management**
-   - **Scheduling**
-   - **Safety**
+   1. **Scheduling**
+   2. **Safety**
 7. **Risk Management**
    1. **Disaster Management**
    2. **Realtime Feedback**
@@ -93,49 +94,49 @@ Solutions
 8. **Sustainability Management**
    1. **Recovery**
    2. **Revegetation**
-9. **Spatial hypotesis and autocorrelation Analysis** 
-   - <img src="/assets/images/knowledge/solution/cases/cases_sa_01.webp" alt="drawing" width="300"/>
-   - <img src="/assets/images/knowledge/solution/cases/cases_sa_02.webp" alt="drawing" width="300"/>
+9.  **Spatial hypotesis and autocorrelation Analysis** 
+    - <img src="/assets/images/knowledge/solution/cases/cases_sa_01.webp" alt="drawing" width="300"/>
+	- <img src="/assets/images/knowledge/solution/cases/cases_sa_02.webp" alt="drawing" width="300"/>
 10. **Distribution and Density**
     - Heatmap Distribution
-      - <img src="/assets/images/knowledge/solution/cases/map_adv_8.gif" alt="drawing" width="300"/>
-    - H3 Spatial Index
-      - <img src="/assets/images/knowledge/solution/cases/cases_h3_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/map_adv_8.gif" alt="drawing" width="300"/>
     - Topological Measures
-      - <img src="/assets/images/knowledge/solution/cases/cases_topo_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_topo_01.webp" alt="drawing" width="300"/>
+    - Indexing H3-Spatial
+		<img src="/assets/images/knowledge/solution/cases/cases_h3_01.webp" alt="drawing" width="300" height="300"/>
 11. **Regionalization and Coverage Area**
     - Covering Radius Method
     - Voronoi Diagram
-      - <img src="/assets/images/knowledge/solution/cases/cases_voro_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_voro_01.webp" alt="drawing" width="300"/>
     - Clustering and Segmentation
     - Isochrone
     - Location Revenue Prediction
     - Colopriming Analysis (visual diagnostic)
-      - Hexagon grid
+    - Hexagon grid
 12. **Spatial Regression Prediction**
     - <img src="/assets/images/knowledge/solution/cases/regression_01.webp" alt="drawing" width="300"/>
 13. **Species Distribution Modeling (SDMs)**
     - Unsupervised Learning
-      - <img src="/assets/images/knowledge/solution/cases/sdm_01.webp" alt="drawing" width="300"/>
+    	<img src="/assets/images/knowledge/solution/cases/sdm_01.webp" alt="drawing" width="300"/>
     - Supervised Learning
-      - <img src="/assets/images/knowledge/solution/cases/sdm_02.webp" alt="drawing" width="300"/>
-    - Maxent Model
-      - <img src="/assets/images/knowledge/solution/cases/sdm_03.webp" alt="drawing" width="300"/>
+    	<img src="/assets/images/knowledge/solution/cases/sdm_02.webp" alt="drawing" width="300"/>
+    - Maxent Modeling
+    	<img src="/assets/images/knowledge/solution/cases/sdm_03.webp" alt="drawing" width="300"/>
 14. **Spatial Interpolation**
     - Nearest ND Interpolator
-      - <img src="/assets/images/knowledge/solution/cases/cases_inter_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_inter_01.webp" alt="drawing" width="300"/>
     - Inverse Distance Weighted (IDW) interpolation
-      - <img src="/assets/images/knowledge/solution/cases/cases_inter_02.webp" alt="drawing" width="300"/>
+    	<img src="/assets/images/knowledge/solution/cases/cases_inter_02.webp" alt="drawing" width="300"/>
     - Kriging-based interpolation
-      - <img src="/assets/images/knowledge/solution/cases/cases_inter_03.webp" alt="drawing" width="300"/>
+    	<img src="/assets/images/knowledge/solution/cases/cases_inter_03.webp" alt="drawing" width="300"/>
 15. **Geocoding**
     - <img src="/assets/images/knowledge/solution/cases/geocoding.webp" alt="drawing" width="300"/>
 16. **Analyze Distance and Attractiveness**
-    - Huff Model
-      - <img src="/assets/images/knowledge/solution/cases/Huff_Gravity_Model.webp" alt="drawing" width="300"/>
+    - Analyze Distance using Huff Model
+    	<img src="/assets/images/knowledge/solution/cases/Huff_Gravity_Model.webp" alt="drawing" width="300"/>
 17. **Change Predition at Spatial and Temporal**
     - Cellular Automata-Markov Model
-      - <img src="/assets/images/knowledge/solution/cases/camarkov_01.gif" alt="drawing" width="300"/>
+    	<img src="/assets/images/knowledge/solution/cases/camarkov_01.gif" alt="drawing" width="300"/>
 
 ## Propensity / Churn / CLTV
 1. **Buy Till You Die (BTYD) Models**
@@ -163,31 +164,31 @@ Solutions
    - Eclat
    - FP-Growth
 2. **Classic algorithms**
-	- Baseline
-	- NormalPredictor
-	- SVD and SVD++ algorithm
-	- Non-negative Matrix Factorization
-	- Stochastic Gradient Descent (SGD)
-	- Weighted Alternating Least Squares (WALS)
-	- SlopeOne algorithm
-	- WARP (Weighted Approximate-Rank Pairwise)
-	- BPR (Bayesian Personalized Ranking)
+   - Baseline
+   - NormalPredictor
+   - SVD and SVD++ algorithm
+   - Non-negative Matrix Factorization
+   - Stochastic Gradient Descent (SGD)
+   - Weighted Alternating Least Squares (WALS)
+   - SlopeOne algorithm
+   - WARP (Weighted Approximate-Rank Pairwise)
+   - BPR (Bayesian Personalized Ranking)
 3. **Machine Learning**
-	- Classification models
-	- Logistic regression
-	- Logistic matrix factorization
-	- SVM
-	- Tree based model
-	- Ensemble model
-	- LightGBM / XGBoost
-	- Clustering techniques
-	- K-means clustering
-	- Co-clustering
+   - Classification models
+   - Logistic regression
+   - Logistic matrix factorization
+   - SVM
+   - Tree based model
+   - Ensemble model
+   - LightGBM / XGBoost
+   - Clustering techniques
+   - K-means clustering
+   - Co-clustering
 4. **Deep Learning**
-	- Neural Collaborative Filtering
-	- Wide & Deep
-	- Two-Tower Models (User tower + Item tower)
-	- Transformer-based session models
+   - Neural Collaborative Filtering
+   - Wide & Deep
+   - Two-Tower Models (User tower + Item tower)
+   - Transformer-based session models
 5. **Graph-Recommendation Engine model**
    - Graph-based recommender
 6. **Learning-to-Rank Models**
@@ -202,12 +203,12 @@ Solutions
 2. **Optimization Problem**
    - <img src="/assets/images/knowledge/solution/cases/cases_sd_02.webp" alt="drawing" width="300"/>
 3. **Route-based combinatorial optimization problems**
-   - **TSP**
-     - <img src="/assets/images/knowledge/solution/cases/cases_tsp_01.webp" alt="drawing" width="300"/>
-   - **VSP**
-     - <img src="/assets/images/knowledge/solution/cases/cases_tsp_02.webp" alt="drawing" width="300"/>
-     - **Deep Reinforcement Learning**
-       - Constrained sequential decision-making task and implementing policy-gradient methods (REINFORCE) for heterogeneous fleets with time window constraints.
+   - **Traveling Sales Problem (TSP)**
+		<img src="/assets/images/knowledge/solution/cases/cases_tsp_01.webp" alt="drawing" width="300"/>
+   - **Vehicle Routing Problem (VRP)**
+		<img src="/assets/images/knowledge/solution/cases/cases_tsp_02.webp" alt="drawing" width="300"/>
+   - **Deep Reinforcement Learning**
+     - Constrained sequential decision-making task and implementing policy-gradient methods (REINFORCE) for heterogeneous fleets with time window constraints.
 
 ## Inventory and Warehouse
 1. **ABC analysis**
@@ -265,7 +266,7 @@ Solutions
      - FractStream
      - FC
 2. **RFM (recency, frequency, monetary)**
-  - <img src="/assets/images/knowledge/solution/cases/cases_p_01.webp" alt="drawing" width="300"/>
+   - <img src="/assets/images/knowledge/solution/cases/cases_p_01.webp" alt="drawing" width="300"/>
 3. **Hyperpersonalized marketing campaigns**
 
 ## Marketing budget allocation
@@ -278,19 +279,6 @@ Solutions
 1. **Crawling POI data**
 2. **Market sharing**
 3. **Market expansion and competition**
-
-## Anomaly and Fraud Detection
-1. **Statistical Tests and Visualization**
-   - <img src="/assets/images/knowledge/solution/cases/cases_ano_01.webp" alt="drawing" width="300"/>
-2. **Proximity and Clustering**
-   - KNN
-     - <img src="/assets/images/knowledge/solution/cases/cases_ano_02.webp" alt="drawing" width="300"/>
-3. **Time Series**
-   - STL Decomposition
-     - <img src="/assets/images/knowledge/solution/cases/cases_ano_03.webp" alt="drawing" width="300"/>
-4. **Machine Learning**
-   - Isolation Forest
-     - <img src="/assets/images/knowledge/solution/cases/cases_ano_04.webp" alt="drawing" width="300"/>
 
 ## Behavioral Modeling
 1. **Survival Analysis**
@@ -323,7 +311,27 @@ Solutions
    - panel data methods
    - mixed effects models
 
-## Ifluential Features
+## Impact measurement - A/B test analysis
+1. **Difference-in-differences (DID)**
+   - <img src="/assets/images/knowledge/solution/cases/cases_ab_did_01.webp" alt="drawing" width="300"/>
+   - <img src="/assets/images/knowledge/solution/cases/cases_ab_did_02.webp" alt="drawing" width="300"/>
+2. **Regression Discontinuity Design (RDD)**
+   - <img src="/assets/images/knowledge/solution/cases/cases_ab_rdd_01.webp" alt="drawing" width="300"/>
+
+## Anomaly and Fraud Detection
+1. **Statistical Tests and Visualization**
+   - <img src="/assets/images/knowledge/solution/cases/cases_ano_01.webp" alt="drawing" width="300"/>
+2. **Proximity and Clustering**
+   - K-Nearest Neighbors (KNN)
+		<img src="/assets/images/knowledge/solution/cases/cases_ano_02.webp" alt="drawing" width="300"/>
+3. **Time Series**
+   - STL Decomposition
+		<img src="/assets/images/knowledge/solution/cases/cases_ano_03.webp" alt="drawing" width="300"/>
+4. **Machine Learning**
+   - Isolation Forest Model
+		<img src="/assets/images/knowledge/solution/cases/cases_ano_04.webp" alt="drawing" width="300"/>
+
+## Influential Features
 1. **Feature Importance**
    - Machine Learning + Interpretable model
 2. **Statistic Test**
@@ -331,6 +339,10 @@ Solutions
 ## Scoring
 1. **Linear Regression**
 2. **Beta weight**
+3. **Multi-Criteria Decision Analysis (MCDA)**
+   - <img src="/assets/images/knowledge/solution/cases/mcda_06.webp" alt="drawing" width="300"/>
+4. **Multi-Criteria Decision Analysis (MCDA) + Enter Entropy Weight Method (EWM)**
+   - <img src="/assets/images/knowledge/solution/cases/cases_mcda_ewm_01.webp" alt="drawing" width="300"/>
 
 ## Credit Scoring
 1. **Scoring type A**
@@ -390,17 +402,17 @@ Solutions
 9.  **Image Captioning**
 10. **Pose Estimation**
 11. **Face Detection**
-   - Facial Recognition
-   - Emotion Detection
+    - Facial Recognition
+    - Emotion Detection
 12. **Anomaly Detection**
 13. **Optical Character Recognition (OCR)**
 
 ## GeoAI
 1. **Vegetation and Natural Environment**
    - Object Detection - Counting
-     - <img src="/assets/images/knowledge/solution/cases/cases_cover_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_cover_01.webp" alt="drawing" width="300"/>
    - Segmentation - cover area
-     - <img src="/assets/images/knowledge/solution/cases/cases_cover_02.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_cover_02.webp" alt="drawing" width="300"/>
    - Distribution and Density
      - Forest Canopy Density - `AVI + SSI + BI = Vegetation Density`
    - Forcasting Area
@@ -420,7 +432,7 @@ Solutions
    - Accessibility
    - Spatial-Temporal Development
    - Encroachment - Change Detection
-     - <img src="/assets/images/knowledge/solution/cases/cases_enc_01.webp" alt="drawing" width="300"/>
+		<img src="/assets/images/knowledge/solution/cases/cases_enc_01.webp" alt="drawing" width="300"/>
    - Zoning and Regulatory Mapping
    - Property Value Mapping (Predict House Price)
      - House photos (interior/exterior visuals)
@@ -428,7 +440,7 @@ Solutions
      - Human mobility patterns (visitor foot traffic and travel times)
      - Socioeconomic indicators (census level demographics)
      - Spatial location and proximity to POIs
-     - <img src="/assets/images/knowledge/solution/cases/cases_hp_01.webp" alt="drawing" width="300"/>
+  	<img src="/assets/images/knowledge/solution/cases/cases_hp_01.webp" alt="drawing" width="300"/>
    - POI Prediction for Business Opportunity Mapping
    - Service Area Optimization
    - Geotagged social media activity
@@ -437,25 +449,25 @@ Solutions
      - Market Expansion Index
      - Market Sharing Index
      - Livability Index
-       - <img src="/assets/images/knowledge/solution/cases/livability_index_01.webp" alt="drawing" width="300"/>
-     - Hyperscale Infrastructure Intelligence Index
-       - Electricity resources accessibility
-         - High-voltage transmission adjacency
-         - Substation and generation proximity
-       - Land-use and protected areas
-         - Urban or Human Settlement
-         - Water area
-         - Forest area
-       - Terrain and topography
-       - Climate exposure and cooling risk
+		<img src="/assets/images/knowledge/solution/cases/livability_index_01.webp" alt="drawing" width="300"/>
+   - Hyperscale Infrastructure Intelligence Index
+     - Electricity resources accessibility
+       - High-voltage transmission adjacency
+       - Substation and generation proximity
+   - Land-use and protected areas
+     - Urban or Human Settlement
+     - Water area
+     - Forest area
+   - Terrain and topography
+   - Climate exposure and cooling risk
    - **Spatial Regression Prediction**
    - **Monitoring of Sustainable Development**
    - **Species Distribution Modeling (SDMs)**
    - **Analyze Distance and Attractiveness**
    - **Change Detection and Predition at Spatial and Temporal**
-       - Urban Sprawl
-         - ML / DL + Cellular Automata
-       - Post-disaster event (damage assessment)
+     - Urban Sprawl
+       - ML / DL + Cellular Automata
+     - Post-disaster event (damage assessment)
 3. **Mining**
    - **Detection and Segmentation mining pits and tailing dams**
    - **Interactive querying data**
@@ -466,43 +478,48 @@ Solutions
      - Machine Learning
      - Lithological and Structural Mapping
      - Iron Oxide and Clay Mapping
-   - **Alteration Zone Mapping**
+    - **Alteration Zone Mapping**
      - Mixture-Tuned Matched Filtering (MTMF)
      - Spectral Angle Mapper (SAM)
-   - **Geochemical Anomaly Detection**
+    - **Geochemical Anomaly Detection**
 4. **Improvements**
    - Automated cloud and shadow mask segmentation
    - Measurement distance to specific object or area - create grids
 
 ## LLM and Gen AI
-1. **Telecomunication**
+- **Telecomunication**
    - Voice identification for prioritization
    - Chatbot for Q&A
    - Autonomous assistants
    - Predict network issues
    - Cloud management
    - Network Anamolies Resolution
-     - Reduce manual effort
-     - Speed up fault detection
-     - Improve network reliability
-     - Real-time recommendations
-     - Address problems before they escalate
-     - Ensuring a more stable and efficient network
+   - Reduce manual effort
+   - Speed up fault detection
+   - Improve network reliability
+   - Real-time recommendations
+   - Address problems before they escalate
+   - Ensuring a more stable and efficient network
    - Network Optimization
    - Capacity Management
    - Real-time Issue Detection
-2. **Marketing** 
+- **Marketing** 
    - Targeted offers and recommendations (hyper-Personalization)
    - Generates personalized messages
    - Automated Content Creation
-3. **RAG**
+- **RAG**
    - Knowledge Management
    - Customer Support (FAQs, User Manuals and troubleshooting guides)
    - Research Assistance
    - Content Curation
    - Summarisation
    - Language Translation
-
+- **LLM from SQL**
+{% include video.html src="/assets/videos/ask_the_database.mp4" %}
+- **PII masking**
+{% include video.html src="/assets/videos/detect_PII.mp4" %}
+- **RAG**
+{% include video.html src="/assets/videos/ask_with_contexts.mp4" %}
 
 
 
