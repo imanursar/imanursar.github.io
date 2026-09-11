@@ -45,17 +45,18 @@ Solutions
   - [kodepos](https://kodepos.posindonesia.co.id/)
   - [nomor.net](https://nomor.net/)
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_8.webp" alt="drawing"/>
-9.  Collection
+9. Collection
   - [MBI](https://www.mbi-geodata.com/)
   - [kependudukan_kemendagri_kelurahan]()
 
 ### POI
 1. Collection
-  - [OpenStreetMap Data](geofabrik.de)
-  - [Infrastructure](https://overturemaps.org/)
-  - [Places](https://overturemaps.org/)
-  - [POI](https://maps.google.com/)
-  - <img src="/assets/images/knowledge/solution/data_collection/dc_3_1.webp" alt="drawing"/>
+   - [OpenStreetMap Data](geofabrik.de)
+   - [Infrastructure](https://overturemaps.org/)
+   - [Places](https://overturemaps.org/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_3_1_1.webp" alt="drawing"/>
+   - [POI](https://maps.google.com/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_3_1_4.webp" alt="drawing"/>
 
 ### Weather
 1. [Weather Himawari Monitor]()
@@ -77,6 +78,7 @@ Solutions
 4. Plantation
 5. Building
    - [buildings](https://overturemaps.org/)
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5.webp" alt="drawing"/>
    - [building parts](https://overturemaps.org/)
    - [Infrastructure](https://overturemaps.org/)
    - [OpenStreetMap Data](geofabrik.de)
@@ -169,7 +171,9 @@ Solutions
 ### Network Utility
 1. Road
    - [Connectors](https://overturemaps.org/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_8_1_1.webp" alt="drawing"/>
    - [Segments](https://overturemaps.org/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_8_1_2.webp" alt="drawing"/>
    - [OpenStreetMap Data](geofabrik.de)
 2. Energy
 3. Animal Migration
