@@ -51,7 +51,27 @@ Because of this formulation, the definition of both the landscape and the backgr
 
 in this project, We'll use this model for extracting raster data from points and polygons, assigning sample weights based on sample density, and creating spatially-explicit train/test data, while also showing general patterns
 
+## **ELI5 version**
+- MaxEnt estimates a probability distribution that:
+  - Matches known presence data
+  - Is otherwise as uniform (maximum entropy) as possible
 
+- You only know where animals were seen, not where they are absent.
+  - Look at environments where they exist
+  - Assume:
+    - > They prefer these conditions
+  - Predict other places with similar conditions
+  - Without making extra assumptions.
+
+- MaxEnt has advantages:
+  - Works with presence-only data
+  - Handles incomplete datasets
+  - Performs well with small samples
+  - The output as Habitat suitability map (0–1 probability)
+
+- MaxEnt's weakness:
+  - Sensitive to sampling bias
+  - Assumes equilibrium (species fully occupies niche)
 
 ## **Data Preparation**
 ### **Load dataset**

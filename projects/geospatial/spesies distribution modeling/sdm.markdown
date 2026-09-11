@@ -36,6 +36,12 @@ SDMs are invaluable tools for:
 
 With the growing availability of high-resolution geospatial and climate data, SDMs have become more powerful and accessible than ever—especially with machine learning techniques that enhance prediction accuracy. This page explores a practical SDM workflow using Python and Scikit-Learn, demonstrating how data-driven modeling can map species suitability across landscapes and inform environmental decision-making.
 
+### **ELI5 version**
+- Species Distribution Modeling (SDM) is about estimating where a species can live based on environmental conditions.
+- Learns relationship between environment and occurrence.
+- Trying to figure out where a specific species can grow or live.
+- > Find the relationship between where species are found and the environment, then predict where else they could exist.
+
 ### **How SDMs Work: Linking Species to Their Environment**
 At the core of SDMs is a simple yet powerful idea:
 
@@ -52,6 +58,68 @@ By analyzing where a species has been observed and linking those locations to cl
 - **Model Training & Assessment** – Use machine learning (e.g., Scikit-Learn classifiers) to establish species-environment relationships.
 - **Interpolate & Extrapolate** – Apply the model to predict species distribution across space and time.
 - **Iteration** – Refine the model based on new data or improved techniques.
+
+### **Formula Definition**
+- SDM estimates a function: $ P(text{species presence} | text{environmental variables}) $
+- Where:
+  - Inputs (features): temperature, rainfall, elevation, soil, land cover, etc.
+  - Output: probability (or suitability) of species presence
+- This is essentially a spatial machine learning problem.
+
+### **Data Required**
+- Species Data:
+  - Presence-only
+  - Presence-absence
+  - Abundance
+- Environmental predictors:
+  - Climate (temperature, precipitation)
+  - Topography (elevation, slope)
+  - Land use / land cover
+  - Soil, vegetation indices (NDVI)
+  - Remote sensing rasters
+
+### **Key Assumptions in SDM**
+- Species–environment equilibrium
+  - Species occupies all suitable habitats
+  - Nearby locations are similar → violates independence
+  - Resolution of raster affects results (Scale Sensitivity)
+- Stationarity
+  - Relationships don’t change over space/time
+  - Climate Change / Non-stationarity where models trained on past data may fail in future conditions
+- No sampling bias
+  - Data represents true distribution
+  - Data often comes from easy-to-access areas that leads to biased models
+- Environmental variables are sufficient
+  - Missing variables = wrong predictions
+  - True absence is hard to confirm that leads to pseudo-absence where it introduces noise
+- Ignoring Biotic Interactions
+  - Predators
+  - Competition
+  - Human activity
+- Extrapolation Risk - Predicting outside training conditions is unreliable
+
+### **Applications**
+- Species Distribution
+- Disease Mapping
+- Urban & Human Geography
+  - Population distribution
+  - Crime hotspots
+- Agriculture
+  - Crop suitability
+  - Yield prediction zones
+- Business / Location Intelligence
+  - Store placement
+  - Customer density
+- Environmental Risk
+  - Landslides
+  - Flood risk
+  - Wildfire susceptibility
+- Invasive Species Prediction
+  - Where species might spread
+- Conservation Planning
+  - Identify biodiversity hotspots
+  - Habitat protection prioritization
+
 
 ### **Interpolation vs. Extrapolation: Mapping Species Distributions**
 Once an SDM is trained, it can be used in two main ways:
@@ -94,7 +162,7 @@ There are 19 raster features.
 ```
 
 ### **Presence Species Data**
-We can map the species presences `(pa==1)`.
+We can map the species presences `(pa == 1)`.
 <img src="/assets/images/geospatial/sdm/sdm_01.webp" alt="drawing"/>
 
 ### **Background Data**
@@ -117,10 +185,11 @@ In this project we used some models that will learn from our dataset and raster 
 - Extra Tree
 - Xgboost
 - Light gradien boosting model (lgbm)
+- Neural Networks
+- Support Vector Machines
 
 
 ### **Initiate Models**
-
 By using `model_pred.model_collection` we can initiate all models yang we want to use for this prediction. This function will return default condition for all models and we need to change some parameters inside this function to get more accurate and robust models.
 
 ```python
