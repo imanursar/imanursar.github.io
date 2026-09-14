@@ -61,6 +61,8 @@ Solutions
 ### Weather
 1. [Weather Himawari Monitor]()
   - <img src="/assets/images/knowledge/solution/data_collection/dc_4_1.gif" alt="drawing"/>
+2. Emission mapping
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_4_2.webp" alt="drawing"/>
 
 ### Land Boundary
 1. Land Use
@@ -129,7 +131,7 @@ Solutions
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_7.webp" alt="drawing"/>
 8. MOU Fisheries Sea Boundary
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_8.webp" alt="drawing"/>
-9.  Territorial Boundary
+9. Territorial Boundary
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_9.webp" alt="drawing"/>
 10. EEZ Boundary
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_10.webp" alt="drawing"/>
@@ -137,7 +139,7 @@ Solutions
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_11.webp" alt="drawing"/>
 12. Additional Zone
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_12.webp" alt="drawing"/>
-13. Mining Business Permit Area (Wilayah Izin Usaha Pertambangan     - WIUP)
+13. Mining Business Permit Area (Wilayah Izin Usaha Pertambangan - WIUP)
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_13.webp" alt="drawing"/>
 14. Solar Energy Potential
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_14.webp" alt="drawing"/>
