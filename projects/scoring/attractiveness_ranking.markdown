@@ -6,7 +6,7 @@ layout: default
 title: Attractiveness Ranking (MCDA & EWM)
 parent: Scoring
 permalink: /Scoring/arractiveness_ranking
-nav_order: 103
+nav_order: 104
 ---
 
 # Attractiveness Ranking (MCDA & EWM)

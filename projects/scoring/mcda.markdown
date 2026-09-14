@@ -6,7 +6,7 @@ layout: default
 title: Multiple-criteria decision analysis (MCDA) 
 parent: Scoring
 permalink: /Scoring/mcda
-nav_order: 104
+nav_order: 105
 ---
 
 # Multiple-criteria decision analysis (MCDA) 

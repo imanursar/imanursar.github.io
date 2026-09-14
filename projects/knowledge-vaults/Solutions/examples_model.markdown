@@ -340,9 +340,11 @@ Solutions
 ## Scoring
 1. **Linear Regression**
 2. **Beta weight**
-3. **Multi-Criteria Decision Analysis (MCDA)**
+3. **Analytic Hierarchy Process (AHP)**
+    - <img src="/assets/images/knowledge/solution/cases/case_ahp.webp" alt="drawing" width="300"/>
+4. **Multi-Criteria Decision Analysis (MCDA)**
     - <img src="/assets/images/knowledge/solution/cases/mcda_06.webp" alt="drawing" width="300"/>
-4. **Multi-Criteria Decision Analysis (MCDA) + Enter Entropy Weight Method (EWM)**
+5. **Multi-Criteria Decision Analysis (MCDA) + Enter Entropy Weight Method (EWM)**
     - <img src="/assets/images/knowledge/solution/cases/cases_mcda_ewm_01.webp" alt="drawing" width="300"/>
 
 ## Credit Scoring
