@@ -18,6 +18,8 @@ Solutions
 {:toc}
 
 ## Linear Optimization
+- The world is not linear, but sometimes a linear approximation is **good enough**.
+
 1. **Invention of intensity modulated radiation therapy (IMRT)**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_01.webp" alt="drawing" width="300"/>
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_02.webp" alt="drawing" width="300"/>
@@ -35,6 +37,10 @@ Solutions
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_08.webp" alt="drawing" width="300"/>
 8. **Scenario Analysis**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_09.webp" alt="drawing" width="300"/>
+9. **Product Mix Problem**
+   - <img src="/assets/images/knowledge/solution/cases/cases_lp_10.webp" alt="drawing" width="300"/>
+10. **Product Blend Problem**
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_11.webp" alt="drawing" width="300"/>
 
 ## Integer Optimization
 1. **Scheduling**
@@ -341,7 +347,7 @@ Solutions
 1. **Linear Regression**
 2. **Beta weight**
 3. **Analytic Hierarchy Process (AHP)**
-    - <img src="/assets/images/knowledge/solution/cases/case_ahp.webp" alt="drawing" width="300"/>
+    - <img src="/assets/images/knowledge/solution/cases/cases_ahp.webp" alt="drawing" width="300"/>
 4. **Multi-Criteria Decision Analysis (MCDA)**
     - <img src="/assets/images/knowledge/solution/cases/mcda_06.webp" alt="drawing" width="300"/>
 5. **Multi-Criteria Decision Analysis (MCDA) + Enter Entropy Weight Method (EWM)**
