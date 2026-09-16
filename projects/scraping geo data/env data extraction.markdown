@@ -4,21 +4,23 @@
 
 layout: default
 title: Geospatial Environmental Data Extraction and Analysis
-parent: Geospatial
-permalink: /geospatial/env_extract_data
-nav_order: 13
+parent: Scraping Geospatial Data
+permalink: /scraping geo data/gee_env_data
+nav_order: 7
 ---
 
 # Geospatial Environmental Data Extraction and Analysis
 
 geospatial
 {: .badge .badge-pill .badge-primary }
-map
+dataset
 {: .badge .badge-pill .badge-secondary }
+map
+{: .badge .badge-pill .badge-info }
 Earth Engine
 {: .badge .badge-pill .badge-info }
 
-<img src="/assets/images/geospatial/snippet/env_02.png" alt="drawing" width="500"/>
+<img src="/assets/images/geospatial/gee/env/env_02.webp" alt="drawing" width="500"/>
 
 ## Introduction
 Understanding and monitoring environmental changes is essential for addressing challenges such as deforestation, climate change, and land degradation. This project utilize Python and the Google Earth Engine (GEE) API to efficiently extract, process, and analyze environmental datasets at scale.
@@ -123,7 +125,7 @@ This function requires the following parameters:
 - **zoom** (`int`):           zoom level
 
 ### Boundary area
-<img src="/assets/images/geospatial/snippet/env_01.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_01.webp" alt="drawing"/>
 
 
 ## Load and Process Satellite Imagery
@@ -146,6 +148,8 @@ This function requires the following parameters:
 - **band_filter** (`list`):  list of bands
 - **overlaping** (`boolean`):    combine all band images into single image
 
+<img src="/assets/images/geospatial/gee/env/env_01_01.webp" alt="drawing"/>
+
 ### Calculate Vegetation Indices
 By calling `geemap_func.vegetation_calculation`, We calculate all required bands to get NDVI, NDRE, NDMI index value. This process we will Normalized Difference specific bands and reduce the image collection to get each index value.
 
@@ -160,15 +164,15 @@ This function requires the following parameters:
 
 ### **NDVI**
 
-<img src="/assets/images/geospatial/snippet/env_02.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_02.webp" alt="drawing"/>
 
 ### **NDRE**
 
-<img src="/assets/images/geospatial/snippet/env_03.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_03.webp" alt="drawing"/>
 
 ### **NDMI**
 
-<img src="/assets/images/geospatial/snippet/env_04.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_04.webp" alt="drawing"/>
 
 ### Calculate vegetation statistics
 By calling `geemap_func.vegetation_statistics`, We can calculate statistics value for each index and store it in local storage.
@@ -182,7 +186,7 @@ This function requires the following parameters:
 - **area** (`map`):   boundary area
 - **scale** (`int`):  a nominal scale in meters of the projection to work in.
 
-<img src="/assets/images/geospatial/snippet/env_05.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_05.webp" alt="drawing"/>
 
 ## Extract Topographic and Elevation Data
 To get Topographic data (such as: elevation, slope, and hillshade) we can use DEM Data to generate those data. By calling `geemap_func.get_dem_variable` we can generate elevation, slope, and hillshade data from `USGS/SRTMGL1_003` dataset.
@@ -199,15 +203,15 @@ This function requires the following parameters:
 
 ### **Elevation**
 
-<img src="/assets/images/geospatial/snippet/env_06.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_06.webp" alt="drawing"/>
 
 ### **Hillshade**
 
-<img src="/assets/images/geospatial/snippet/env_07.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_07.webp" alt="drawing"/>
 
 ### **Slope**
 
-<img src="/assets/images/geospatial/snippet/env_08.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_08.webp" alt="drawing"/>
 
 ## Extract Canopy Height Data
 By calling `geemap_func.get_canopy_height_variable` we can generate canopy height dataset and Mask out the values that are equal to 255 to get normilized data.
@@ -224,7 +228,7 @@ This function requires the following parameters:
 
 ### **Canopy Height**
 
-<img src="/assets/images/geospatial/snippet/env_09.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_09.webp" alt="drawing"/>
 
 ## Extract Precipitation Data
 By calling `geemap_func.get_precipitation_variable` we can generate precipitation or rainfall dataset and aggregate to get daily or yearly data.
@@ -242,7 +246,7 @@ This function requires the following parameters:
 
 ### **Precipitation Analysis**
 
-<img src="/assets/images/geospatial/snippet/env_11.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_11.webp" alt="drawing"/>
 
 ### Calculate Precipitation statistics
 By calling `geemap_func.precipitation_statistics`, We can calculate statistics value for precipitation and store it in local storage.
@@ -256,7 +260,7 @@ This function requires the following parameters:
 - **area** (`map`):   boundary area
 - **scale** (`int`):  a nominal scale in meters of the projection to work in.
 
-<img src="/assets/images/geospatial/snippet/env_12.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_12.webp" alt="drawing"/>
 
 
 ## Extract Temperature Data
@@ -275,7 +279,7 @@ This function requires the following parameters:
 
 ### **Precipitation Analysis**
 
-<img src="/assets/images/geospatial/snippet/env_10.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_10.webp" alt="drawing"/>
 
 ### Calculate Temperature statistics
 By calling `geemap_func.temperature_calculation`, We can calculate statistics value for temperature and store it in local storage.
@@ -291,7 +295,7 @@ This function requires the following parameters:
 - **date_filter** (`list`):  time windows
 - **scale** (`int`):  a nominal scale in meters of the projection to work in.
 
-<img src="/assets/images/geospatial/snippet/env_13.png" alt="drawing"/>
+<img src="/assets/images/geospatial/gee/env/env_13.webp" alt="drawing"/>
 
 ## Save the data 
 By calling `geemap_func.save_to_tif`, We can save all raster data into `.tiff` image format.
