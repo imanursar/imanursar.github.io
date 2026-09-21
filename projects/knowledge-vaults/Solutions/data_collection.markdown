@@ -63,6 +63,10 @@ Solutions
   - <img src="/assets/images/knowledge/solution/data_collection/dc_4_1.gif" alt="drawing"/>
 2. Emission mapping
   - <img src="/assets/images/knowledge/solution/data_collection/dc_4_2.webp" alt="drawing"/>
+3. Temperature Land at Day
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_4_3.webp" alt="drawing"/>
+4. Wind ECMWF-ERA5_LAND
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_4_4.webp" alt="drawing"/>
 
 ### Land Boundary
 1. Land Use
