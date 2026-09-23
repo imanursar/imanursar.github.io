@@ -39,7 +39,7 @@ Solutions
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_5.webp" alt="drawing"/>
 6. Rainfall Intensity
 7. Nighttime Lights
-  - [VIIRS/JPSS1 Lunar BRDF-Adjusted Nighttime Lights Yearly](https://cmr.earthdata.nasa.gov/search/concepts/C3816918646-LAADS.html)
+  - [VIIRS/JPSS1 Lunar BRDF-Adjusted Nighttime Lights Yearly - VJ146A4](https://cmr.earthdata.nasa.gov/search/concepts/C3816918646-LAADS.html)
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_7.webp" alt="drawing"/>
 8. Kode Pos
   - [kodepos](https://kodepos.posindonesia.co.id/)
