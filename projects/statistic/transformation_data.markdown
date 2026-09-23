@@ -33,19 +33,19 @@ Solutions
 
 # Encoding Type
 
-| Type                         | Data Type    |  Details           | 
-| ---------------------------- | ------------ | ------------------ | 
-| Label Encoding     | Ordinal data | Unique labels with Equal interval     | 
-| Ordinal Encoding     | Ordinal data | Same as label encoding with ordered data     |	
-| Target-guided Encoding       | Ordinal data | Equal interval     |
-| Polynomial Encoding          | Ordinal data | Non-Equal interval | 
-| Helmert Encoding             | Ordinal data | Non-Equal interval |
-| Sum/ Count Encoding          | Ordinal data | Contains count or sum for each category, Non-Equal interval |
-| Backward Different Encoding  | Ordinal data | Non-Equal interval |
-| One-hot Encoding             | Nominal data | Convert all categories into each column with 0 1, < 15 Cardinality, not suitable for decision-tree based algorithm |
-| Dummy Encoding               | Nominal data | Same as One-hot encoding with drop one feature (randomly) |
-| Effect Encoding              | Nominal data | Same as Dummy encoding with alter row with zeros to all -1 |
-| Mean Encoding                | Nominal data |                    |
+| Type                         | Data Type              |  Details           | 
+| ---------------------------- | ------------           | ------------------ | 
+| Label Encoding               | Ordinal data           | Unique labels with Equal interval     | 
+| Ordinal Encoding             | Ordinal data           | Same as label encoding with ordered data     |	
+| Target-guided Encoding       | Ordinal data           | Equal interval     |
+| Polynomial Encoding          | Ordinal data           | Non-Equal interval | 
+| Helmert Encoding             | Ordinal data           | Non-Equal interval |
+| Sum/ Count Encoding          | Ordinal data           | Contains count or sum for each category, Non-Equal interval |
+| Backward Different Encoding  | Ordinal data           | Non-Equal interval |
+| One-hot Encoding             | Nominal data           | Convert all categories into each column with 0 1, < 15 Cardinality, not suitable for decision-tree based algorithm |
+| Dummy Encoding               | Nominal data           | Same as One-hot encoding with drop one feature (randomly) |
+| Effect Encoding              | Nominal data           | Same as Dummy encoding with alter row with zeros to all -1 |
+| Mean Encoding                | Nominal data           |                    |
 | Binary Encoding              | Ordinal / Nominal data | converts data into more several columns in binary labels, each colums contain 0 and 1 to label each category in binary, Some info loss acceptable for lower dimesionality |
 | BaseN Encoding               | Ordinal / Nominal data |          |
 | Feature Hashing Encoding     | Ordinal / Nominal data | Some info loss acceptable for lower dimesionality |
@@ -55,9 +55,11 @@ Solutions
 | Weights of Evidence Encoding | Ordinal / Nominal data | info loss is not acceptable, the encoder can't handle overfitting / response leakage |
 | James-Stein Encoding         | Ordinal / Nominal data | info loss is not acceptable, the encoder can't handle overfitting / response leakage |
 | M-Estimator Encoding         | Ordinal / Nominal data | info loss is not acceptable, the encoder can't handle overfitting / response leakage |
-| Generalzied Linear Mixed Model Encoding           | Ordinal / Nominal data |          |
+| Generalzied Linear Mixed Model Encoding               | Ordinal / Nominal data |          |
 | CatBoost Encoding            | Ordinal / Nominal data |          |
 | RareLabel Encoding           | Ordinal / Nominal data |          |
+
+<img src="/assets/images/stat/transform/transform_01.webp" alt="drawing"/>
 
 
 # Handling Missing Data
