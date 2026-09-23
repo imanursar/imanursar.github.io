@@ -1,0 +1,109 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+title: Git 101
+parent: Tools
+permalink: /tools/git
+nav_order: 9
+---
+
+# Git 101
+
+tools
+{: .badge .badge-pill .badge-primary }
+container
+{: .badge .badge-pill .badge-secondary }
+milvus
+{: .badge .badge-pill .badge-info }
+
+* Do not remove this line (it will not be displayed)
+{:toc}
+
+# Zaman Jahiliah
+  Pada zaman jahiliah dulu saat kita ngerjain skripsi, kita pasti punya folder ini.
+
+  ```
+  .
+  └── skripsi/
+      ├── laporan.docx
+      ├── laporan-final.docx
+      ├── laporan-final-final.docx
+      ├── laporan-sidang.docx
+      └── laporan-yang-paling-bener.docx
+  ```
+
+  Jadi file yang dipake buat diprint yang mana niiih???
+  Untungnya zaman jahiliah sudah lewat dan sekarang kita punya git.
+
+# Clone
+  Clone adalah copas folder skripsi tersebut ke laptop anda. Bukan, bukan copas pakai flashdisk, itu mah jaman jahiliah. Jaman sekarang kita pakai git clone.
+  
+  Copas dari mana? copas dari server. Jadi ada server git tempat kita nyimpen skripsi ini. Di eFishery, server git yang kita pakai adalah bitbucket. Karena ada di server, jadi jangan takut kalo laptop anda hilang atau error karena file anda tidak hilang.
+
+# Branch
+  Bayangkan jika folder skripsi anda isinya hanya begini.
+
+  ```
+  .
+  └── skripsi/
+      └── laporan.docx
+  ```
+
+  Cakep kan, cuman ada satu docx sehingga kita nggak bingung kudu pakai file yang mana.
+
+  Tapi kenyataan tidak bisa demikian. Kita memang perlu banyak file karena file skripsi kita memang ada beberapa versi. Di situlah kita bermain branch.
+
+  Anggaplah saat sidang skripsi kita perlu bikin dua revisi, satu buat dosen A dan satu buat dosen B karena mau compare mana yang lebih baik. Ya memang ribet lah dua dosen ini. Dengan git, ini kita lakukan dengan mainin branch.
+
+  - Anggaplah ada satu branch utama yang kita namain `master`. Ini tempat skripsi final kita berada. File laporan.docx yang dipake sidang juga di branch ini.
+  - Selanjutnya dari `master` ini kita branching ke branch `fix/revisi-dosen-A`. Lalu kita edit file laporan.docx sesuai dengan kebutuhan dosen A.
+  - Dari `master` juga, kita branching ke branch `fix/revisi-dosen-B` dan kita edit laporan.docx sesuai dengan maunya dosen B.
+  - Sehingga daripada itu, folder skripsi kita tetep satu file aja, yaitu laporan.docx. Kalo mau buka file yang versi sidang, kita tinggal pindah branch ke `master`. Kalo mau buka file yang buat dosen A, kita tinggal pindah branch ke `fix/revisi-dosen-A`. Kalo mau buka file yang buat dosen B, kita tinggal pindah branch ke `fix/revisi-dosen-B`. Pindah branch ini kita biasanya nyebutnya **checkout**.
+  - Ketika kita ngedit-ngedit file laporan.docx di `fix/revisi-dosen-B`, perubahan ini gak akan kena ke file laporan.docx di `fix/revisi-dosen-A`. Jadi perubahan di masing - masing tidak mengganggu satu sama lain. Independen.
+  
+  Branching itu dari mana ke mana. Ilustrasinya sebagai berikut.
+
+  <img src="/assets/images/tools/git/git_01.webp" alt="drawing" />
+
+  Si branch merah ngebranch dari branch `master` ke `develop`. Si branch biru ngebranch dari branch `develop` ke `feature`. Jadi bakal beda ketika si biru ngebranch dari `master`. Kenapa beda? Ya karena isinya branch `master` dan `develop` itu bisa jadi beda.
+
+# Pull
+  Nah, sekarang, anggaplah skripsi ini dikerjain sama 2 orang. Iya, satu laporan tapi dikerjain sama 2 orang. Bakalan kerja bareng kan. Di zaman jahiliah sih ngerjainnya barengan di satu tempat bersama dengan laptop yang sama dan saling ketik bersama. So sweet. Tapi di zaman moderen ini tidak begitu. Dengan git kita tinggal pull kerjaan satu sama lain.
+
+  Misal, dari branch `master` kita ngebranch ke `feat/bab-2` dan `feat/bab-3`. Bab 2 dikerjain sama Dimas dan bab 3 dikerjain sama Agung. Beda laptop, gak saling sebelahan, gak so sweet. Tapi git kan filenya ada di server jadi bisa ditarik ke laptop masing-masing.
+
+  Ketika Dimas pengen liat kerjaan Agung, dia tinggal checkout ke branch `feat/bab-3` dan ngelakuin pull. Kalo nggak pull mungkin file laporannya di laptop Dimas outdated. Agung baru aja ngerjain bab 3 tadi, jadi Dimas harus ngepull kerjaan Agung yang terbaru.
+
+  Supaya gak pusing, jadikan kebiasaan aja bahwa setiap pindah branch harus melakukan pull.
+
+# Commit
+  Balik lagi ke kasus revisi si dosen A dan dosen B. Anggaplah kita lagi ngerjain buat si dosen A, lalu kita mau upload ke server. Kita harus commit dulu.
+
+  Commit adalah ngecommit hasil kerjaan kita pada sebuah commit.
+
+  Ngomong naon atuh. Intinya, kalo nggak dicommit maka kerjaan kita nggak ada yang bisa diupload karena kerjaan kita belum dicommit. Singkat cerita, yaudah terima aja, commit itu wajib jika mau upload.
+
+  Anggaplah untuk ngerjain revisi dosen A ini kita ngubah file laporan.docx dan nambahin file ilustrasi.jpg. Berarti pertama kita add file laporan.docx dan ilustrasi.jpg untuk dicommit. Selanjutnya kita ngelakuin commit. Saat ngelakuin commit, kita set commit messagenya apa. Misal commit messagenya `fix(laporan): menambahkan ilustrasi cara kerja feeder`.
+
+  Jika commit message tidak jelas maka kita lihat historynya pun gak akan ngerti. Padahal itu kerjaan kita sendiri tapi kita sendiri juga nggak ngerti. Sungguh jahiliah!
+
+  <img src="/assets/images/tools/git/git_02.webp" alt="drawing" />
+
+  Ahh, nikmat sekali. Commit messagenya jelas. Itu kerjaan saya sendiri dan saya ngerti saya ngapain waktu itu. Sungguh zaman moderen ini sudah beda dengan zaman jahiliah dulu.
+
+  Sehingga kesimpulannya: commit adalah memberikan konteks pada kerjaan yang telah dilakukan.
+
+# Push atau Publish
+  Oke, sudah commit, sekarang saatnya ngupload. Di git kita nyebutnya bukan ngupload, tapi push. Itu aja. Push adalah ngupload commit-commit yang sudah dicommit.
+
+# Pull Request (PR) dan Merge
+  Sip, mari balik lagi ke kasus Dimas dan Agung ngerjain skripsi barengan namun tidak so sweet. Branch utama kita kan `master` ya. Dan yang bakal diprint buat bimbingan adalah yang ada di branch `master` ini. Rencananya kita mau bimbingan nih, mau review bab 2 dan bab 3. Artinya kerjaan bab 2 oleh Dimas dan kerjaan bab 3 oleh Agung harus disatuin. Oleh karena itu, branch `feat/bab-2` harus dimerge ke branch `master` dan branch `feat/bab-3` juga harus dimerge ke branch `master`.
+
+  Tapi Dimas dan Agung ini saling skeptis satu sama lain nih. Pengen ngecek dulu kerjaan masing- masing sebelum nanti dikasih ke pembimbing. Alhasil, Dimas dan Agung butuh saling review kerjaan masing-masing.
+
+  Di git yang dilakukan adalah Dimas melakukan PR untuk request ngemerge branch `feat/bab-2` ke `master` dan set reviewernya Agung. Begitu juga Agung pada Dimas. Di situ mereka saling memberikan feedback dan masing-masing merevisi sesuai dengan feedback tersebut. Setelah Dimas puas, maka PR Agung diapprove dan dimerge ke `master`. Begitu pula jika Agung sudah puas dengan kerjaan Dimas. Setelah kedua PR ini approved dan dimerge ke `master`, mereka bisa ngeprint laporannya dan menghadap pembimbing.
+
+# N.B.
+  Thanks for mas Dimas untuk ilustrasi dan catatannya.
