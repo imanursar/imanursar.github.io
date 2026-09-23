@@ -6,7 +6,7 @@ layout: default
 title: CLTV Analysis (Part 3)
 parent: ML DL AI
 permalink: /ml_dl_ai/churn_cltv_propensity_03
-nav_order: 107
+nav_order: 108
 toc: true
 ---
 

@@ -6,7 +6,7 @@ layout: default
 title: Propensity Model
 parent: ML DL AI
 permalink: /ml_dl_ai/propensity
-nav_order: 104
+nav_order: 105
 toc: true
 ---
 

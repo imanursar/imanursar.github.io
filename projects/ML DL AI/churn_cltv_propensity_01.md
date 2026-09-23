@@ -6,7 +6,7 @@ layout: default
 title: EDA Churn Analysis (Part 1)
 parent: ML DL AI
 permalink: /ml_dl_ai/churn_cltv_propensity_01
-nav_order: 105
+nav_order: 106
 toc: true
 ---
 

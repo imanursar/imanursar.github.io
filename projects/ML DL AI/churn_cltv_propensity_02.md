@@ -6,7 +6,7 @@ layout: default
 title: Churn and Propensity Analysis (Part 2)
 parent: ML DL AI
 permalink: /ml_dl_ai/churn_cltv_propensity_02
-nav_order: 106
+nav_order: 107
 toc: true
 ---
 
