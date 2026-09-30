@@ -41,6 +41,8 @@ Solutions
    - <img src="/assets/images/knowledge/solution/cases/cases_lp_10.webp" alt="drawing" width="300"/>
 10. **Product Blend Problem**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_11.webp" alt="drawing" width="300"/>
+11. **Project Management Problem**
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_12.webp" alt="drawing" width="300"/>
 
 ## Integer Optimization
 1. **Scheduling**
