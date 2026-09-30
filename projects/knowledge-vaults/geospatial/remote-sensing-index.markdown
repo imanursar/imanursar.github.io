@@ -24,7 +24,7 @@ indexs
 |NDRE     |Normalized Difference Red Edge Index       |NDRE = (NIR - RedEdge) / (NIR + RedEdge)                                                                 |a vegetation index used in remote sensing to assess plant health and chlorophyll content. Sensitive to changes in plant chlorophyll content               |
 |NIRv     |near-infrared reflectance of vegetation    |NIRv=(NDVI−NDVImin)×NIR  NIRv=NDVI×NIR                                                                   |is a remote sensing index that enhances the measurement of vegetation productivity and greenness by isolating the vegetation signal from the background. It builds upon the Normalized Difference Vegetation Index (NDVI) but tries to correct for the mixed pixel problem (i.e., where pixels contain both vegetation and non-vegetation elements like soil or shadow).                |
 |NDMI     |Normalized Difference Moisture Index       |NDMI=(NIR+SWIR) / (NIR−SWIR)   |measures the difference in reflectance between the Near-Infrared (NIR) and Short-Wave Infrared (SWIR) bands. Healthy, water-rich vegetation reflects more NIR and less SWIR, while stressed or dry vegetation reflects less NIR and more SWIR.   High NDMI (close to +1): High vegetation moisture, healthy vegetation.  Low NDMI (close to -1): Low moisture, vegetation stress, possible drought.  NDMI ≈ 0: Sparse or dry vegetation, or non-vegetated surfaces like soil or built-up areas.                                             |
-|NBR      |Normalized Burn Ratio                      |NBR=(NIR+SWIR) / (NIR−SWIR)    |Detects burn areas and post-fire damage  is a remote sensing index specifically designed to identify burned areas, assess fire severity, and monitor vegetation recovery after wildfires.  Healthy vegetation strongly reflects near-infrared (NIR) and weakly reflects short-wave infrared (SWIR).  Burned areas show reduced NIR reflectance and increased SWIR reflectance due to the charring and loss of biomass and moisture.                               |
+|NBR      |Normalized Burn Ratio                      |NBR=(NIR+SWIR) / (NIR−SWIR)    | \- Detects burn areas and post-fire damage  is a remote sensing index specifically designed to identify burned areas, assess fire severity, and monitor vegetation recovery after wildfires.  Healthy vegetation strongly reflects near-infrared (NIR) and weakly reflects short-wave infrared (SWIR).  Burned areas show reduced NIR reflectance and increased SWIR reflectance due to the charring and loss of biomass and moisture. <br><br> \- dNBR or ΔNBR = PrefireNBR - PostfireNBR |
 |MSI      |The moisture stress index  |MSI=(Band 11 or SWIR 1 / Band 8 or NIR)    |MSI is used to evaluate changes in the water content in vegetation via canopy stress analysis. It is also used to indicate water concentration in soil. Indicates Vegetation Moisture Stress |
 |NDWI     |Normalized Difference Water Index          | \- NDWI=(Green+NIR) / (Green−NIR) <br> \- NDWIGao=(NIR+SWIR) / (NIR−SWIR) <br> \- MNDWI = (Green - SWIR) / (Green + SWIR) |Identifies water bodies using green and NIR reflectance  to detect open water bodies and surface water extent. Detect water bodies (McFeeters) or vegetation moisture (Gao).  Contrast between vegetation/water and background  NDWI (McFeeters, 1996) — for water body detection. bands B3 (Green) and B8 (NIR)  NDWI (Gao, 1996) — also called NDMI, for vegetation water content.  "The Modified Normalized Difference Water Index (MNDWI) uses green and SWIR bands for the enhancement of open water features. It also diminishes built-up area features that are often correlated with open water in other indices.  Positive NDWI (>0): Water Negative NDWI (<0): Soil, vegetation, or built-up areas  -1 to +1 (positive values usually indicate water or moisture)    |
 | NDTI    |Normalized Difference Tillage Index        |NDTI=(Red+SWIR1) / (Red−SWIR1) |used primarily to distinguish between tilled and untilled agricultural soil surfaces. It helps monitor soil disturbance, especially in agricultural areas, where identifying recent plowing or tillage is important for land management, erosion studies, and precision agriculture.  Red: Reflectance in the red band (~660 nm) SWIR1: Reflectance in the shortwave infrared band 1 (~1650 nm)  Differentiate bare tilled soil (which tends to reflect more in the red band) from undisturbed or vegetated soil (which tends to reflect more in the SWIR1 band). Support analysis of soil management practices. Assist in erosion risk assessment and soil conservation mapping.  Higher NDTI values (positive): Likely indicate tilled or disturbed soil. Lower NDTI values (negative): Suggest untilled or covered soil, or areas with vegetation or moisture.                                                             |
@@ -72,3 +72,19 @@ indexs
 |BAI     | Burned Area Index | 1/[(RED-0.05)^2 + (NIR-0.2)^2] | Burned land detection, finre damage mapping |
 |MSAVI  | Modified Soil Adjusted Vegetation index | [2NIR+1((2NIR+1)^2-(8NIR-RED))^0.5]/2 | Vegetation detection with minimal soil influence, expecially in early growth stages |
 |SATVI  | Soil-Adjusted Total Vegetation index | [SWIR-RED]/[SWIR+RED+0.5] x (1+0.5)- [BLUE/2] | 0.5 = soil adjustment factor |
+
+
+
+# NBR
+
+dNBR or ΔNBR = PrefireNBR - PostfireNBR
+
+| ΔNBR           | Burn Severity                |
+|----------------|------------------------------|
+| < -0.25        | High post-fire regrowth      |
+| -0.25 to -0.1  | Low post-fire regrowth       |
+| -0.1 to +0.1   | Unburned                     |
+| 0.1 to 0.27    | Low-severity burn            |
+| 0.27 to 0.44   | Moderate-low severity burn   |
+| 0.44 to 0.66   | Moderate-high severity burn  |
+| > 0.66         | High-severity burn           |
