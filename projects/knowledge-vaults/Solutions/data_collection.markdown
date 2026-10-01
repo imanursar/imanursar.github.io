@@ -105,6 +105,8 @@ Solutions
 15. Residential
 16. Coral Reef
 17. Mangrove
+    - [Global Mangrove Watch](https://www.globalmangrovewatch.org/)
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_17.webp" alt="drawing"/>
 18. Earth Quake (Hazard, Risk)
     - [Earth quake GEM GLOBAL SEISMIC HAZARD MAP](https://www.globalquakemodel.org/gem)
     - [Seismic Hazard Maps of Indonesia](https://hazard.openquake.org/gem/)
