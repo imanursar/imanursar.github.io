@@ -178,6 +178,32 @@ Dice=2TP/(2TP+FP+FN)
 |-------------------------- |-------------------------- |-------------------------- |
 | Weighted overlap               | Small object detection       | Small-class errors  |
 
+---
+### **R Square**
+**Meaning:**
+How much of the variation in the real answers your model can explain.
+
+**Formula:**
+$R^2 = 1 − \frac{\text(model’s error)}{\text(error from predicting the average)} $
+
+**Interpretation:**
+- How much better is my model at explaining the data compared with just guessing the average?
+- The model explains about 90% of the variation in the data.
+- $R^2$ = 0.8 does NOT mean your predictions are 80% accurate. It's measuring explained variation, not prediction accuracy.
+- Meaning the model reduced the error by 80% compared with the simple average baseline.
+- A high R² doesn't automatically mean the model is good.
+- If I used my model instead of just guessing the average, how much of the pattern in the data did I manage to explain? 
+
+| $R^2$ | Very roughly means | 
+|-------------------------- |-------------------------- |
+| 1.0               | 	Perfect predictions       | 
+| 0.9               | 	Model explains a lot       | 
+| 0.7               | 	Model explains quite a bit       | 
+| 0.5               | 	Model explains about half the variation       | 
+| 0.0               | 	No better than predicting the average       | 
+| < 0>              | 	Worse than predicting the average       | 
+
+---
 
 ## Performance Metrics decision
 
