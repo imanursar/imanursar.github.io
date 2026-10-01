@@ -113,6 +113,7 @@ Solutions
   - Levene’s Test for Homogeneity of variances
   - t-test for comparing groups.
   - Minimum Detectable Effect (MDE) - minimum uplift yang ingin terukur
+    - by changing the layout, we expect the CTR metric to increase by at least 3%.
   - Chi-Square Test
 
 ## Error
@@ -221,8 +222,19 @@ Solutions
     2. The metrics’ delta confidence interval is 1.89% — 3.27%, meaning we would get a metrics lift of 1.89% — 3.27% if we roll out the revamped design into production (i.e., we win the variant group).
     3. The statistical power of the experiment is 54.8%. That is, the likelihood is 54.8% for the experiment to detect a non-zero effect (i.e., redemption rates between variant and control is different) if there is truly an effect in reality.
 
+## Post-experiment Analysis: Sample Ratio Mismatch (SRM)
+  - SRM is a bias that occurs when the proportion of users across experiment variants differs from the proportion specified in the experimental design.
+  - A Chi-squared Goodness-of-fit test can be used to detect SRM.
+  - Example:
+    - In the experimental design, the proportion between Control and Treatment is 50%:50%.
+    - During the experiment, the Control group has 10,000 users, while the Treatment group has 8,000. Consequently, the Control-to-Treatment proportion is 55%:45%.
+    - Based on the Chi-squared Goodness-of-fit test, the user proportion during the experiment differs from the experimental design, indicating that the experiment is subject to SRM bias.
 
-
+## Experimentation Trustworthiness
+  - **Tyman's Law**: the more unusual or interesting the data, the more likely they are to have been the result of an error of one kind or another.
+  - **Simpson's Paradox**: when data is put into groups that reverses or disappears when the data is combined.
+  - **Novelty Effect**: happens when users interact with new feature.
+  - **Lack of Statistical Power**: the experiment is underpowered to detect the effect size we are seeing, there are not enough users in the test.
 
 
 
