@@ -171,6 +171,13 @@ Solutions
       - <img src="/assets/images/knowledge/solution/data_collection/dc_5_26.webp" alt="drawing"/>
 20. Power Grid
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_20.webp" alt="drawing"/>
+21. Power Plants
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_6_21.webp" alt="drawing"/>
+22. Power House
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_6_22.webp" alt="drawing"/>
+23. Transmission
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_6_23.webp" alt="drawing"/>
+
 
 ### Administrative
 1. Collection
