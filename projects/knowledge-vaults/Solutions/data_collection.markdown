@@ -104,19 +104,25 @@ Solutions
 14. Coastline
 15. Residential
 16. Coral Reef
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_16.webp" alt="drawing"/>
 17. Mangrove
     - [Global Mangrove Watch](https://www.globalmangrovewatch.org/)
     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_17.webp" alt="drawing"/>
-18. Earth Quake (Hazard, Risk)
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_17_2.webp" alt="drawing"/>
+18. Seagrass
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_18.webp" alt="drawing"/>
+19. Macro alga
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_19.webp" alt="drawing"/>
+20. Earth Quake (Hazard, Risk)
     - [Earth quake GEM GLOBAL SEISMIC HAZARD MAP](https://www.globalquakemodel.org/gem)
     - [Seismic Hazard Maps of Indonesia](https://hazard.openquake.org/gem/)
     - [BMKG]()
       - <img src="/assets/images/knowledge/solution/data_collection/dc_5_27.webp" alt="drawing"/>
-19. Bathymetry
-20. Hydrogeology Lithology Aquifer 
-21. Hydrogeology of Aquifer Productivity 
-22. Magneto field
-23. Contours
+21. Bathymetry
+22. Hydrogeology Lithology Aquifer 
+23. Hydrogeology of Aquifer Productivity 
+24. Magneto field
+25. Contours
 
 ### Energy and Mining
 1. Potential Resources and Reserves of non-Metal Minerals
