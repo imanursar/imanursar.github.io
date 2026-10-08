@@ -34,18 +34,20 @@ Solutions
 3. Household
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_3.webp" alt="drawing"/>
 4. Water Availability
-5. Water Stress Map
-  - [WRI Aqueduct 4.0](https://www.wri.org/data/aqueduct-global-maps-40-data)
+5. Water Surface - [Global Surface Water Explorer](https://global-surface-water.appspot.com/)
   - <img src="/assets/images/knowledge/solution/data_collection/dc_2_5.webp" alt="drawing"/>
-6. Rainfall Intensity
-7. Nighttime Lights
+6. Water Stress Map
+  - [WRI Aqueduct 4.0](https://www.wri.org/data/aqueduct-global-maps-40-data)
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_6.webp" alt="drawing"/>
+7. Rainfall Intensity
+8. Nighttime Lights
   - [VIIRS/JPSS1 Lunar BRDF-Adjusted Nighttime Lights Yearly - VJ146A4](https://cmr.earthdata.nasa.gov/search/concepts/C3816918646-LAADS.html)
-  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_7.webp" alt="drawing"/>
-8. Kode Pos
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_8.webp" alt="drawing"/>
+9.  Kode Pos
   - [kodepos](https://kodepos.posindonesia.co.id/)
   - [nomor.net](https://nomor.net/)
-  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_8.webp" alt="drawing"/>
-9. Collection
+  - <img src="/assets/images/knowledge/solution/data_collection/dc_2_9.webp" alt="drawing"/>
+10. Collection
   - [MBI](https://www.mbi-geodata.com/)
   - [kependudukan_kemendagri_kelurahan]()
 
