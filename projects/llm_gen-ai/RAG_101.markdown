@@ -77,10 +77,13 @@ rag
   | Type               | Details               | Examples               |
 	| ------------------ | ------------------------------ | ------------------------------ |
 	| Standard           | Basic retrieval + context for Q&A   | answering questions from documents (fact-based Q&A, knowledge base assistants) |
-	| Fusion             | multiple queries → better retrieval results  | combining multiple retrieval strategies for better coverage (large-scale enterprise search) |
+	| Contextual         | Basic retrieval + contexts from metadata or header   | attach a short note explaining what that chunk is about |
+  	| Memory             | storing historical conversations   |  the system also searches its own history with us, treating past conversations as something it can look back on, not something it forgets the moment the conversation ends |
+  	| Fusion             | multiple queries → better retrieval results  | combining multiple retrieval strategies for better coverage (large-scale enterprise search) |
 	| Corrective         | verifies queries or fixes responses  | reducing hallucinations and fixing incorrect outputs (high-stakes domains like legal or healthcare) |
 	| Agentic            | step-by-step reasoning loop with tools | automating workflows (research assistants, task automation, multi-step reasoning) |
-	| Modular            | flexible pipeline (swap components) | building flexible systems that can be customized per use case (AI platforms, SaaS tools) |
+	| Multi-Agent        | split those jobs across several smaller, specialized systems that each do one thing well, coordinated by one that manages the whole process |  |
+  	| Modular            | flexible pipeline (swap components) | building flexible systems that can be customized per use case (AI platforms, SaaS tools) |
 	| Multimodal         | works with text, images, etc. | working with images, audio, and text together (medical reports, visual QA systems) |
 	| Graph              | knowledge graph | understanding relationships in structured data (fraud detection, knowledge graphs), cross-document reasoning and multi-hop queries |
 	| Hybrid             | combine between dense + sparse search and reranker | improving search accuracy in enterprise systems (BM/25 keyword - lexical search + semantic search) |
@@ -138,3 +141,13 @@ rag
   - Continuous feedback loops
   - Performance monitoring
   - Adaptive tuning to evolving data
+
+## RAG issues
+  - Noisy Text
+    - sources:
+      - Mistyped a word (typo)
+      - non-ideal condition (transcription noise)
+      - OCR noise
+    - Handling:
+      - Classical spell-check
+      - Embedding + LLMs

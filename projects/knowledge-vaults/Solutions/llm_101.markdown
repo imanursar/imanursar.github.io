@@ -250,7 +250,7 @@ Solutions
 # RAG (Retrieval-Augmented Generation)
   - Combines **information retrieval** with a **language model** to generate accurate, relevant, less hallucination, private-secure and up-to-date answers.
   - `RAG = Retrieval + Augmented + Generation`
-  - Instead of relyinh only on what the model was trained on, RAG lets the model look up information from trusted sources before generating a response.
+  - Instead of relying only on what the model was trained on, RAG lets the model look up information from trusted sources before generating a response.
   - Retrieves more accurate, contextually appropriate, relevant data from a knowledge base
   - Uses an LLM to generate a response based on that context
   - RAG systems augment LLM model's generative capabilities with real-time retrieval of information, ensuring responses are fluent, factually grounded, and relevant.
