@@ -90,6 +90,10 @@ Solutions
    - [building parts](https://overturemaps.org/)
    - [Infrastructure](https://overturemaps.org/)
    - [OpenStreetMap Data](geofabrik.de)
+   - [Microsoft Building Density](https://visualizers.aiforgood.ai/buildings/index.html)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_1.webp" alt="drawing"/>
+   - [Microsoft Building Height](https://visualizers.aiforgood.ai/buildings/index.html)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_2.webp" alt="drawing"/>
 6. Water (Lake, River)
    - [Water](https://overturemaps.org/)
 7. Fire Detection
