@@ -3,27 +3,27 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Transformations Parameters
+title: Features Transformation and Engineering
 parent: Statistics
-permalink: /statistics/transform
+permalink: /statistics/features
 nav_order: 103
 ---
 
-# Transformations Parameters
+# Features Transformation and Engineering
 Solutions
 {: .badge .badge-pill .badge-primary }
 
 * Do not remove this line (it will not be displayed)
 {:toc}
 
-# Transformation Type
+# Feature Transformation
 
 | Transformation               | Use Case                                                                                                       | Equation / Calculation Method                                                   |
 | ---------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
 | Log Transformation           | Stabilizing variance, normalizing data, useful for data with exponential changes (e.g., economic data).        | y = log(x)                                                                      |
 | Square Root Transformation   | Stabilizing variance, normalizing data, suitable for data sets with non-negative values (counts, areas).       | y = √x                                                                          |
 | Box-Cox Transformation       | Generalized form for stabilizing variance, making data more normal-like, applicable in various scenarios.      | y(λ) = (x^λ -1)/λ, for x > 0 and λ ≠ 0                                          |
-| Z-Score/Standard Score       | Standardizing data to have mean of 0 and standard deviation of 1, used in outlier detection and normalization. | z = (x-µ)/σ                                                                     |
+| Z-Score / Standard Score / Standardization      | Standardizing data to have mean of 0 and standard deviation of 1, used in outlier detection and normalization. | z = (x-µ)/σ                                                                     |
 | Min-Max Scaling              | Scaling data to a fixed range (0-1), useful in scale-sensitive algorithms (neural networks, k-NN).             | Xscaled = (X - Xmin) / (Xmax - Xmin)                                            |
 | Normalization (L1, L2 norms) | Scaling individual samples, essential for algorithms needing comparable scales (support vector machines).      |                                                                                 |
 | Difference Transformation    | Making time-series data stationary by subtracting previous observation from the current one.                   | Δxt = xt - xt-1                                                                 |
@@ -31,7 +31,7 @@ Solutions
 | Binning/Discretization       | Transforming continuous variables into discrete bins, simplifying complex relationships in data.               | Interval: Equal-Width Quantile: Equal Frequency Count Tree-Based: Decision Tree |
 
 
-# Encoding Type
+# Feature Encoding
 
 | Type                         | Data Type              |  Details           | 
 | ---------------------------- | ------------           | ------------------ | 
@@ -74,3 +74,13 @@ Solutions
 | Common data                  | Imputation   | Make NA as level                                 | Categorical |
 | Common data                  | Imputation   | Logistic Regression                              | Categorical |
 | Common data                  | Imputation   | Mean, Median, Mode, Linear Regression            | Numerical   |
+
+
+# Feature Selection
+
+| Type                                |  Details                                                                             | Methods                                                                  |
+| ----------------------------------- | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| Univariate feature selection        | Evaluating the statistical relationship between each feature and the target variable, Features with high scores or p-values below a certain threshold are considered significant and selected for the model. | Statistical tests such as chi-square, ANOVA, or correlation coefficients |
+| Recursive Feature Elimination (RFE) | An iterative technique that starts with all features and progressively eliminates the least important ones based on model performance | RFE                                                                         |	
+
+
