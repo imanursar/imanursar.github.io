@@ -23,8 +23,16 @@ Solutions
 1. **Invention of intensity modulated radiation therapy (IMRT)**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_01.webp" alt="drawing" width="300"/>
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_02.webp" alt="drawing" width="300"/>
-2. **Maximize revenue**
-    - <img src="/assets/images/knowledge/solution/cases/cases_lp_03.webp" alt="drawing" width="300"/>
+2. **Combinational Problem**
+    - <img src="/assets/images/knowledge/solution/cases/cases_lp_08.webp" alt="drawing" width="300"/>
+    
+    1. **Scenario Analysis**
+       - <img src="/assets/images/knowledge/solution/cases/cases_lp_02_1.webp" alt="drawing" width="300"/>
+    2. **Maximize revenue**
+       - <img src="/assets/images/knowledge/solution/cases/cases_lp_02_2.webp" alt="drawing" width="300"/>
+    3. **Production planning problem**
+       - <img src="/assets/images/knowledge/solution/cases/cases_lp_02_3.webp" alt="drawing" width="300"/>
+
 3. **Price and Demand Optimization**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_04.webp" alt="drawing" width="300"/>
 4. **Transportation Problem (Distribution Network)**
@@ -33,15 +41,11 @@ Solutions
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_06.webp" alt="drawing" width="300"/>
 6. **Transshipment problem**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_07.webp" alt="drawing" width="300"/>
-7. **Combinational Problem**
-    - <img src="/assets/images/knowledge/solution/cases/cases_lp_08.webp" alt="drawing" width="300"/>
-8. **Scenario Analysis**
-    - <img src="/assets/images/knowledge/solution/cases/cases_lp_09.webp" alt="drawing" width="300"/>
-9. **Product Mix Problem**
+7. **Product Mix Problem**
    - <img src="/assets/images/knowledge/solution/cases/cases_lp_10.webp" alt="drawing" width="300"/>
-10. **Product Blend Problem**
+8.  **Product Blend Problem**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_11.webp" alt="drawing" width="300"/>
-11. **Project Management Problem**
+9. **Project Management Problem**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_12.webp" alt="drawing" width="300"/>
 
 ## Integer Optimization
