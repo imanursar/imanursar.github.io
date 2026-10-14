@@ -94,6 +94,12 @@ Solutions
      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_1.webp" alt="drawing"/>
    - [Microsoft Building Height](https://visualizers.aiforgood.ai/buildings/index.html)
      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_2.webp" alt="drawing"/>
+   - [Google-Microsoft Open Buildings](https://source.coop/vida/google-microsoft-open-buildings?_rsc=1vtc7)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_3.webp" alt="drawing"/>
+   - [Open Building Map](https://www.openbuildingmap.org/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_4.webp" alt="drawing"/>
+   - [Google Open Building Map](https://sites.research.google/gr/open-buildings/)
+     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_5_5.webp" alt="drawing"/>
 6. Water (Lake, River)
    - [Water](https://overturemaps.org/)
 7. Fire Detection
