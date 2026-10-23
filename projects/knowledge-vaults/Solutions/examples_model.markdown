@@ -18,7 +18,8 @@ Solutions
 {:toc}
 
 ## Linear Optimization
-- The world is not linear, but sometimes a linear approximation is **good enough**.
+
+> The world is not linear, but sometimes a linear approximation is **good enough**.
 
 1. **Invention of intensity modulated radiation therapy (IMRT)**
     - <img src="/assets/images/knowledge/solution/cases/cases_lp_01.webp" alt="drawing" width="300"/>
