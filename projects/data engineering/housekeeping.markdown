@@ -35,7 +35,7 @@ intermediate
 
 ## Core lifecycle
   1. A standard ETL temporary-data lifecycle
-  ```mermaid
+  ```
   Create
     ↓
   Generate / Process
@@ -50,7 +50,7 @@ intermediate
   ```
     
   2. For data that needs to be retained
-  ```mermaid
+  ```
   Create
     ↓
   Generate / Process
@@ -67,7 +67,7 @@ intermediate
   ```
 
   3. For memory-based processing:
-  ```mermaid
+  ```
   Allocate Memory
     ↓
   Process Data
@@ -108,7 +108,7 @@ intermediate
   Risk:
   - If the previous data is removed before the new process succeeds, a failed run can leave the downstream process without usable data.
 
-  ```mermaid
+  ```
               Check Temporary Area / Staging Table
                       ↓
               Create if Not Exists
@@ -146,7 +146,7 @@ intermediate
   - Cleanup must happen even when the ETL fails.
   - Potentially delete failed-run artifacts and lost capable to troubleshooting.
 
-  ```mermaid
+  ```
       Create Temporary Area / Staging Table
               ↓
       Generate Data
@@ -167,7 +167,7 @@ intermediate
 ### Schema 3 — In-Memory Processing
   Use this when the ETL does not write intermediate data to persistent storage. Keep in mind that some programs using a reference to allocate the memory that can prevent the object/data from being released.
 
-  ```mermaid
+  ```
       Check Memory
           ↓
       Allocate Data Objects
@@ -196,7 +196,7 @@ intermediate
 ## Failure-Aware Housekeeping
   A Housekeeping process should distinguish between successful and failed executions. Each process should manages the temporary data differently. Either with replace, delete, or compress and delete.
 
-  ```mermaid
+  ```
                   Start
                     ↓
               Create Area
