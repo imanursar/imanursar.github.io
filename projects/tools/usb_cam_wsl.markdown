@@ -93,7 +93,7 @@ webcam
   In an elevated Windows terminal, bind the webcam to the USB/IP service.
 
   ```cmd
-  usbipd bind --busid 2-3
+  usbipd bind --busid 1-4
   ```
 
   Replace 2-3 with the bus ID obtained from usbipd list. Binding authorizes the device for USB/IP sharing. Administrative privileges may be required.
@@ -102,7 +102,7 @@ webcam
   Attach the webcam to the running WSL 2 distribution.
 
   ```cmd
-  usbipd attach --wsl --busid 2-3
+  usbipd attach --wsl --busid 1-4
   ```
 
   The command transfers access to the USB device from the Windows host to WSL. While attached, the device may no longer be available to Windows applications. Detach it from WSL when Windows applications need to use it again.
@@ -201,6 +201,7 @@ webcam
 
   ```cmd
   sudo usermod -aG video "$USER"
+  sudo chmod 666 /dev/video0 /dev/video1
   ```
 
   Close the current shell session and reopen it for the group membership change to take effect. Depending on the environment, logging out and back in or restarting the WSL session may be necessary. Verify the effective group membership:
