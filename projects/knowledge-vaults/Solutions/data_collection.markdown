@@ -135,6 +135,8 @@ Solutions
 23. Hydrogeology of Aquifer Productivity 
 24. Magneto field
 25. Contours
+26. Submarine Cables
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_26.webp" alt="drawing"/>
 
 ### Energy and Mining
 1. Potential Resources and Reserves of non-Metal Minerals
@@ -180,7 +182,7 @@ Solutions
 19. Liquefaction Vulnerability
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_19.webp" alt="drawing"/>
     - [BMKG]()
-      - <img src="/assets/images/knowledge/solution/data_collection/dc_5_26.webp" alt="drawing"/>
+      - <img src="/assets/images/knowledge/solution/data_collection/dc_6_26.webp" alt="drawing"/>
 20. Power Grid
     - <img src="/assets/images/knowledge/solution/data_collection/dc_6_20.webp" alt="drawing"/>
 21. Power Plants
