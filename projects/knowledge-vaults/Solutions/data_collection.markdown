@@ -131,11 +131,12 @@ Solutions
     - [BMKG]()
       - <img src="/assets/images/knowledge/solution/data_collection/dc_5_27.webp" alt="drawing"/>
 21. Bathymetry
-22. Hydrogeology Lithology Aquifer 
-23. Hydrogeology of Aquifer Productivity 
-24. Magneto field
-25. Contours
-26. Submarine Cables
+    - <img src="/assets/images/knowledge/solution/data_collection/dc_5_21.webp" alt="drawing"/>
+1.  Hydrogeology Lithology Aquifer 
+2.  Hydrogeology of Aquifer Productivity 
+3.  Magneto field
+4.  Contours
+5.  Submarine Cables
     - <img src="/assets/images/knowledge/solution/data_collection/dc_5_26.webp" alt="drawing"/>
 
 ### Energy and Mining
