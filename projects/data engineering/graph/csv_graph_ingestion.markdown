@@ -19,6 +19,8 @@ graph
 csv
 {: .badge .badge-pill .badge-info }
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 # Overview
 CSV is one of the most common formats for exchanging and storing structured data. It provides a simple way to organize information into rows and columns, making it suitable for datasets exported from databases, business applications, analytical platforms, and other data sources.
@@ -427,9 +429,9 @@ Detail for each parameter in metadata.
 
 
 ## Detail Scripts
-
-| \`.env\`               | Store environment parameter                                                                                                                                                                                                                                                  |
+| script                 | Details                                                                                                                                                                                                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| \`.env\`               | Store environment parameter                                                                                                                                                                                                                                                  |
 | \`src/config.py\`      | Configuration and database connection                                                                                                                                                                                                                                        |
 | \`src/metadata.py\`    | Metadata validation, to catch invalid labels, duplicate CSV definitions, missing mappings and unsupported property types.                                                                                                                                                    |
 | \`src/transformer.py\` | Data transformation and type conversion. This module converts CSV values according to the metadata configuration.                                                                                                                                                            |
