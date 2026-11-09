@@ -89,39 +89,39 @@ The csv file could be stored like example below:
 
 1. people.csv
 
-```csv
-:ID(Person),name
-23,Rosa
-42,Karl
-55,Fred
-```
+    ```csv
+    :ID(Person),name
+    23,Rosa
+    42,Karl
+    55,Fred
+    ```
 
 2. places.csv
 
-```csv
-:ID(Place),city,country
-143,Berlin,Germany
-244,London,UK
-```
+    ```csv
+    :ID(Place),city,country
+    143,Berlin,Germany
+    244,London,UK
+    ```
 
 3. live_in.csv
 
-```csv
-:START_ID(Person),:END_ID(Place),since
-23,143,2020
-55,244
-42,244,1980
-```
+    ```csv
+    :START_ID(Person),:END_ID(Place),since
+    23,143,2020
+    55,244
+    42,244,1980
+    ```
 
 4. friends.csv
 
-```csv
-:START_ID(Person),:END_ID(Person)
-23,42
-42,23
-42,55
-55,42
-```
+    ```csv
+    :START_ID(Person),:END_ID(Person)
+    23,42
+    42,23
+    42,55
+    55,42
+    ```
 
 In general, the files describe two node labels and two relationship types.
 
@@ -429,6 +429,7 @@ Detail for each parameter in metadata.
 
 
 ## Detail Scripts
+
 | script                 | Details                                                                                                                                                                                                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | \`.env\`               | Store environment parameter                                                                                                                                                                                                                                                  |
