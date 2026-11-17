@@ -3,10 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: default
-title: Graph
-parent: Data Engineering
-permalink: /data engineering/graph/
-nav_order: 51
+title: Knowledge Graphs
+permalink: /graphs/
+nav_order: 101
 has_children: true
 heading_anchors: true
 has_toc: false

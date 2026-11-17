@@ -4,7 +4,7 @@
 
 layout: default
 title: Computer Vision
-nav_order: 104
+nav_order: 114
 has_children: true
 heading_anchors: true
 permalink: /computer vision

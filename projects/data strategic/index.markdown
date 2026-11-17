@@ -4,7 +4,7 @@
 
 layout: default
 title: Data Strategic
-nav_order: 101
+nav_order: 110
 has_children: true
 heading_anchors: true
 permalink: /data strategic

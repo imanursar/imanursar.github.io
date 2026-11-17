@@ -4,9 +4,9 @@
 
 layout: default
 title: CSV to Graph Ingestion
-parent: Graph
+parent: Knowledge Graphs
 grand_parent: Data Engineering
-permalink: /data engineering/graph/ingestion/
+permalink: /graphs/ingestion/
 nav_order: 100
 ---
 

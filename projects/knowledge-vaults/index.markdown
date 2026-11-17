@@ -4,7 +4,7 @@
 
 layout: default
 title: Knowledge Vaults
-nav_order: 105
+nav_order: 115
 has_children: true
 heading_anchors: true
 permalink: /knowledge-vaults/
