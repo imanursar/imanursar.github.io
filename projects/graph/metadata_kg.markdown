@@ -230,7 +230,6 @@ Use `source` to connect an external source to its source dataset. Use `consumes`
 The data layers in this data are source, bronze, silver, and gold. The data uses CRM, ERP, payment, and web event data.
 
 ##  Data discovery queries
-
 Support data discovery queries like “What’s the most popular corporate sales dataset containing customer location information?” One way to measure a dataset’s popularity is to count the ways in which the data is consumed, by the number of data sinks consuming the dataset.
 
 ```cypher
@@ -384,3 +383,14 @@ LIMIT 5
 - Each relationship uses `relationship_id` as its identity key. Property types are declared in the schema. Blank optional values are left blank in the CSV.
 - Use `graph_schema.json` with the metadata-driven CSV loader. Resolve each CSV path relative to the dataset directory.
 
+
+# Conclusion
+A Metadata Knowledge Graph transforms metadata from a collection of disconnected technical descriptions into a connected representation of the enterprise data ecosystem.
+
+By linking datasets, fields, data platforms, processing tasks, pipelines, data sinks, user groups, and business definitions, organizations gain visibility into how data is structured, processed, managed, and consumed.
+
+> Its primary value lies in making relationships explicit.
+
+This provides a foundation for data discovery, lineage tracking, impact analysis, governance, and operational intelligence. It also creates opportunities to apply graph-based reasoning and intelligent search to enterprise data management.
+
+Ultimately, a Metadata Knowledge Graph enables organizations to understand not only what data they have, but also how that data moves, why it exists, who is responsible for it, and where it creates business value.
