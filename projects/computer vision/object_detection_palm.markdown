@@ -6,7 +6,7 @@ layout: default
 title: Detecting Palm Trees using Deep Learning
 parent: Computer Vision
 permalink: /computer vision/od_palm
-nav_order: 102
+nav_order: 103
 ---
 
 #  Detecting Palm Trees using Deep Learning

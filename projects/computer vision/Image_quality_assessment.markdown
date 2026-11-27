@@ -6,7 +6,7 @@ layout: default
 title: Image Data Quality Assessment
 parent: Computer Vision
 permalink: /computer vision/dq_assessment
-nav_order: 103
+nav_order: 104
 ---
 
 #  Imagery Data Quality Assessment

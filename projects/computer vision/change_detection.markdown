@@ -6,7 +6,7 @@ layout: default
 title: ​Land Change Detection
 parent: Computer Vision
 permalink: /computer vision/lcd
-nav_order: 104
+nav_order: 105
 ---
 
 #  ​Land Change Detection (Encroachment Detection)
