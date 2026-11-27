@@ -7,7 +7,7 @@ title:  Species Distribution Modeling (SDMs) with Unsupervised Learning
 parent: Species Distribution Modeling
 grand_parent: Geospatial
 permalink: /geospatial/sdm/sdm_unsupervised/
-nav_order: 3
+nav_order: 4
 ---
 
 # Species Distribution Modeling (SDMs) with Unsupervised Learning
@@ -21,6 +21,8 @@ distribution models
 
 <img src="/assets/images/geospatial/sdm/sdm_25.webp" alt="drawing" width="500"/>
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## **Introduction**
 ### **Modeling Species’ Geographic Distributions: A Case Study of South American Mammals**

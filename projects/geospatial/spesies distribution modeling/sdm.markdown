@@ -7,7 +7,7 @@ title:  Species Distribution Modeling (SDMs) with Machine Learning
 parent: Species Distribution Modeling
 grand_parent: Geospatial
 permalink: /geospatial/sdm/sdm/
-nav_order: 1
+nav_order: 2
 ---
 
 # Species Distribution Modeling (SDMs) with Machine Learning
@@ -21,6 +21,8 @@ distribution models
 
 <img src="/assets/images/geospatial/sdm/sdm_03.webp" alt="drawing" width="500"/>
 
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## **Introduction**
 ### **Understanding Species Distribution Models (SDMs)**

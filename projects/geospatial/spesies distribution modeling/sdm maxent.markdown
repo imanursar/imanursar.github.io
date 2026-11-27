@@ -7,7 +7,7 @@ title:  Species Distribution Modeling using Maxent Model
 parent: Species Distribution Modeling
 grand_parent: Geospatial
 permalink: /geospatial/sdm/sdm_maxent/
-nav_order: 2
+nav_order: 3
 ---
 
 # Species Distribution Modeling using Maxent Model
@@ -22,6 +22,9 @@ maxent model
 
 
 <img src="/assets/images/geospatial/sdm/sdm_20.webp" alt="drawing" width="500"/>
+
+* Do not remove this line (it will not be displayed)
+{:toc}
 
 ## **Introduction**
 ### **Understanding Species Distribution Models (SDMs)**
